@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import sharp from 'sharp';
 // [name, crop in 1x px (x,y,w,h) or null for full]
 const DOC = [240, 180, 1200, 720];
@@ -6,18 +7,21 @@ const list = [
   ['query-totals', null], ['query-criteria', null], ['sql-view', null], ['table-design', null], ['datasheet', null],
   ['form-code', null], ['debugger', null], ['intellisense', null], ['conditional-formatting', null], ['import-access', null],
   ['users', null], ['user-view', null], ['property-sheet', null],
-  ['report-view', null], ['report-preview', null], ['report-design', null],
+  ['report-view', null], ['report-preview', null], ['report-design', null], ['chart-dashboard', null],
+  ['demo-signin', null], ['demo-menu', null], ['demo-dashboard', null], ['demo-orders', null],
 ];
 const crops = {
   'continuous-form': DOC, 'form-view': DOC, 'form-design': DOC, 'pivottable': DOC, 'pivotchart': DOC, 'query-totals': DOC,
   'query-criteria': DOC, 'sql-view': [240, 180, 1200, 420], 'table-design': DOC, 'datasheet': DOC, 'form-code': DOC, 'debugger': DOC,
   'intellisense': DOC, 'conditional-formatting': [240, 180, 1200, 560], 'import-access': [220, 255, 1000, 390], 'users': [240, 180, 1200, 420],
   'user-view': DOC, 'property-sheet': [240, 180, 1200, 720],
-  'report-view': DOC, 'report-preview': DOC, 'report-design': DOC,
+  'report-view': DOC, 'report-preview': DOC, 'report-design': DOC, 'chart-dashboard': DOC,
+  'demo-signin': [500, 120, 440, 660], 'demo-menu': DOC, 'demo-dashboard': DOC, 'demo-orders': [240, 180, 1200, 720],
 };
 const out = new URL('../../public/img/', import.meta.url).pathname;
 for (const [n] of list) {
   const src = `shots/${n}.png`;
+  if (!fs.existsSync(src)) { console.log(`no ${src}: keeping the published ${n} images`); continue; }
   await sharp(src).resize(2880).webp({ quality: 78 }).toFile(`${out}${n}-full@2x.webp`);
   await sharp(src).resize(1440).webp({ quality: 80 }).toFile(`${out}${n}-full.webp`);
   const [x, y, w, h] = crops[n];

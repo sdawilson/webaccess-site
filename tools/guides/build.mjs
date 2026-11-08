@@ -146,7 +146,7 @@ const head = (title, description, canonical) => `<!doctype html>
         <li><a href="/#faq">Questions</a></li>
       </ul>
     </nav>
-    <a class="btn btn-light" href="/#request">Try it</a>
+    <a class="btn btn-light" href="/#demo">Try it</a>
   </div>
 </header>
 <div class="devnotice" role="note">

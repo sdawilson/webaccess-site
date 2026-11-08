@@ -79,11 +79,14 @@ for (let i = 0; i < roads.length; i++) {
   const t = types[i % types.length];
   const month = Math.floor(rnd() * 20); // Apr 2025 .. Nov 2026
   const d = new Date(Date.UTC(2025, 3 + month, 1 + Math.floor(rnd() * 27)));
+  // every fourth scheme is still to start (early 2027), so there are always Planned and Approved ones
+  if (i % 4 === 3) d.setUTCFullYear(2027, Math.floor(i / 8) % 3, 1 + (i % 27));
   const LengthM = 80 + Math.floor(rnd() * 900);
   const WidthM = t[0] === 'Footway' ? 2 : t[0] === 'Drainage' ? 1.5 : 6 + Math.round(rnd() * 3 * 2) / 2;
   const share = t[0] === 'Patching' ? 0.3 : 1; // patching covers part of the carriageway
   const Estimate = Math.round(LengthM * WidthM * t[1] * share * (0.9 + rnd() * 0.3) / 100) * 100;
-  const Status = d < new Date('2026-10-01') ? (rnd() < 0.85 ? 'Complete' : 'On Site') : pick(['Planned', 'Planned', 'Approved', 'On Site']);
+  const Status = i % 4 === 3 ? (i % 8 === 7 ? 'Approved' : 'Planned')
+    : d < new Date('2026-10-01') ? (rnd() < 0.85 ? 'Complete' : 'On Site') : pick(['Planned', 'Approved', 'On Site']);
   const Actual = Status === 'Complete' ? Math.round(Estimate * (0.85 + rnd() * 0.35) / 100) * 100 : null;
   const values = {
     SchemeRef: `HS-${String(d.getUTCFullYear()).slice(2)}-${String(101 + i).padStart(3, '0')}`,

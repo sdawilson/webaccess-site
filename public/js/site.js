@@ -5,6 +5,9 @@
 // To show the "Watch it in use" section, set these to a Bunny Stream library ID and video ID.
 const STREAM_LIBRARY_ID = '';
 const STREAM_VIDEO_ID = '';
+// The demo: set this to the demo instance's address (e.g. 'https://demo.webaccessbuilder.com')
+// to show the "Open the demo" buttons; until then the page offers a test instance instead.
+const DEMO_URL = '';
 // The "Buy me a coffee" button under the note from Simon appears once this is set,
 // e.g. 'https://buymeacoffee.com/yourname'.
 const COFFEE_URL = 'https://buymeacoffee.com/simonwilson_wab';
@@ -21,6 +24,7 @@ const SCREENS = [
   ['sql-view', 'SQL view, in Access SQL', 'SQL view of a query in Access SQL'],
   ['report-preview', 'A report in Print Preview, grouped by type with subtotals', 'Print Preview of a report of schemes grouped by type, on an A4 page'],
   ['report-design', 'Report Design view with the Group, Sort, and Total pane', 'Report Design view with sections and the Group, Sort, and Total pane'],
+  ['chart-dashboard', 'Chart controls on a dashboard form', 'A dashboard form with two Chart controls: estimate and actual by scheme type, and schemes by status'],
   ['pivottable', 'PivotTable view, grouped by year and quarter', 'A PivotTable of estimates by scheme type and quarter'],
   ['pivotchart', 'PivotChart view of the same layout', 'A stacked column PivotChart of estimates by scheme type'],
   ['conditional-formatting', 'The Conditional Formatting Rules Manager', 'The Conditional Formatting Rules Manager with three rules'],
@@ -30,6 +34,7 @@ const SCREENS = [
   ['import-access', 'Importing tables from an Access database', 'The Import from Access dialog listing tables to import'],
   ['users', 'Users and their roles', 'The Users screen listing admins and users'],
   ['user-view', 'What a user sees: the same form, no design tools', 'A user’s view of a form, with no design tools in the ribbon'],
+  ['demo-menu', 'The demo: Fieldfare Traders, a sample database to explore', 'The Main Menu of the Fieldfare Traders sample database, open in the demo'],
 ];
 
 const viewer = {
@@ -243,4 +248,11 @@ if (featureForm) {
       say(`${err.message} Please try again in a moment.`, 'err');
     }
   });
+}
+
+// ---------- the demo ----------
+if (DEMO_URL) {
+  document.querySelectorAll('[data-demo-link]').forEach((a) => { a.href = DEMO_URL; });
+  document.querySelectorAll('[data-demo]').forEach((el) => { el.hidden = false; });
+  document.querySelectorAll('[data-demo-fallback]').forEach((el) => { el.hidden = true; });
 }

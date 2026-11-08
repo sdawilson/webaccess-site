@@ -533,3 +533,16 @@ html:has(.guide) { scroll-behavior: auto; }
 @media (max-width: 1060px) { .roadmap-more { grid-column: 1; } }
 @media (max-width: 640px) { .suggest { padding: 64px 0; } }
 .roadmap-grid { row-gap: 0; }
+
+/* ---------- try the demo ---------- */
+.demo { padding: 96px 0; background: var(--green); color: #eaf2ed; }
+.demo h2 { color: #fff; }
+.demo .feature-text > p { color: #d3e3d9; }
+.demo .ticks li::before { border-color: #fff; background: transparent; }
+.demo .ticks li::after { border-color: var(--focus); }
+.demo .btn-primary { background: #fff; color: var(--green); }
+.demo .btn-primary:hover { background: var(--current); color: var(--green-deep); }
+.demo-cta { margin-top: 28px; }
+.demo-soon { margin-top: 24px; padding: 12px 14px; border-left: 3px solid var(--focus); background: rgba(255, 255, 255, 0.07); color: #e6efe9; }
+.demo-soon a { color: #fff; }
+@media (max-width: 640px) { .demo { padding: 64px 0; } }
