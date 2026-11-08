@@ -524,3 +524,12 @@ html:has(.guide) { scroll-behavior: auto; }
 .field.confirm input[aria-invalid="true"] { outline: 2px solid #b42318; outline-offset: 2px; }
 .request-intro p + p { margin-top: 0; }
 @media (max-width: 640px) { .field.confirm > span { display: none; } }
+
+/* ---------- suggest a feature ---------- */
+.suggest { padding: 96px 0; border-top: 1px solid var(--rule); }
+.suggest .accform-header { background: var(--green-deep); }
+.roadmap-more { grid-column: 2; margin: 18px 0 0; color: var(--muted); }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+@media (max-width: 1060px) { .roadmap-more { grid-column: 1; } }
+@media (max-width: 640px) { .suggest { padding: 64px 0; } }
+.roadmap-grid { row-gap: 0; }

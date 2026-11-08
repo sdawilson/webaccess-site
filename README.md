@@ -62,9 +62,14 @@ Both are registered at names.co.uk. Set up on 8 November 2026 as below. **webacc
 - names.co.uk: set up web forwarding from `webaccessbuilder.co.uk` and `www.webaccessbuilder.co.uk` to `https://webaccessbuilder.com`. Don't touch its MX records.
 - If its DNS ever moves to Bunny, copy every MX, SPF (TXT), DKIM and autodiscover record from names.co.uk first.
 
-## Reading requests
+## Reading requests and suggestions
 
-Storage > `webaccess-site` > File Manager > `requests/`. Each request is a JSON file named by date and time.
+Storage > `webaccess-site` > File Manager:
+
+- `requests/`: test-instance requests from the "Request a test instance" form.
+- `features/`: suggestions from the "Suggest a feature" form.
+
+Each is a JSON file named by date and time. With Resend set up, each also arrives by email.
 
 ## Adding the demo video (Bunny Stream)
 

@@ -358,6 +358,67 @@
       <li><strong>Connections to SQL databases</strong> outside Web Access Builder</li>
       <li><strong>Scheduled backups</strong> to cloud storage</li>
     </ul>
+    <p class="roadmap-more">Something missing from this list? <a href="#suggest">Suggest a feature</a></p>
+  </div>
+</section>
+
+<!-- ============ Suggest a feature ============ -->
+<section class="suggest" id="suggest" aria-labelledby="suggest-title">
+  <div class="wrap request-grid">
+    <div class="request-intro">
+      <h2 id="suggest-title">Suggest a feature</h2>
+      <p>Something you rely on in Access that isn't here yet? Something Access never had that you've always wanted? Tell us.</p>
+      <p>Every suggestion is read, and it helps decide what comes next. Leave your email if you'd like to hear back.</p>
+    </div>
+
+    <form class="accform" id="feature-form" action="/api/feature" method="post" novalidate>
+      <div class="accform-section">Form Header</div>
+      <div class="accform-header">
+        <span class="accform-title">New feature suggestion</span>
+      </div>
+      <div class="accform-section">Detail</div>
+      <div class="accform-detail">
+        <div class="field field-wide">
+          <label for="s-feature">The feature</label>
+          <textarea id="s-feature" name="feature" rows="3" maxlength="2000" required placeholder="For example: the Relationships window, with referential integrity and cascade deletes."></textarea>
+        </div>
+        <div class="field">
+          <label for="s-area">Part of the app</label>
+          <select id="s-area" name="area">
+            <option value="">Choose…</option>
+            <option>Tables</option>
+            <option>Queries</option>
+            <option>Forms</option>
+            <option>Reports</option>
+            <option>VBA and code</option>
+            <option>Import and export</option>
+            <option>Users and sharing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field field-wide">
+          <label for="s-use">How would you use it?</label>
+          <textarea id="s-use" name="use" rows="3" maxlength="4000" placeholder="Optional: what it would let you do, or what you do without it now."></textarea>
+        </div>
+        <div class="field">
+          <label for="s-name">Your name</label>
+          <input id="s-name" name="name" type="text" autocomplete="name" maxlength="100" placeholder="Optional">
+        </div>
+        <div class="field">
+          <label for="s-email">Email</label>
+          <input id="s-email" name="email" type="email" autocomplete="email" maxlength="200" placeholder="Optional, if you'd like a reply">
+        </div>
+        <div class="field hp" aria-hidden="true">
+          <label for="s-web">Leave this empty</label>
+          <input id="s-web" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+      </div>
+      <div class="accform-section">Form Footer</div>
+      <div class="accform-footer">
+        <p class="form-status" id="feature-status" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" type="submit">Send suggestion</button>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -469,7 +530,7 @@
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
     <p>© 2026 Simon Wilson. Microsoft Access is a trademark of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p><a href="/guides/">Guides</a></p>
+    <p class="footer-links"><a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
   </div>
 </footer>
 

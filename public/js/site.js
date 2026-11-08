@@ -213,3 +213,34 @@ if (COFFEE_URL) {
     link.closest('.why-coffee').hidden = false;
   }
 }
+
+// ---------- suggest a feature ----------
+const featureForm = document.getElementById('feature-form');
+if (featureForm) {
+  const status = document.getElementById('feature-status');
+  const say = (msg, kind) => { status.textContent = msg; status.className = `form-status ${kind || ''}`; };
+  featureForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(featureForm).entries());
+    featureForm.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
+    const feature = featureForm.elements.feature;
+    const email = featureForm.elements.email;
+    if (data.feature.trim().length < 5) { feature.setAttribute('aria-invalid', 'true'); feature.focus(); say('Describe the feature you\'d like.', 'err'); return; }
+    if (data.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) { email.setAttribute('aria-invalid', 'true'); email.focus(); say('That email address doesn\'t look right. Leave it empty if you\'d rather not get a reply.', 'err'); return; }
+    const button = featureForm.querySelector('button[type="submit"]');
+    button.disabled = true;
+    say('Sending…');
+    try {
+      const res = await fetch(featureForm.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || 'The suggestion could not be sent.');
+      say(data.email.trim() ? `Thank you. Suggestion sent; we'll reply to ${data.email.trim()}.` : 'Thank you. Suggestion sent.', 'ok');
+      featureForm.reset();
+      button.disabled = false;
+      button.textContent = 'Send another';
+    } catch (err) {
+      button.disabled = false;
+      say(`${err.message} Please try again in a moment.`, 'err');
+    }
+  });
+}

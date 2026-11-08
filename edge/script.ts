@@ -3,6 +3,8 @@
 // GET  /...           serves the site's files from the storage zone, under site/
 // POST /api/request   saves a "request an instance" form to the storage zone, under requests/,
 //                     and emails a notification if RESEND_API_KEY is set
+// POST /api/feature   saves a "suggest a feature" form to the storage zone, under features/,
+//                     and emails a notification in the same way
 //
 // The script is the origin for its pull zone, so the CDN caches the files it serves
 // (see Cache-Control below) and the script runs only on a cache miss.
@@ -27,6 +29,7 @@ const STORAGE_KEY = env("STORAGE_KEY");
 const STORAGE_URL = env("STORAGE_URL") || `https://${env("STORAGE_HOST", "storage.bunnycdn.com")}`;
 const SITE_PREFIX = "site";
 const REQUEST_PREFIX = "requests";
+const FEATURE_PREFIX = "features";
 
 const TYPES: Record<string, string> = {
   html: "text/html; charset=utf-8",
@@ -124,9 +127,8 @@ async function serveFile(url: URL, method: string): Promise<Response> {
   return new Response("Not found", { status: 404, headers: { "Content-Type": "text/plain; charset=utf-8", ...SECURITY_HEADERS } });
 }
 
-// ---------- the request form ----------
+// ---------- the forms: test-instance requests and feature suggestions ----------
 
-const LIMITS: Record<string, number> = { name: 100, email: 200, organisation: 150, users: 40, existing: 60, message: 4000 };
 const recent = new Map<string, number[]>(); // per client, in this isolate only: a light brake, not a guarantee
 
 function tooMany(client: string): boolean {
@@ -142,12 +144,14 @@ function clean(v: unknown, max: number): string {
   return typeof v === "string" ? v.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, "").trim().slice(0, max) : "";
 }
 
-async function saveRequest(request: Request): Promise<Response> {
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Reads a form posted as JSON. Returns the fields, a Response to send back at once, or null
+// for a bot (a filled-in honeypot), which is told "ok" and has nothing kept.
+async function readForm(request: Request): Promise<Record<string, unknown> | Response | null> {
   const type = request.headers.get("content-type") || "";
   if (!type.includes("application/json")) return json(415, { error: "Send the form as JSON." });
-  const length = Number(request.headers.get("content-length") || 0);
-  if (length > 20_000) return json(413, { error: "That's too long." });
-
+  if (Number(request.headers.get("content-length") || 0) > 20_000) return json(413, { error: "That's too long." });
   let raw: Record<string, unknown>;
   try {
     const text = await request.text();
@@ -157,51 +161,69 @@ async function saveRequest(request: Request): Promise<Response> {
     return json(400, { error: "The form couldn't be read." });
   }
   if (!raw || typeof raw !== "object") return json(400, { error: "The form couldn't be read." });
+  if (clean(raw.website, 200)) return null;
+  return raw;
+}
 
-  // A filled-in honeypot means a bot: say yes and keep nothing.
-  if (clean(raw.website, 200)) return json(200, { ok: true });
+function clientOf(request: Request): string {
+  return request.headers.get("x-real-ip") || request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
+}
 
-  const data: Record<string, string> = {};
-  for (const [k, max] of Object.entries(LIMITS)) data[k] = clean(raw[k], max);
-  if (!data.name) return json(400, { error: "Enter your name." });
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return json(400, { error: "Enter an email address we can reply to." });
-  const acknowledged = raw.acknowledged === true || ["yes", "on", "true"].includes(clean(raw.acknowledged, 10).toLowerCase());
-  if (!acknowledged) return json(400, { error: "Please tick the box to confirm you understand it isn't ready for production use." });
-
-  const client = request.headers.get("x-real-ip") || request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
-  if (tooMany(client)) return json(429, { error: "Too many requests from here." });
-
+// Saves a record under <prefix>/YYYY/MM/<id>.json and returns it with its id, or a Response on failure.
+async function store(prefix: string, request: Request, data: Record<string, unknown>): Promise<Record<string, string> | Response> {
   const now = new Date();
   const id = `${now.toISOString().replace(/[:.]/g, "-")}-${crypto.randomUUID().slice(0, 8)}`;
   const record = {
     id,
     received: now.toISOString(),
     ...data,
-    acknowledgedNotForProduction: true,
     country: request.headers.get("cdn-requestcountrycode") || "",
     userAgent: clean(request.headers.get("user-agent"), 300),
   };
-  const path = `${REQUEST_PREFIX}/${now.getUTCFullYear()}/${String(now.getUTCMonth() + 1).padStart(2, "0")}/${id}.json`;
+  const path = `${prefix}/${now.getUTCFullYear()}/${String(now.getUTCMonth() + 1).padStart(2, "0")}/${id}.json`;
   const put = await fetch(storageUrl(path), {
     method: "PUT",
     headers: { AccessKey: STORAGE_KEY, "Content-Type": "application/json" },
     body: JSON.stringify(record, null, 2),
   });
   if (!put.ok) {
-    console.error(`Saving request failed: ${put.status} ${await put.text().catch(() => "")}`);
-    return json(502, { error: "The request couldn't be saved." });
+    console.error(`Saving ${path} failed: ${put.status} ${await put.text().catch(() => "")}`);
+    return json(502, { error: "That couldn't be saved." });
   }
-
-  await notify(record).catch((err) => console.error("Notification failed:", err));
-  return json(200, { ok: true });
+  return record as Record<string, string>;
 }
 
-async function notify(r: Record<string, string>): Promise<void> {
+// Emails Simon about a new record, if Resend is set up (see the top of this file).
+async function notify(subject: string, lines: string[], replyTo: string): Promise<void> {
   const key = env("RESEND_API_KEY");
   const to = env("NOTIFY_TO");
   const from = env("NOTIFY_FROM");
   if (!key || !to || !from) return;
-  const lines = [
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ from, to: [to], ...(replyTo ? { reply_to: replyTo } : {}), subject, text: lines.join("\n") }),
+  });
+  if (!res.ok) throw new Error(`Resend returned ${res.status}: ${await res.text().catch(() => "")}`);
+}
+
+const REQUEST_FIELDS: Record<string, number> = { name: 100, email: 200, organisation: 150, users: 40, existing: 60, message: 4000 };
+
+async function saveRequest(request: Request): Promise<Response> {
+  const raw = await readForm(request);
+  if (raw === null) return json(200, { ok: true });
+  if (raw instanceof Response) return raw;
+  const data: Record<string, string> = {};
+  for (const [k, max] of Object.entries(REQUEST_FIELDS)) data[k] = clean(raw[k], max);
+  if (!data.name) return json(400, { error: "Enter your name." });
+  if (!EMAIL.test(data.email)) return json(400, { error: "Enter an email address we can reply to." });
+  const acknowledged = raw.acknowledged === true || ["yes", "on", "true"].includes(clean(raw.acknowledged, 10).toLowerCase());
+  if (!acknowledged) return json(400, { error: "Please tick the box to confirm you understand it isn't ready for production use." });
+  if (tooMany(clientOf(request))) return json(429, { error: "Too many requests from here." });
+
+  const r = await store(REQUEST_PREFIX, request, { ...data, acknowledgedNotForProduction: true });
+  if (r instanceof Response) return r;
+  await notify(`Web Access Builder test instance request: ${r.organisation || r.name}`, [
     `Name: ${r.name}`,
     `Email: ${r.email}`,
     `Organisation: ${r.organisation || "-"}`,
@@ -212,20 +234,41 @@ async function notify(r: Record<string, string>): Promise<void> {
     "",
     r.message || "(no message)",
     "",
-    `Saved as ${r.id}.json in the storage zone.`,
-  ];
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: r.email,
-      subject: `webaccess instance request: ${r.organisation || r.name}`,
-      text: lines.join("\n"),
-    }),
-  });
-  if (!res.ok) throw new Error(`Resend returned ${res.status}: ${await res.text().catch(() => "")}`);
+    `Saved as ${REQUEST_PREFIX}/…/${r.id}.json in the storage zone.`,
+  ], r.email).catch((err) => console.error("Notification failed:", err));
+  return json(200, { ok: true });
+}
+
+const FEATURE_FIELDS: Record<string, number> = { feature: 2000, area: 40, use: 4000, name: 100, email: 200 };
+const AREAS = ["Tables", "Queries", "Forms", "Reports", "VBA and code", "Import and export", "Users and sharing", "Other"];
+
+async function saveFeature(request: Request): Promise<Response> {
+  const raw = await readForm(request);
+  if (raw === null) return json(200, { ok: true });
+  if (raw instanceof Response) return raw;
+  const data: Record<string, string> = {};
+  for (const [k, max] of Object.entries(FEATURE_FIELDS)) data[k] = clean(raw[k], max);
+  if (data.feature.length < 5) return json(400, { error: "Describe the feature you'd like." });
+  if (data.area && !AREAS.includes(data.area)) data.area = "Other";
+  if (data.email && !EMAIL.test(data.email)) return json(400, { error: "That email address doesn't look right. Leave it empty if you'd rather not get a reply." });
+  if (tooMany(clientOf(request))) return json(429, { error: "Too many suggestions from here. Please try again later." });
+
+  const r = await store(FEATURE_PREFIX, request, data);
+  if (r instanceof Response) return r;
+  await notify(`Web Access Builder feature suggestion: ${r.feature.split("\n")[0].slice(0, 60)}`, [
+    `Area: ${r.area || "-"}`,
+    `From: ${r.name || "(no name)"}${r.email ? ` <${r.email}>` : ""}`,
+    `Country: ${r.country || "-"}`,
+    "",
+    "The feature:",
+    r.feature,
+    "",
+    "How they'd use it:",
+    r.use || "(not said)",
+    "",
+    `Saved as ${FEATURE_PREFIX}/…/${r.id}.json in the storage zone.`,
+  ], r.email).catch((err) => console.error("Notification failed:", err));
+  return json(200, { ok: true });
 }
 
 // ---------- routing ----------
@@ -235,6 +278,10 @@ export async function handle(request: Request): Promise<Response> {
   try {
     if (url.pathname === "/api/request") {
       if (request.method === "POST") return await saveRequest(request);
+      return json(405, { error: "Use POST." });
+    }
+    if (url.pathname === "/api/feature") {
+      if (request.method === "POST") return await saveFeature(request);
       return json(405, { error: "Use POST." });
     }
     if (url.pathname.startsWith("/api/")) return json(404, { error: "Not found." });
