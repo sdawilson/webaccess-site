@@ -425,7 +425,7 @@ p { margin: 0 0 1em; }
 .guide-body h2 { font-size: 1.7rem; margin: 2.4em 0 0.6em; padding-top: 0.8em; border-top: 1px solid var(--rule); }
 .guide-body h3 { font-size: 1.2rem; margin: 1.9em 0 0.5em; }
 .guide-body h4 { font-size: 1.02rem; margin: 1.6em 0 0.4em; }
-.guide-body h2, .guide-body h3, .guide-body h4 { position: relative; scroll-margin-top: 80px; }
+.guide-body h2, .guide-body h3, .guide-body h4 { position: relative; scroll-margin-top: 16px; } /* plus the page's scroll-padding for the title bar */
 .guide-body .anchor {
   position: absolute; left: -1.1em; width: 1em; color: var(--edge); text-decoration: none; opacity: 0;
 }
