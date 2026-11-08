@@ -146,9 +146,14 @@ const head = (title, description, canonical) => `<!doctype html>
         <li><a href="/#faq">Questions</a></li>
       </ul>
     </nav>
-    <a class="btn btn-light" href="/#request">Request<span class="hide-sm">&nbsp;an instance</span></a>
+    <a class="btn btn-light" href="/#request">Try it</a>
   </div>
 </header>
+<div class="devnotice" role="note">
+  <div class="wrap devnotice-inner">
+    <p><strong>In active development.</strong> Web Access Builder isn't yet recommended for production use. We're inviting people to test it and tell us what they find. <a href="/#request">Request a test instance</a></p>
+  </div>
+</div>
 `;
 
 const foot = `

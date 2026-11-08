@@ -37,9 +37,14 @@
         <li><a href="#faq">Questions</a></li>
       </ul>
     </nav>
-    <a class="btn btn-light" href="#request">Request<span class="hide-sm">&nbsp;an instance</span></a>
+    <a class="btn btn-light" href="#request">Try it</a>
   </div>
 </header>
+<div class="devnotice" role="note">
+  <div class="wrap devnotice-inner">
+    <p><strong>In active development.</strong> Web Access Builder isn't yet recommended for production use. We're inviting people to test it and tell us what they find. <a href="/#request">Request a test instance</a></p>
+  </div>
+</div>
 
 <main id="main">
 
@@ -49,7 +54,7 @@
     <h1 id="hero-title">Build it like Access.<br>Share it like a website.</h1>
     <p class="lede">Web Access Builder gives you the tables, queries, forms, reports and VBA you already know, in a web browser. Design your database the Access way, then send your team a link. No installs, no split databases, no shared drive.</p>
     <p class="hero-actions">
-      <a class="btn btn-primary" href="#request">Request a hosted instance</a>
+      <a class="btn btn-primary" href="#request">Request a test instance</a>
       <a class="btn btn-ghost" href="#data">See what it does</a>
     </p>
 
@@ -76,7 +81,7 @@
           <span class="nav-of">of <span id="viewer-count">19</span></span>
           <button type="button" class="nav-btn" data-go="next" aria-label="Next screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l7 5-7 5z"/></svg></button>
           <button type="button" class="nav-btn" data-go="last" aria-label="Last screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l7 5-7 5zM12 3v10"/></svg></button>
-          <a class="nav-btn nav-new" href="#request" aria-label="Start your own: request an instance" title="New record: start your own"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3l7 5-7 5z"/><path class="star" d="M12.5 2.5v4M10.7 3.5l3.6 2M10.7 5.5l3.6-2"/></svg></a>
+          <a class="nav-btn nav-new" href="#request" aria-label="Start your own: request a test instance" title="New record: request a test instance"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3l7 5-7 5z"/><path class="star" d="M12.5 2.5v4M10.7 3.5l3.6 2M10.7 5.5l3.6-2"/></svg></a>
         </span>
         <span class="navbar-caption" id="viewer-caption" aria-live="polite">Continuous form with conditional formatting and data bars</span>
       </figcaption>
@@ -360,14 +365,15 @@
 <section class="request" id="request" aria-labelledby="request-title">
   <div class="wrap request-grid">
     <div class="request-intro">
-      <h2 id="request-title">Get your own instance</h2>
-      <p>We'll set up Web Access Builder for your team at its own web address, with its own database. Tell us a little about what you want to build and we'll reply by email.</p>
+      <h2 id="request-title">Help us test it</h2>
+      <p>Web Access Builder is in active development and isn't yet recommended for production use. We're looking for people to try it and tell us what works, what doesn't, and what's missing.</p>
+      <p>Tell us a little about what you'd like to try, and we'll set you up with a test instance of your own and reply by email.</p>
     </div>
 
     <form class="accform" id="request-form" action="/api/request" method="post" novalidate>
       <div class="accform-section">Form Header</div>
       <div class="accform-header">
-        <span class="accform-title">Request a hosted instance</span>
+        <span class="accform-title">Request a test instance</span>
       </div>
       <div class="accform-section">Detail</div>
       <div class="accform-detail">
@@ -399,8 +405,12 @@
           <label><input type="radio" name="existing" value="Starting fresh"> Nothing yet: we're starting fresh</label>
         </fieldset>
         <div class="field field-wide">
-          <label for="f-msg">What will you use it for?</label>
-          <textarea id="f-msg" name="message" rows="4" maxlength="4000" placeholder="For example: we track highway schemes and defects in Access and want site teams to update it from tablets."></textarea>
+          <label for="f-msg">What would you like to try?</label>
+          <textarea id="f-msg" name="message" rows="4" maxlength="4000" placeholder="For example: a copy of the Access database we use for highway schemes, to see how its forms, reports and VBA hold up."></textarea>
+        </div>
+        <div class="field field-wide confirm">
+          <span aria-hidden="true"></span>
+          <label><input type="checkbox" id="f-ack" name="acknowledged" value="yes" required> I understand Web Access Builder is in development and not yet for production use. I'll test it with copies of my data, not the only copy.</label>
         </div>
         <div class="field hp" aria-hidden="true">
           <label for="f-web">Leave this empty</label>
@@ -421,6 +431,10 @@
   <div class="wrap faq-grid">
     <h2 id="faq-title">Questions</h2>
     <div class="faq-list">
+      <details>
+        <summary>Can we use it for real work yet?</summary>
+        <p>Not yet. Web Access Builder is in active development, so features are still changing and there may be bugs. Please test it with copies of your data, keep your Access database as the working version, and tell us what you find. We'll say here when it's ready for production use.</p>
+      </details>
       <details>
         <summary>Is this Microsoft Access?</summary>
         <p>No. Web Access Builder is an independent product that works the way Access does. It runs in a browser, doesn't need Access installed, and isn't made by or connected with Microsoft.</p>

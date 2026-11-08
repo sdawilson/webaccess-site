@@ -509,3 +509,18 @@ html:has(.guide) { scroll-behavior: auto; }
   .bubble p { font-size: 1.06rem; }
   .why-sign, .why-coffee { margin-left: 18px; }
 }
+
+/* ---------- development notice (every page) ---------- */
+.devnotice { background: var(--current); border-bottom: 1px solid #ecd98a; color: #4a3d00; }
+.devnotice-inner { padding-top: 10px; padding-bottom: 10px; }
+.devnotice p { margin: 0; font-size: 0.95rem; line-height: 1.45; }
+.devnotice strong { font-weight: 750; color: #3a3000; }
+.devnotice a { color: #3a3000; font-weight: 650; white-space: nowrap; }
+
+/* the request form's confirmation tick box */
+.field.confirm { align-items: start; padding-top: 6px; border-top: 1px solid var(--rule); margin-top: 4px; }
+.field.confirm label { display: flex; gap: 12px; align-items: flex-start; color: var(--green-ink); font-size: 0.97rem; line-height: 1.45; cursor: pointer; padding-top: 8px; }
+.field.confirm input { width: 18px; height: 18px; margin: 2px 0 0; flex: none; accent-color: var(--green); }
+.field.confirm input[aria-invalid="true"] { outline: 2px solid #b42318; outline-offset: 2px; }
+.request-intro p + p { margin-top: 0; }
+@media (max-width: 640px) { .field.confirm > span { display: none; } }

@@ -165,6 +165,8 @@ async function saveRequest(request: Request): Promise<Response> {
   for (const [k, max] of Object.entries(LIMITS)) data[k] = clean(raw[k], max);
   if (!data.name) return json(400, { error: "Enter your name." });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return json(400, { error: "Enter an email address we can reply to." });
+  const acknowledged = raw.acknowledged === true || ["yes", "on", "true"].includes(clean(raw.acknowledged, 10).toLowerCase());
+  if (!acknowledged) return json(400, { error: "Please tick the box to confirm you understand it isn't ready for production use." });
 
   const client = request.headers.get("x-real-ip") || request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
   if (tooMany(client)) return json(429, { error: "Too many requests from here." });
@@ -175,6 +177,7 @@ async function saveRequest(request: Request): Promise<Response> {
     id,
     received: now.toISOString(),
     ...data,
+    acknowledgedNotForProduction: true,
     country: request.headers.get("cdn-requestcountrycode") || "",
     userAgent: clean(request.headers.get("user-agent"), 300),
   };
@@ -204,6 +207,7 @@ async function notify(r: Record<string, string>): Promise<void> {
     `Organisation: ${r.organisation || "-"}`,
     `Users: ${r.users || "-"}`,
     `Starting from: ${r.existing || "-"}`,
+    "Confirmed it's a test, not for production: yes",
     `Country: ${r.country || "-"}`,
     "",
     r.message || "(no message)",

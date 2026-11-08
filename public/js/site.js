@@ -173,6 +173,8 @@ if (form) {
     const email = form.elements.email;
     if (!data.name.trim()) { name.setAttribute('aria-invalid', 'true'); name.focus(); say('Enter your name.', 'err'); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) { email.setAttribute('aria-invalid', 'true'); email.focus(); say('Enter an email address we can reply to.', 'err'); return; }
+    const ack = form.elements.acknowledged;
+    if (!ack.checked) { ack.setAttribute('aria-invalid', 'true'); ack.focus(); say('Please tick the box to confirm you understand it isn\'t ready for production use.', 'err'); return; }
     const button = form.querySelector('button[type="submit"]');
     button.disabled = true;
     say('Sending…');
