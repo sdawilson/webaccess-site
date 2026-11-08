@@ -342,7 +342,7 @@ p { margin: 0 0 1em; }
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--green-deep); color: #b8ccc0; padding: 40px 0; font-size: 0.93rem; }
-.footer-grid { display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: baseline; }
+.footer-grid { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: baseline; }
 .site-footer p { margin: 0; }
 .site-footer a { color: #fff; }
 .wordmark-small { font-size: 1.1rem; color: #fff; }
