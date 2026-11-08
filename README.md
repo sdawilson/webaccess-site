@@ -73,7 +73,9 @@ Each is a JSON file named by date and time. With Resend set up, each also arrive
 
 ## Adding the demo video (Bunny Stream)
 
-Upload the video to a Bunny Stream library, then set `STREAM_LIBRARY_ID` and `STREAM_VIDEO_ID` at the top of `public/js/site.js`. The "Watch it in use" section appears once both are set.
+The "Watch it in use" section, just below the screen gallery, embeds a Bunny Stream video. It appears once `STREAM_LIBRARY_ID` and `STREAM_VIDEO_ID` at the top of `public/js/site.js` are set; both are blank in a fresh copy.
+
+The current video is the 100-second narrated demo in the Stream library `webaccess-site` (library 803383), with English captions and the PivotChart frame as its thumbnail. To replace it, upload the new video to the same library, add its captions (`.vtt`) on its Captions tab, and change `STREAM_VIDEO_ID`. The player is an iframe from `iframe.mediadelivery.net`, which the edge script's Content-Security-Policy already allows.
 
 ## Previewing locally
 
