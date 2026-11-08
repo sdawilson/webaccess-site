@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Web Access Builder: build it like Access, share it like a website</title>
-<meta name="description" content="Web Access Builder gives you Access's tables, queries, forms, PivotTables and VBA in a web browser. Design once, then give your team a link.">
+<meta name="description" content="Web Access Builder gives you Access's tables, queries, forms, reports and VBA in a web browser. Design once, then give your team a link.">
 <meta property="og:title" content="Web Access Builder: build it like Access, share it like a website">
-<meta property="og:description" content="Tables, queries, forms, PivotTables and VBA, the way Access does them, running in a browser.">
+<meta property="og:description" content="Tables, queries, forms, reports and VBA, the way Access does them, running in a browser.">
 <meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
 <meta property="og:url" content="https://webaccessbuilder.com/">
 <link rel="canonical" href="https://webaccessbuilder.com/">
@@ -36,7 +36,7 @@
         <li><a href="#faq">Questions</a></li>
       </ul>
     </nav>
-    <a class="btn btn-light" href="#request">Request<span class="hide-sm"> an instance</span></a>
+    <a class="btn btn-light" href="#request">Request<span class="hide-sm">&nbsp;an instance</span></a>
   </div>
 </header>
 
@@ -46,7 +46,7 @@
 <section class="hero" id="screens" aria-labelledby="hero-title">
   <div class="wrap">
     <h1 id="hero-title">Build it like Access.<br>Share it like a website.</h1>
-    <p class="lede">Web Access Builder gives you the tables, queries, forms and VBA you already know, in a web browser. Design your database the Access way, then send your team a link. No installs, no split databases, no shared drive.</p>
+    <p class="lede">Web Access Builder gives you the tables, queries, forms, reports and VBA you already know, in a web browser. Design your database the Access way, then send your team a link. No installs, no split databases, no shared drive.</p>
     <p class="hero-actions">
       <a class="btn btn-primary" href="#request">Request a hosted instance</a>
       <a class="btn btn-ghost" href="#data">See what it does</a>
@@ -72,7 +72,7 @@
           <button type="button" class="nav-btn" data-go="prev" aria-label="Previous screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 3 4 8l7 5z"/></svg></button>
           <label class="visually-hidden" for="viewer-pos">Screen number</label>
           <input id="viewer-pos" class="nav-pos" type="text" inputmode="numeric" value="1" autocomplete="off">
-          <span class="nav-of">of <span id="viewer-count">17</span></span>
+          <span class="nav-of">of <span id="viewer-count">19</span></span>
           <button type="button" class="nav-btn" data-go="next" aria-label="Next screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l7 5-7 5z"/></svg></button>
           <button type="button" class="nav-btn" data-go="last" aria-label="Last screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l7 5-7 5zM12 3v10"/></svg></button>
           <a class="nav-btn nav-new" href="#request" aria-label="Start your own: request an instance" title="New record: start your own"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3l7 5-7 5z"/><path class="star" d="M12.5 2.5v4M10.7 3.5l3.6 2M10.7 5.5l3.6-2"/></svg></a>
@@ -96,13 +96,14 @@
           <tr><th class="sel" aria-hidden="true"></th><th scope="col">In Access</th><th scope="col">In Web Access Builder</th></tr>
         </thead>
         <tbody>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Navigation Pane</th><td>The same pane down the left: Tables, Queries, Forms and Modules, with a search box</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Navigation Pane</th><td>The same pane down the left: Tables, Queries, Forms, Reports and Modules, with a search box</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Table Design view</th><td>AutoNumber, Short Text, Long Text, Number, Currency, Date/Time and Yes/No, with indexes, captions and defaults such as <code>Date()</code></td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Query Design grid</th><td>Drag to join, Σ Totals, Sort, Show and Criteria rows. <code>Between #01/01/2026# And #31/03/2026#</code> works as you'd type it</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">SQL view</th><td>Access SQL, including <code>IIf</code>, <code>Nz</code>, <code>DateAdd</code> and <code>&amp;</code>. Dates read day/month/year</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Action queries</th><td>Make Table, Append, Update and Delete, with the same “You are about to update 3 row(s)” warnings</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Forms</th><td>Single, Continuous and Datasheet views; subforms, tab controls, combo boxes and option groups; Form Header, Detail and Form Footer</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Conditional formatting</th><td>The Access 2010 Rules Manager, data bars included</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Reports</th><td>Report and Page Headers, group headers and footers, the Group, Sort, and Total pane, and Print Preview</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">PivotTable and PivotChart</th><td>Back as form views, after Access 2013 took them away</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">VBA editor</th><td>Form events, <code>DoCmd</code>, <code>DLookup</code> and DAO recordsets, with breakpoints, F8 stepping and the Immediate window</td></tr>
         </tbody>
@@ -166,8 +167,34 @@
   </div>
 </section>
 
+<!-- ============ Reports ============ -->
+<section class="feature" id="reports" aria-labelledby="reports-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="reports-title">Reports</h2>
+      <p>Lay out a report in Access's sections, group and total it in the Group, Sort, and Total pane, then check the pages in Print Preview before printing.</p>
+      <ul class="ticks">
+        <li>Report Header and Footer, Page Header and Footer, and a header and footer for each group</li>
+        <li>Group by value, first letters, ranges, or dates by week, month, quarter or year</li>
+        <li>Sum, Average, Count, Max and Min in every group footer, plus Running Sum and Hide Duplicates</li>
+        <li>A4, A3, A5, Letter or Legal, portrait or landscape; print, or save as PDF</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Report screens">
+        <button role="tab" type="button" aria-selected="true" data-img="report-view" data-alt="A report of highway schemes grouped by type, with a subtotal for each type">Report</button>
+        <button role="tab" type="button" aria-selected="false" data-img="report-preview" data-alt="Print Preview of the report on an A4 page, with page size, margins and zoom on the ribbon">Print Preview</button>
+        <button role="tab" type="button" aria-selected="false" data-img="report-design" data-alt="Report Design view with its sections and the Group, Sort, and Total pane">Design</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/report-view.webp" srcset="/img/report-view.webp 1200w, /img/report-view@2x.webp 2400w" sizes="(min-width: 1100px) 760px, 94vw" width="1200" height="720" loading="lazy" alt="A report of highway schemes grouped by type, with a subtotal for each type">
+      </div>
+    </figure>
+  </div>
+</section>
+
 <!-- ============ Pivot ============ -->
-<section class="feature" id="pivot" aria-labelledby="pivot-title">
+<section class="feature feature-alt" id="pivot" aria-labelledby="pivot-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="pivot-title">PivotTable and PivotChart, back again</h2>
@@ -192,7 +219,7 @@
 </section>
 
 <!-- ============ Code ============ -->
-<section class="feature feature-alt" id="code" aria-labelledby="code-title">
+<section class="feature" id="code" aria-labelledby="code-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="code-title">VBA, with the debugger you're used to</h2>
@@ -201,6 +228,7 @@
         <li>Form and control events, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code> and <code>InputBox</code></li>
         <li><code>DLookup</code>, <code>DCount</code> and DAO recordsets: <code>Edit</code>, <code>AddNew</code>, <code>Update</code>, <code>FindFirst</code></li>
         <li>Compile errors as VBA shows them: “Compile error: Expected: Then or GoTo”</li>
+        <li>Explain Error and Fix Error: AI says what went wrong and offers a fix you can apply</li>
         <li>References for statistics, UK bank holidays and British National Grid coordinates</li>
       </ul>
     </div>
@@ -282,7 +310,7 @@
     </div>
     <ol class="steps">
       <li><h3>Import the tables</h3><p>Pick your .accdb or .mdb and tick the tables. Field types come with them, and AutoNumber values are kept so related records still match.</p></li>
-      <li><h3>Rebuild the queries and forms</h3><p>In the same Query Design grid and form designer. Most of it is drag, drop and set properties, as you did the first time.</p></li>
+      <li><h3>Rebuild queries, forms and reports</h3><p>In the same Query Design grid, form designer and report designer. Most of it is drag, drop and set properties, as you did the first time.</p></li>
       <li><h3>Paste in your VBA</h3><p>Compile tells you what needs changing, such as file access or a <code>Declare</code> that a web page can't do.</p></li>
       <li><h3>Add your users</h3><p>Give each person a sign-in as an admin or a user, then send them the link.</p></li>
     </ol>
@@ -300,11 +328,11 @@
   <div class="wrap roadmap-grid">
     <h2 id="roadmap-title">Still to come</h2>
     <ul>
-      <li><strong>Reports</strong>, with print to PDF</li>
+      <li><strong>Importing forms, queries, reports and code</strong> from an .accdb</li>
+      <li><strong>Subreports</strong>, Can Grow and Can Shrink, and report events</li>
       <li><strong>UNION and crosstab</strong> queries</li>
       <li><strong>Connections to SQL databases</strong> outside Web Access Builder</li>
       <li><strong>Scheduled backups</strong> to cloud storage</li>
-      <li><strong>AI help</strong> to explain and fix code errors</li>
     </ul>
   </div>
 </section>
@@ -380,7 +408,7 @@
       </details>
       <details>
         <summary>Can I open my .accdb file in it?</summary>
-        <p>You import the tables from it, with their field types and AutoNumber values. Queries, forms and code are rebuilt in Web Access Builder's own designers, which work like Access's, so it's familiar work.</p>
+        <p>You import the tables from it, with their field types and AutoNumber values. For now, queries, forms, reports and code are rebuilt in Web Access Builder's own designers, which work like Access's. Importing those from the .accdb is on the way.</p>
       </details>
       <details>
         <summary>Will my VBA run?</summary>
@@ -388,7 +416,7 @@
       </details>
       <details>
         <summary>Does it do reports?</summary>
-        <p>Not yet. Reports, with print to PDF, are next. In the meantime any table, query or form's records export to Excel or CSV.</p>
+        <p>Yes: grouping, totals, page numbers and Print Preview with page size, margins and orientation. Print them, or save them as PDF from the print dialog. Subreports and report events are next.</p>
       </details>
       <details>
         <summary>Where is our data kept?</summary>

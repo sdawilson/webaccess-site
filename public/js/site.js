@@ -16,6 +16,8 @@ const SCREENS = [
   ['query-criteria', 'Query criteria in Access syntax, with an Or row', 'Query Design grid with criteria on Status and StartDate'],
   ['query-totals', 'A totals query joining two tables', 'Query Design with two joined tables and Group By, Count, Sum and Max'],
   ['sql-view', 'SQL view, in Access SQL', 'SQL view of a query in Access SQL'],
+  ['report-preview', 'A report in Print Preview, grouped by type with subtotals', 'Print Preview of a report of schemes grouped by type, on an A4 page'],
+  ['report-design', 'Report Design view with the Group, Sort, and Total pane', 'Report Design view with sections and the Group, Sort, and Total pane'],
   ['pivottable', 'PivotTable view, grouped by year and quarter', 'A PivotTable of estimates by scheme type and quarter'],
   ['pivotchart', 'PivotChart view of the same layout', 'A stacked column PivotChart of estimates by scheme type'],
   ['conditional-formatting', 'The Conditional Formatting Rules Manager', 'The Conditional Formatting Rules Manager with three rules'],

@@ -9,6 +9,7 @@ declare -A SHOTS=(
   [s1]=continuous-form [s2]=form-view [s3]=form-design [prop]=property-sheet [p1]=pivottable [p2]=pivotchart
   [q1]=query-totals [q2]=query-criteria [sql]=sql-view [tbl]=table-design [ds]=datasheet [m2]=form-code
   [dbg]=debugger [ac]=intellisense [cf]=conditional-formatting [imp]=import-access [usr]=users
+  [rpt-open]=report-view [rpt-preview]=report-preview [rpt-design]=report-design
 )
 for k in "${!SHOTS[@]}"; do
   node look.mjs "steps/$k.json" "shots/${SHOTS[$k]}.png" &

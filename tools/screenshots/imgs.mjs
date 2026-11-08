@@ -6,12 +6,14 @@ const list = [
   ['query-totals', null], ['query-criteria', null], ['sql-view', null], ['table-design', null], ['datasheet', null],
   ['form-code', null], ['debugger', null], ['intellisense', null], ['conditional-formatting', null], ['import-access', null],
   ['users', null], ['user-view', null], ['property-sheet', null],
+  ['report-view', null], ['report-preview', null], ['report-design', null],
 ];
 const crops = {
   'continuous-form': DOC, 'form-view': DOC, 'form-design': DOC, 'pivottable': DOC, 'pivotchart': DOC, 'query-totals': DOC,
   'query-criteria': DOC, 'sql-view': [240, 180, 1200, 420], 'table-design': DOC, 'datasheet': DOC, 'form-code': DOC, 'debugger': DOC,
   'intellisense': DOC, 'conditional-formatting': [240, 180, 1200, 560], 'import-access': [220, 255, 1000, 390], 'users': [240, 180, 1200, 420],
   'user-view': DOC, 'property-sheet': [240, 180, 1200, 720],
+  'report-view': DOC, 'report-preview': DOC, 'report-design': DOC,
 };
 const out = new URL('../../public/img/', import.meta.url).pathname;
 for (const [n] of list) {
