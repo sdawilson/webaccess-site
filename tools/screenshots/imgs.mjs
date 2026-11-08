@@ -16,7 +16,7 @@ const crops = {
   'intellisense': DOC, 'conditional-formatting': [240, 180, 1200, 560], 'import-access': [220, 255, 1000, 390], 'users': [240, 180, 1200, 420],
   'user-view': DOC, 'property-sheet': [240, 180, 1200, 720],
   'report-view': DOC, 'report-preview': DOC, 'report-design': DOC, 'chart-dashboard': DOC,
-  'demo-signin': [500, 120, 440, 660], 'demo-menu': DOC, 'demo-dashboard': DOC, 'demo-orders': [240, 180, 1200, 720],
+  'demo-signin': [120, 90, 1200, 720], 'demo-menu': DOC, 'demo-dashboard': DOC, 'demo-orders': [240, 180, 1200, 720],
 };
 const out = new URL('../../public/img/', import.meta.url).pathname;
 for (const [n] of list) {
