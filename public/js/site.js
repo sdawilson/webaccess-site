@@ -5,6 +5,9 @@
 // To show the "Watch it in use" section, set these to a Bunny Stream library ID and video ID.
 const STREAM_LIBRARY_ID = '';
 const STREAM_VIDEO_ID = '';
+// The "Buy me a coffee" button under the note from Simon appears once this is set,
+// e.g. 'https://buymeacoffee.com/yourname'.
+const COFFEE_URL = '';
 
 // ---------- screen gallery ----------
 const SCREENS = [
@@ -198,4 +201,13 @@ if (STREAM_LIBRARY_ID && STREAM_VIDEO_ID) {
   iframe.allowFullscreen = true;
   tour.querySelector('.tour-frame').append(iframe);
   tour.hidden = false;
+}
+
+// ---------- Buy me a coffee ----------
+if (COFFEE_URL) {
+  const link = document.getElementById('coffee-link');
+  if (link) {
+    link.href = COFFEE_URL;
+    link.closest('.why-coffee').hidden = false;
+  }
 }
