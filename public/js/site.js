@@ -1,4 +1,4 @@
-// webaccess site: the screen gallery (driven by an Access-style record navigator),
+// Web Access Builder site: the screen gallery (driven by an Access-style record navigator),
 // the view switchers on each feature, the request form, and the optional Bunny Stream video.
 
 // ---------- settings ----------
@@ -190,7 +190,7 @@ if (STREAM_LIBRARY_ID && STREAM_VIDEO_ID) {
   const tour = document.getElementById('tour');
   const iframe = document.createElement('iframe');
   iframe.src = `https://iframe.mediadelivery.net/embed/${encodeURIComponent(STREAM_LIBRARY_ID)}/${encodeURIComponent(STREAM_VIDEO_ID)}?autoplay=false&preload=false&responsive=true`;
-  iframe.title = 'webaccess in use';
+  iframe.title = 'Web Access Builder in use';
   iframe.loading = 'lazy';
   iframe.allow = 'accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen';
   iframe.allowFullscreen = true;
