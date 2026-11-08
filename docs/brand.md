@@ -44,10 +44,22 @@ Mark, for the green title bar:
 
 ## Suggested changes in the app
 
-- The title bar shows "webaccess". Show the logo or "Web Access Builder" there instead, and on the sign-in page.
-- Use the mark as the app's favicon.
+- Done (9657d3e): the logo and name in the title bar and sign-in page, and the mark as the favicon.
 - Keep "Admin" and "User" badges and the green as they are: the site's colours were taken from the app.
 
 ## The marketing site
 
-A static site served by a Bunny Edge Script from a Storage zone, with a GitHub Actions deploy. Its screenshots come from a local copy of the app with a sample highways database. After the app's title bar changes, re-take them with `tools/screenshots/capture.sh` in the site repo, so the site matches the app.
+- Live at https://webaccess-site-2lr7j.b-cdn.net until webaccessbuilder.com is pointed at it. Repo: `sdawilson/webaccess-site`.
+- A static site served by a Bunny Edge Script from a Storage zone, deployed by GitHub Actions on every push, once a day, and by hand.
+- Its screenshots come from a local copy of the app with a sample highways database (`tools/screenshots/capture.sh` in the site repo). Re-take them when the app's look changes.
+- The site never links to GitHub (Simon's choice).
+
+## The guides on the website
+
+The site publishes the app's guides at `/guides/`, built at each deploy from `docs/` in `sdawilson/webaccess`. So for the session that writes the guides:
+
+- **Please rename the product in the guides**: they still say "webaccess" (about 34 times, including the H1s). Use "Web Access Builder" in prose; "webaccess" is fine for the repo, code and file names.
+- Keep these file names, as the site looks for them: `docs/user-guide.md`, `docs/programmers-guide.md`, `docs/access-differences.md`. A new guide needs adding to the list at the top of `tools/guides/build.mjs` in the site repo.
+- Links between the guides (`user-guide.md#roles`) become site links automatically; keep using GitHub-style heading anchors.
+- The site leaves out `docs/README.md`, `docs/CHANGELOG.md`, any link to GitHub, and any paragraph about the repo's workflows. Keep the guides about the product, not the repo.
+- The site rebuilds daily at 05:17 UTC, so guide changes appear within a day (or at once if the site's deploy is run by hand).
