@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>webaccess: build it like Access, share it like a website</title>
+<meta name="description" content="webaccess gives you Access's tables, queries, forms, PivotTables and VBA in a web browser. Design once, then give your team a link.">
+<meta property="og:title" content="webaccess: build it like Access, share it like a website">
+<meta property="og:description" content="Tables, queries, forms, PivotTables and VBA, the way Access does them, running in a browser.">
+<meta property="og:image" content="/img/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f4e3d">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="preload" as="image" href="/img/continuous-form-full.webp" imagesrcset="/img/continuous-form-full.webp 1440w, /img/continuous-form-full@2x.webp 2880w" imagesizes="(min-width: 1240px) 1160px, 94vw">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="titlebar">
+  <div class="titlebar-inner">
+    <a class="wordmark" href="/" aria-label="webaccess home">webaccess</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#screens">Screens</a></li>
+        <li><a href="#data">Features</a></li>
+        <li><a href="#web">On the web</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-light" href="#request">Request an instance</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="screens" aria-labelledby="hero-title">
+  <div class="wrap">
+    <h1 id="hero-title">Build it like Access.<br>Share it like a website.</h1>
+    <p class="lede">webaccess gives you the tables, queries, forms and VBA you already know, in a web browser. Design your database the Access way, then send your team a link. No installs, no split databases, no shared drive.</p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="#request">Request a hosted instance</a>
+      <a class="btn btn-ghost" href="#data">See what it does</a>
+    </p>
+
+    <figure class="viewer" aria-roledescription="screen gallery" aria-label="webaccess screens">
+      <div class="window">
+        <div class="window-bar" aria-hidden="true">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="address">yourteam.webaccess.app</span>
+        </div>
+        <a class="viewer-link" id="viewer-link" href="/img/continuous-form-full@2x.webp" target="_blank" rel="noopener">
+          <img id="viewer-img" src="/img/continuous-form-full.webp"
+               srcset="/img/continuous-form-full.webp 1440w, /img/continuous-form-full@2x.webp 2880w"
+               sizes="(min-width: 1240px) 1160px, 94vw" width="1440" height="900"
+               alt="A continuous form listing highway schemes, with status colours and data bars on the estimates">
+        </a>
+      </div>
+      <figcaption class="navbar">
+        <span class="navbar-label">Screen:</span>
+        <span class="navbar-buttons">
+          <button type="button" class="nav-btn" data-go="first" aria-label="First screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3v10M13 3 6 8l7 5z"/></svg></button>
+          <button type="button" class="nav-btn" data-go="prev" aria-label="Previous screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 3 4 8l7 5z"/></svg></button>
+          <label class="visually-hidden" for="viewer-pos">Screen number</label>
+          <input id="viewer-pos" class="nav-pos" type="text" inputmode="numeric" value="1" autocomplete="off">
+          <span class="nav-of">of <span id="viewer-count">17</span></span>
+          <button type="button" class="nav-btn" data-go="next" aria-label="Next screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l7 5-7 5z"/></svg></button>
+          <button type="button" class="nav-btn" data-go="last" aria-label="Last screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l7 5-7 5zM12 3v10"/></svg></button>
+          <a class="nav-btn nav-new" href="#request" aria-label="Start your own: request an instance" title="New record: start your own"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3l7 5-7 5z"/><path class="star" d="M12.5 2.5v4M10.7 3.5l3.6 2M10.7 5.5l3.6-2"/></svg></a>
+        </span>
+        <span class="navbar-caption" id="viewer-caption" aria-live="polite">Continuous form with conditional formatting and data bars</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Familiar ============ -->
+<section class="familiar" aria-labelledby="familiar-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="familiar-title">If you've built in Access, you already know it</h2>
+      <p>webaccess isn't a new way of working that looks a bit like Access. It's the Access way of working, kept on purpose, down to the names of things.</p>
+    </div>
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Access compared with webaccess">
+      <table class="datasheet">
+        <thead>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">In Access</th><th scope="col">In webaccess</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Navigation Pane</th><td>The same pane down the left: Tables, Queries, Forms and Modules, with a search box</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Table Design view</th><td>AutoNumber, Short Text, Long Text, Number, Currency, Date/Time and Yes/No, with indexes, captions and defaults such as <code>Date()</code></td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Query Design grid</th><td>Drag to join, Σ Totals, Sort, Show and Criteria rows. <code>Between #01/01/2026# And #31/03/2026#</code> works as you'd type it</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">SQL view</th><td>Access SQL, including <code>IIf</code>, <code>Nz</code>, <code>DateAdd</code> and <code>&amp;</code>. Dates read day/month/year</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Action queries</th><td>Make Table, Append, Update and Delete, with the same “You are about to update 3 row(s)” warnings</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Forms</th><td>Single, Continuous and Datasheet views; subforms, tab controls, combo boxes and option groups; Form Header, Detail and Form Footer</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Conditional formatting</th><td>The Access 2010 Rules Manager, data bars included</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">PivotTable and PivotChart</th><td>Back as form views, after Access 2013 took them away</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">VBA editor</th><td>Form events, <code>DoCmd</code>, <code>DLookup</code> and DAO recordsets, with breakpoints, F8 stepping and the Immediate window</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Tables and queries ============ -->
+<section class="feature" id="data" aria-labelledby="data-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="data-title">Tables and queries</h2>
+      <p>Design tables with Access's field types, then query them in the grid you've always used. Criteria are written the Access way, and SQL view speaks Access SQL.</p>
+      <ul class="ticks">
+        <li>Number sizes from Byte to Double, Currency to four places, UK dates throughout</li>
+        <li>Join by dragging between field lists; click a join line to make it an outer join</li>
+        <li>Parameters in <code>[brackets]</code> are asked for when the query runs</li>
+        <li>Import from .accdb, .mdb, Excel and CSV; export to Excel and CSV</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Tables and queries screens">
+        <button role="tab" type="button" aria-selected="true" data-img="datasheet" data-alt="A table of highway schemes in Datasheet view">Datasheet</button>
+        <button role="tab" type="button" aria-selected="false" data-img="table-design" data-alt="Table Design view listing fields and their Access data types">Table design</button>
+        <button role="tab" type="button" aria-selected="false" data-img="query-criteria" data-alt="Query Design grid with criteria on Status and StartDate across two rows">Query design</button>
+        <button role="tab" type="button" aria-selected="false" data-img="query-totals" data-alt="A totals query joining Schemes to SchemeTypes, with Group By, Count, Sum and Max">Totals</button>
+        <button role="tab" type="button" aria-selected="false" data-img="sql-view" data-w="1200" data-h="420" data-alt="SQL view of the same query, in Access SQL">SQL</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/datasheet.webp" srcset="/img/datasheet.webp 1200w, /img/datasheet@2x.webp 2400w" sizes="(min-width: 1100px) 760px, 94vw" width="1200" height="720" loading="lazy" alt="A table of highway schemes in Datasheet view">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Forms ============ -->
+<section class="feature feature-alt" id="forms" aria-labelledby="forms-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="forms-title">Forms</h2>
+      <p>The form designer works the way Access's does: a field list to drag from, a gallery of controls, Form Header, Detail and Form Footer sections, and a property sheet for every control.</p>
+      <ul class="ticks">
+        <li>Single, Continuous and Datasheet views, with subforms nested three deep</li>
+        <li>Text and combo boxes, list boxes, option groups, tab controls, buttons, images and hyperlinks</li>
+        <li>Calculated controls such as <code>=[LengthM]*[WidthM]</code> and <code>=Sum([Estimate])</code></li>
+        <li>Pop-up and modal forms, anchoring, and forms that hide the ribbon to run your application</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Forms screens">
+        <button role="tab" type="button" aria-selected="true" data-img="form-view" data-alt="A single form for one highway scheme, with a defects subform on a tab control">Form</button>
+        <button role="tab" type="button" aria-selected="false" data-img="continuous-form" data-alt="A continuous form with status colours, data bars and a total in the footer">Continuous</button>
+        <button role="tab" type="button" aria-selected="false" data-img="form-design" data-alt="Form Design view with the field list and property sheet">Design</button>
+        <button role="tab" type="button" aria-selected="false" data-img="conditional-formatting" data-w="1200" data-h="560" data-alt="The Conditional Formatting Rules Manager with three Field Value Is rules">Conditional formatting</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/form-view.webp" srcset="/img/form-view.webp 1200w, /img/form-view@2x.webp 2400w" sizes="(min-width: 1100px) 760px, 94vw" width="1200" height="720" loading="lazy" alt="A single form for one highway scheme, with a defects subform on a tab control">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Pivot ============ -->
+<section class="feature" id="pivot" aria-labelledby="pivot-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="pivot-title">PivotTable and PivotChart, back again</h2>
+      <p>Access 2013 removed them. In webaccess they're form views again: drag fields to rows, columns and totals, group dates by year, quarter or month, then switch to a chart of the same layout.</p>
+      <ul class="ticks">
+        <li>Sum, Count, Average, Min, Max, StDev and Var, with subtotals and grand totals</li>
+        <li>Show As a percentage of the row, column or grand total</li>
+        <li>Column, bar, line, area, pie, doughnut and scatter charts, stacked or 100%</li>
+        <li>Totals are worked out by the database, so large tables stay quick</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Pivot screens">
+        <button role="tab" type="button" aria-selected="true" data-img="pivottable" data-alt="A PivotTable of estimates by scheme type, with columns grouped by year and quarter">PivotTable</button>
+        <button role="tab" type="button" aria-selected="false" data-img="pivotchart" data-alt="A stacked column PivotChart of the same estimates">PivotChart</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/pivottable.webp" srcset="/img/pivottable.webp 1200w, /img/pivottable@2x.webp 2400w" sizes="(min-width: 1100px) 760px, 94vw" width="1200" height="720" loading="lazy" alt="A PivotTable of estimates by scheme type, with columns grouped by year and quarter">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Code ============ -->
+<section class="feature feature-alt" id="code" aria-labelledby="code-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="code-title">VBA, with the debugger you're used to</h2>
+      <p>Open the code window and it's the VBA editor: a module behind each form, standard and class modules, IntelliSense as you type, and breakpoints, stepping, Locals, Watches and the Immediate window.</p>
+      <ul class="ticks">
+        <li>Form and control events, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code> and <code>InputBox</code></li>
+        <li><code>DLookup</code>, <code>DCount</code> and DAO recordsets: <code>Edit</code>, <code>AddNew</code>, <code>Update</code>, <code>FindFirst</code></li>
+        <li>Compile errors as VBA shows them: “Compile error: Expected: Then or GoTo”</li>
+        <li>References for statistics, UK bank holidays and British National Grid coordinates</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Code screens">
+        <button role="tab" type="button" aria-selected="true" data-img="debugger" data-alt="Code paused at a breakpoint, with the current line highlighted and Locals listing the variables">Debugger</button>
+        <button role="tab" type="button" aria-selected="false" data-img="intellisense" data-alt="IntelliSense listing a recordset's members after typing rs.">IntelliSense</button>
+        <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form, with Form_Current and a button's Click event">Form module</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/debugger.webp" srcset="/img/debugger.webp 1200w, /img/debugger@2x.webp 2400w" sizes="(min-width: 1100px) 760px, 94vw" width="1200" height="720" loading="lazy" alt="Code paused at a breakpoint, with the current line highlighted and Locals listing the variables">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Video (shown once a Bunny Stream video is set in site.js) ============ -->
+<section class="tour" id="tour" hidden aria-labelledby="tour-title">
+  <div class="wrap">
+    <h2 id="tour-title">Watch it in use</h2>
+    <div class="tour-frame"></div>
+  </div>
+</section>
+
+<!-- ============ The web ============ -->
+<section class="web" id="web" aria-labelledby="web-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="web-title">What changes when it's on the web</h2>
+      <p>You design the same way. What's different is everything after that: getting it to people, keeping them up to date, and keeping the data safe.</p>
+    </div>
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Desktop Access compared with webaccess">
+      <table class="datasheet datasheet-dark">
+        <thead>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">With desktop Access</th><th scope="col">With webaccess</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sel" aria-hidden="true"></td><td>Install Access or the Runtime on every PC</td><td>Open a link in any modern browser, on Windows, Mac or a tablet</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Split the database, and keep the back end on a shared drive</td><td>One database on the server. There's nothing to split or copy round</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Send everyone a new front end after each change</td><td>Save a change and everyone has it next time they open the form</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>VPN or remote desktop to work from home</td><td>Sign in from anywhere over HTTPS</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Anyone with the file can open Design view</td><td>Admins design. Users open what you've built and work with the data</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Locked or corrupted .accdb files</td><td>SQLite on the server, with Back Up Database and Compact and Repair</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="web-grid">
+      <figure class="shot shot-dark" data-views>
+        <div class="viewbar" role="tablist" aria-label="Users screens">
+          <button role="tab" type="button" aria-selected="true" data-img="user-view" data-alt="A user's view of a form: the same form, with no design tools in the ribbon">What a user sees</button>
+          <button role="tab" type="button" aria-selected="false" data-img="users" data-w="1200" data-h="420" data-alt="The Users screen listing admins and users, with their roles and last sign-in">Users and roles</button>
+        </div>
+        <div class="frame" role="tabpanel">
+          <img src="/img/user-view.webp" srcset="/img/user-view.webp 1200w, /img/user-view@2x.webp 2400w" sizes="(min-width: 1100px) 700px, 94vw" width="1200" height="720" loading="lazy" alt="A user's view of a form: the same form, with no design tools in the ribbon">
+        </div>
+      </figure>
+      <div class="extras">
+        <h3>And a few things Access never had</h3>
+        <dl>
+          <dt>On Render</dt>
+          <dd>An event that runs as each record's copy of a control is drawn, so code can colour rows in a continuous form.</dd>
+          <dt>JavaScript modules</dt>
+          <dd>In place of Windows DLLs: write a function, export it, and call it from VBA. It runs in a sealed sandbox with no network.</dd>
+          <dt>Built-in libraries</dt>
+          <dd>UK bank holidays and working days, British National Grid and OS grid references, chainage along a line, and statistics, ready to tick in References.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Migrate ============ -->
+<section class="migrate" id="migrate" aria-labelledby="migrate-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="migrate-title">Bring your database across</h2>
+      <p>Moving an existing Access application is mostly familiar work, done once.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Import the tables</h3><p>Pick your .accdb or .mdb and tick the tables. Field types come with them, and AutoNumber values are kept so related records still match.</p></li>
+      <li><h3>Rebuild the queries and forms</h3><p>In the same Query Design grid and form designer. Most of it is drag, drop and set properties, as you did the first time.</p></li>
+      <li><h3>Paste in your VBA</h3><p>Compile tells you what needs changing, such as file access or a <code>Declare</code> that a web page can't do.</p></li>
+      <li><h3>Add your users</h3><p>Give each person a sign-in as an admin or a user, then send them the link.</p></li>
+    </ol>
+    <figure class="shot shot-plain">
+      <div class="frame">
+        <img src="/img/import-access.webp" srcset="/img/import-access.webp 1000w, /img/import-access@2x.webp 2000w" sizes="(min-width: 1100px) 900px, 94vw" width="1000" height="390" loading="lazy" alt="The Import from Access dialog, with each table ticked and a name to import it as">
+      </div>
+      <figcaption>Importing tables from an Access database</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Roadmap ============ -->
+<section class="roadmap" aria-labelledby="roadmap-title">
+  <div class="wrap roadmap-grid">
+    <h2 id="roadmap-title">Still to come</h2>
+    <ul>
+      <li><strong>Reports</strong>, with print to PDF</li>
+      <li><strong>UNION and crosstab</strong> queries</li>
+      <li><strong>Connections to SQL databases</strong> outside webaccess</li>
+      <li><strong>Scheduled backups</strong> to cloud storage</li>
+      <li><strong>AI help</strong> to explain and fix code errors</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Request ============ -->
+<section class="request" id="request" aria-labelledby="request-title">
+  <div class="wrap request-grid">
+    <div class="request-intro">
+      <h2 id="request-title">Get your own instance</h2>
+      <p>We'll set up webaccess for your team at its own web address, with its own database. Tell us a little about what you want to build and we'll reply by email.</p>
+    </div>
+
+    <form class="accform" id="request-form" action="/api/request" method="post" novalidate>
+      <div class="accform-section">Form Header</div>
+      <div class="accform-header">
+        <span class="accform-title">Request a hosted instance</span>
+      </div>
+      <div class="accform-section">Detail</div>
+      <div class="accform-detail">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100">
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
+        </div>
+        <div class="field">
+          <label for="f-org">Organisation</label>
+          <input id="f-org" name="organisation" type="text" autocomplete="organization" maxlength="150">
+        </div>
+        <div class="field">
+          <label for="f-users">Number of users</label>
+          <select id="f-users" name="users">
+            <option value="">Choose…</option>
+            <option>1 to 5</option>
+            <option>6 to 20</option>
+            <option>21 to 100</option>
+            <option>More than 100</option>
+          </select>
+        </div>
+        <fieldset class="field optgroup">
+          <legend>Starting from</legend>
+          <label><input type="radio" name="existing" value="Existing Access database" checked> An Access database we already use</label>
+          <label><input type="radio" name="existing" value="Starting fresh"> Nothing yet: we're starting fresh</label>
+        </fieldset>
+        <div class="field field-wide">
+          <label for="f-msg">What will you use it for?</label>
+          <textarea id="f-msg" name="message" rows="4" maxlength="4000" placeholder="For example: we track highway schemes and defects in Access and want site teams to update it from tablets."></textarea>
+        </div>
+        <div class="field hp" aria-hidden="true">
+          <label for="f-web">Leave this empty</label>
+          <input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+      </div>
+      <div class="accform-section">Form Footer</div>
+      <div class="accform-footer">
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" type="submit">Send request</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <h2 id="faq-title">Questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Is this Microsoft Access?</summary>
+        <p>No. webaccess is an independent product that works the way Access does. It runs in a browser, doesn't need Access installed, and isn't made by or connected with Microsoft.</p>
+      </details>
+      <details>
+        <summary>Can I open my .accdb file in it?</summary>
+        <p>You import the tables from it, with their field types and AutoNumber values. Queries, forms and code are rebuilt in webaccess's own designers, which work like Access's, so it's familiar work.</p>
+      </details>
+      <details>
+        <summary>Will my VBA run?</summary>
+        <p>Much of it, as written: form and control events, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code>, <code>DLookup</code> and <code>DCount</code>, DAO recordsets, error handling and class modules. Things a web page can't do, such as <code>Shell</code>, file access, Windows DLLs and automating Excel, are flagged when you compile. JavaScript modules stand in for DLLs.</p>
+      </details>
+      <details>
+        <summary>Does it do reports?</summary>
+        <p>Not yet. Reports, with print to PDF, are next. In the meantime any table, query or form's records export to Excel or CSV.</p>
+      </details>
+      <details>
+        <summary>Where is our data kept?</summary>
+        <p>In a SQLite database on the server that runs your instance. Admins can download a complete copy at any time with Back Up Database.</p>
+      </details>
+      <details>
+        <summary>Who can change the design?</summary>
+        <p>Only admins. They design tables, queries, forms and code, and manage who can sign in. Users open what's been built and work with the data, and can't open Design view.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <p class="wordmark wordmark-small">webaccess</p>
+    <p>Microsoft Access is a trademark of Microsoft Corporation. webaccess is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p><a href="https://github.com/sdawilson/webaccess">Source on GitHub</a></p>
+  </div>
+</footer>
+
+<script src="/js/site.js" defer></script>
+</body>
+</html>

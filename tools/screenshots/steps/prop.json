@@ -1,0 +1,2 @@
+[{"dbltext":"Scheme Details","wait":1200},{"text":"Design","exact":true,"wait":1500},
+ {"click":".fd-section[data-section=detail] .fd-source:text-is('Actual')","wait":800}]

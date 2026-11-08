@@ -1,0 +1,3 @@
+[{"dbltext":"Scheme List","wait":1200},{"text":"Design","exact":true,"wait":1500},
+ {"click":".fd-section[data-section=detail] .fd-source:text-is('Status')","wait":500},
+ {"text":"Format","exact":true,"wait":500},{"text":"Conditional Formatting","exact":true,"wait":1500}]

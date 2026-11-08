@@ -1,0 +1,75 @@
+# Deploys the site to Bunny on every push to main:
+#   1. uploads public/ to the storage zone under site/
+#   2. deploys edge/script.ts to the edge script
+#   3. purges the edge script's pull zone so the new files show straight away
+#
+# Repository variables (Settings > Secrets and variables > Actions > Variables):
+#   STORAGE_ZONE   storage zone name, e.g. webaccess-site
+#   STORAGE_HOST   the zone's storage endpoint, e.g. storage.bunnycdn.com or uk.storage.bunnycdn.com
+#   PULLZONE_ID    the edge script's pull zone ID
+# Repository secrets:
+#   STORAGE_KEY    storage zone password (FTP & API Access)
+#   SCRIPT_ID      edge script ID          } Edge Script > Deployments > Settings
+#   DEPLOY_KEY     edge script deploy key  }
+#   BUNNY_API_KEY  account API key, for purging the cache
+#
+# Until STORAGE_ZONE is set the job is skipped, so pushes before setup don't fail.
+
+name: Deploy to Bunny
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ vars.STORAGE_ZONE != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload the site to Bunny Storage
+        env:
+          STORAGE_ZONE: ${{ vars.STORAGE_ZONE }}
+          STORAGE_HOST: ${{ vars.STORAGE_HOST || 'storage.bunnycdn.com' }}
+          STORAGE_KEY: ${{ secrets.STORAGE_KEY }}
+        run: |
+          set -euo pipefail
+          cd public
+          count=0
+          while IFS= read -r -d '' f; do
+            rel="${f#./}"
+            code=$(curl -sS -o /tmp/resp -w '%{http_code}' -X PUT \
+              -H "AccessKey: ${STORAGE_KEY}" \
+              -H "Content-Type: application/octet-stream" \
+              --data-binary "@${f}" \
+              "https://${STORAGE_HOST}/${STORAGE_ZONE}/site/${rel}")
+            if [ "$code" != "201" ]; then
+              echo "::error::Uploading ${rel} failed with HTTP ${code}: $(cat /tmp/resp)"
+              exit 1
+            fi
+            count=$((count + 1))
+          done < <(find . -type f -print0)
+          echo "Uploaded ${count} files."
+
+      - name: Deploy the edge script
+        uses: BunnyWay/actions/deploy-script@main
+        with:
+          script_id: ${{ secrets.SCRIPT_ID }}
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          file: edge/script.ts
+
+      - name: Purge the CDN cache
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+          PULLZONE_ID: ${{ vars.PULLZONE_ID }}
+        run: |
+          set -euo pipefail
+          if [ -z "${PULLZONE_ID}" ]; then echo "PULLZONE_ID not set; skipping the purge."; exit 0; fi
+          curl -fsS -X POST -H "AccessKey: ${BUNNY_API_KEY}" "https://api.bunny.net/pullzone/${PULLZONE_ID}/purgeCache"
+          echo "Cache purged."

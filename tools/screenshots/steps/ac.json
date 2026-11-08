@@ -1,0 +1,4 @@
+[{"dbltext":"Module1","wait":1500},
+ {"eval":"(()=>{const t=document.querySelector('.ce-input');t.focus();const lines=t.value.split('\\n');let p=0;for(let i=0;i<20;i++)p+=lines[i].length+1;t.setSelectionRange(p-1,p-1);})()","wait":300},
+ {"press":"Enter","wait":100},{"type":"rs.","wait":1200}
+]
