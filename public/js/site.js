@@ -7,7 +7,7 @@ const STREAM_LIBRARY_ID = '';
 const STREAM_VIDEO_ID = '';
 // The "Buy me a coffee" button under the note from Simon appears once this is set,
 // e.g. 'https://buymeacoffee.com/yourname'.
-const COFFEE_URL = '';
+const COFFEE_URL = 'https://buymeacoffee.com/simonwilson_wab';
 
 // ---------- screen gallery ----------
 const SCREENS = [
