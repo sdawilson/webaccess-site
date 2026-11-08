@@ -151,7 +151,7 @@ const head = (title, description, canonical) => `<!doctype html>
 </header>
 <div class="devnotice" role="note">
   <div class="wrap devnotice-inner">
-    <p><strong>In active development.</strong> Web Access Builder isn't yet recommended for production use. We're inviting people to test it and tell us what they find. <a href="/#request">Request a test instance</a></p>
+    <p><strong>In active development.</strong> Web Access Builder isn't yet recommended for production use. We're inviting people to test it and tell us what they find. <a href="https://demo.webaccessbuilder.com" target="_blank" rel="noopener">Try the demo</a> or <a href="/#request">request a test instance</a>.</p>
   </div>
 </div>
 `;

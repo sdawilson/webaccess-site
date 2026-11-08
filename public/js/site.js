@@ -7,7 +7,7 @@ const STREAM_LIBRARY_ID = '';
 const STREAM_VIDEO_ID = '';
 // The demo: set this to the demo instance's address (e.g. 'https://demo.webaccessbuilder.com')
 // to show the "Open the demo" buttons; until then the page offers a test instance instead.
-const DEMO_URL = '';
+const DEMO_URL = 'https://demo.webaccessbuilder.com';
 // The "Buy me a coffee" button under the note from Simon appears once this is set,
 // e.g. 'https://buymeacoffee.com/yourname'.
 const COFFEE_URL = 'https://buymeacoffee.com/simonwilson_wab';
@@ -252,7 +252,7 @@ if (featureForm) {
 
 // ---------- the demo ----------
 if (DEMO_URL) {
-  document.querySelectorAll('[data-demo-link]').forEach((a) => { a.href = DEMO_URL; });
+  document.querySelectorAll('[data-demo-link]').forEach((a) => { a.href = DEMO_URL; a.target = '_blank'; a.rel = 'noopener'; });
   document.querySelectorAll('[data-demo]').forEach((el) => { el.hidden = false; });
   document.querySelectorAll('[data-demo-fallback]').forEach((el) => { el.hidden = true; });
 }
