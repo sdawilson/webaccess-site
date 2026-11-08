@@ -26,6 +26,7 @@ Compare the app's current README with what the site says, and note each thing th
 | "Still to come" | `public/index.html` | Remove what's now done; add what the README's roadmap says is next |
 | Questions | `public/index.html` | Especially "Can I open my .accdb", "Will my VBA run?", "Does it do reports?" |
 | Screen gallery captions | `public/js/site.js` (`SCREENS`) | Captions and alt text still describe the screens |
+| Screenshots page | `public/screenshots/index.html` | Each card's title, note and alt text still describe its screen; a notable new screen may deserve a card |
 | Try the demo | `public/index.html` (`#demo`) | What the sample database contains and how long a demo lasts, as the app's README says |
 
 Keep the site's voice: plain British English, "we", short sentences, no hype, nothing the app doesn't do yet. Keep the development notice and the "not for production" wording exactly as they are unless Simon has changed them.

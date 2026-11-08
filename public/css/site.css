@@ -594,3 +594,43 @@ html:has(.guide) { scroll-behavior: auto; }
   .admin-tag { display: none; }
 }
 .viewbar .count[hidden] { display: none; }
+
+/* ---------- screenshots page ---------- */
+.shots { padding: 64px 0 104px; }
+.shots h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+.shotjump { display: flex; flex-wrap: wrap; gap: 8px; margin: -12px 0 24px; }
+.shotjump a { padding: 6px 14px; border: 1px solid var(--edge); border-radius: 20px; background: var(--paper); color: var(--green-ink); text-decoration: none; font-weight: 550; font-size: 0.95rem; }
+.shotjump a:hover { border-color: var(--green); color: var(--green); }
+.shotgroup { padding-top: 40px; scroll-margin-top: 72px; }
+.shotgroup h2 { margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.shotgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+.shotcard { margin: 0; }
+.shotcard-img { display: block; border: 1px solid var(--edge); border-radius: 6px; overflow: hidden; background: var(--paper); cursor: zoom-in; box-shadow: 0 18px 40px -28px rgba(22, 58, 45, 0.45); }
+.shotcard-img img { width: 100%; transition: transform .25s ease; }
+.shotcard-img:hover img { transform: scale(1.015); }
+.shotcard figcaption { margin-top: 14px; }
+.shotcard h3 { font-size: 1.2rem; margin-bottom: 4px; }
+.shotcard figcaption p { margin: 0; color: #2a3a32; max-width: 58ch; }
+.shots-end { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 64px; }
+
+.lightbox { width: min(96vw, 1600px); max-width: none; max-height: 96vh; padding: 0; border: 0; border-radius: 8px; background: transparent; overflow: visible; }
+.lightbox::backdrop { background: rgba(10, 24, 18, 0.93); }
+.lightbox figure { margin: 0; }
+.lightbox img { display: block; width: 100%; height: auto; max-height: calc(96vh - 64px); object-fit: contain; border-radius: 6px; background: var(--mist); }
+.lightbox figcaption { margin-top: 10px; color: #e6efe9; font-size: 1rem; text-align: center; }
+.lightbox figcaption strong { color: #fff; margin-right: 6px; }
+.lb-btn { position: absolute; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, 0.92); color: var(--green-ink); font-size: 1.8rem; line-height: 1; cursor: pointer; display: grid; place-items: center; }
+.lb-btn:hover { background: #fff; }
+.lb-prev { left: 10px; top: calc(50% - 40px); }
+.lb-next { right: 10px; top: calc(50% - 40px); }
+.lb-close { right: 10px; top: 10px; font-size: 1.6rem; }
+@media (max-width: 760px) {
+  .shotgrid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .shots { padding-top: 40px; }
+  .lightbox { padding-bottom: 60px; }
+  .lb-prev, .lb-next { top: auto; bottom: 0; }
+  .lb-close { top: -56px; right: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .shotcard-img:hover img { transform: none; } }
+.viewer-more { margin: 14px 0 0; text-align: right; }
+.viewer-more a { font-weight: 600; }

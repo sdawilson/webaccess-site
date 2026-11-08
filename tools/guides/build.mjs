@@ -139,7 +139,7 @@ const head = (title, description, canonical) => `<!doctype html>
     <a class="wordmark" href="/"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="256" height="26"></a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="/#screens">Screens</a></li>
+        <li><a href="/screenshots/">Screens</a></li>
         <li><a href="/#data">Features</a></li>
         <li><a href="/#web">On the web</a></li>
         <li><a href="/guides/" aria-current="page">Guides</a></li>
@@ -161,7 +161,7 @@ const foot = `
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
     <p>© 2026 Simon Wilson. Microsoft Access is a trademark of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p class="footer-links"><a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
+    <p class="footer-links"><a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
   </div>
 </footer>
 <script src="/js/admin-link.js" defer></script>
