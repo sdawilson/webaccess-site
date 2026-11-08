@@ -49,7 +49,7 @@ Mark, for the green title bar:
 
 ## The marketing site
 
-- Live at https://webaccess-site-2lr7j.b-cdn.net until webaccessbuilder.com is pointed at it. Repo: `sdawilson/webaccess-site`.
+- Live at https://webaccessbuilder.com (DNS at Bunny); webaccessbuilder.co.uk forwards to it from names.co.uk, which keeps its DNS for email. Repo: `sdawilson/webaccess-site`.
 - A static site served by a Bunny Edge Script from a Storage zone, deployed by GitHub Actions on every push, once a day, and by hand.
 - Its screenshots come from a local copy of the app with a sample highways database (`tools/screenshots/capture.sh` in the site repo). Re-take them when the app's look changes.
 - The site never links to GitHub (Simon's choice).

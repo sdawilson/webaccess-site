@@ -49,7 +49,7 @@ Then push to `main`, or run the workflow from the Actions tab. Until `STORAGE_ZO
 
 ## The domains
 
-Both are registered at names.co.uk. **webaccessbuilder.com** is the site's address; **webaccessbuilder.co.uk** carries email (simonwilson@webaccessbuilder.co.uk) and forwards visitors to the .com.
+Both are registered at names.co.uk. Set up on 8 November 2026 as below. **webaccessbuilder.com** is the site's address; **webaccessbuilder.co.uk** carries email (simonwilson@webaccessbuilder.co.uk) and forwards visitors to the .com.
 
 **webaccessbuilder.com** (no email on it, so its DNS can move to Bunny):
 
