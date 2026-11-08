@@ -1,0 +1,12 @@
+{
+  "name": "webaccess-site",
+  "private": true,
+  "type": "module",
+  "description": "The Web Access Builder website. public/ is served as is; the guides are built into public/guides/ from the app's docs.",
+  "scripts": {
+    "guides": "node tools/guides/build.mjs ../webaccess/docs public/guides"
+  },
+  "devDependencies": {
+    "marked": "18.0.10"
+  }
+}

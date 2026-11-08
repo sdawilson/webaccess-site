@@ -76,6 +76,15 @@ Upload the video to a Bunny Stream library, then set `STREAM_LIBRARY_ID` and `ST
 node devserver.mjs        # http://localhost:4100, with a stand-in for POST /api/request
 ```
 
+## The guides
+
+The pages under `/guides/` are built from the Markdown guides in the app repo (`sdawilson/webaccess`, folder `docs/`). The site doesn't store them: each deploy fetches the latest, builds them with `tools/guides/build.mjs`, and uploads them. The deploy runs on every push, once a day at 05:17 UTC, and from Actions > Deploy to Bunny > Run workflow, so a change to the guides reaches the site within a day, or straight away if you run it by hand.
+
+- The build publishes `user-guide.md`, `programmers-guide.md` and `access-differences.md` (the list is at the top of `build.mjs`). It leaves out the docs README, the changelog, links to GitHub, and paragraphs about the repo's workflows.
+- Links between the guides become site links, and every link and anchor is kept working.
+- To preview: clone the app repo next to this one, then `npm install` and `npm run guides`.
+- If the app repo is made private, the "Fetch the guides" step needs a token with read access to it (`token:` on that checkout step).
+
 ## Re-taking the screenshots
 
 See `tools/screenshots/README.md`.

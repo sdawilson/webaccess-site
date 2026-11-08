@@ -1,4 +1,6 @@
-# Deploys the site to Bunny on every push to main:
+# Deploys the site to Bunny on every push to main, once a day (to pick up changes to the
+# guides), and when run by hand:
+#   0. builds the Guides pages from the app repo's docs/ (sdawilson/webaccess, public)
 #   1. uploads public/ to the storage zone under site/
 #   2. deploys edge/script.ts to the edge script
 #   3. purges the edge script's pull zone so the new files show straight away
@@ -20,6 +22,8 @@ name: Deploy to Bunny
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '17 5 * * *'   # 05:17 UTC daily
   workflow_dispatch:
 
 concurrency:
@@ -32,6 +36,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Fetch the guides from the app repo
+        uses: actions/checkout@v4
+        with:
+          repository: sdawilson/webaccess
+          path: app
+          sparse-checkout: docs
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Build the guides
+        run: node tools/guides/build.mjs app/docs public/guides
 
       - name: Upload the site to Bunny Storage
         env:
