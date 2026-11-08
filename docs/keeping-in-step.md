@@ -35,7 +35,7 @@ Keep the site's voice: plain British English, "we", short sentences, no hype, no
 If the new commits touched the app's `public/` folder (its browser code), retake the screenshots so they match:
 
 1. Clone the app next to this repo, `npm install`, and start it with a throwaway admin on port 3100 (see `tools/screenshots/README.md`; use a fresh `DATA_DIR`).
-2. In `tools/screenshots/`: make sure `playwright` and `sharp` can be imported (`npm i playwright sharp` if not), then run `seed.mjs`, `seed2.mjs`, `seed3.mjs`, `seed4.mjs` and `users.mjs` with `SEED_PW`.
+2. In `tools/screenshots/`: make sure `playwright` and `sharp` can be imported (`npm i playwright sharp` if not), then run `seed.mjs`, `seed2.mjs`, `seed3.mjs`, `seed4.mjs`, `seed5.mjs` and `users.mjs` with `SEED_PW`.
 3. For the demo's screens, start a second copy of the app with `DEMO_MODE=true` on port 3200 (its own fresh `DATA_DIR`; it builds the Fieldfare Traders sample itself). Then run `WEBACCESS_DIR=<app clone> DEMO_URL=http://localhost:3200 ./capture.sh`. Without the demo copy, the demo screenshots already published are kept.
 4. Look at every new image. If a step no longer finds what it clicks (a renamed button, say), fix that step's JSON in `tools/screenshots/steps/` and retake. Don't commit a screenshot that shows an error, a half-loaded screen or the wrong thing.
 5. If a notable new feature has a screen of its own, consider adding a shot: a step file, an entry in `capture.sh` and `imgs.mjs`, a caption in `SCREENS`, and possibly a view tab in the matching section.

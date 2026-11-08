@@ -25,6 +25,7 @@ const SCREENS = [
   ['report-preview', 'A report in Print Preview, grouped by type with subtotals', 'Print Preview of a report of schemes grouped by type, on an A4 page'],
   ['report-design', 'Report Design view with the Group, Sort, and Total pane', 'Report Design view with sections and the Group, Sort, and Total pane'],
   ['chart-dashboard', 'Chart controls on a dashboard form', 'A dashboard form with two Chart controls: estimate and actual by scheme type, and schemes by status'],
+  ['treeview-listview', 'TreeView and ListView controls, filled by VBA', 'A form with a TreeView of scheme types and schemes, and a ListView of the chosen type\u2019s schemes'],
   ['pivottable', 'PivotTable view, grouped by year and quarter', 'A PivotTable of estimates by scheme type and quarter'],
   ['pivotchart', 'PivotChart view of the same layout', 'A stacked column PivotChart of estimates by scheme type'],
   ['conditional-formatting', 'The Conditional Formatting Rules Manager', 'The Conditional Formatting Rules Manager with three rules'],
