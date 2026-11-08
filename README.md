@@ -64,7 +64,13 @@ Both are registered at names.co.uk. Set up on 8 November 2026 as below. **webacc
 
 ## Reading requests and suggestions
 
-Storage > `webaccess-site` > File Manager:
+The easiest way is the private admin page, **https://webaccessbuilder.com/admin**. It lists test-instance requests and feature suggestions, with filters (To reply, Replied, All), search, a Replied tick box and a note on each, a Reply button that opens an email, and Delete. Once you've signed in, an **Admin** button appears in the header of every page in that browser, for 30 days.
+
+- The password is the edge script's secret `ADMIN_PASSWORD` (Bunny: Edge Platform > Scripting > webaccess-site > Env Configuration). Without it the admin page can't sign in. Changing it signs every browser out.
+- The page is static; the data comes from the edge script's `POST /api/admin/*` routes, which need the sign-in token. POST is never cached by the CDN.
+- The tick and note are saved in each item's JSON file in storage (`replied`, `repliedAt`, `note`).
+
+The files themselves are in Storage > `webaccess-site` > File Manager:
 
 - `requests/`: test-instance requests from the "Request a test instance" form.
 - `features/`: suggestions from the "Suggest a feature" form.

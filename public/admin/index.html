@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · Web Access Builder</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="admin-page">
+<header class="titlebar">
+  <div class="titlebar-inner">
+    <a class="wordmark" href="/"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="256" height="26"></a>
+    <span class="admin-tag">Admin</span>
+    <button type="button" class="btn btn-light admin-signout" id="signout" hidden>Sign out</button>
+  </div>
+</header>
+
+<main id="main" class="admin">
+  <div class="wrap">
+
+    <!-- signed out -->
+    <section id="signin" class="admin-signin" hidden aria-labelledby="signin-title">
+      <form class="accform" id="signin-form" novalidate>
+        <div class="accform-header"><h1 class="accform-title" id="signin-title">Sign in</h1></div>
+        <div class="accform-detail">
+          <div class="field field-stack">
+            <label for="a-password">Admin password</label>
+            <input id="a-password" name="password" type="password" autocomplete="current-password" required>
+          </div>
+        </div>
+        <div class="accform-footer">
+          <p class="form-status" id="signin-status" role="status" aria-live="polite"></p>
+          <button class="btn btn-primary" type="submit">Sign in</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- signed in -->
+    <section id="inbox" hidden aria-labelledby="inbox-title">
+      <div class="inbox-head">
+        <h1 id="inbox-title">Requests and suggestions</h1>
+        <button type="button" class="btn btn-ghost" id="refresh">Refresh</button>
+      </div>
+
+      <div class="inbox-tools">
+        <div class="viewbar" role="tablist" aria-label="Which list">
+          <button role="tab" type="button" aria-selected="true" data-kind="requests">Test instance requests <span class="count" data-count="requests"></span></button>
+          <button role="tab" type="button" aria-selected="false" data-kind="features">Feature suggestions <span class="count" data-count="features"></span></button>
+        </div>
+        <div class="viewbar" role="group" aria-label="Show">
+          <button type="button" aria-pressed="true" data-show="todo">To reply</button>
+          <button type="button" aria-pressed="false" data-show="done">Replied</button>
+          <button type="button" aria-pressed="false" data-show="all">All</button>
+        </div>
+        <label class="visually-hidden" for="search">Search</label>
+        <input id="search" class="inbox-search" type="search" placeholder="Search names, emails and text" autocomplete="off">
+      </div>
+
+      <p class="inbox-status" id="inbox-status" role="status" aria-live="polite"></p>
+      <div id="items" class="inbox-items"></div>
+    </section>
+
+  </div>
+</main>
+
+<script src="/js/admin.js" defer></script>
+</body>
+</html>

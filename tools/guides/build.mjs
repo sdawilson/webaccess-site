@@ -164,6 +164,7 @@ const foot = `
     <p class="footer-links"><a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
   </div>
 </footer>
+<script src="/js/admin-link.js" defer></script>
 </body>
 </html>
 `;

@@ -5,6 +5,7 @@
 //                     and emails a notification if RESEND_API_KEY is set
 // POST /api/feature   saves a "suggest a feature" form to the storage zone, under features/,
 //                     and emails a notification in the same way
+// POST /api/admin/*   the private admin page's view of both (see "admin" below)
 //
 // The script is the origin for its pull zone, so the CDN caches the files it serves
 // (see Cache-Control below) and the script runs only on a cache miss.
@@ -17,6 +18,7 @@
 //   NOTIFY_FROM      optional: sender for that email, on a domain verified with Resend
 // Secrets:
 //   STORAGE_KEY      the storage zone's password (FTP & API Access)
+//   ADMIN_PASSWORD   optional: the password for the /admin page; without it the admin API is off
 //   RESEND_API_KEY   optional: Resend API key, to send the notification email
 
 import * as BunnySDK from "https://esm.sh/@bunny.net/edgescript-sdk@0.13.0";
@@ -271,6 +273,161 @@ async function saveFeature(request: Request): Promise<Response> {
   return json(200, { ok: true });
 }
 
+// ---------- admin: Simon's private view of requests and suggestions ----------
+//
+// /admin (a static page) signs in with ADMIN_PASSWORD (an Edge Script secret) and then calls
+// these, all POST so the CDN never caches them, with the token in an Authorization header:
+//   POST /api/admin/login   { password }                 -> { token, expires }
+//   POST /api/admin/list    { kind: requests|features }  -> { items: [...] }, newest first
+//   POST /api/admin/update  { kind, id, replied?, note? } -> { item }
+//   POST /api/admin/delete  { kind, id }                 -> { ok }
+// A token is "<expiry>.<HMAC-SHA256 of it, keyed by the password>", so changing the password
+// signs every browser out. With no ADMIN_PASSWORD set, the admin API is off.
+
+const ADMIN_KINDS = [REQUEST_PREFIX, FEATURE_PREFIX];
+const TOKEN_DAYS = 30;
+const ID = /^(\d{4})-(\d{2})-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z-[0-9a-f]{8}$/;
+const loginTries = new Map<string, number[]>();
+
+const enc = new TextEncoder();
+const b64url = (buf: ArrayBuffer) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+
+async function hmac(text: string): Promise<string> {
+  const key = await crypto.subtle.importKey("raw", enc.encode(`webaccess-site-admin:${env("ADMIN_PASSWORD")}`), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  return b64url(await crypto.subtle.sign("HMAC", key, enc.encode(text)));
+}
+
+// Compares two strings in time that doesn't depend on where they differ.
+function sameText(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let d = 0;
+  for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return d === 0;
+}
+
+async function tokenOk(request: Request): Promise<boolean> {
+  const m = /^Bearer\s+(\d{10,13})\.([A-Za-z0-9_-]{20,})$/.exec(request.headers.get("authorization") || "");
+  if (!m) return false;
+  if (Number(m[1]) < Date.now()) return false;
+  return sameText(await hmac(m[1]), m[2]);
+}
+
+async function adminBody(request: Request): Promise<Record<string, unknown>> {
+  if (!(request.headers.get("content-type") || "").includes("application/json")) return {};
+  try {
+    const text = await request.text();
+    if (text.length > 10_000) return {};
+    const v = JSON.parse(text);
+    return v && typeof v === "object" ? v : {};
+  } catch {
+    return {};
+  }
+}
+
+// The files in a storage folder: [{ name, dir }]
+async function listFolder(path: string): Promise<{ name: string; dir: boolean }[]> {
+  const res = await fetch(storageUrl(path) + "/", { headers: { AccessKey: STORAGE_KEY, Accept: "application/json" } });
+  if (res.status === 404) return [];
+  if (!res.ok) throw new Error(`Listing ${path} returned ${res.status}`);
+  const list = await res.json();
+  return (Array.isArray(list) ? list : []).map((o: Record<string, unknown>) => ({ name: String(o.ObjectName || ""), dir: !!o.IsDirectory }));
+}
+
+async function mapLimit<T, R>(items: T[], limit: number, fn: (t: T) => Promise<R>): Promise<R[]> {
+  const out: R[] = new Array(items.length);
+  let next = 0;
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (next < items.length) { const i = next++; out[i] = await fn(items[i]); }
+  }));
+  return out;
+}
+
+async function listItems(kind: string): Promise<Record<string, unknown>[]> {
+  const files: string[] = [];
+  for (const y of (await listFolder(kind)).filter((f) => f.dir && /^\d{4}$/.test(f.name))) {
+    for (const m of (await listFolder(`${kind}/${y.name}`)).filter((f) => f.dir && /^\d{2}$/.test(f.name))) {
+      for (const f of await listFolder(`${kind}/${y.name}/${m.name}`)) {
+        if (!f.dir && f.name.endsWith(".json")) files.push(`${kind}/${y.name}/${m.name}/${f.name}`);
+      }
+    }
+  }
+  files.sort().reverse();
+  const items = await mapLimit(files.slice(0, 1000), 8, async (path) => {
+    const res = await fetch(storageUrl(path), { headers: { AccessKey: STORAGE_KEY } });
+    if (!res.ok) return null;
+    try { return await res.json(); } catch { return null; }
+  });
+  return items.filter((x) => x && typeof x === "object");
+}
+
+function itemPath(kind: string, id: string): string | null {
+  if (!ADMIN_KINDS.includes(kind)) return null;
+  const m = ID.exec(id);
+  return m ? `${kind}/${m[1]}/${m[2]}/${id}.json` : null;
+}
+
+async function admin(action: string, request: Request): Promise<Response> {
+  if (!env("ADMIN_PASSWORD")) return json(503, { error: "The admin page isn't set up: add the ADMIN_PASSWORD secret to the edge script." });
+  if (request.method !== "POST") return json(405, { error: "Use POST." });
+  const body = await adminBody(request);
+
+  if (action === "login") {
+    const client = clientOf(request);
+    const now = Date.now();
+    const tries = (loginTries.get(client) || []).filter((t) => now - t < 15 * 60_000);
+    if (tries.length >= 8) return json(429, { error: "Too many attempts. Try again in 15 minutes." });
+    if (!sameText(String(body.password || ""), env("ADMIN_PASSWORD"))) {
+      tries.push(now);
+      loginTries.set(client, tries);
+      if (loginTries.size > 5000) loginTries.clear();
+      return json(401, { error: "That password isn't right." });
+    }
+    loginTries.delete(client);
+    const expires = String(now + TOKEN_DAYS * 86_400_000);
+    return json(200, { token: `${expires}.${await hmac(expires)}`, expires: Number(expires) });
+  }
+
+  if (!(await tokenOk(request))) return json(401, { error: "Please sign in again." });
+
+  if (action === "list") {
+    const kind = String(body.kind || "");
+    if (!ADMIN_KINDS.includes(kind)) return json(400, { error: "Unknown list." });
+    return json(200, { items: await listItems(kind) });
+  }
+
+  const kind = String(body.kind || "");
+  const id = String(body.id || "");
+  const path = itemPath(kind, id);
+  if (!path) return json(400, { error: "Unknown item." });
+
+  if (action === "update") {
+    const res = await fetch(storageUrl(path), { headers: { AccessKey: STORAGE_KEY } });
+    if (res.status === 404) return json(404, { error: "That item no longer exists." });
+    if (!res.ok) return json(502, { error: "That item couldn't be read." });
+    const item = await res.json();
+    if (typeof body.replied === "boolean") {
+      item.replied = body.replied;
+      item.repliedAt = body.replied ? new Date().toISOString() : null;
+    }
+    if (typeof body.note === "string") item.note = clean(body.note, 2000);
+    const put = await fetch(storageUrl(path), {
+      method: "PUT",
+      headers: { AccessKey: STORAGE_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify(item, null, 2),
+    });
+    if (!put.ok) return json(502, { error: "That couldn't be saved." });
+    return json(200, { item });
+  }
+
+  if (action === "delete") {
+    const res = await fetch(storageUrl(path), { method: "DELETE", headers: { AccessKey: STORAGE_KEY } });
+    if (!res.ok && res.status !== 404) return json(502, { error: "That couldn't be deleted." });
+    return json(200, { ok: true });
+  }
+
+  return json(404, { error: "Not found." });
+}
+
 // ---------- routing ----------
 
 export async function handle(request: Request): Promise<Response> {
@@ -284,6 +441,8 @@ export async function handle(request: Request): Promise<Response> {
       if (request.method === "POST") return await saveFeature(request);
       return json(405, { error: "Use POST." });
     }
+    const adminRoute = /^\/api\/admin\/(login|list|update|delete)$/.exec(url.pathname);
+    if (adminRoute) return await admin(adminRoute[1], request);
     if (url.pathname.startsWith("/api/")) return json(404, { error: "Not found." });
     if (request.method === "GET" || request.method === "HEAD") return await serveFile(url, request.method);
     return new Response("Method not allowed", { status: 405, headers: { Allow: "GET, HEAD", ...SECURITY_HEADERS } });
