@@ -26,7 +26,7 @@ The script is the origin for its pull zone, so the CDN caches the files it retur
 2. **Edge script.** Edge Platform > Scripting > Add Script > **Standalone**, name it `webaccess-site`. Bunny creates a pull zone for it with a `*.b-cdn.net` hostname.
    - Env Configuration, variables: `STORAGE_ZONE` = `webaccess-site`, `STORAGE_HOST` = the storage hostname.
    - Env Configuration, secrets: `STORAGE_KEY` = the storage zone password.
-   - Optional email for each request: secret `RESEND_API_KEY`, variables `NOTIFY_TO` = `simonwilson@webaccessbuilder.co.uk` and `NOTIFY_FROM` = e.g. `requests@webaccessbuilder.com` (verify webaccessbuilder.com with [Resend](https://resend.com) by adding its DNS records in Bunny DNS). Without these, requests are still saved to storage.
+   - Optional email for each request: secret `RESEND_API_KEY`, variables `NOTIFY_TO` = `webaccessbuilder@gmail.com` and `NOTIFY_FROM` = e.g. `requests@webaccessbuilder.com` (verify webaccessbuilder.com with [Resend](https://resend.com) by adding its DNS records in Bunny DNS). Without these, requests are still saved to storage.
    - Deployments > Settings: note the **script ID** and **deploy key**.
 3. **Pull zone ID.** CDN > the pull zone named after the script: the ID is in its URL and General settings.
 4. **API key.** Account settings > API key, for purging the cache.
@@ -49,7 +49,7 @@ Then push to `main`, or run the workflow from the Actions tab. Until `STORAGE_ZO
 
 ## The domains
 
-Both are registered at names.co.uk. Set up on 8 November 2026 as below. **webaccessbuilder.com** is the site's address; **webaccessbuilder.co.uk** carries email (simonwilson@webaccessbuilder.co.uk) and forwards visitors to the .com.
+Both are registered at names.co.uk. Set up on 8 November 2026 as below. **webaccessbuilder.com** is the site's address; **webaccessbuilder.co.uk** forwards visitors to the .com, and has a names.co.uk mailbox (simonwilson@webaccessbuilder.co.uk). The contact address for Web Access Builder is **webaccessbuilder@gmail.com**.
 
 **webaccessbuilder.com** (no email on it, so its DNS can move to Bunny):
 

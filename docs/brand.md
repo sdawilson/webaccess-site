@@ -5,7 +5,7 @@ Decided by Simon on 8 November 2026, while building the marketing website. For a
 ## Name
 
 - The product is called **Web Access Builder**. "webaccess" stays as the repo and code name.
-- Website: **https://webaccessbuilder.com** (webaccessbuilder.co.uk forwards to it). Contact: simonwilson@webaccessbuilder.co.uk.
+- Website: **https://webaccessbuilder.com** (webaccessbuilder.co.uk forwards to it). Contact: webaccessbuilder@gmail.com.
 - Copyright: © 2026 Simon Wilson. In public text: "Microsoft Access is a trademark of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft."
 - The site's copy speaks as "we" (Simon plus friends who'll be involved).
 
