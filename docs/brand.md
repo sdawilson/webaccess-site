@@ -53,6 +53,7 @@ Mark, for the green title bar:
 - A static site served by a Bunny Edge Script from a Storage zone, deployed by GitHub Actions on every push, once a day, and by hand.
 - Its screenshots come from a local copy of the app with a sample highways database (`tools/screenshots/capture.sh` in the site repo). Re-take them when the app's look changes.
 - The site never links to GitHub (Simon's choice).
+- Status, as Simon wants it stated everywhere: **in active development, not yet recommended for production use; we're inviting people to test it and give feedback.** The site shows this in a notice on every page, the request form is for a *test instance* and needs the tester to confirm they understand, and the FAQ says to test with copies of data. Worth echoing in the app (sign-in page or About) and the guides.
 
 ## The guides on the website
 
