@@ -100,7 +100,10 @@ function render(md) {
         return `<a href="${esc(to)}"${title ? ` title="${esc(title)}"` : ''}${ext}>${inner}</a>`;
       },
       html({ text }) {
-        return esc(text); // the guides are Markdown; show stray HTML as text rather than run it
+        // Images in raw HTML (the logo at the top of each guide, for GitHub) are left out: the
+        // site's header has the logo, and their paths point into the app's repo.
+        if (/^(\s*<\/?(img|p|div|picture|source|br)\b[^>]*>)+\s*$/i.test(text)) return '';
+        return esc(text); // the guides are Markdown; show any other stray HTML as text rather than run it
       },
     },
   });
