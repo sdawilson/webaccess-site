@@ -85,6 +85,10 @@ The pages under `/guides/` are built from the Markdown guides in the app repo (`
 - To preview: clone the app repo next to this one, then `npm install` and `npm run guides`.
 - If the app repo is made private, the "Fetch the guides" step needs a token with read access to it (`token:` on that checkout step).
 
+## Keeping the site in step with the app
+
+A scheduled task checks the app every morning. When the app has changed, it updates the site's text and screenshots on the branch `app-sync` and opens a pull request for Simon to approve. Its checklist is `docs/keeping-in-step.md`; `.app-sync.json` records the app commit the site was last checked against.
+
 ## Re-taking the screenshots
 
 See `tools/screenshots/README.md`.
