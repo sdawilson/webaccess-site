@@ -71,7 +71,7 @@ p { margin: 0 0 1em; }
 .btn-primary:hover { background: var(--green-deep); color: #fff; }
 .btn-ghost { border-color: var(--edge); color: var(--green); background: var(--paper); }
 .btn-ghost:hover { border-color: var(--green); }
-.btn-light { background: #fff; color: var(--green); min-height: 36px; padding: 0 14px; font-size: 0.95rem; }
+.btn-light { white-space: nowrap; background: #fff; color: var(--green); min-height: 36px; padding: 0 14px; font-size: 0.95rem; }
 .btn-light:hover { background: var(--current); color: var(--green-deep); }
 
 /* ---------- title bar (the app's own) ---------- */
@@ -82,6 +82,8 @@ p { margin: 0 0 1em; }
 }
 .wordmark { color: #fff; font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; text-decoration: none; }
 .wordmark:hover { color: #fff; }
+.wordmark img { display: block; width: auto; height: 26px; }
+.wordmark-small img { height: 20px; }
 .titlebar nav { margin-left: auto; }
 .titlebar ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
 .titlebar nav a {
@@ -391,6 +393,8 @@ p { margin: 0 0 1em; }
   .datasheet-dark td:last-child::before { content: "webaccess: "; color: #b9cdc1; font-weight: 400; }
   .datasheet-scroll { overflow: visible; }
   .btn-light { padding: 0 10px; font-size: 0.88rem; }
+  .titlebar .wordmark img { height: 19px; }
+  .hide-sm { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
