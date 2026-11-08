@@ -26,7 +26,7 @@ The script is the origin for its pull zone, so the CDN caches the files it retur
 2. **Edge script.** Edge Platform > Scripting > Add Script > **Standalone**, name it `webaccess-site`. Bunny creates a pull zone for it with a `*.b-cdn.net` hostname.
    - Env Configuration, variables: `STORAGE_ZONE` = `webaccess-site`, `STORAGE_HOST` = the storage hostname.
    - Env Configuration, secrets: `STORAGE_KEY` = the storage zone password.
-   - Optional email for each request: secret `RESEND_API_KEY`, variables `NOTIFY_TO` (your address) and `NOTIFY_FROM` (an address on a domain verified with [Resend](https://resend.com)). Without these, requests are still saved to storage.
+   - Optional email for each request: secret `RESEND_API_KEY`, variables `NOTIFY_TO` = `simonwilson@webaccessbuilder.co.uk` and `NOTIFY_FROM` = e.g. `requests@webaccessbuilder.com` (verify webaccessbuilder.com with [Resend](https://resend.com) by adding its DNS records in Bunny DNS). Without these, requests are still saved to storage.
    - Deployments > Settings: note the **script ID** and **deploy key**.
 3. **Pull zone ID.** CDN > the pull zone named after the script: the ID is in its URL and General settings.
 4. **API key.** Account settings > API key, for purging the cache.
@@ -47,9 +47,20 @@ Settings > Secrets and variables > Actions:
 
 Then push to `main`, or run the workflow from the Actions tab. Until `STORAGE_ZONE` is set the workflow skips itself.
 
-## A custom domain
+## The domains
 
-In the script's pull zone: Hostnames > Add, e.g. `webaccess.example.com`. Add a CNAME for it pointing at the `*.b-cdn.net` hostname, then turn on the free SSL certificate.
+Both are registered at names.co.uk. **webaccessbuilder.com** is the site's address; **webaccessbuilder.co.uk** carries email (simonwilson@webaccessbuilder.co.uk) and forwards visitors to the .com.
+
+**webaccessbuilder.com** (no email on it, so its DNS can move to Bunny):
+
+1. Bunny: DNS > Add Zone > `webaccessbuilder.com`.
+2. names.co.uk: set the .com's nameservers to the two Bunny shows (e.g. `kiki.bunny.net`, `coco.bunny.net`).
+3. Bunny: the script's pull zone > Hostnames > add `webaccessbuilder.com` and `www.webaccessbuilder.com`. In the DNS zone, point both at the pull zone (Bunny offers this as a "Pull Zone" record), then turn on the free SSL certificate for each.
+
+**webaccessbuilder.co.uk** (leave its nameservers at names.co.uk, or the mailbox stops working):
+
+- names.co.uk: set up web forwarding from `webaccessbuilder.co.uk` and `www.webaccessbuilder.co.uk` to `https://webaccessbuilder.com`. Don't touch its MX records.
+- If its DNS ever moves to Bunny, copy every MX, SPF (TXT), DKIM and autodiscover record from names.co.uk first.
 
 ## Reading requests
 
