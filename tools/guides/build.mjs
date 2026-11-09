@@ -144,7 +144,8 @@ const head = (title, description, canonical) => `<!doctype html>
       <ul>
         <li><a href="/screenshots/">Screens</a></li>
         <li><a href="/#data">Features</a></li>
-        <li><a href="/#web">On the web</a></li>
+        <li><a href="/#runtime">Runtime</a></li>
+        <li><a href="/#plans">Plans</a></li>
         <li><a href="/guides/" aria-current="page">Guides</a></li>
         <li><a href="/#faq">Questions</a></li>
       </ul>

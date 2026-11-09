@@ -8,7 +8,7 @@ const list = [
   ['form-code', null], ['debugger', null], ['intellisense', null], ['conditional-formatting', null], ['import-access', null],
   ['users', null], ['user-view', null], ['property-sheet', null],
   ['report-view', null], ['report-preview', null], ['report-design', null], ['chart-dashboard', null], ['treeview-listview', null], ['help-guides', null],
-  ['demo-signin', null], ['demo-menu', null], ['demo-dashboard', null], ['demo-orders', null],
+  ['demo-signin', null], ['demo-menu', null], ['demo-dashboard', null], ['demo-orders', null], ['runtime-orders', null],
 ];
 const crops = {
   'continuous-form': DOC, 'form-view': DOC, 'form-design': DOC, 'pivottable': DOC, 'pivotchart': DOC, 'query-totals': DOC,
@@ -17,6 +17,7 @@ const crops = {
   'user-view': DOC, 'property-sheet': [240, 180, 1200, 720],
   'report-view': DOC, 'report-preview': DOC, 'report-design': DOC, 'chart-dashboard': DOC, 'treeview-listview': DOC, 'help-guides': DOC,
   'demo-signin': [120, 90, 1200, 720], 'demo-menu': DOC, 'demo-dashboard': DOC, 'demo-orders': [240, 180, 1200, 720],
+  'runtime-orders': [0, 0, 1440, 900], // the whole window: the point is what isn't there
 };
 const out = new URL('../../public/img/', import.meta.url).pathname;
 for (const [n] of list) {

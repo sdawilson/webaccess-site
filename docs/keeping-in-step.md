@@ -28,6 +28,7 @@ Compare the app's current README with what the site says, and note each thing th
 | Screen gallery captions | `public/js/site.js` (`SCREENS`) | Captions and alt text still describe the screens |
 | Screenshots page | `public/screenshots/index.html` | Each card's title, note and alt text still describe its screen; a notable new screen may deserve a card |
 | Try the demo | `public/index.html` (`#demo`) | What the sample database contains and how long a demo lasts, as the app's README says |
+| Runtime, Plans | `public/index.html` (`#runtime`, `#plans`), the hero note, the FAQ | Accounts, roles, runtime mode and the error log as the app has them. While they're being built, keep the "Coming with accounts" wording; once the README says they're done, say so in the present tense and retake `runtime-orders`. Never change prices or the free limit (10 people per database) unless Simon has; `docs/brand.md` has them |
 
 Keep the site's voice: plain British English, "we", short sentences, no hype, nothing the app doesn't do yet. Keep the development notice and the "not for production" wording exactly as they are unless Simon has changed them.
 

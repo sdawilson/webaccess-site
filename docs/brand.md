@@ -56,6 +56,16 @@ Mark, for the green title bar:
 - The public demo is at https://demo.webaccessbuilder.com: the Magic Containers app `webaccess-demo`, the same image with `DEMO_MODE=true`, showing the Fieldfare Traders sample. The site links to it from the hero, a "Try the demo" section, the FAQ and the notice on every page (`DEMO_URL` in `public/js/site.js`).
 - Status, as Simon wants it stated everywhere: **in active development, not yet recommended for production use; we're inviting people to test it and give feedback.** The site shows this in a notice on every page, the request form is for a *test instance* and needs the tester to confirm they understand, and the FAQ says to test with copies of data. Worth echoing in the app (sign-in page or About) and the guides.
 
+## Plans and the runtime, as the site states them
+
+Decided by Simon on 9 November 2026, from the accounts, runtime and licensing proposal. The site leads with Access's original promise: **simple to build, free to hand out** (the hero says "Build it like Access. Hand it out free.").
+
+- Admins, the people who design, are paid seats: **£15 a month or £99 a year** each.
+- The runtime is free for **up to 10 people per database** (Users and Guests together) while the database runs on SQLite. The proposal said 5; Simon changed it to 10.
+- More than 10 people on a database: "talk to us" (a hosted SQL database at a fee that covers its hosting).
+- Databases are hosted in London. Customers are anyone, not only councils.
+- Until accounts open, the site says these are planned prices and that testing is free; the runtime section is labelled "Coming with accounts". When the app ships accounts, sharing and runtime mode, change that wording to the present tense and retake `runtime-orders` from the real runtime.
+
 ## The guides on the website
 
 The site publishes the app's guides at `/guides/`, built at each deploy from `docs/` in `sdawilson/webaccess`. So for the session that writes the guides:
