@@ -1,0 +1,1 @@
+[{"press":"F1","wait":1800},{"click":"input.help-search","wait":300},{"type":"subform","wait":1500}]
