@@ -1,0 +1,1 @@
+[{"click":"button.rail-btn[title^='File']","wait":900},{"text":"Share","exact":true,"wait":1200}]

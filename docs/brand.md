@@ -65,7 +65,8 @@ Decided by Simon on 9 November 2026, from the accounts, runtime and licensing pr
 - Users' and Guests' free access lasts while the account's Admin subscription is active. The site says "Their access stays free for as long as your subscription is active."
 - More than 10 people on a database: "talk to us" (a hosted SQL database at a fee that covers its hosting).
 - Databases are hosted in London. Customers are anyone, not only councils.
-- Until accounts open, the site says these are planned prices and that testing is free; the runtime section is labelled "Coming with accounts". When the app ships accounts, sharing and runtime mode, change that wording to the present tense and retake `runtime-orders` from the real runtime.
+- Sharing, the runtime and the error log shipped on 9 Nov 2026, and the site describes them in the present tense. Paying isn't switched on, so the site still says these are planned prices and that testing is free; accounts are set up by hand through "request a test instance".
+- The app has a rail and a command bar in place of a ribbon; the site never says "ribbon" about the app.
 
 ## The guides on the website
 

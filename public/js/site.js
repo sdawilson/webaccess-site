@@ -16,7 +16,7 @@ const COFFEE_URL = 'https://buymeacoffee.com/simonwilson_wab';
 const SCREENS = [
   ['continuous-form', 'Continuous form with conditional formatting and data bars', 'A continuous form listing highway schemes, with status colours and data bars on the estimates'],
   ['form-view', 'Single form with a subform on a tab control', 'A single form for one scheme, with a datasheet subform of defects on a tab control'],
-  ['form-design', 'Form Design view: controls, field list and property sheet', 'Form Design view with the controls gallery, field list and property sheet'],
+  ['form-design', 'Form Design view: controls on the command bar, field list and property sheet', 'Form Design view with the controls gallery, field list and property sheet'],
   ['datasheet', 'A table in Datasheet view', 'A table of highway schemes in Datasheet view'],
   ['table-design', 'Table Design view with Access field types', 'Table Design view listing each field and its data type'],
   ['query-criteria', 'Query criteria in Access syntax, with an Or row', 'Query Design grid with criteria on Status and StartDate'],
@@ -34,8 +34,9 @@ const SCREENS = [
   ['debugger', 'Paused at a breakpoint, with Locals', 'VBA paused at a breakpoint with the Locals window showing variables'],
   ['help-guides', 'Help: the guides inside the app, with search', 'The Help tab, searching all three guides, with the matched words marked'],
   ['import-access', 'Importing tables from an Access database', 'The Import from Access dialog listing tables to import'],
-  ['users', 'Users and their roles', 'The Users screen listing admins and users'],
-  ['user-view', 'What a user sees: the same form, no design tools', 'A user’s view of a form, with no design tools in the ribbon'],
+  ['users', 'Users and their roles', 'The Users screen listing the account’s people and their roles'],
+  ['share', 'Share a database: invite people as a User or a Guest', 'The Share page, listing the account’s Admins and the people the database is shared with'],
+  ['runtime-view', 'What a User sees: the runtime, with no design tools', 'A User’s view of a form filling the window, with no rail, command bar or Navigation Pane'],
   ['demo-menu', 'The demo: Fieldfare Traders, a sample database to explore', 'The Main Menu of the Fieldfare Traders sample database, open in the demo'],
 ];
 

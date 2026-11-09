@@ -1,1 +1,1 @@
-[{"dbltext":"Scheme Details","wait":1500},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":1200}]
+[{"click":".start-list button:has-text('Scheme Details')","wait":1500},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":600},{"text":"Next ▶","wait":1200}]

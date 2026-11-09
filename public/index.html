@@ -81,7 +81,7 @@
           <button type="button" class="nav-btn" data-go="prev" aria-label="Previous screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 3 4 8l7 5z"/></svg></button>
           <label class="visually-hidden" for="viewer-pos">Screen number</label>
           <input id="viewer-pos" class="nav-pos" type="text" inputmode="numeric" value="1" autocomplete="off">
-          <span class="nav-of">of <span id="viewer-count">23</span></span>
+          <span class="nav-of">of <span id="viewer-count">24</span></span>
           <button type="button" class="nav-btn" data-go="next" aria-label="Next screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l7 5-7 5z"/></svg></button>
           <button type="button" class="nav-btn" data-go="last" aria-label="Last screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l7 5-7 5zM12 3v10"/></svg></button>
           <a class="nav-btn nav-new" href="#request" aria-label="Start your own: request a test instance" title="New record: request a test instance"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3l7 5-7 5z"/><path class="star" d="M12.5 2.5v4M10.7 3.5l3.6 2M10.7 5.5l3.6-2"/></svg></a>
@@ -109,22 +109,22 @@
 <section class="runtime" id="runtime" aria-labelledby="runtime-title">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Coming with accounts</p>
+      <p class="eyebrow">New: sharing and the runtime</p>
       <h2 id="runtime-title">Simple to build. Free to distribute.</h2>
       <p>That was always the deal with Access. Someone who knows the work builds the database, and everyone else uses it through the free Access Runtime, without buying Access. Web Access Builder keeps that deal, on the web.</p>
     </div>
     <ol class="steps steps-3">
       <li><h3>Build it</h3><p>Admins design the tables, queries, forms, reports and VBA. An Admin seat is the only thing you pay for.</p></li>
       <li><h3>Share it</h3><p>Invite people to a database by email: as a User, who works with the data, or a Guest, who can only read it. They open it from a link.</p></li>
-      <li><h3>They use the runtime</h3><p>No ribbon, no Navigation Pane, no Design view and no code window: just your forms and reports, starting at the database's Display Form.</p></li>
+      <li><h3>They use the runtime</h3><p>No design tools, no Navigation Pane, no Design view and no code window: just your forms and reports, starting at the database's Display Form.</p></li>
     </ol>
 
     <div class="runtime-grid">
       <figure class="shot">
-        <div class="frame"><a href="/img/runtime-orders-full@2x.webp" target="_blank" rel="noopener">
-          <img src="/img/runtime-orders.webp" srcset="/img/runtime-orders.webp 1440w, /img/runtime-orders@2x.webp 2880w" sizes="(min-width: 1100px) 680px, 94vw" width="1440" height="900" loading="lazy" alt="The demo's Orders form filling the window, with no ribbon and no Navigation Pane">
+        <div class="frame"><a href="/img/runtime-view-full@2x.webp" target="_blank" rel="noopener">
+          <img src="/img/runtime-view.webp" srcset="/img/runtime-view.webp 1440w, /img/runtime-view@2x.webp 2880w" sizes="(min-width: 1100px) 680px, 94vw" width="1440" height="900" loading="lazy" alt="A User's view of a form filling the window: no rail, no command bar and no Navigation Pane, only a File button and Report a problem">
         </a></div>
-        <figcaption>The demo's Orders form with the ribbon and Navigation Pane hidden, as a database can already do for itself. The runtime goes further: no Design view or code window, and code can't bring them back.</figcaption>
+        <figcaption>A form as a User sees it. The rail, the command bar and the Navigation Pane are gone, and so are Design view and the code window. Nothing in the database's code can bring them back.</figcaption>
       </figure>
       <div class="runtime-text">
         <h3>Free for up to 10 people</h3>
@@ -153,7 +153,7 @@
         </tbody>
       </table>
     </div>
-    <p class="runtime-status">Accounts, sharing and the runtime are being built now. Until they're ready, test instances have admins, who design, and users, who work with the data without the design tools.</p>
+    <p class="runtime-status">Sharing, the runtime and the error log are in the app now. While we test, we set up each account ourselves: <a href="#request">request a test instance</a> to try them. Paying isn't switched on yet.</p>
   </div>
 </section>
 
@@ -161,7 +161,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 id="familiar-title">If you've built in Access, you already know it</h2>
-      <p>Web Access Builder isn't a new way of working that looks a bit like Access. It's the Access way of working, kept on purpose, down to the names of things.</p>
+      <p>Web Access Builder isn't a new way of working that looks a bit like Access. It's the Access way of working, kept on purpose, down to the names of things. Only the ribbon has gone: its commands are on a rail and a command bar.</p>
     </div>
     <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Access compared with Web Access Builder">
       <table class="datasheet stack">
@@ -182,7 +182,8 @@
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Import Objects</th><td>Access's own dialog, with a tab for each kind of object: tables and queries straight from the .accdb, forms and modules through an export module</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">VBA editor</th><td>Form events, <code>DoCmd</code>, <code>DLookup</code> and DAO recordsets, with breakpoints, F8 stepping and the Immediate window</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Help and F1</th><td>A Help button and F1 open the user guide, the programmer's guide and <em>Access compared</em> inside the app, with a search across all three. F1 goes to the section for what's in front of you</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Access Runtime</th><td>Coming with accounts: the people you share a database with use its forms and reports with no ribbon or design tools, free for up to 10 per database</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Tabbed Documents and Overlapping Windows</th><td>Both, chosen in Options as in Access, with Size to Fit Form, tile and cascade</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Access Runtime</th><td>The people you share a database with use its forms and reports with no design tools, free for up to 10 per database. <code>SysCmd(acSysCmdRuntime)</code> tells your code, as it does in Access</td></tr>
         </tbody>
       </table>
     </div>
@@ -262,7 +263,7 @@
           <li>Datasheet formatting kept with the form: font, colours, gridlines, frozen columns and row height, for its Datasheet view and datasheet subforms</li>
         <li>Calculated controls such as <code>=[LengthM]*[WidthM]</code> and <code>=Sum([Estimate])</code></li>
         <li>Access's properties and events: tab order, input masks, validation, NotInList, and mouse and key events</li>
-        <li>Pop-up and modal forms, anchoring, and forms that hide the ribbon to run your application</li>
+        <li>Pop-up and modal forms, anchoring, and forms that hide the commands to run your application</li>
       </ul>
     </div>
     <figure class="shot" data-views>
@@ -298,7 +299,7 @@
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Report screens">
         <button role="tab" type="button" aria-selected="true" data-img="report-view" data-alt="A report of highway schemes grouped by type, with a subtotal for each type">Report</button>
-        <button role="tab" type="button" aria-selected="false" data-img="report-preview" data-alt="Print Preview of the report on an A4 page, with page size, margins and zoom on the ribbon">Print Preview</button>
+        <button role="tab" type="button" aria-selected="false" data-img="report-preview" data-alt="Print Preview of the report on an A4 page, with page size, margins and zoom on the command bar">Print Preview</button>
         <button role="tab" type="button" aria-selected="false" data-img="report-design" data-alt="Report Design view with its sections and the Group, Sort, and Total pane">Design</button>
       </div>
       <div class="frame" role="tabpanel">
@@ -381,7 +382,8 @@
           <tr><td class="sel" aria-hidden="true"></td><td>VPN or remote desktop to work from home</td><td>Sign in from anywhere over HTTPS</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><td>Anyone with the file can open Design view</td><td>Admins design. Everyone else gets your forms and reports, without the design tools</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><td>Buy Access for each designer, and rely on the Runtime for everyone else</td><td>Pay for the people who build. Up to 10 people use each database free</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Locked or corrupted .accdb files</td><td>SQLite on the server, with Back Up Database and Compact and Repair</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Locked or corrupted .accdb files</td><td>SQLite on the server, backed up every night, with Back Up Database and Compact and Repair</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>The ribbon, with its tabs</td><td>A rail down the left for what you can make and do, and a command bar that follows the object in front</td></tr>
         </tbody>
       </table>
     </div>
@@ -389,11 +391,11 @@
     <div class="web-grid">
       <figure class="shot shot-dark" data-views>
         <div class="viewbar" role="tablist" aria-label="Users screens">
-          <button role="tab" type="button" aria-selected="true" data-img="user-view" data-alt="A user's view of a form: the same form, with no design tools in the ribbon">What a user sees</button>
+          <button role="tab" type="button" aria-selected="true" data-img="user-view" data-alt="A User's view of a form: the same form in the runtime, with no design tools">What a user sees</button>
           <button role="tab" type="button" aria-selected="false" data-img="users" data-w="1200" data-h="420" data-alt="The Users screen listing admins and users, with their roles and last sign-in">Users and roles</button>
         </div>
         <div class="frame" role="tabpanel">
-          <img src="/img/user-view.webp" srcset="/img/user-view.webp 1200w, /img/user-view@2x.webp 2400w" sizes="(min-width: 1100px) 700px, 94vw" width="1200" height="720" loading="lazy" alt="A user's view of a form: the same form, with no design tools in the ribbon">
+          <img src="/img/user-view.webp" srcset="/img/user-view.webp 1200w, /img/user-view@2x.webp 2400w" sizes="(min-width: 1100px) 700px, 94vw" width="1200" height="720" loading="lazy" alt="A User's view of a form: the same form in the runtime, with no design tools">
         </div>
       </figure>
       <div class="extras">
@@ -422,11 +424,11 @@
       <li><h3>Import tables and queries</h3><p>Open your .accdb or .mdb in Import Objects. Tables keep their fields, data types, calculated fields and AutoNumber values; queries are rebuilt from the database's own design.</p></li>
       <li><h3>Bring in forms and code</h3><p>Run our export module once in Access. It writes your forms and modules out to a folder and changes nothing. Import the folder, and each form comes with its layout and its code. Reports are rebuilt by hand for now.</p></li>
       <li><h3>Check the code</h3><p>Compile shows what needs changing, such as file access or a <code>Declare</code> that a web page can't do. The References your code uses are ticked for you.</p></li>
-      <li><h3>Share it</h3><p>Give each person a sign-in, then send them the link. With accounts, you'll invite them by email as a User or a Guest, and up to 10 per database are free.</p></li>
+      <li><h3>Share it</h3><p>Invite people by email from File &gt; Share, as a User or a Guest. They open your database from the link, in the runtime, and up to 10 per database are free.</p></li>
     </ol>
     <figure class="shot shot-plain">
       <div class="frame">
-        <img src="/img/import-access.webp" srcset="/img/import-access.webp 1000w, /img/import-access@2x.webp 2000w" sizes="(min-width: 1100px) 900px, 94vw" width="1000" height="390" loading="lazy" alt="The Import Objects dialog, with tabs for tables, queries, forms, reports, macros and modules">
+        <img src="/img/import-access.webp" srcset="/img/import-access.webp 1000w, /img/import-access@2x.webp 2000w" sizes="(min-width: 1100px) 900px, 94vw" width="1000" height="540" loading="lazy" alt="The Import Objects dialog, with tabs for tables, queries, forms, reports, macros and modules">
       </div>
       <figcaption>Import Objects, with a tab for each kind of object</figcaption>
     </figure>
@@ -438,7 +440,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 id="plans-title">Plans</h2>
-      <p>What we plan to charge when accounts open. While Web Access Builder is in testing, it's free.</p>
+      <p>What we plan to charge once testing is over. Until then, Web Access Builder is free.</p>
     </div>
     <div class="plan-grid">
       <article class="plan">
@@ -494,11 +496,10 @@
   <div class="wrap roadmap-grid">
     <h2 id="roadmap-title">Still to come</h2>
     <ul>
-      <li><strong>Accounts and sharing:</strong> invite people to each database as Admin, User or Guest</li>
-      <li><strong>Runtime mode</strong>, free for up to 10 people per database</li>
-      <li><strong>Error log:</strong> runtime errors reported to the database's Admins</li>
-      <li><strong>Overlapping windows</strong>, as well as tabbed documents</li>
-      <li><strong>Nightly backups</strong> of every database</li>
+      <li><strong>Paying online</strong>, when testing is over</li>
+      <li><strong>Reports from Access:</strong> importing them, as forms are now</li>
+      <li><strong>Subreports</strong>, Can Grow and Can Shrink, and report events in code</li>
+      <li><strong>Union and crosstab queries</strong></li>
       <li><strong>Hosted SQL databases</strong> for more than 10 people</li>
       <li><strong>Connections to your own SQL Server</strong>, as linked tables</li>
       <li><strong>Desktop version</strong> on all platforms: Windows, Mac and Linux</li>
@@ -649,7 +650,7 @@
       </details>
       <details>
         <summary>What will it cost?</summary>
-        <p>Nothing while we're testing. When accounts open, we plan to charge £15 a month or £99 a year for each Admin, the people who design. Up to 10 people use each database free in the runtime. For more than 10 on one database, <a href="#request">talk to us</a>.</p>
+        <p>Nothing while we're testing. After that, we plan to charge £15 a month or £99 a year for each Admin, the people who design. Up to 10 people use each database free in the runtime. For more than 10 on one database, <a href="#request">talk to us</a>.</p>
       </details>
       <details>
         <summary>Do the people who use my database need a licence?</summary>
@@ -673,11 +674,11 @@
       </details>
       <details>
         <summary>Where is our data kept?</summary>
-        <p>In a SQLite database on our server. When accounts open, each database will be its own file on servers in London, backed up every night. Admins can download a complete copy at any time with Back Up Database.</p>
+        <p>Each database is its own SQLite file on our servers in London, backed up every night, with copies kept for 30 days. Admins can download a complete copy at any time with Back Up Database.</p>
       </details>
       <details>
         <summary>Who can change the design?</summary>
-        <p>Only Admins. They design tables, queries, forms, reports and code, and decide who can open each database. Everyone else uses what's been built, without the design tools: today as a user; with accounts, as a User who works with the data or a Guest who can only read it.</p>
+        <p>Only Admins. They design tables, queries, forms, reports and code, and decide who can open each database. Everyone else uses what's been built, without the design tools: as a User, who works with the data, or a Guest, who can only read it.</p>
       </details>
     </div>
   </div>

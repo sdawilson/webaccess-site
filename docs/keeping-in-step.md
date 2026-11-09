@@ -2,7 +2,7 @@
 
 A scheduled task checks this every day. This file is its checklist; a person can follow it too.
 
-The app is `sdawilson/webaccess` (public). The website is this repo, `sdawilson/webaccess-site`, served at https://webaccessbuilder.com and deployed by GitHub Actions on every push to `main`.
+The app is `sdawilson/webaccess` (private; the session needs access to it). The website is this repo, `sdawilson/webaccess-site`, served at https://webaccessbuilder.com and deployed by GitHub Actions on every push to `main`.
 
 `.app-sync.json` records the last app commit the website was checked against. Simon approves every change: the check opens (or updates) a pull request and never pushes to `main` itself.
 
@@ -26,9 +26,10 @@ Compare the app's current README with what the site says, and note each thing th
 | "Still to come" | `public/index.html` | Remove what's now done; add what the README's roadmap says is next |
 | Questions | `public/index.html` | Especially "Can I open my .accdb", "Will my VBA run?", "Does it do reports?" |
 | Screen gallery captions | `public/js/site.js` (`SCREENS`) | Captions and alt text still describe the screens |
+| Layout words | everywhere | The app has a rail and a command bar, not a ribbon; menus are New, Data, Code, Tools, People, File. Don't write "ribbon", "External Data" or "Database Tools" |
 | Screenshots page | `public/screenshots/index.html` | Each card's title, note and alt text still describe its screen; a notable new screen may deserve a card |
 | Try the demo | `public/index.html` (`#demo`) | What the sample database contains and how long a demo lasts, as the app's README says |
-| Runtime, Plans | `public/index.html` (`#runtime`, `#plans`), the hero note, the FAQ | Accounts, roles, runtime mode and the error log as the app has them. While they're being built, keep the "Coming with accounts" wording; once the README says they're done, say so in the present tense and retake `runtime-orders`. Never change prices or the free limit (10 people per database) unless Simon has; `docs/brand.md` has them |
+| Runtime, Plans | `public/index.html` (`#runtime`, `#plans`), the hero note, the FAQ | Sharing, roles, runtime mode and the error log as the app has them (live since 9 Nov 2026). Paying isn't switched on: keep "what we plan to charge" until Simon says otherwise. Never change prices or the free limit (10 people per database) unless Simon has; `docs/brand.md` has them |
 
 Keep the site's voice: plain British English, "we", short sentences, no hype, nothing the app doesn't do yet. Keep the development notice and the "not for production" wording exactly as they are unless Simon has changed them.
 
