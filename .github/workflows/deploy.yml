@@ -60,7 +60,10 @@ jobs:
       - name: Build the guides
         run: |
           if [ -d app/docs ]; then
-            node tools/guides/build.mjs app/docs public/guides
+            if ! node tools/guides/build.mjs app/docs public/guides; then
+              rm -rf public/guides
+              echo "::warning::The guides didn't build from the app's docs (see above). The live guides stay as they were; the rest of the site deploys."
+            fi
           else
             echo "::warning::Couldn't fetch the guides from the app repo (is APP_REPO_TOKEN set?). The live guides stay as they were; the rest of the site deploys."
           fi
