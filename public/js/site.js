@@ -32,6 +32,7 @@ const SCREENS = [
   ['form-code', 'The module behind a form', 'The VBA module behind a form, with Form_Current and a Click event'],
   ['intellisense', 'IntelliSense as you type', 'IntelliSense listing a recordset’s members'],
   ['debugger', 'Paused at a breakpoint, with Locals', 'VBA paused at a breakpoint with the Locals window showing variables'],
+  ['help-guides', 'Help: the guides inside the app, with search', 'The Help tab, searching all three guides, with the matched words marked'],
   ['import-access', 'Importing tables from an Access database', 'The Import from Access dialog listing tables to import'],
   ['users', 'Users and their roles', 'The Users screen listing admins and users'],
   ['user-view', 'What a user sees: the same form, no design tools', 'A user’s view of a form, with no design tools in the ribbon'],

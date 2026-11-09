@@ -79,7 +79,7 @@
           <button type="button" class="nav-btn" data-go="prev" aria-label="Previous screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 3 4 8l7 5z"/></svg></button>
           <label class="visually-hidden" for="viewer-pos">Screen number</label>
           <input id="viewer-pos" class="nav-pos" type="text" inputmode="numeric" value="1" autocomplete="off">
-          <span class="nav-of">of <span id="viewer-count">22</span></span>
+          <span class="nav-of">of <span id="viewer-count">23</span></span>
           <button type="button" class="nav-btn" data-go="next" aria-label="Next screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l7 5-7 5z"/></svg></button>
           <button type="button" class="nav-btn" data-go="last" aria-label="Last screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l7 5-7 5zM12 3v10"/></svg></button>
           <a class="nav-btn nav-new" href="#request" aria-label="Start your own: request a test instance" title="New record: request a test instance"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3l7 5-7 5z"/><path class="star" d="M12.5 2.5v4M10.7 3.5l3.6 2M10.7 5.5l3.6-2"/></svg></a>
@@ -127,6 +127,7 @@
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">PivotTable and PivotChart</th><td>Back as form views, after Access 2013 took them away</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Import Objects</th><td>Access's own dialog, with a tab for each kind of object: tables and queries straight from the .accdb, forms and modules through an export module</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">VBA editor</th><td>Form events, <code>DoCmd</code>, <code>DLookup</code> and DAO recordsets, with breakpoints, F8 stepping and the Immediate window</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Help and F1</th><td>A Help button and F1 open the user guide, the programmer's guide and <em>Access compared</em> inside the app, with a search across all three. F1 goes to the section for what's in front of you</td></tr>
         </tbody>
       </table>
     </div>
@@ -142,7 +143,8 @@
       <ul class="ticks">
         <li>Full design rights: open anything in Design view, change the code, build something new</li>
         <li>No sign-up: one click gives you your own copy</li>
-        <li>Nothing is kept: your copy is deleted when you end the demo, after 30 minutes idle, or after 2 hours</li>
+        <li>Your copy isn't kept: it's deleted when you end the demo, after 30 minutes idle, after 2 hours, or when the server restarts</li>
+          <li>A Feedback button at the top of every screen sends us a note and a screenshot. Feedback is the one thing we keep</li>
       </ul>
       <p class="demo-cta" data-demo hidden><a class="btn btn-primary" data-demo-link href="#" rel="noopener" target="_blank">Open the demo</a></p>
       <p class="demo-soon" data-demo-fallback>The public demo opens here shortly. In the meantime, <a href="#request">request a test instance</a>.</p>
@@ -201,7 +203,8 @@
         <li>Single, Continuous and Datasheet views, with subforms nested three deep</li>
         <li>Text boxes, multi-column combo and list boxes, option groups, tab controls, buttons, images and hyperlinks</li>
         <li>TreeView, ListView and ImageList, the controls Access applications use for trees and lists</li>
-        <li>Access's modern Chart control: column, bar, line, area, combo, pie, doughnut, scatter and bubble, from a table, a query or code</li>
+        <li>Access's modern Chart control: column, bar, line, area, combo, pie, doughnut, scatter and bubble, from a table, a query or code, and able to follow the main form's record as a subform does</li>
+          <li>Datasheet formatting kept with the form: font, colours, gridlines, frozen columns and row height, for its Datasheet view and datasheet subforms</li>
         <li>Calculated controls such as <code>=[LengthM]*[WidthM]</code> and <code>=Sum([Estimate])</code></li>
         <li>Access's properties and events: tab order, input masks, validation, NotInList, and mouse and key events</li>
         <li>Pop-up and modal forms, anchoring, and forms that hide the ribbon to run your application</li>
@@ -285,7 +288,8 @@
       <ul class="ticks">
         <li>Form and control events, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code> and <code>InputBox</code></li>
         <li><code>DLookup</code>, <code>DCount</code> and DAO recordsets: <code>Edit</code>, <code>AddNew</code>, <code>Update</code>, <code>FindFirst</code></li>
-        <li>Compile errors as VBA shows them: “Compile error: Expected: Then or GoTo”</li>
+        <li>More of <code>DoCmd</code>: <code>FindRecord</code>, <code>SearchForRecord</code>, <code>SetFilter</code>, and <code>OutputTo</code> and <code>TransferSpreadsheet</code> to export as a download; and the <code>Screen</code> and <code>Application</code> objects</li>
+          <li>Compile errors as VBA shows them: “Compile error: Expected: Then or GoTo”</li>
         <li>Explain Error and Fix Error: AI says what went wrong and offers a fix you can apply</li>
         <li>References for statistics, UK bank holidays and British National Grid coordinates</li>
       </ul>
@@ -541,7 +545,7 @@
       </details>
       <details>
         <summary>Is there a demo?</summary>
-        <p>Yes: <a href="https://demo.webaccessbuilder.com" rel="noopener" target="_blank">demo.webaccessbuilder.com</a>. Click Try the demo for your own copy of the Fieldfare Traders sample database, with full design rights. There's no sign-up, and nothing is kept: your copy is deleted when you end the demo, after 30 minutes without use, or after 2 hours.</p>
+        <p>Yes: <a href="https://demo.webaccessbuilder.com" rel="noopener" target="_blank">demo.webaccessbuilder.com</a>. Click Try the demo for your own copy of the Fieldfare Traders sample database, with full design rights. There's no sign-up, and your copy isn't kept: it's deleted when you end the demo, after 30 minutes without use, after 2 hours, or when the server restarts. Anything you send with the Feedback button is kept, so we can read it.</p>
       </details>
       <details>
         <summary>Is this Microsoft Access?</summary>
