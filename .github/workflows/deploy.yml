@@ -1,6 +1,6 @@
 # Deploys the site to Bunny on every push to main, once a day (to pick up changes to the
 # guides), and when run by hand:
-#   0. builds the Guides pages from the app repo's docs/ (sdawilson/webaccess, public)
+#   0. builds the Guides pages from the app repo's docs/ (sdawilson/webaccess, private)
 #   1. uploads public/ to the storage zone under site/
 #   2. deploys edge/script.ts to the edge script
 #   3. purges the edge script's pull zone so the new files show straight away
@@ -14,6 +14,9 @@
 #   SCRIPT_ID      edge script ID          } Edge Script > Deployments > Settings
 #   DEPLOY_KEY     edge script deploy key  }
 #   BUNNY_API_KEY  account API key, for purging the cache
+#   APP_REPO_TOKEN a fine-grained token for sdawilson/webaccess with Contents: Read-only,
+#                  to fetch the guides now that the app repo is private. Without it the job
+#                  stops at that step and the live site stays as it was.
 #
 # Until STORAGE_ZONE is set the job is skipped, so pushes before setup don't fail.
 
@@ -41,6 +44,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: sdawilson/webaccess
+          token: ${{ secrets.APP_REPO_TOKEN }}
           path: app
           sparse-checkout: docs
 
