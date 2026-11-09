@@ -58,10 +58,11 @@ Mark, for the green title bar:
 
 ## Plans and the runtime, as the site states them
 
-Decided by Simon on 9 November 2026, from the accounts, runtime and licensing proposal. The site leads with Access's original promise: **simple to build, free to hand out** (the hero says "Build it like Access. Hand it out free.").
+Decided by Simon on 9 November 2026, from the accounts, runtime and licensing proposal. The site leads with Access's original promise: **simple to build, free to hand out** (the hero says "Build it like Access. Hand it out free."; the runtime section, "Simple to build. Free to distribute.").
 
 - Admins, the people who design, are paid seats: **£15 a month or £99 a year** each.
 - The runtime is free for **up to 10 people per database** (Users and Guests together) while the database runs on SQLite. The proposal said 5; Simon changed it to 10.
+- Users' and Guests' free access lasts while the account's Admin subscription is active. The site says "Their access stays free for as long as your subscription is active."
 - More than 10 people on a database: "talk to us" (a hosted SQL database at a fee that covers its hosting).
 - Databases are hosted in London. Customers are anyone, not only councils.
 - Until accounts open, the site says these are planned prices and that testing is free; the runtime section is labelled "Coming with accounts". When the app ships accounts, sharing and runtime mode, change that wording to the present tense and retake `runtime-orders` from the real runtime.
