@@ -4,7 +4,7 @@
 // ---------- settings ----------
 // To show the "Watch it in use" section, set these to a Bunny Stream library ID and video ID.
 const STREAM_LIBRARY_ID = '803383';
-const STREAM_VIDEO_ID = '38da4a3b-0be8-4681-8ae2-d9f2c5a57dc5'; // the 100-second narrated demo
+const STREAM_VIDEO_ID = '00788605-e180-400b-bb28-7eeb615d5dd3'; // the narrated demo (v2, new layout, 1:45)
 // The demo: set this to the demo instance's address (e.g. 'https://demo.webaccessbuilder.com')
 // to show the "Open the demo" buttons; until then the page offers a test instance instead.
 const DEMO_URL = 'https://demo.webaccessbuilder.com';
