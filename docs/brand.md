@@ -77,3 +77,11 @@ The site publishes the app's guides at `/guides/`, built at each deploy from `do
 - Links between the guides (`user-guide.md#roles`) become site links automatically; keep using GitHub-style heading anchors.
 - The site leaves out `docs/README.md`, `docs/CHANGELOG.md`, any link to GitHub, and any paragraph about the repo's workflows. Keep the guides about the product, not the repo.
 - The site rebuilds daily at 05:17 UTC, so guide changes appear within a day (or at once if the site's deploy is run by hand).
+
+## Mentioning Microsoft Access (10 Nov 2026)
+
+Simon is reducing references to Access, in the app and on the site, to avoid legal trouble. On the site:
+
+- Compare with Access; never say or imply the product is Access, or that a feature is "Access's own". Write "like Access's", "the ones Access uses", "you know from Access".
+- No "Access" in the headline, page title or social title (other than in the product's name). Say "Microsoft Access" at the first mention in a section.
+- Keep the trademark line in the footer and the "Is this Microsoft Access?" question.
