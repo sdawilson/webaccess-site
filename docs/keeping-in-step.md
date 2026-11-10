@@ -27,6 +27,7 @@ Compare the app's current README with what the site says, and note each thing th
 | Questions | `public/index.html` | Especially "Can I open my .accdb", "Will my VBA run?", "Does it do reports?" |
 | Screen gallery captions | `public/js/site.js` (`SCREENS`) | Captions and alt text still describe the screens |
 | Layout words | everywhere | The app has a rail and a command bar, not a ribbon; menus are New, Data, Code, Tools, People, File. Don't write "ribbon", "External Data" or "Database Tools" |
+| Screenshot crops | `tools/screenshots/imgs.mjs` | Document crops start at the Navigation Pane's right edge (x 304). If the rail or pane changes width, move them, or the pane's "+" buttons show down the left of every picture |
 | Screenshots page | `public/screenshots/index.html` | Each card's title, note and alt text still describe its screen; a notable new screen may deserve a card |
 | Try the demo | `public/index.html` (`#demo`) | What the sample database contains and how long a demo lasts, as the app's README says |
 | Runtime, Plans | `public/index.html` (`#runtime`, `#plans`), the hero note, the FAQ | Sharing, roles, runtime mode and the error log as the app has them (live since 9 Nov 2026). Paying isn't switched on: keep "what we plan to charge" until Simon says otherwise. Never change prices or the free limit (10 people per database) unless Simon has; `docs/brand.md` has them |
@@ -38,7 +39,7 @@ Keep the site's voice: plain British English, "we", short sentences, no hype, no
 If the new commits touched the app's `public/` folder (its browser code), retake the screenshots so they match:
 
 1. Clone the app next to this repo, `npm install`, and start it with a throwaway admin on port 3100 (see `tools/screenshots/README.md`; use a fresh `DATA_DIR`).
-2. In `tools/screenshots/`: make sure `playwright` and `sharp` can be imported (`npm i playwright sharp` if not), then run `seed.mjs`, `seed2.mjs`, `seed3.mjs`, `seed4.mjs`, `seed5.mjs` and `users.mjs` with `SEED_PW`.
+2. In `tools/screenshots/`: make sure `playwright` and `sharp` can be imported (`npm i playwright sharp` if not), then run `seed.mjs`, `seed2.mjs`, `seed3.mjs`, `seed4.mjs`, `seed5.mjs`, `seed6.mjs` and `users.mjs` with `SEED_PW`.
 3. For the demo's screens, start a second copy of the app with `DEMO_MODE=true` on port 3200 (its own fresh `DATA_DIR`; it builds the Fieldfare Traders sample itself). Then run `WEBACCESS_DIR=<app clone> DEMO_URL=http://localhost:3200 ./capture.sh`. Without the demo copy, the demo screenshots already published are kept.
 4. Look at every new image. If a step no longer finds what it clicks (a renamed button, say), fix that step's JSON in `tools/screenshots/steps/` and retake. Don't commit a screenshot that shows an error, a half-loaded screen or the wrong thing.
 5. If a notable new feature has a screen of its own, consider adding a shot: a step file, an entry in `capture.sh` and `imgs.mjs`, a caption in `SCREENS`, and possibly a view tab in the matching section.

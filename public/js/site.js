@@ -19,6 +19,7 @@ const SCREENS = [
   ['form-design', 'Form Design view: controls on the command bar, field list and property sheet', 'Form Design view with the controls gallery, field list and property sheet'],
   ['datasheet', 'A table in Datasheet view', 'A table of highway schemes in Datasheet view'],
   ['table-design', 'Table Design view with Access field types', 'Table Design view listing each field and its data type'],
+  ['relationships', 'The Relationships window, with referential integrity', 'The Relationships window on the sample database, with lines between related tables and the relationships listed underneath'],
   ['query-criteria', 'Query criteria in Access syntax, with an Or row', 'Query Design grid with criteria on Status and StartDate'],
   ['query-totals', 'A totals query joining two tables', 'Query Design with two joined tables and Group By, Count, Sum and Max'],
   ['sql-view', 'SQL view, in Access SQL', 'SQL view of a query in Access SQL'],
@@ -32,6 +33,7 @@ const SCREENS = [
   ['form-code', 'The module behind a form', 'The VBA module behind a form, with Form_Current and a Click event'],
   ['intellisense', 'IntelliSense as you type', 'IntelliSense listing a recordset’s members'],
   ['debugger', 'Paused at a breakpoint, with Locals', 'VBA paused at a breakpoint with the Locals window showing variables'],
+  ['macro-design', 'Macro Design: actions, If blocks and comments', 'Macro Design showing a comment, an If block with two actions, and an Else with a MessageBox'],
   ['help-guides', 'Help: the guides inside the app, with search', 'The Help tab, searching all three guides, with the matched words marked'],
   ['import-access', 'Importing tables from an Access database', 'The Import from Access dialog listing tables to import'],
   ['users', 'Users and their roles', 'The Users screen listing the account’s people and their roles'],
@@ -136,8 +138,8 @@ document.querySelectorAll('[data-views]').forEach((fig) => {
       t.tabIndex = on ? 0 : -1;
     });
     const name = tab.dataset.img;
-    const w = Number(tab.dataset.w || 1200);
-    const h = Number(tab.dataset.h || 720);
+    const w = Number(tab.dataset.w || 1136);
+    const h = Number(tab.dataset.h || 682);
     img.classList.add('loading');
     img.onload = () => img.classList.remove('loading');
     img.width = w;

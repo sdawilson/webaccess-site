@@ -22,6 +22,7 @@ for (const s of steps) {
     if (s.rclick) await page.locator(s.rclick).first().click({ button: 'right', timeout: 4000 });
     if (s.text) await page.getByText(s.text, { exact: !!s.exact }).first().click({ timeout: 4000 });
     if (s.dbltext) await page.getByText(s.dbltext, { exact: true }).first().dblclick({ timeout: 4000 });
+    if (s.righttext) await page.getByText(s.righttext, { exact: true }).first().click({ button: 'right', timeout: 4000 });
     if (s.type) await page.keyboard.type(s.type, { delay: 20 });
     if (s.press) await page.keyboard.press(s.press);
     if (s.mouse) await page.mouse.click(s.mouse[0], s.mouse[1]);

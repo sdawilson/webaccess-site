@@ -19,6 +19,7 @@ The site's screenshots come from a local copy of webaccess with a small sample d
    SEED_PW='Shot-Capture-2026!' node seed3.mjs   # a grouped report
    SEED_PW='Shot-Capture-2026!' node seed4.mjs   # calculated fields, a chart dashboard
    SEED_PW='Shot-Capture-2026!' node seed5.mjs   # a TreeView and ListView form
+   SEED_PW='Shot-Capture-2026!' node seed6.mjs   # a macro, for the Macro Design shot
    SEED_PW='Shot-Capture-2026!' node users.mjs   # a few admins and users
    WEBACCESS_DIR=../../../webaccess DEMO_URL=http://localhost:3200 ./capture.sh
    ```

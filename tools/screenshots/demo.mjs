@@ -15,4 +15,8 @@ await p.screenshot({ path: `${out}/demo-dashboard.png` });
 await p.getByText('Main Menu', { exact: true }).first().click(); await p.waitForTimeout(800);
 await p.locator('button.fv-button', { hasText: /^Orders$/ }).click(); await p.waitForTimeout(3000);
 await p.screenshot({ path: `${out}/demo-orders.png` });
+// The Relationships window, on the sample's tables.
+await p.locator('button.rail-btn', { hasText: /^Tools$/ }).click(); await p.waitForTimeout(500);
+await p.locator('[role=menuitem]', { hasText: /^Relationships/ }).first().click(); await p.waitForTimeout(2500);
+await p.screenshot({ path: `${out}/relationships.png` });
 await b.close();
