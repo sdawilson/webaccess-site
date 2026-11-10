@@ -136,8 +136,8 @@ document.querySelectorAll('[data-views]').forEach((fig) => {
       t.tabIndex = on ? 0 : -1;
     });
     const name = tab.dataset.img;
-    const w = Number(tab.dataset.w || 1200);
-    const h = Number(tab.dataset.h || 720);
+    const w = Number(tab.dataset.w || 1136);
+    const h = Number(tab.dataset.h || 682);
     img.classList.add('loading');
     img.onload = () => img.classList.remove('loading');
     img.width = w;
