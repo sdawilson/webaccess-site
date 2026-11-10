@@ -85,3 +85,4 @@ Simon is reducing references to Access, in the app and on the site, to avoid leg
 - Compare with Access; never say or imply the product is Access, or that a feature is "Access's own". Write "like Access's", "the ones Access uses", "you know from Access".
 - No "Access" in the headline, page title or social title (other than in the product's name). Say "Microsoft Access" at the first mention in a section.
 - Keep the trademark line in the footer and the "Is this Microsoft Access?" question.
+- Tree View, List View, Image List and Progress Bar are the app's own controls (since 10 Nov 2026). Never call them ActiveX controls or Microsoft's; say they work like the Windows Common Controls, so code written for those runs.

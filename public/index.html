@@ -169,17 +169,18 @@
           <tr><th class="sel" aria-hidden="true"></th><th scope="col">In Access</th><th scope="col">In Web Access Builder</th></tr>
         </thead>
         <tbody>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Navigation Pane</th><td>The same pane down the left: Tables, Queries, Forms, Reports and Modules, with a search box</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Navigation Pane</th><td>The same pane down the left: Tables, Queries, Forms, Reports and Modules, with a search box, and Rename on the right-click menu or F2</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Table Design view</th><td>AutoNumber, Short Text, Long Text, Number, Currency, Date/Time, Yes/No and Calculated, with Format, Input Mask, Validation Rule, indexes, captions and defaults such as <code>Date()</code></td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Query Design grid</th><td>Drag to join, Σ Totals, Sort, Show and Criteria rows. <code>Between #01/01/2026# And #31/03/2026#</code> works as you'd type it</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">SQL view</th><td>Access SQL, including <code>IIf</code>, <code>Nz</code>, <code>DateAdd</code> and <code>&amp;</code>. Dates between # signs read as Access reads them: month/day/year in SQL, your regional order in the design grid</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Action queries</th><td>Make Table, Append, Update and Delete, with the same “You are about to update 3 row(s)” warnings</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Forms</th><td>Single, Continuous and Datasheet views; subforms, tab controls, combo boxes, option groups, the modern Chart control, and the TreeView and ListView; the properties and events Access has</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Crosstab and union queries</th><td>Row Heading, Column Heading and Value in the grid, with fixed column headings; <code>TRANSFORM … PIVOT</code> and <code>UNION</code> in SQL view</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Forms</th><td>Single, Continuous and Datasheet views; subforms, tab controls, combo boxes, option groups, the modern Chart control, and built-in TreeView, ListView and ProgressBar controls; the properties and events Access has</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Regional settings</th><td>Dates, numbers and money as each database chooses, from 13 regions, as Windows' Region settings do for Access</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Conditional formatting</th><td>A Rules Manager like Access 2010's, data bars included</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Reports</th><td>Report and Page Headers, group headers and footers, the Group, Sort, and Total pane, and Print Preview</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Reports</th><td>Report and Page Headers, group headers and footers, the Group, Sort, and Total pane, subreports, Can Grow and Can Shrink, a module behind each report, and Print Preview</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">PivotTable and PivotChart</th><td>Back as form views, after Access 2013 took them away</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Import Objects</th><td>A dialog laid out like the one in Access, with a tab for each kind of object: tables and queries straight from the .accdb, forms and modules through an export module</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Import Objects</th><td>A dialog laid out like the one in Access, with a tab for each kind of object: tables and queries straight from the .accdb; forms, reports and modules through an export module</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">VBA editor</th><td>Form events, <code>DoCmd</code>, <code>DLookup</code> and DAO recordsets, with breakpoints, F8 stepping and the Immediate window</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Help and F1</th><td>A Help button and F1 open the user guide, the programmer's guide and <em>Access compared</em> inside the app, with a search across all three. F1 goes to the section for what's in front of you</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Tabbed Documents and Overlapping Windows</th><td>Both, chosen in Options as in Access, with Size to Fit Form, tile and cascade</td></tr>
@@ -230,7 +231,10 @@
         <li>Calculated fields such as <code>[LengthM]*[WidthM]</code>, and a Format for every field</li>
         <li>Validation rules and input masks, for each field and the whole table, kept by the database itself</li>
         <li>Join by dragging between field lists; click a join line to make it an outer join</li>
-        <li>Parameters in <code>[brackets]</code> are asked for when the query runs</li>
+        <li>Parameters in <code>[brackets]</code> are asked for when the query runs, or declared with a data type in Query Parameters</li>
+        <li>Change, add and delete records through a query, in its datasheet or a form on it, when each row is one record of the tables behind it</li>
+        <li>Crosstab queries in the grid, and union queries in SQL view</li>
+        <li>SQL you've written, or imported, turns back into the design grid whenever the grid can say the same thing</li>
         <li>Import tables and queries from .accdb and .mdb, and data from Excel and CSV; export to Excel and CSV</li>
       </ul>
     </div>
@@ -258,7 +262,7 @@
       <ul class="ticks">
         <li>Single, Continuous and Datasheet views, with subforms nested three deep</li>
         <li>Text boxes, multi-column combo and list boxes, option groups, tab controls, buttons, images and hyperlinks</li>
-        <li>TreeView, ListView and ImageList, the controls Access applications use for trees and lists</li>
+        <li>Tree View, List View, Image List and Progress Bar, built in and in the Controls gallery like any other control. They work the way the Windows Common Controls do in Access, so code written for those runs</li>
         <li>A Chart control modelled on Access's modern one: column, bar, line, area, combo, pie, doughnut, scatter and bubble, from a table, a query or code, and able to follow the main form's record as a subform does</li>
           <li>Datasheet formatting kept with the form: font, colours, gridlines, frozen columns and row height, for its Datasheet view and datasheet subforms</li>
         <li>Calculated controls such as <code>=[LengthM]*[WidthM]</code> and <code>=Sum([Estimate])</code></li>
@@ -292,8 +296,10 @@
         <li>Report Header and Footer, Page Header and Footer, and a header and footer for each group</li>
         <li>Group by value, first letters, ranges, or dates by week, month, quarter or year</li>
         <li>Sum, Average, Count, Max and Min in every group footer, plus Running Sum and Hide Duplicates</li>
+        <li>Subreports linked by master and child fields, and Can Grow and Can Shrink on text boxes and sections</li>
+        <li>A module behind each report: Open, No Data, Page, and each section's Format and Print events</li>
         <li>A4, A3, A5, Letter or Legal, portrait or landscape; print, or save as PDF</li>
-        <li><code>DoCmd.OpenReport</code> from code, filtered to the records you choose</li>
+        <li><code>DoCmd.OpenReport</code> from code, filtered to the records you choose, and reports imported from Access</li>
       </ul>
     </div>
     <figure class="shot" data-views>
@@ -422,7 +428,7 @@
     </div>
     <ol class="steps">
       <li><h3>Import tables and queries</h3><p>Open your .accdb or .mdb in Import Objects. Tables keep their fields, data types, calculated fields and AutoNumber values; queries are rebuilt from the database's own design.</p></li>
-      <li><h3>Bring in forms and code</h3><p>Run our export module once in Access. It writes your forms and modules out to a folder and changes nothing. Import the folder, and each form comes with its layout and its code. Reports are rebuilt by hand for now.</p></li>
+      <li><h3>Bring in forms, reports and code</h3><p>Run our export module once in Access. It writes your forms, reports and modules out to a folder and changes nothing. Import the folder, and each form and report comes with its layout and its code, with a list of anything that couldn't come across.</p></li>
       <li><h3>Check the code</h3><p>Compile shows what needs changing, such as file access or a <code>Declare</code> that a web page can't do. The References your code uses are ticked for you.</p></li>
       <li><h3>Share it</h3><p>Invite people by email from File &gt; Share, as a User or a Guest. They open your database from the link, in the runtime, and up to 10 per database are free.</p></li>
     </ol>
@@ -497,9 +503,8 @@
     <h2 id="roadmap-title">Still to come</h2>
     <ul>
       <li><strong>Paying online</strong>, when testing is over</li>
-      <li><strong>Reports from Access:</strong> importing them, as forms are now</li>
-      <li><strong>Subreports</strong>, Can Grow and Can Shrink, and report events in code</li>
-      <li><strong>Union and crosstab queries</strong></li>
+      <li><strong>Macros from Access:</strong> importing them</li>
+      <li><strong>Reports as PDF files</strong> made on the server, and reports in columns</li>
       <li><strong>Hosted SQL databases</strong> for more than 10 people</li>
       <li><strong>Connections to your own SQL Server</strong>, as linked tables</li>
       <li><strong>Desktop version</strong> on all platforms: Windows, Mac and Linux</li>
@@ -662,7 +667,7 @@
       </details>
       <details>
         <summary>Can I open my .accdb file in it?</summary>
-        <p>Mostly. Import Objects brings in tables, with their calculated fields and AutoNumber values, and queries, straight from the file. Forms and modules come through a small export module you run once in Access; it saves them with Access's own SaveAsText and changes nothing. Reports are next; until then they're rebuilt in the report designer, which works like Access's.</p>
+        <p>Mostly. Import Objects brings in tables, with their calculated fields and AutoNumber values, and queries, straight from the file. Forms, reports and modules come through a small export module you run once in Access; it saves them with Access's own SaveAsText and changes nothing. Macros are next.</p>
       </details>
       <details>
         <summary>Will my VBA run?</summary>
@@ -670,7 +675,7 @@
       </details>
       <details>
         <summary>Does it do reports?</summary>
-        <p>Yes: grouping, totals, page numbers and Print Preview with page size, margins and orientation. Print them, or save them as PDF from the print dialog, and open them from code with <code>DoCmd.OpenReport</code>. Subreports and report events are next.</p>
+        <p>Yes: grouping, totals, page numbers and Print Preview with page size, margins and orientation. Subreports, Can Grow and Can Shrink, and a module behind each report with its events. Print them, or save them as PDF from the print dialog, and open them from code with <code>DoCmd.OpenReport</code>. Reports come across from Access with the export module.</p>
       </details>
       <details>
         <summary>Where is our data kept?</summary>
