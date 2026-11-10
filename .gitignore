@@ -2,3 +2,5 @@ node_modules/
 dev.log
 tools/screenshots/shots/
 public/guides/
+tools/video/node_modules
+tools/video/take*/
