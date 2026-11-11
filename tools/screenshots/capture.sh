@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Re-takes every screenshot from a local webaccess seeded with the sample highways database.
+# Re-takes every screenshot from a local webaccess (the seeded sample on 3100, the demo sample on 3200).
 # See README.md in this folder. Needs Node 22 and Playwright (npm i playwright sharp).
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -21,6 +21,7 @@ cp shots/user-view.png shots/runtime-view.png   # the same window, uncropped, fo
 # The demo's screens, from a second copy of the app in demo mode (skipped if it isn't running)
 if curl -sf "${DEMO_URL:-http://localhost:3200}/api/demo/info" | grep -q '"enabled":true'; then
   OUT=shots node demo.mjs
+  OUT=shots node sheet.mjs   # the Spreadsheet control, on the same sample
 else
   echo "No demo instance at ${DEMO_URL:-http://localhost:3200}: keeping the demo screenshots already in public/img/"
 fi

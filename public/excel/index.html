@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coming from Excel · Web Access Builder</title>
+<meta name="description" content="If your team runs on a shared workbook: what carries over to Web Access Builder, what is different, and how to start from a spreadsheet.">
+<meta property="og:title" content="Coming from Excel · Web Access Builder">
+<meta property="og:description" content="If your team runs on a shared workbook: what carries over to Web Access Builder, what is different, and how to start from a spreadsheet.">
+<meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
+<meta property="og:url" content="https://webaccessbuilder.com/excel/">
+<link rel="canonical" href="https://webaccessbuilder.com/excel/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f4e3d">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/img/brand/logo-mark-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/img/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="titlebar">
+  <div class="titlebar-inner">
+    <a class="wordmark" href="/"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="256" height="26"></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="/screenshots/">Screens</a></li>
+        <li><a href="/#sheets">Spreadsheets</a></li>
+        <li><a href="/#data">Features</a></li>
+        <li><a href="/#runtime">Runtime</a></li>
+        <li><a href="/#plans">Plans</a></li>
+        <li><a href="/excel/" aria-current="page">From Excel</a></li>
+        <li><a href="/access/">From Access</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/#faq">Questions</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-light" href="/#demo">Try it</a>
+  </div>
+</header>
+<div class="devnotice" role="note">
+  <div class="wrap devnotice-inner">
+    <p><strong>In active development.</strong> Web Access Builder isn't yet recommended for production use. We're inviting people to test it and tell us what they find. <a href="https://demo.webaccessbuilder.com" target="_blank" rel="noopener">Try the demo</a> or <a href="/#request">request a test instance</a>.</p>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="pagehead" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 id="page-title">Coming from Excel</h1>
+    <p class="lede">If your team runs on a shared workbook, this is what you keep, what's different, and how to start. The short version: your worksheets, formulas and VBA, on a database that everyone shares.</p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="/#demo" data-demo-link>Try the demo</a>
+      <a class="btn btn-ghost" href="/#request">Request a test instance</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ Spreadsheets ============ -->
+<section class="feature" id="sheets" aria-labelledby="sheets-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="sheets-title">Worksheets on live data</h2>
+      <p>The Spreadsheet control puts a workbook on a form. Lay it out as you would in Excel, with titles, formulas and formatting, then choose the row where the records of a table or query go.</p>
+      <ul class="ticks">
+        <li>Records are inserted at the row you choose. What's above and below them stays, and a total beneath stretches as records come and go</li>
+        <li>A formula beside the first record fills down, one for every record</li>
+        <li>Change a cell and its record is saved at once. Or turn Auto Update off, and your code decides when, with <code>Data.Update</code></li>
+        <li>Allow Edits, Allow Inserts and Allow Deletes, set for each workbook</li>
+        <li>Lock the layout, so Users can change the records and nothing else</li>
+        <li>Link a workbook to the form's current record, the way a subform is linked</li>
+        <li>Import and export Excel files, with their formulas, formats and column widths</li>
+        <li>Excel's objects in VBA: <code>Workbook</code>, <code>Worksheet</code>, <code>Range</code> and <code>ListObject</code>, with <code>SheetChange</code> and <code>SheetSelectionChange</code> events</li>
+        <li>PivotTable and PivotChart views work from the same table or query</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Spreadsheet screens">
+        <button role="tab" type="button" aria-selected="true" data-img="spreadsheet" data-alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">Workbook</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-runtime" data-alt="The same workbook as a User sees it, in the runtime, with no design tools">As a User</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-design" data-alt="Form Design view with the Spreadsheet control selected, and its Record Source, Sheet, Insert Row, Allow Edits and Auto Update properties">Properties</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The form's module: a SheetChange event that shades a cell, and a procedure that loops through the rows and saves them with Data.Update">Code</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/spreadsheet.webp" srcset="/img/spreadsheet.webp 1136w, /img/spreadsheet@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ What carries over ============ -->
+<section class="familiar" id="familiar" aria-labelledby="familiar-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="familiar-title">What carries over</h2>
+      <p>You keep the worksheet, the formulas and the VBA. What changes is where the data lives: in a table, with rules, where everyone works on the same records.</p>
+    </div>
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Excel compared with Web Access Builder">
+      <table class="datasheet stack">
+        <thead>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">In Excel</th><th scope="col">In Web Access Builder</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Worksheets, formulas and formatting</th><td>The Spreadsheet control: a workbook on a form, with several sheets, formulas, number formats, fonts, fills, borders and frozen panes</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A table on a sheet</th><td>The records of a database table or query, inserted at the row you choose. In code it's the sheet's <code>ListObject</code></td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">PivotTables and PivotCharts</th><td>PivotTable and PivotChart views, working from the same table or query as the sheet</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row"><code>Range</code>, <code>Cells</code> and <code>Worksheets</code> in VBA</th><td>The same names, on the control: <code>Me.Sheet1.Object.Worksheets("Stock").Range("A1")</code></td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row"><code>Worksheet_Change</code></th><td><code>Sheet1_SheetChange</code> and <code>Sheet1_SheetSelectionChange</code>, each with its <code>Target As Range</code></td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">UserForms</th><td>Forms bound to your data, with combo boxes, subforms, tab controls and charts, and no code needed to load or save a record</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Data validation</th><td>Field types, validation rules and relationships, kept by the database, so they hold however the data is entered</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Protect Sheet</th><td>Lock the layout, and Users change the records and nothing else. Guests can't change anything</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Sharing the file</th><td>Share the database by email. Each person signs in, as a User or a Guest, and up to 10 are free</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Printing</th><td>Reports: grouped, totalled and paged, printed or saved as PDF</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">.xlsx files</th><td>Import and Export on every workbook, with formulas, formats and column widths</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ What's different ============ -->
+<section class="web" id="different" aria-labelledby="different-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="different-title">What's different</h2>
+      <p>It isn't Excel, and it's better to know where before you start.</p>
+    </div>
+    <div class="extras extras-wide">
+      <dl>
+        <dt>A workbook lives on a form</dt>
+        <dd>You open a form, and the workbook is a control on it, beside any buttons, combo boxes or charts you add. There isn't a file to pass round.</dd>
+        <dt>One block of records on each sheet</dt>
+        <dd>A sheet takes the records of one table or query, at one place. Use more sheets, or more workbooks, for more.</dd>
+        <dt>Pivots and charts aren't drawn on the sheet</dt>
+        <dd>They're views and controls of their own, working from the same table or query, so they always show what the sheet shows.</dd>
+        <dt>The VBA in a workbook doesn't import</dt>
+        <dd>Paste it into the form's module. Code for cells and ranges mostly runs as written; code for charts, shapes, files on your PC or other applications needs changing.</dd>
+        <dt>Some things don't come with an imported file</dt>
+        <dd>Conditional formats, data validation, filters, charts and PivotTables. The first three can be set again in the workbook here.</dd>
+        <dt>There's no macro recorder</dt>
+        <dd>Macros are built in Macro Design, from a list of actions.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Start from a workbook ============ -->
+<section class="migrate" id="migrate" aria-labelledby="migrate-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="migrate-title">Start from a workbook</h2>
+      <p>The usual route from a shared spreadsheet to something several people can rely on.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Put the data in a table</h3><p>Import the sheet that holds your rows. Each column becomes a field with a type, and you can add rules for what it will accept.</p></li>
+      <li><h3>Put a workbook on a form</h3><p>Add a Spreadsheet control, then import your workbook as its layout, or lay one out from new.</p></li>
+      <li><h3>Point it at the table</h3><p>Choose the table or query, and the row where its records go. Formulas beside the first record fill down, and totals stretch.</p></li>
+      <li><h3>Share it</h3><p>Invite people by email, as a User or a Guest. They open it from the link, in the runtime, and up to 10 per database are free.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <h2 id="faq-title">Questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Is it Excel?</summary>
+        <p>No. Web Access Builder is an independent product, and isn't made by or connected with Microsoft. Its Spreadsheet control is a workbook on a form, with several sheets, formulas and formatting, and it reads and writes Excel files. It doesn't do everything Excel does. <a href="/excel/">Coming from Excel</a> says what carries over and what doesn't.</p>
+      </details>
+      <details>
+        <summary>Can I open my Excel workbook in it?</summary>
+        <p>Yes, as a starting point. Importing a workbook brings in its values, formulas, number formats, fonts, fills, borders, column widths, merged cells and frozen panes. Conditional formats, data validation, filters, charts and PivotTables don't come with the file: set them up again here. The data itself is better moved into a table, which also imports from Excel.</p>
+      </details>
+      <details>
+        <summary>Do my Excel macros run?</summary>
+        <p>The language does, but the code doesn't import with the workbook. VBA written for Excel's <code>Workbook</code>, <code>Worksheet</code> and <code>Range</code> objects runs against a Spreadsheet control once you paste it into the form's module, with change events. It isn't the whole of Excel's object model, so expect to adjust code that uses charts, shapes, files on your PC or other applications.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
+    <p>© 2026 Simon Wilson. Microsoft Access and Microsoft Excel are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
+  </div>
+</footer>
+
+<script src="/js/site.js" defer></script>
+<script src="/js/admin-link.js" defer></script>
+</body>
+</html>

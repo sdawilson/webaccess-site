@@ -26,10 +26,12 @@
     <nav aria-label="Main">
       <ul>
         <li><a href="/screenshots/" aria-current="page">Screens</a></li>
-        <li><a href="/#tour">Video</a></li>
+        <li><a href="/#sheets">Spreadsheets</a></li>
         <li><a href="/#data">Features</a></li>
         <li><a href="/#runtime">Runtime</a></li>
         <li><a href="/#plans">Plans</a></li>
+        <li><a href="/excel/">From Excel</a></li>
+        <li><a href="/access/">From Access</a></li>
         <li><a href="/guides/">Guides</a></li>
         <li><a href="/#faq">Questions</a></li>
       </ul>
@@ -50,9 +52,38 @@
       <p>Every screen here is Web Access Builder running in a browser, with a sample highways database. Click any screenshot to see it full size.</p>
     </div>
     <nav class="shotjump" aria-label="Screenshot groups">
-      <a href="#designing">Designing</a><a href="#using">Working with data</a><a href="#code">Code</a><a href="#sharing">Sharing</a><a href="#start">Getting started</a>
+      <a href="#spreadsheets">Spreadsheets</a><a href="#designing">Designing</a><a href="#using">Working with data</a><a href="#code">Code</a><a href="#sharing">Sharing</a><a href="#start">Getting started</a>
     </nav>
 
+    <section class="shotgroup" id="spreadsheets" aria-labelledby="spreadsheets-title">
+      <h2 id="spreadsheets-title">Spreadsheets</h2>
+      <div class="shotgrid">
+      <figure class="shotcard">
+        <a class="shotcard-img" href="/img/spreadsheet-full@2x.webp" data-full="/img/spreadsheet-full@2x.webp">
+          <img src="/img/spreadsheet-full.webp" srcset="/img/spreadsheet-full.webp 1440w, /img/spreadsheet-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">
+        </a>
+        <figcaption><h3>A workbook on a form</h3><p>A table's records go in at the row you choose. The title and figures above, the formulas beside and the total beneath are the workbook's own, and stay.</p></figcaption>
+      </figure>
+      <figure class="shotcard">
+        <a class="shotcard-img" href="/img/spreadsheet-runtime-full@2x.webp" data-full="/img/spreadsheet-runtime-full@2x.webp">
+          <img src="/img/spreadsheet-runtime-full.webp" srcset="/img/spreadsheet-runtime-full.webp 1440w, /img/spreadsheet-runtime-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="The stock workbook filling a User's window, with no rail, command bar or Navigation Pane">
+        </a>
+        <figcaption><h3>The same workbook, for a User</h3><p>In the runtime. Change a price or a stock level and the product is saved at once, for everyone.</p></figcaption>
+      </figure>
+      <figure class="shotcard">
+        <a class="shotcard-img" href="/img/spreadsheet-design-full@2x.webp" data-full="/img/spreadsheet-design-full@2x.webp">
+          <img src="/img/spreadsheet-design-full.webp" srcset="/img/spreadsheet-design-full.webp 1440w, /img/spreadsheet-design-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="Form Design view with the Spreadsheet control selected, and its Record Source, Sheet, Insert Row, Allow Edits and Auto Update properties">
+        </a>
+        <figcaption><h3>The control's properties</h3><p>Record Source, the sheet and row for the records, and what people may change: Allow Edits, Allow Inserts, Allow Deletes and Auto Update.</p></figcaption>
+      </figure>
+      <figure class="shotcard">
+        <a class="shotcard-img" href="/img/spreadsheet-code-full@2x.webp" data-full="/img/spreadsheet-code-full@2x.webp">
+          <img src="/img/spreadsheet-code-full.webp" srcset="/img/spreadsheet-code-full.webp 1440w, /img/spreadsheet-code-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="The form's module: a SheetChange event that shades a cell, and a procedure that loops through the rows and saves them with Data.Update">
+        </a>
+        <figcaption><h3>Worksheet code</h3><p>Excel's objects in VBA: Worksheet, Range and ListObject, with a change event. Data.Update writes changed rows to the table.</p></figcaption>
+      </figure>
+      </div>
+    </section>
     <section class="shotgroup" id="designing" aria-labelledby="designing-title">
       <h2 id="designing-title">Designing</h2>
       <div class="shotgrid">
@@ -210,8 +241,8 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
-    <p>© 2026 Simon Wilson. Microsoft Access is a trademark of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p class="footer-links"><a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
+    <p>© 2026 Simon Wilson. Microsoft Access and Microsoft Excel are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
   </div>
 </footer>
 <script src="/js/shots.js" defer></script>

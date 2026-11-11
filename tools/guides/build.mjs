@@ -143,9 +143,12 @@ const head = (title, description, canonical) => `<!doctype html>
     <nav aria-label="Main">
       <ul>
         <li><a href="/screenshots/">Screens</a></li>
+        <li><a href="/#sheets">Spreadsheets</a></li>
         <li><a href="/#data">Features</a></li>
         <li><a href="/#runtime">Runtime</a></li>
         <li><a href="/#plans">Plans</a></li>
+        <li><a href="/excel/">From Excel</a></li>
+        <li><a href="/access/">From Access</a></li>
         <li><a href="/guides/" aria-current="page">Guides</a></li>
         <li><a href="/#faq">Questions</a></li>
       </ul>
@@ -164,8 +167,8 @@ const foot = `
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
-    <p>© 2026 Simon Wilson. Microsoft Access is a trademark of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p class="footer-links"><a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
+    <p>© 2026 Simon Wilson. Microsoft Access and Microsoft Excel are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
   </div>
 </footer>
 <script src="/js/admin-link.js" defer></script>

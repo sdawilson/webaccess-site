@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Web Access Builder: build a database app, hand it out free</title>
-<meta name="description" content="Build database applications with tables, queries, forms, reports and VBA, in a web browser. Familiar if you know Microsoft Access. Then hand them out: up to 10 people use each database free, in the runtime.">
-<meta property="og:title" content="Web Access Builder: build a database app, hand it out free">
-<meta property="og:description" content="Tables, queries, forms, reports and VBA in a browser, familiar to anyone who knows Microsoft Access. Share each database free with up to 10 people.">
+<title>Web Access Builder: your spreadsheet, with a database behind it</title>
+<meta name="description" content="Worksheets, forms, reports and pivot charts on one shared database, in a web browser. Keep your formulas; every change is saved for everyone at once. Build with no code, macros or VBA, then share it: up to 10 people use each database free.">
+<meta property="og:title" content="Web Access Builder: your spreadsheet, with a database behind it">
+<meta property="og:description" content="Worksheets, forms, reports and pivot charts on one shared database, in a browser. No code, macros or VBA. Share each database free with up to 10 people.">
 <meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
 <meta property="og:url" content="https://webaccessbuilder.com/">
 <link rel="canonical" href="https://webaccessbuilder.com/">
@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css">
-<link rel="preload" as="image" href="/img/continuous-form-full.webp" imagesrcset="/img/continuous-form-full.webp 1440w, /img/continuous-form-full@2x.webp 2880w" imagesizes="(min-width: 1240px) 1160px, 94vw">
+<link rel="preload" as="image" href="/img/spreadsheet-full.webp" imagesrcset="/img/spreadsheet-full.webp 1440w, /img/spreadsheet-full@2x.webp 2880w" imagesizes="(min-width: 1240px) 1160px, 94vw">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -31,10 +31,12 @@
     <nav aria-label="Main">
       <ul>
         <li><a href="/screenshots/">Screens</a></li>
-        <li><a href="#tour">Video</a></li>
+        <li><a href="#sheets">Spreadsheets</a></li>
         <li><a href="#data">Features</a></li>
         <li><a href="#runtime">Runtime</a></li>
         <li><a href="#plans">Plans</a></li>
+        <li><a href="/excel/">From Excel</a></li>
+        <li><a href="/access/">From Access</a></li>
         <li><a href="/guides/">Guides</a></li>
         <li><a href="#faq">Questions</a></li>
       </ul>
@@ -53,8 +55,8 @@
 <!-- ============ Hero ============ -->
 <section class="hero" id="screens" aria-labelledby="hero-title">
   <div class="wrap">
-    <h1 id="hero-title">Build a database app.<br>Hand it out free.</h1>
-    <p class="lede">Design a database application with the tables, queries, forms, reports and VBA you know from Microsoft Access, in a web browser. Then share it: the people who use it get your forms and reports in a runtime, without the design tools, and up to 10 people use each database free.</p>
+    <h1 id="hero-title">Your spreadsheet, with a database behind it.<br>Hand it out free.</h1>
+    <p class="lede">Worksheets, forms, reports and pivot charts on one shared database, in a web browser. Keep your formulas and your layout; the records underneath are saved the moment a cell changes, for everyone at once. Build with no code, with macros, or in VBA. Then hand it out: up to 10 people use each database free.</p>
     <p class="hero-actions">
       <a class="btn btn-primary" href="#demo" data-demo-link>Try the demo</a>
       <a class="btn btn-ghost" href="#request">Request a test instance</a>
@@ -67,11 +69,11 @@
           <span class="dots"><i></i><i></i><i></i></span>
           <span class="address">yourteam.webaccessbuilder.com</span>
         </div>
-        <a class="viewer-link" id="viewer-link" href="/img/continuous-form-full@2x.webp" target="_blank" rel="noopener">
-          <img id="viewer-img" src="/img/continuous-form-full.webp"
-               srcset="/img/continuous-form-full.webp 1440w, /img/continuous-form-full@2x.webp 2880w"
+        <a class="viewer-link" id="viewer-link" href="/img/spreadsheet-full@2x.webp" target="_blank" rel="noopener">
+          <img id="viewer-img" src="/img/spreadsheet-full.webp"
+               srcset="/img/spreadsheet-full.webp 1440w, /img/spreadsheet-full@2x.webp 2880w"
                sizes="(min-width: 1240px) 1160px, 94vw" width="1440" height="900"
-               alt="A continuous form listing highway schemes, with status colours and data bars on the estimates">
+               alt="A workbook on a form: a stock list with a title, totals and formulas, and the products of a database table filling its rows">
         </a>
       </div>
       <figcaption class="navbar">
@@ -81,19 +83,18 @@
           <button type="button" class="nav-btn" data-go="prev" aria-label="Previous screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 3 4 8l7 5z"/></svg></button>
           <label class="visually-hidden" for="viewer-pos">Screen number</label>
           <input id="viewer-pos" class="nav-pos" type="text" inputmode="numeric" value="1" autocomplete="off">
-          <span class="nav-of">of <span id="viewer-count">26</span></span>
+          <span class="nav-of">of <span id="viewer-count">29</span></span>
           <button type="button" class="nav-btn" data-go="next" aria-label="Next screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l7 5-7 5z"/></svg></button>
           <button type="button" class="nav-btn" data-go="last" aria-label="Last screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l7 5-7 5zM12 3v10"/></svg></button>
           <a class="nav-btn nav-new" href="#request" aria-label="Start your own: request a test instance" title="New record: request a test instance"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3l7 5-7 5z"/><path class="star" d="M12.5 2.5v4M10.7 3.5l3.6 2M10.7 5.5l3.6-2"/></svg></a>
         </span>
-        <span class="navbar-caption" id="viewer-caption" aria-live="polite">Continuous form with conditional formatting and data bars</span>
+        <span class="navbar-caption" id="viewer-caption" aria-live="polite">A workbook on a form, with a table’s records in its rows</span>
       </figcaption>
     </figure>
     <p class="viewer-more"><a href="/screenshots/">See all the screenshots, with notes</a></p>
   </div>
 </section>
 
-<!-- ============ Familiar ============ -->
 <!-- ============ Video (shown once a Bunny Stream video is set in site.js) ============ -->
 <section class="tour" id="tour" hidden aria-labelledby="tour-title">
   <div class="wrap">
@@ -105,18 +106,76 @@
   </div>
 </section>
 
+<!-- ============ When the spreadsheet is the system ============ -->
+<section class="web" id="why-not" aria-labelledby="why-not-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="why-not-title">When the spreadsheet has become the system</h2>
+      <p>Most shared workbooks start small and end up running something that matters. A workbook has nowhere to keep rules about what goes in a cell, and no single copy that's the real one. A 2024 review of the research found errors in 94% of the spreadsheets businesses use to make decisions (<a href="https://phys.org/news/2024-08-business-spreadsheets-critical-errors.html" rel="noopener" target="_blank">reported by Phys.org</a>).</p>
+    </div>
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="A shared workbook compared with Web Access Builder">
+      <table class="datasheet datasheet-dark stack">
+        <thead>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">With a shared workbook</th><th scope="col">With Web Access Builder</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sel" aria-hidden="true"></td><td>Copies emailed round, and nobody sure which is current</td><td>One database. Everyone opens the same records from a link</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>A file on a shared drive, locked by whoever opened it first</td><td>Many people at once. A changed cell saves its own record straight away</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Anything can be typed into any cell</td><td>Field types, validation rules and relationships, kept by the database under the sheet</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>A formula or a column overwritten by accident</td><td>Lock the layout: Users change the records, not your formulas or formatting</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Everyone who can open the file can change everything in it</td><td>Admins design, Users work with the data, and Guests only read it</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>VBA macros that don't run in Excel for the web</td><td>VBA that runs in the browser, with worksheet change events</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Another file for the form, the report and the chart</td><td>Forms, printed reports, PivotTables and PivotCharts on the same data</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>A licence for everyone who needs to type a number in</td><td>Pay for the people who build. Up to 10 people use each database free</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Spreadsheets ============ -->
+<section class="feature" id="sheets" aria-labelledby="sheets-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="sheets-title">Worksheets on live data</h2>
+      <p>The Spreadsheet control puts a workbook on a form. Lay it out as you would in Excel, with titles, formulas and formatting, then choose the row where the records of a table or query go.</p>
+      <ul class="ticks">
+        <li>Records are inserted at the row you choose. What's above and below them stays, and a total beneath stretches as records come and go</li>
+        <li>A formula beside the first record fills down, one for every record</li>
+        <li>Change a cell and its record is saved at once. Or turn Auto Update off, and your code decides when, with <code>Data.Update</code></li>
+        <li>Allow Edits, Allow Inserts and Allow Deletes, set for each workbook</li>
+        <li>Lock the layout, so Users can change the records and nothing else</li>
+        <li>Link a workbook to the form's current record, the way a subform is linked</li>
+        <li>Import and export Excel files, with their formulas, formats and column widths</li>
+        <li>Excel's objects in VBA: <code>Workbook</code>, <code>Worksheet</code>, <code>Range</code> and <code>ListObject</code>, with <code>SheetChange</code> and <code>SheetSelectionChange</code> events</li>
+        <li>PivotTable and PivotChart views work from the same table or query</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Spreadsheet screens">
+        <button role="tab" type="button" aria-selected="true" data-img="spreadsheet" data-alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">Workbook</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-runtime" data-alt="The same workbook as a User sees it, in the runtime, with no design tools">As a User</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-design" data-alt="Form Design view with the Spreadsheet control selected, and its Record Source, Sheet, Insert Row, Allow Edits and Auto Update properties">Properties</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The form's module: a SheetChange event that shades a cell, and a procedure that loops through the rows and saves them with Data.Update">Code</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/spreadsheet.webp" srcset="/img/spreadsheet.webp 1136w, /img/spreadsheet@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">
+      </div>
+    </figure>
+  </div>
+</section>
+
 <!-- ============ Runtime: simple to build, free to hand out ============ -->
 <section class="runtime" id="runtime" aria-labelledby="runtime-title">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">New: sharing and the runtime</p>
       <h2 id="runtime-title">Simple to build. Free to distribute.</h2>
-      <p>That was always the deal with Microsoft Access. Someone who knows the work builds the database, and everyone else uses it through the free Access Runtime, without buying Access. Web Access Builder keeps that deal, on the web.</p>
+      <p>Someone who knows the work builds it. Everyone else uses it from a link, in a runtime with no design tools, without paying for anything or installing anything.</p>
     </div>
     <ol class="steps steps-3">
-      <li><h3>Build it</h3><p>Admins design the tables, queries, forms, reports and VBA. An Admin seat is the only thing you pay for.</p></li>
+      <li><h3>Build it</h3><p>Admins design the tables, worksheets, forms, reports and code. An Admin seat is the only thing you pay for.</p></li>
       <li><h3>Share it</h3><p>Invite people to a database by email: as a User, who works with the data, or a Guest, who can only read it. They open it from a link.</p></li>
-      <li><h3>They use the runtime</h3><p>No design tools, no Navigation Pane, no Design view and no code window: just your forms and reports, starting at the database's Display Form.</p></li>
+      <li><h3>They use the runtime</h3><p>No design tools, no Navigation Pane, no Design view and no code window: just your forms, worksheets and reports, starting at the form you choose.</p></li>
     </ol>
 
     <div class="runtime-grid">
@@ -128,11 +187,11 @@
       </figure>
       <div class="runtime-text">
         <h3>Free for up to 10 people</h3>
-        <p>Up to 10 people use each database free, Users and Guests together, while it runs on SQLite. There's no per-user licence, just as there wasn't with the Access Runtime. Their access stays free for as long as your subscription is active.</p>
+        <p>Up to 10 people use each database free, Users and Guests together, while it runs on SQLite. There's no per-user licence. Their access stays free for as long as your subscription is active.</p>
         <ul class="ticks">
           <li><strong>Locked down properly.</strong> Nothing in a database's code can bring the design tools back, and the server checks every request, so hiding the tools isn't the only protection.</li>
           <li><strong>Errors come back to you.</strong> If something goes wrong, the person sees a plain message and carries on, and the error is logged for the database's Admins to see when they next open it.</li>
-          <li><strong>See what they see.</strong> Preview as User opens your database in the runtime, as Access's /runtime switch does.</li>
+          <li><strong>See what they see.</strong> Preview as User opens your database in the runtime, exactly as they'll get it.</li>
           <li><strong>More than 10 people?</strong> A database can move to a hosted SQL database for more, at a fee that covers its hosting.</li>
         </ul>
       </div>
@@ -157,39 +216,47 @@
   </div>
 </section>
 
-<section class="familiar" aria-labelledby="familiar-title">
+<!-- ============ Everything in one place ============ -->
+<section class="familiar" id="all-in-one" aria-labelledby="all-in-one-title">
   <div class="wrap">
     <div class="section-head">
-      <h2 id="familiar-title">If you've built in Microsoft Access, you'll know your way round</h2>
-      <p>Web Access Builder is an independent product, built for people who know Microsoft Access. The objects, the views and the way of working are the ones you're used to. Only the ribbon has gone: its commands are on a rail and a command bar.</p>
+      <h2 id="all-in-one-title">Everything in one place</h2>
+      <p>A web application usually means a database, a server, a front end, sign-in, hosting, and someone who understands all of them. Here it's one tool, and the skills are ones you may already have: a table, a formula, a form, a little VBA.</p>
     </div>
-    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Access compared with Web Access Builder">
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="What a web application usually needs, and what Web Access Builder gives you">
       <table class="datasheet stack">
         <thead>
-          <tr><th class="sel" aria-hidden="true"></th><th scope="col">In Access</th><th scope="col">In Web Access Builder</th></tr>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">You'd usually need</th><th scope="col">In Web Access Builder</th></tr>
         </thead>
         <tbody>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Navigation Pane</th><td>The same pane down the left: Tables, Queries, Forms, Reports, Macros and Modules, with a search box, and Rename and Copy on the right-click menu</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Table Design view</th><td>AutoNumber, Short Text, Long Text, Number, Currency, Date/Time, Yes/No and Calculated, with Format, Input Mask, Validation Rule, indexes, captions and defaults such as <code>Date()</code></td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Relationships window</th><td>Tables as boxes of fields; drag a field onto another table to relate them. Enforce Referential Integrity, Cascade Update Related Fields and Cascade Delete Related Records, with errors 3200 and 3201 when a change would break a relationship</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Query Design grid</th><td>Drag to join, Σ Totals, Sort, Show and Criteria rows. <code>Between #01/01/2026# And #31/03/2026#</code> works as you'd type it</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">SQL view</th><td>Access SQL, including <code>IIf</code>, <code>Nz</code>, <code>DateAdd</code> and <code>&amp;</code>. Dates between # signs read as Access reads them: month/day/year in SQL, your regional order in the design grid</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Action queries</th><td>Make Table, Append, Update and Delete, with the same “You are about to update 3 row(s)” warnings</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Crosstab and union queries</th><td>Row Heading, Column Heading and Value in the grid, with fixed column headings; <code>TRANSFORM … PIVOT</code> and <code>UNION</code> in SQL view</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Forms</th><td>Single, Continuous and Datasheet views; subforms, tab controls, combo boxes, option groups, the modern Chart control, built-in TreeView, ListView, ProgressBar, Slider and UpDown controls, and a Web Browser Control; the properties and events Access has</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Find, Replace and Filter by Form</th><td>Ctrl+F and Ctrl+H on datasheets and forms, with Look In, Match and Search; Filter by Form with a box for each field and Or tabs</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Regional settings</th><td>Dates, numbers and money as each database chooses, from 13 regions, as Windows' Region settings do for Access</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Conditional formatting</th><td>A Rules Manager like Access 2010's, data bars included</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Reports</th><td>Report and Page Headers, group headers and footers, the Group, Sort, and Total pane, subreports, Can Grow and Can Shrink, a module behind each report, and Print Preview</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">PivotTable and PivotChart</th><td>Back as form views, after Access 2013 took them away</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Import Objects</th><td>A dialog laid out like the one in Access, with a tab for each kind of object: tables, queries and relationships straight from the .accdb; forms, reports, macros and modules through an export module</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Macros</th><td>Macro Design with If blocks, groups and submacros; AutoExec as the database opens; macros behind events; <code>DoCmd.RunMacro</code> from code</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">VBA editor</th><td>Form events, <code>DoCmd</code>, <code>DLookup</code> and DAO recordsets, with breakpoints, F8 stepping and the Immediate window</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Help and F1</th><td>A Help button and F1 open the user guide, the programmer's guide and <em>Access compared</em> inside the app, with a search across all three. F1 goes to the section for what's in front of you</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Tabbed Documents and Overlapping Windows</th><td>Both, chosen in Options as in Access, with Size to Fit Form, tile and cascade</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Access Runtime</th><td>The people you share a database with use its forms and reports with no design tools, free for up to 10 per database. <code>SysCmd(acSysCmdRuntime)</code> tells your code, as it does in Access</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A database server, and someone to run it</th><td>Tables, queries and relationships, designed on screen</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A front end, written in a web framework</th><td>Forms, with worksheets, charts and subforms, drawn in Design view</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A reporting tool</th><td>Reports with grouping, totals and Print Preview, printed or saved as PDF</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A language for each layer</th><td>No code, macros, or VBA: one language, with a debugger</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Sign-in, roles and permissions</th><td>Admins, Users and Guests, invited to each database by email</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Hosting, HTTPS and backups</th><td>A link. We host it in London and back it up every night</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A release for every change</th><td>Save a change and everyone has it the next time they open the form</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Coming from ============ -->
+<section class="paths" id="paths" aria-labelledby="paths-title">
+  <div class="wrap">
+    <h2 id="paths-title" class="visually-hidden">Where you're coming from</h2>
+    <div class="path-grid">
+      <a class="path" href="/excel/">
+        <h3>Coming from Excel</h3>
+        <p>What carries over from a workbook, what's different, and how to start from one.</p>
+        <span class="path-go" aria-hidden="true">Read more</span>
+      </a>
+      <a class="path" href="/access/">
+        <h3>Coming from Access</h3>
+        <p>What's the same, what changes on the web, and how to bring a database across.</p>
+        <span class="path-go" aria-hidden="true">Read more</span>
+      </a>
     </div>
   </div>
 </section>
@@ -228,7 +295,7 @@
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="data-title">Tables and queries</h2>
-      <p>Design tables with the field types Access uses, then query them in the grid you've always used. Criteria are written the Access way, and SQL view speaks Access SQL.</p>
+      <p>Design tables on screen, with a type, a format and rules for every field, then query them by dragging fields into a grid. If you know Microsoft Access, they're the field types and the grid you're used to, and SQL view speaks Access SQL.</p>
       <ul class="ticks">
         <li>Number sizes from Byte to Double, Currency to four places, and regional settings for dates, numbers and money</li>
         <li>Calculated fields such as <code>[LengthM]*[WidthM]</code>, and a Format for every field</li>
@@ -353,9 +420,10 @@
 <section class="feature" id="code" aria-labelledby="code-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
-      <h2 id="code-title">VBA, with the debugger you're used to</h2>
-      <p>Open the code window and it's the VBA editor: a module behind each form, standard and class modules, IntelliSense as you type, and breakpoints, stepping, Locals, Watches and the Immediate window.</p>
+      <h2 id="code-title">No code, macros, or VBA</h2>
+      <p>Forms, queries and worksheets need no code at all. Add a macro when a button should do something. Write VBA when you need more, in an editor with IntelliSense as you type, and breakpoints, stepping, Locals, Watches and the Immediate window.</p>
       <ul class="ticks">
+        <li>Excel's <code>Workbook</code>, <code>Worksheet</code> and <code>Range</code> on a Spreadsheet control, and worksheet change events</li>
         <li>Form and control events, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code> and <code>InputBox</code></li>
         <li><code>DLookup</code>, <code>DCount</code> and DAO recordsets: <code>Edit</code>, <code>AddNew</code>, <code>Update</code>, <code>FindFirst</code></li>
         <li>More of <code>DoCmd</code>: <code>FindRecord</code>, <code>SearchForRecord</code>, <code>SetFilter</code>, and <code>OutputTo</code> and <code>TransferSpreadsheet</code> to export as a download; and the <code>Screen</code> and <code>Application</code> objects</li>
@@ -369,6 +437,7 @@
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Code screens">
         <button role="tab" type="button" aria-selected="true" data-img="debugger" data-alt="Code paused at a breakpoint, with the current line highlighted and Locals listing the variables">Debugger</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The module behind a workbook form: a SheetChange event and a loop through the rows that ends with Data.Update">Worksheet code</button>
         <button role="tab" type="button" aria-selected="false" data-img="intellisense" data-alt="IntelliSense listing a recordset's members after typing rs.">IntelliSense</button>
         <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form, with Form_Current and a button's Click event">Form module</button>
         <button role="tab" type="button" aria-selected="false" data-img="macro-design" data-alt="Macro Design: a comment, an If block that opens a form and sets a TempVar, and an Else with a MessageBox">Macro</button>
@@ -376,78 +445,6 @@
       <div class="frame" role="tabpanel">
         <img src="/img/debugger.webp" srcset="/img/debugger.webp 1136w, /img/debugger@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="Code paused at a breakpoint, with the current line highlighted and Locals listing the variables">
       </div>
-    </figure>
-  </div>
-</section>
-
-<!-- ============ The web ============ -->
-<section class="web" id="web" aria-labelledby="web-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="web-title">What changes when it's on the web</h2>
-      <p>You design the same way. What's different is everything after that: getting it to people, keeping them up to date, and keeping the data safe.</p>
-    </div>
-    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Desktop Access compared with Web Access Builder">
-      <table class="datasheet datasheet-dark stack">
-        <thead>
-          <tr><th class="sel" aria-hidden="true"></th><th scope="col">With desktop Access</th><th scope="col">With Web Access Builder</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="sel" aria-hidden="true"></td><td>Install Access or the Runtime on every PC</td><td>Open a link in any modern browser, on Windows, Mac or a tablet</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Split the database, and keep the back end on a shared drive</td><td>One database on the server. There's nothing to split or copy round</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Send everyone a new front end after each change</td><td>Save a change and everyone has it next time they open the form</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>VPN or remote desktop to work from home</td><td>Sign in from anywhere over HTTPS</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Anyone with the file can open Design view</td><td>Admins design. Everyone else gets your forms and reports, without the design tools</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Buy Access for each designer, and rely on the Runtime for everyone else</td><td>Pay for the people who build. Up to 10 people use each database free</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Locked or corrupted .accdb files</td><td>SQLite on the server, backed up every night, with Back Up Database and Compact and Repair</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>The ribbon, with its tabs</td><td>A rail down the left for what you can make and do, and a command bar that follows the object in front</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="web-grid">
-      <figure class="shot shot-dark" data-views>
-        <div class="viewbar" role="tablist" aria-label="Users screens">
-          <button role="tab" type="button" aria-selected="true" data-img="user-view" data-w="1200" data-h="720" data-alt="A User's view of a form: the same form in the runtime, with no design tools">What a user sees</button>
-          <button role="tab" type="button" aria-selected="false" data-img="users" data-w="1136" data-h="398" data-alt="The Users screen listing admins and users, with their roles and last sign-in">Users and roles</button>
-        </div>
-        <div class="frame" role="tabpanel">
-          <img src="/img/user-view.webp" srcset="/img/user-view.webp 1200w, /img/user-view@2x.webp 2400w" sizes="(min-width: 1100px) 700px, 94vw" width="1200" height="720" loading="lazy" alt="A User's view of a form: the same form in the runtime, with no design tools">
-        </div>
-      </figure>
-      <div class="extras">
-        <h3>And a few things Access never had</h3>
-        <dl>
-          <dt>On Render</dt>
-          <dd>An event that runs as each record's copy of a control is drawn, so code can colour rows in a continuous form.</dd>
-          <dt>JavaScript modules</dt>
-          <dd>In place of Windows DLLs: write a function, export it, and call it from VBA. It runs in a sealed sandbox with no network.</dd>
-          <dt>Built-in libraries</dt>
-          <dd>UK bank holidays and working days, British National Grid and OS grid references, chainage along a line, and statistics, ready to tick in References.</dd>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Migrate ============ -->
-<section class="migrate" id="migrate" aria-labelledby="migrate-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="migrate-title">Bring your database across</h2>
-      <p>Moving an existing Access application is mostly familiar work, done once.</p>
-    </div>
-    <ol class="steps">
-      <li><h3>Import tables and queries</h3><p>Open your .accdb or .mdb in Import Objects. Tables keep their fields, data types, calculated fields and AutoNumber values; queries are rebuilt from the database's own design; relationships come with the tables.</p></li>
-      <li><h3>Bring in forms, reports, macros and code</h3><p>Run our export module once in Access. It writes your forms, reports, macros and modules out to a folder and changes nothing. Import the folder, and each form and report comes with its layout, its code and its macros, with a list of anything that couldn't come across.</p></li>
-      <li><h3>Check the code</h3><p>Compile shows what needs changing, such as file access or a <code>Declare</code> that a web page can't do. The References your code uses are ticked for you.</p></li>
-      <li><h3>Share it</h3><p>Invite people by email from File &gt; Share, as a User or a Guest. They open your database from the link, in the runtime, and up to 10 per database are free.</p></li>
-    </ol>
-    <figure class="shot shot-plain">
-      <div class="frame">
-        <img src="/img/import-access.webp" srcset="/img/import-access.webp 980w, /img/import-access@2x.webp 1960w" sizes="(min-width: 1100px) 900px, 94vw" width="980" height="518" loading="lazy" alt="The Import Objects dialog, with tabs for tables, queries, forms, reports, macros and modules">
-      </div>
-      <figcaption>Import Objects, with a tab for each kind of object</figcaption>
     </figure>
   </div>
 </section>
@@ -658,7 +655,7 @@
     <div class="faq-list">
       <details>
         <summary>Can we use it for real work yet?</summary>
-        <p>Not yet. Web Access Builder is in active development, so features are still changing and there may be bugs. Please test it with copies of your data, keep your Access database as the working version, and tell us what you find. We'll say here when it's ready for production use.</p>
+        <p>Not yet. Web Access Builder is in active development, so features are still changing and there may be bugs. Please test it with copies of your data, keep your existing workbook or database as the working version, and tell us what you find. We'll say here when it's ready for production use.</p>
       </details>
       <details>
         <summary>Is there a demo?</summary>
@@ -670,23 +667,27 @@
       </details>
       <details>
         <summary>Do the people who use my database need a licence?</summary>
-        <p>No. As with the Access Runtime, the people you share a database with don't pay: up to 10 per database, Users and Guests together, while it runs on SQLite. Their access stays free for as long as your subscription is active. They use its forms and reports, and can't open Design view or the code.</p>
+        <p>No. The people you share a database with don't pay: up to 10 per database, Users and Guests together, while it runs on SQLite. Their access stays free for as long as your subscription is active. They use its forms and reports, and can't open Design view or the code.</p>
+      </details>
+      <details>
+        <summary>Is it Excel?</summary>
+        <p>No. Web Access Builder is an independent product, and isn't made by or connected with Microsoft. Its Spreadsheet control is a workbook on a form, with several sheets, formulas and formatting, and it reads and writes Excel files. It doesn't do everything Excel does. <a href="/excel/">Coming from Excel</a> says what carries over and what doesn't.</p>
+      </details>
+      <details>
+        <summary>Can I open my Excel workbook in it?</summary>
+        <p>Yes, as a starting point. Importing a workbook brings in its values, formulas, number formats, fonts, fills, borders, column widths, merged cells and frozen panes. Conditional formats, data validation, filters, charts and PivotTables don't come with the file: set them up again here. The data itself is better moved into a table, which also imports from Excel.</p>
+      </details>
+      <details>
+        <summary>Do my Excel macros run?</summary>
+        <p>The language does, but the code doesn't import with the workbook. VBA written for Excel's <code>Workbook</code>, <code>Worksheet</code> and <code>Range</code> objects runs against a Spreadsheet control once you paste it into the form's module, with change events. It isn't the whole of Excel's object model, so expect to adjust code that uses charts, shapes, files on your PC or other applications.</p>
       </details>
       <details>
         <summary>Is this Microsoft Access?</summary>
-        <p>No. Web Access Builder is an independent product that works the way Access does. It runs in a browser, doesn't need Access installed, and isn't made by or connected with Microsoft.</p>
-      </details>
-      <details>
-        <summary>Can I open my .accdb file in it?</summary>
-        <p>Mostly. Import Objects brings in tables, with their calculated fields and AutoNumber values, and queries, straight from the file. Forms, reports, macros and modules come through a small export module you run once in Access; it saves them with Access's own SaveAsText and changes nothing.</p>
-      </details>
-      <details>
-        <summary>Will my VBA run?</summary>
-        <p>Much of it, as written: form and control events in Access's order, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code>, <code>DLookup</code> and <code>DCount</code>, DAO recordsets, error handling and class modules. Things a web page can't do, such as <code>Shell</code>, file access, Windows DLLs and automating Excel, are marked in the code window, and only that line fails if it runs. JavaScript modules stand in for DLLs.</p>
+        <p>No. Web Access Builder is an independent product that works the way Access does. It runs in a browser, doesn't need Access installed, and isn't made by or connected with Microsoft. <a href="/access/">Coming from Access</a> has the detail.</p>
       </details>
       <details>
         <summary>Does it do reports?</summary>
-        <p>Yes: grouping, totals, page numbers and Print Preview with page size, margins and orientation. Subreports, Can Grow and Can Shrink, and a module behind each report with its events. Print them, or save them as PDF from the print dialog, and open them from code with <code>DoCmd.OpenReport</code>. Reports come across from Access with the export module.</p>
+        <p>Yes: grouping, totals, page numbers and Print Preview with page size, margins and orientation. Subreports, Can Grow and Can Shrink, and a module behind each report with its events. Print them, or save them as PDF from the print dialog, and open them from code with <code>DoCmd.OpenReport</code>.</p>
       </details>
       <details>
         <summary>Where is our data kept?</summary>
@@ -705,8 +706,8 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
-    <p>© 2026 Simon Wilson. Microsoft Access is a trademark of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p class="footer-links"><a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
+    <p>© 2026 Simon Wilson. Microsoft Access and Microsoft Excel are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
   </div>
 </footer>
 

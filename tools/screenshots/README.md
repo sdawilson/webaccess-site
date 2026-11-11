@@ -1,12 +1,12 @@
 # Screenshots
 
-The site's screenshots come from a local copy of webaccess with a small sample database of highway schemes and defects. Re-take them after webaccess's look changes.
+The site's screenshots come from a local copy of webaccess. Re-take them after webaccess's look changes. Older shots use a small sample database of highway schemes and defects (the seeds below); new ones should use the demo's Fieldfare Traders sample, and the highways ones are to be moved over.
 
 1. Clone and start webaccess next to this repo, with a throwaway admin:
 
    ```sh
    git clone https://github.com/sdawilson/webaccess ../webaccess
-   cd ../webaccess && npm install
+   cd ../webaccess && npm install && npm run build:univer
    DATA_DIR=/tmp/wa-shots PORT=3100 ADMIN_USER=admin ADMIN_PASSWORD='Shot-Capture-2026!' node server/index.js
    ```
 
@@ -28,4 +28,4 @@ The site's screenshots come from a local copy of webaccess with a small sample d
 
 The data and passwords here are made up and only ever used on a local, temporary instance.
 
-The demo's screens come from a second copy of the app in demo mode: in the app folder, `DATA_DIR=/tmp/wa-demo PORT=3200 DEMO_MODE=true ADMIN_PASSWORD='Shot-Capture-2026!' node server/index.js`. It builds the Fieldfare Traders sample database itself. If it isn't running, `capture.sh` keeps the published demo screenshots.
+The demo's screens come from a second copy of the app in demo mode: in the app folder, `DATA_DIR=/tmp/wa-demo PORT=3200 DEMO_MODE=true ADMIN_PASSWORD='Shot-Capture-2026!' node server/index.js`. It builds the Fieldfare Traders sample database itself. `demo.mjs` takes the demo's screens and `sheet.mjs` builds a "Stock Workbook" form with a Spreadsheet control on the sample and takes the four spreadsheet shots. If the demo copy isn't running, `capture.sh` keeps the published ones.

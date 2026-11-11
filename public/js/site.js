@@ -14,6 +14,9 @@ const COFFEE_URL = 'https://buymeacoffee.com/simonwilson_wab';
 
 // ---------- screen gallery ----------
 const SCREENS = [
+  ['spreadsheet', 'A workbook on a form, with a table’s records in its rows', 'A workbook on a form: a stock list with a title, totals and formulas, and the products of a database table filling its rows'],
+  ['spreadsheet-runtime', 'The same workbook as a User sees it, in the runtime', 'The stock workbook filling a User’s window, with no rail, command bar or Navigation Pane'],
+  ['spreadsheet-code', 'Excel’s objects in VBA: Worksheet, Range and a change event', 'The module behind the workbook form, with a SheetChange event and a loop that saves rows with Data.Update'],
   ['continuous-form', 'Continuous form with conditional formatting and data bars', 'A continuous form listing highway schemes, with status colours and data bars on the estimates'],
   ['form-view', 'Single form with a subform on a tab control', 'A single form for one scheme, with a datasheet subform of defects on a tab control'],
   ['form-design', 'Form Design view: controls on the command bar, field list and property sheet', 'Form Design view with the controls gallery, field list and property sheet'],
@@ -205,6 +208,7 @@ if (form) {
 // ---------- Bunny Stream video ----------
 if (STREAM_LIBRARY_ID && STREAM_VIDEO_ID) {
   const tour = document.getElementById('tour');
+  if (tour) {
   const iframe = document.createElement('iframe');
   iframe.src = `https://iframe.mediadelivery.net/embed/${encodeURIComponent(STREAM_LIBRARY_ID)}/${encodeURIComponent(STREAM_VIDEO_ID)}?autoplay=false&preload=false&responsive=true`;
   iframe.title = 'Web Access Builder in use';
@@ -213,6 +217,7 @@ if (STREAM_LIBRARY_ID && STREAM_VIDEO_ID) {
   iframe.allowFullscreen = true;
   tour.querySelector('.tour-frame').append(iframe);
   tour.hidden = false;
+  }
 }
 
 // ---------- Buy me a coffee ----------

@@ -51,7 +51,7 @@ Mark, for the green title bar:
 
 - Live at https://webaccessbuilder.com (DNS at Bunny); webaccessbuilder.co.uk forwards to it from names.co.uk, which keeps its DNS for email. Repo: `sdawilson/webaccess-site`.
 - A static site served by a Bunny Edge Script from a Storage zone, deployed by GitHub Actions on every push, once a day, and by hand.
-- Its screenshots come from a local copy of the app with a sample highways database (`tools/screenshots/capture.sh` in the site repo). Re-take them when the app's look changes.
+- Its screenshots come from a local copy of the app (`tools/screenshots/capture.sh` in the site repo). Re-take them when the app's look changes. Some still show an older highways sample; new ones use Fieldfare Traders (see "Leading with spreadsheets").
 - The site never links to GitHub (Simon's choice).
 - The public demo is at https://demo.webaccessbuilder.com: the Magic Containers app `webaccess-demo`, the same image with `DEMO_MODE=true`, showing the Fieldfare Traders sample. The site links to it from the hero, a "Try the demo" section, the FAQ and the notice on every page (`DEMO_URL` in `public/js/site.js`).
 - Status, as Simon wants it stated everywhere: **in active development, not yet recommended for production use; we're inviting people to test it and give feedback.** The site shows this in a notice on every page, the request form is for a *test instance* and needs the tester to confirm they understand, and the FAQ says to test with copies of data. Worth echoing in the app (sign-in page or About) and the guides.
@@ -86,3 +86,16 @@ Simon is reducing references to Access, in the app and on the site, to avoid leg
 - No "Access" in the headline, page title or social title (other than in the product's name). Say "Microsoft Access" at the first mention in a section.
 - Keep the trademark line in the footer and the "Is this Microsoft Access?" question.
 - Tree View, List View, Image List and Progress Bar are the app's own controls (since 10 Nov 2026). Never call them ActiveX controls or Microsoft's; say they work like the Windows Common Controls, so code written for those runs.
+
+## Leading with spreadsheets (11 Nov 2026)
+
+Simon's view: Access developers are a small market, so the Spreadsheet control was added to bring in people who run things on shared Excel workbooks. The site leads on that, with Access as a second way in.
+
+- Home page headline: "Your spreadsheet, with a database behind it. Hand it out free." It opens on the problem (a shared workbook that has become the system), then the Spreadsheet control, then the runtime.
+- Two pages for where people come from: `/excel/` (what carries over, what's different, how to start) and `/access/` (what they'll recognise, what changes on the web, bringing a database across). The Access comparison lives on `/access/`, not the home page.
+- A third, supporting message: everything in one place (database, forms, reports, code, sign-in, hosting), with no full-stack skills needed.
+- Three ways to build, in this order: no code, macros, VBA.
+- Don't say or imply it is Excel, or that it opens and runs Excel workbooks as they are. It imports and exports Excel files (formulas, formats, column widths); workbook VBA isn't imported, and conditional formats, validation, filters, charts and PivotTables don't come with a file. The `/excel/` page says so under "What's different".
+- Same care with Microsoft's names as for Access: "Excel" is fine in comparisons and in "Coming from Excel"; the trademark line in the footer names both Microsoft Access and Microsoft Excel.
+- Examples and screenshots use the Fieldfare Traders sample (a food wholesaler), never highways. Screenshots still showing the highways sample are to be retaken on Fieldfare.
+- Claims with a source: 94% of business spreadsheets used for decisions contain errors (a 2024 review, linked to the phys.org report); VBA macros don't run in Excel for the web (Microsoft's Office Scripts and VBA comparison).

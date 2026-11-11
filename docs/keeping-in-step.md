@@ -18,13 +18,15 @@ Compare the app's current README with what the site says, and note each thing th
 
 | Where | File | What to check |
 |---|---|---|
-| Hero, meta description | `public/index.html` | The feature list ("tables, queries, forms, reports and VBA") |
-| "If you've built in Access…" table | `public/index.html` | Each row still true; a new Access feature worth a row? |
+| Hero, meta description | `public/index.html` | The headline leads on spreadsheets (see `docs/brand.md`); the feature list under it ("worksheets, forms, reports and pivot charts") |
+| "When the spreadsheet has become the system", "Worksheets on live data", "Everything in one place" | `public/index.html` (`#why-not`, `#sheets`, `#all-in-one`) | Each row and ticked bullet still true of the Spreadsheet control and the rest of the app |
+| Coming from Excel | `public/excel/index.html` | "What carries over", "What's different" (remove a limit once the app lifts it), the steps and the questions |
+| "What you'll recognise" table | `public/access/index.html` | Each row still true; a new Access feature worth a row? |
 | Tables and queries, Forms, Reports, PivotTable, VBA sections | `public/index.html` | The ticked bullets, and whether a new feature belongs in one |
-| "What changes when it's on the web" and "a few things Access never had" | `public/index.html` | Still true; anything new that Access never had |
-| "Bring your database across" steps | `public/index.html` | What Import from Access brings in (it grows over time) |
+| "What changes when it's on the web" and "a few things Access never had" | `public/access/index.html` | Still true; anything new that Access never had |
+| "Bring your database across" steps | `public/access/index.html` | What Import from Access brings in (it grows over time) |
 | "Still to come" | `public/index.html` | Remove what's now done; add what the README's roadmap says is next |
-| Questions | `public/index.html` | Especially "Can I open my .accdb", "Will my VBA run?", "Does it do reports?" |
+| Questions | `public/index.html`, `public/excel/index.html`, `public/access/index.html` | Especially "Can I open my Excel workbook in it?", "Do my Excel macros run?", "Can I open my .accdb", "Will my VBA run?", "Does it do reports?" |
 | Screen gallery captions | `public/js/site.js` (`SCREENS`) | Captions and alt text still describe the screens |
 | Layout words | everywhere | The app has a rail and a command bar, not a ribbon; menus are New, Data, Code, Tools, People, File. Don't write "ribbon", "External Data" or "Database Tools" |
 | Screenshot crops | `tools/screenshots/imgs.mjs` | Document crops start at the Navigation Pane's right edge (x 304). If the rail or pane changes width, move them, or the pane's "+" buttons show down the left of every picture |
@@ -38,15 +40,15 @@ Keep the site's voice: plain British English, "we", short sentences, no hype, no
 
 If the new commits touched the app's `public/` folder (its browser code), retake the screenshots so they match:
 
-1. Clone the app next to this repo, `npm install`, and start it with a throwaway admin on port 3100 (see `tools/screenshots/README.md`; use a fresh `DATA_DIR`).
+1. Clone the app next to this repo, `npm install`, `npm run build:univer` (the Spreadsheet control's workbook; without it the spreadsheet shots are blank), and start it with a throwaway admin on port 3100 (see `tools/screenshots/README.md`; use a fresh `DATA_DIR`).
 2. In `tools/screenshots/`: make sure `playwright` and `sharp` can be imported (`npm i playwright sharp` if not), then run `seed.mjs`, `seed2.mjs`, `seed3.mjs`, `seed4.mjs`, `seed5.mjs`, `seed6.mjs` and `users.mjs` with `SEED_PW`.
-3. For the demo's screens, start a second copy of the app with `DEMO_MODE=true` on port 3200 (its own fresh `DATA_DIR`; it builds the Fieldfare Traders sample itself). Then run `WEBACCESS_DIR=<app clone> DEMO_URL=http://localhost:3200 ./capture.sh`. Without the demo copy, the demo screenshots already published are kept.
+3. For the demo's screens, start a second copy of the app with `DEMO_MODE=true` on port 3200 (its own fresh `DATA_DIR`; it builds the Fieldfare Traders sample itself). Then run `WEBACCESS_DIR=<app clone> DEMO_URL=http://localhost:3200 ./capture.sh`. Without the demo copy, the demo and spreadsheet screenshots already published are kept. `sheet.mjs` builds the "Stock Workbook" form on the sample for the spreadsheet shots.
 4. Look at every new image. If a step no longer finds what it clicks (a renamed button, say), fix that step's JSON in `tools/screenshots/steps/` and retake. Don't commit a screenshot that shows an error, a half-loaded screen or the wrong thing.
 5. If a notable new feature has a screen of its own, consider adding a shot: a step file, an entry in `capture.sh` and `imgs.mjs`, a caption in `SCREENS`, and possibly a view tab in the matching section.
 
 ## 4. Check the result
 
-- The page still loads with no console errors: serve `public/` (`node devserver.mjs`, port 4100) and open it in Playwright at 1440×900 and 390×844. No sideways scrolling on the phone.
+- The page still loads with no console errors: serve `public/` (`node devserver.mjs`, port 4100) and open it, `/excel/`, `/access/` and `/screenshots/` in Playwright at 1440×900 and 390×844. No sideways scrolling on the phone.
 - Every image the page references exists in `public/img/`.
 - The view tabs and the gallery still switch screens.
 
