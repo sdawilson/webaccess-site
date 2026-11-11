@@ -2,10 +2,9 @@
 // the view switchers on each feature, the request form, and the optional Bunny Stream video.
 
 // ---------- settings ----------
-// The video section is off the home page for now (11 Nov 2026: to be re-filmed). To bring it back, put a
-// <section id="tour"> with a .tour-frame on the page; these are the Bunny Stream library ID and video ID.
+// The "Watch it in use" section shows when these are a Bunny Stream library ID and video ID.
 const STREAM_LIBRARY_ID = '803383';
-const STREAM_VIDEO_ID = '00788605-e180-400b-bb28-7eeb615d5dd3'; // the narrated demo (v2, new layout, 1:45)
+const STREAM_VIDEO_ID = '7ba38bcd-642d-489b-9308-ca32c20a44d7'; // the narrated demo (v3: Fieldfare Traders, Modern look, opens with the workbook, 1:50)
 // The demo: set this to the demo instance's address (e.g. 'https://demo.webaccessbuilder.com')
 // to show the "Open the demo" buttons; until then the page offers a test instance instead.
 const DEMO_URL = 'https://demo.webaccessbuilder.com';
