@@ -1,12 +1,12 @@
 [
-  { "scene": "title", "text": "Web Access Builder: build a database app in your browser, and hand it out free." },
-  { "scene": "import", "text": "Start by importing a Microsoft Access database. Tables keep their fields, data types and AutoNumber values, and queries are rebuilt from their original design." },
-  { "scene": "forms", "text": "Forms run as they were designed. This search form builds a filter in VBA and applies it to the list below." },
-  { "scene": "pivottable", "text": "PivotTable view is here too. Drag a field into the column area, and the totals follow." },
-  { "scene": "pivotchart", "text": "The same layout drives a PivotChart. Change the chart type, and it redraws at once." },
-  { "scene": "treeview", "text": "TreeView controls work too, with drag and drop, through the form's own code." },
-  { "scene": "vba", "text": "And VBA runs as VBA, in the browser. Set a breakpoint, click the button on the form, and the code pauses on that line. Step through, then carry on." },
-  { "scene": "share", "text": "When it's ready, share it. Invite people by email, as a User who works with the data, or a Guest who only reads it." },
-  { "scene": "runtime", "text": "They get the runtime: your forms and reports, and no design tools. Up to ten people use each database free." },
-  { "scene": "end", "text": "Web Access Builder is in active development, and not yet for production use. Try the demo at webaccessbuilder.com." }
+  {"scene": "title", "text": "Web Access Builder: a spreadsheet and a database, together at last. Design it, then share it with your team, as your own app."},
+  {"scene": "sheet", "text": "This is a workbook, on a form. Its rows are the records of a database, and the formulas beside them belong to the worksheet. Change a stock level in a cell, and the record is saved at once. Here it is, in the Products form."},
+  {"scene": "forms", "text": "Forms work on the same data. This search form builds a filter in VBA, and applies it to the list below."},
+  {"scene": "pivottable", "text": "PivotTable view is here too. Drag a field into the column area, and the totals follow."},
+  {"scene": "pivotchart", "text": "The same layout drives a PivotChart. Change the chart type, and it redraws at once."},
+  {"scene": "treeview", "text": "TreeView controls work too, with drag and drop, through the form's own code."},
+  {"scene": "vba", "text": "And VBA runs as VBA, in the browser. Set a breakpoint, click the button on the form, and the code pauses on that line. Step through, then carry on."},
+  {"scene": "share", "text": "When it's ready, share it. Invite people by email, as a User who works with the data, or a Guest who only reads it."},
+  {"scene": "runtime", "text": "They get the runtime: your forms and reports, and no design tools. Up to ten people use each database free."},
+  {"scene": "end", "text": "Web Access Builder is in active development, and not yet for production use. Try the demo at webaccessbuilder.com."}
 ]

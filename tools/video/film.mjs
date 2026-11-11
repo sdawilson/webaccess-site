@@ -7,7 +7,6 @@ import { spawn } from 'node:child_process';
 import { Camera, signIn, BASE, ADMIN } from './filmlib.mjs';
 
 const [, , dir = 'take', only] = process.argv;
-const ACCDB = path.resolve(import.meta.dirname, 'accdb/Highway Maintenance.accdb');
 const USER = { user: 'mreid', name: 'Maya Reid', password: 'Viewer-Pass-2026!' };
 
 // A fresh demo-mode copy of the app for every take, so nothing is left over from the last one.
@@ -41,18 +40,50 @@ await p.evaluate(async (u) => {
     body: JSON.stringify({ username: u.user, displayName: u.name, password: u.password, role: 'user' }) });
 }, USER);
 
-if (want('import')) {
-  cam.scene('import', 'Import a Microsoft Access database: tables, queries, forms and code');
-  await cam.hold(1.2);
-  await cam.click("button.rail-btn[title='Import and export']", { after: 0.6 });
-  const chooser = p.waitForEvent('filechooser');
-  await cam.click("[role=menuitem]:text-is('Access') >> nth=0", { settle: 200, after: 0 });
-  await (await chooser).setFiles(ACCDB);
-  await p.waitForSelector('dialog.dlg.wide', { timeout: 20000 }); await p.waitForTimeout(1200);
+// The sample's note beside the Stock Workbook's buttons is two lines in a one-line label: give it the room.
+await p.evaluate(async () => {
+  const H = { 'Content-Type': 'application/json', 'X-Requested-With': 'webaccess' };
+  const url = '/api/forms/' + encodeURIComponent('Stock Workbook');
+  const got = await (await fetch(url)).json(); const def = got.form || got;
+  const note = def.controls?.find((c) => c.name === 'lblNote');
+  if (note && note.height < 36) { note.y = 6; note.height = 38; await fetch(url, { method: 'PUT', headers: H, body: JSON.stringify({ form: def }) }); }
+});
+
+const PANE = '.doc-body > .doc-pane:not([hidden])';
+if (want('sheet')) {
+  cam.scene('sheet', 'A workbook on a form: change a cell, and its record is saved');
+  await menu(); await cam.hold(1.0);
+  await cam.click('[data-name=cmdWorkbook]', { settle: 800, after: 0 });
+  await p.waitForFunction(() => document.querySelector('.doc-body > .doc-pane:not([hidden]) .fv-sheet')?.sheetControl?.bound, null, { timeout: 30000 });
+  await p.waitForTimeout(2500); await cam.hold(2.6);
+  // where the cells are: the sheet's canvas, and the first data row's Units In Stock (D) and Stock value (F)
+  const cell = async (a1) => p.evaluate((ref) => {
+    const el = document.querySelector('.doc-body > .doc-pane:not([hidden]) .fv-sheet'); const s = el.sheetControl; const ws = s.workbook.getActiveSheet();
+    const r = ws.getRange(ref); const rect = r.getCellRect ? r.getCellRect() : null;
+    if (!rect) return null;
+    // the rect is measured from the sheet's canvas (the largest one), not the window
+    const cv = [...el.querySelectorAll('canvas')].map((c) => c.getBoundingClientRect()).sort((a, b) => b.width * b.height - a.width * a.height)[0];
+    return { x: cv.left + rect.x + rect.width / 2, y: cv.top + rect.y + rect.height / 2 };
+  }, a1);
+  let d5 = await cell('D5'), f5 = await cell('F5');
+  if (!d5) { d5 = { x: 905, y: 503 }; f5 = { x: 1105, y: 503 }; }
+  console.log('  D5 at', JSON.stringify(d5), 'F5 at', JSON.stringify(f5));
+  await cam.click(f5, { after: 1.6 });                 // a formula cell: the formula bar shows =C5*D5
+  await cam.click(d5, { after: 0.6 });                 // Blue Stilton's stock, shaded because it is low
+  await cam.type('40', 0.25);
+  await cam.press('Enter', { settle: 1500, after: 2.4 });   // saved: the shading goes and Stock value follows
+  await menu(); await cam.hold(0.4);
+  await cam.click('[data-name=cmdProducts]', { settle: 2200, after: 0.6 });
+  // point at Blue Stilton's stock, now 40 here too
+  const at = await p.evaluate(() => {
+    const pane = document.querySelector('.doc-body > .doc-pane:not([hidden])');
+    const name = [...pane.querySelectorAll('input')].find((i) => i.value === 'Blue Stilton'); if (!name) return null;
+    const y = name.getBoundingClientRect().top;
+    const box = [...pane.querySelectorAll('input')].find((i) => i.value === '40' && Math.abs(i.getBoundingClientRect().top - y) < 6); if (!box) return null;
+    const r = box.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  });
+  if (at) await cam.moveTo(at); else console.log('  Blue Stilton at 40 not found in the Products form');
   await cam.hold(2.6);
-  await cam.click('dialog.dlg.wide button:text-is("Import")', { settle: 3500, after: 2.2 });
-  for (const b of ['Close', 'OK', 'Done']) { const l = p.locator(`dialog[open] button:text-is("${b}")`); if (await l.count()) { await cam.click(l.first(), { after: 0.4 }); break; } }
-  await cam.click(p.getByText('Defects', { exact: true }).first(), { settle: 1800, after: 2.6 });
   await closeOthers();
 }
 
@@ -124,7 +155,7 @@ if (want('vba')) {
 if (want('share')) {
   cam.scene('share', 'Share a database: Users work with the data, Guests only read it');
   await menu(); await cam.hold(0.6);
-  await cam.click("button.rail-btn[title^='File']", { settle: 1000, after: 0.8 });
+  await cam.click("button.rail-btn[title^='File']", { settle: 1000, after: 0.2 });   // straight on to Share: the Info page isn't the point
   await cam.click(p.getByText('Share', { exact: true }).first(), { settle: 1200, after: 1.2 });
   await cam.click(p.locator('input[placeholder*="email"]').first(), { after: 0.1 });
   await cam.type('sam.carter@example.com', 0.05);
