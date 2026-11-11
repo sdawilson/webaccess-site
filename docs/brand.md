@@ -93,6 +93,7 @@ Simon's view: Access developers are a small market, so the Spreadsheet control w
 
 - Home page headline: "Spreadsheet and database, together at last.", with "Design it, then share it with your team as your own app." under it (Simon, 11 Nov: the best of both worlds; "hand it out free" sounded lightweight for a headline, so the free runtime is in the paragraph and the note under the buttons instead). It opens on the problem (a shared workbook that has become the system), then the Spreadsheet control, then the runtime.
 - Two pages for where people come from: `/excel/` (what carries over, what's different, how to start) and `/access/` (what they'll recognise, what changes on the web, bringing a database across). The Access comparison lives on `/access/`, not the home page.
+- Above the two cards on the home page: "What you rely on in Excel. What you always wanted from Access." (Simon's idea, softened from "Everything you needed from Excel, and everything you wanted in Access": no "everything", and not as the main headline.)
 - A third, supporting message: everything in one place (database, forms, reports, code, sign-in, hosting), with no full-stack skills needed.
 - Three ways to build, in this order: no code, macros, VBA.
 - Don't say or imply it is Excel, or that it opens and runs Excel workbooks as they are. It imports and exports Excel files (formulas, formats, column widths); workbook VBA isn't imported, and conditional formats, validation, filters, charts and PivotTables don't come with a file. The `/excel/` page says so under "What's different".

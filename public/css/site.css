@@ -694,6 +694,8 @@ html:has(.guide) { scroll-behavior: auto; }
 .pagehead .hero-actions { margin-bottom: 0; }
 .web .section-head a { color: #fff; }
 .paths { padding: 72px 0; border-top: 1px solid var(--rule); }
+.paths .section-head { max-width: none; margin-bottom: 32px; }
+.paths .section-head h2 { text-wrap: wrap; }
 .path-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .path { display: flex; flex-direction: column; padding: 32px; background: var(--paper); border: 1px solid var(--edge); border-left: 4px solid var(--green); border-radius: 6px; color: inherit; text-decoration: none; }
 .path:hover { border-color: var(--green); box-shadow: 0 22px 44px -32px rgba(22, 58, 45, 0.55); }
