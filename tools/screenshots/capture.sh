@@ -11,8 +11,11 @@ declare -A SHOTS=(
   [dbg]=debugger [ac]=intellisense [cf]=conditional-formatting [imp]=import-access [usr]=users
   [rpt-open]=report-view [rpt-preview]=report-preview [rpt-design]=report-design [dash]=chart-dashboard [explorer]=treeview-listview [help]=help-guides [share]=share [macro]=macro-design
 )
+# six at a time: with every browser open at once, a slow screen gets photographed before it has drawn
+n=0
 for k in "${!SHOTS[@]}"; do
   node look.mjs "steps/$k.json" "shots/${SHOTS[$k]}.png" &
+  n=$((n + 1)); if (( n % 6 == 0 )); then wait; fi
 done
 wait
 # A user's view, signed in as one of the users from users.mjs

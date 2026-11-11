@@ -36,5 +36,6 @@ for (const [n] of list) {
   await c.clone().resize(w).webp({ quality: 80 }).toFile(`${out}${n}.webp`);
 }
 // social card
-await sharp('shots/continuous-form.png').resize(1200, 630, { fit: 'cover', position: 'top' }).png().toFile(out + 'og.png');
+// the picture shown when the site is shared: the spreadsheet, as the home page leads with it
+await sharp(fs.existsSync('shots/spreadsheet.png') ? 'shots/spreadsheet.png' : 'shots/continuous-form.png').resize(1200, 630, { fit: 'cover', position: 'top' }).png().toFile(out + 'og.png');
 console.log('done');

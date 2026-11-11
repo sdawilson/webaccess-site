@@ -91,7 +91,7 @@ Simon is reducing references to Access, in the app and on the site, to avoid leg
 
 Simon's view: Access developers are a small market, so the Spreadsheet control was added to bring in people who run things on shared Excel workbooks. The site leads on that, with Access as a second way in.
 
-- Home page headline: "Your spreadsheet, with a database behind it. Hand it out free." It opens on the problem (a shared workbook that has become the system), then the Spreadsheet control, then the runtime.
+- Home page headline: "Spreadsheet and database, together at last.", with "Design it, then share it with your team as your own app." under it (Simon, 11 Nov: the best of both worlds; "hand it out free" sounded lightweight for a headline, so the free runtime is in the paragraph and the note under the buttons instead). It opens on the problem (a shared workbook that has become the system), then the Spreadsheet control, then the runtime.
 - Two pages for where people come from: `/excel/` (what carries over, what's different, how to start) and `/access/` (what they'll recognise, what changes on the web, bringing a database across). The Access comparison lives on `/access/`, not the home page.
 - A third, supporting message: everything in one place (database, forms, reports, code, sign-in, hosting), with no full-stack skills needed.
 - Three ways to build, in this order: no code, macros, VBA.
