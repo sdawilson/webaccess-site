@@ -1,1 +1,0 @@
-[{"rclick":"text=Live Schemes","wait":600},{"text":"Design View","exact":true,"wait":1500},{"click":"button:text-is('SQL')","wait":1500}]

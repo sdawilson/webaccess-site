@@ -57,7 +57,7 @@
   <div class="wrap">
     <h1 id="hero-title">Spreadsheet and database, together at last.</h1>
     <p class="hero-sub">Design it, then share it with your team as your own app.</p>
-    <p class="lede">Worksheets, forms, reports and pivot charts on one shared database, in a web browser. Keep your formulas and your layout; the records underneath are saved the moment a cell changes, for everyone at once. Build with no code, with macros, or in VBA. Up to 10 people use each database free.</p>
+    <p class="lede">Worksheets, forms, reports and pivot charts on one shared database, in a web browser. Keep your formulas and your layout; the records underneath are saved the moment a cell changes, for everyone at once. Build with no code, with macros, or in VBA, and an AI assistant will plan and build with you. Up to 10 people use each database free.</p>
     <p class="hero-actions">
       <a class="btn btn-primary" href="#demo" data-demo-link>Try the demo</a>
       <a class="btn btn-ghost" href="#request">Request a test instance</a>
@@ -74,7 +74,7 @@
           <img id="viewer-img" src="/img/spreadsheet-full.webp"
                srcset="/img/spreadsheet-full.webp 1440w, /img/spreadsheet-full@2x.webp 2880w"
                sizes="(min-width: 1240px) 1160px, 94vw" width="1440" height="900"
-               alt="A workbook on a form: a stock list with a title, totals and formulas, and the products of a database table filling its rows">
+               alt="A workbook on a form: a stock list with a title and a note above, the products of a query from row 4, low stock shaded by a conditional format, and a Stock value column worked out by a formula">
         </a>
       </div>
       <figcaption class="navbar">
@@ -84,7 +84,7 @@
           <button type="button" class="nav-btn" data-go="prev" aria-label="Previous screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 3 4 8l7 5z"/></svg></button>
           <label class="visually-hidden" for="viewer-pos">Screen number</label>
           <input id="viewer-pos" class="nav-pos" type="text" inputmode="numeric" value="1" autocomplete="off">
-          <span class="nav-of">of <span id="viewer-count">29</span></span>
+          <span class="nav-of">of <span id="viewer-count">32</span></span>
           <button type="button" class="nav-btn" data-go="next" aria-label="Next screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l7 5-7 5z"/></svg></button>
           <button type="button" class="nav-btn" data-go="last" aria-label="Last screen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l7 5-7 5zM12 3v10"/></svg></button>
           <a class="nav-btn nav-new" href="#request" aria-label="Start your own: request a test instance" title="New record: request a test instance"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3l7 5-7 5z"/><path class="star" d="M12.5 2.5v4M10.7 3.5l3.6 2M10.7 5.5l3.6-2"/></svg></a>
@@ -93,17 +93,6 @@
       </figcaption>
     </figure>
     <p class="viewer-more"><a href="/screenshots/">See all the screenshots, with notes</a></p>
-  </div>
-</section>
-
-<!-- ============ Video (shown once a Bunny Stream video is set in site.js) ============ -->
-<section class="tour" id="tour" hidden aria-labelledby="tour-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="tour-title">Watch it in use</h2>
-      <p>Under two minutes, with narration and captions: a Microsoft Access database imported, a form running its VBA, PivotTable and PivotChart views, a TreeView, the VBA debugger stopping at a breakpoint, then a database shared and opened in the runtime.</p>
-    </div>
-    <div class="tour-frame"></div>
   </div>
 </section>
 
@@ -154,14 +143,40 @@
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Spreadsheet screens">
-        <button role="tab" type="button" aria-selected="true" data-img="spreadsheet" data-alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">Workbook</button>
+        <button role="tab" type="button" aria-selected="true" data-img="spreadsheet" data-alt="A workbook on a form: a stock list with a title and a note above, the products of a query from row 4, low stock shaded by a conditional format, and a Stock value column worked out by a formula">Workbook</button>
         <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-runtime" data-alt="The same workbook as a User sees it, in the runtime, with no design tools">As a User</button>
         <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-design" data-alt="Form Design view with the Spreadsheet control selected, and its Record Source, Sheet, Insert Row, Allow Edits and Auto Update properties">Properties</button>
-        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The form's module: a SheetChange event that shades a cell, and a procedure that loops through the rows and saves them with Data.Update">Code</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The form's module: a button's Click event that reads the records as a ListObject, loops through its rows and puts the low ones in bold">Code</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/spreadsheet.webp" srcset="/img/spreadsheet.webp 1136w, /img/spreadsheet@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">
+        <img src="/img/spreadsheet.webp" srcset="/img/spreadsheet.webp 1136w, /img/spreadsheet@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A workbook on a form: a stock list with a title and a note above, the products of a query from row 4, low stock shaded by a conditional format, and a Stock value column worked out by a formula">
       </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ The assistant ============ -->
+<section class="feature feature-alt" id="assistant" aria-labelledby="assistant-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="assistant-title">An assistant that builds it with you</h2>
+      <p>Say what you need in plain words: a table, a query, a form, a report, or a small application. The assistant looks at what's in your database, shows you a plan, and builds it only when you say go ahead.</p>
+      <ul class="ticks">
+        <li>It makes tables, relationships, queries, forms, reports, macros and code with the same designers you'd use, so you can open and change everything afterwards</li>
+        <li>Nothing changes until you approve its plan. Don't like the plan? Say what to change</li>
+        <li>Its last build can be undone: what it made is removed, and what it changed is put back as it was</li>
+        <li>It's sent the design of your database, not the records. If it wants to see a few rows of a table it asks, each time, and you can say no</li>
+        <li>For Admins only. Users and Guests never see it</li>
+        <li>It can be switched off for an account, and then its buttons aren't there at all</li>
+        <li>In the code window, Explain Error and Fix Error say what went wrong and offer a fix</li>
+      </ul>
+      <p class="feature-note">The assistant is new, and it's an AI: it can be wrong, so look over what it makes. It isn't in the public demo yet. <a href="#request">Request a test instance</a> to try it.</p>
+    </div>
+    <figure class="shot">
+      <div class="frame">
+        <a href="/img/assistant-full@2x.webp" target="_blank" rel="noopener"><img src="/img/assistant.webp" srcset="/img/assistant.webp 1136w, /img/assistant@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="The Assistant: a request in plain words to keep track of supplier deliveries, and its plan of a table, a relationship, a query, a form, a report and a menu button, waiting for Go ahead"></a>
+      </div>
+      <figcaption>A plan, waiting for Go ahead. This picture was made with a scripted stand-in for the AI, to show the steps.</figcaption>
     </figure>
   </div>
 </section>
@@ -234,6 +249,7 @@
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">A front end, written in a web framework</th><td>Forms, with worksheets, charts and subforms, drawn in Design view</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">A reporting tool</th><td>Reports with grouping, totals and Print Preview, printed or saved as PDF</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">A language for each layer</th><td>No code, macros, or VBA: one language, with a debugger</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A developer to get you started</th><td>An assistant that plans a table, a form or a report with you, and builds it when you approve</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Sign-in, roles and permissions</th><td>Admins, Users and Guests, invited to each database by email</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Hosting, HTTPS and backups</th><td>A link. We host it in London and back it up every night</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">A release for every change</th><td>Save a change and everyone has it the next time they open the form</td></tr>
@@ -269,7 +285,7 @@
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="demo-title">Try the demo</h2>
-      <p>Open your own copy of Fieldfare Traders, a sample food wholesaler's database in the spirit of Northwind: customers, products and orders, with forms and subforms, queries, VBA, a PivotChart, charts, grouped reports and an invoice.</p>
+      <p>Open your own copy of Fieldfare Traders, a sample food wholesaler's database in the spirit of Northwind: customers, products and orders, with a stock workbook, forms and subforms, queries, VBA, a PivotTable, a PivotChart, charts, grouped reports and an invoice.</p>
       <ul class="ticks">
         <li>Full design rights: open anything in Design view, change the code, build something new</li>
         <li>No sign-up: one click gives you your own copy</li>
@@ -301,7 +317,7 @@
       <p>Design tables on screen, with a type, a format and rules for every field, then query them by dragging fields into a grid. If you know Microsoft Access, they're the field types and the grid you're used to, and SQL view speaks Access SQL.</p>
       <ul class="ticks">
         <li>Number sizes from Byte to Double, Currency to four places, and regional settings for dates, numbers and money</li>
-        <li>Calculated fields such as <code>[LengthM]*[WidthM]</code>, and a Format for every field</li>
+        <li>Calculated fields such as <code>[Unit Price]*[Quantity]</code>, and a Format for every field</li>
         <li>Validation rules and input masks, for each field and the whole table, kept by the database itself</li>
         <li>Relationships between tables, with referential integrity, cascade update and cascade delete, kept by the database itself</li>
         <li>Join by dragging between field lists; click a join line to make it an outer join. Related tables join themselves</li>
@@ -315,15 +331,15 @@
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Tables and queries screens">
-        <button role="tab" type="button" aria-selected="true" data-img="datasheet" data-alt="A table of highway schemes in Datasheet view">Datasheet</button>
-        <button role="tab" type="button" aria-selected="false" data-img="table-design" data-alt="Table Design view with a Calculated field selected, showing its expression, result type and format">Table design</button>
+        <button role="tab" type="button" aria-selected="true" data-img="datasheet" data-alt="The Products table in Datasheet view">Datasheet</button>
+        <button role="tab" type="button" aria-selected="false" data-img="table-design" data-w="1136" data-h="856" data-alt="Table Design view with a Calculated field selected, showing its expression, result type and format">Table design</button>
         <button role="tab" type="button" aria-selected="false" data-img="relationships" data-alt="The Relationships window on the sample database: eight tables joined by lines marked 1 and ∞, with the relationships listed underneath">Relationships</button>
-        <button role="tab" type="button" aria-selected="false" data-img="query-criteria" data-alt="Query Design grid with criteria on Status and StartDate across two rows">Query design</button>
-        <button role="tab" type="button" aria-selected="false" data-img="query-totals" data-alt="A totals query joining Schemes to SchemeTypes, with Group By, Count, Sum and Max">Totals</button>
-        <button role="tab" type="button" aria-selected="false" data-img="sql-view" data-w="1136" data-h="398" data-alt="SQL view of the same query, in Access SQL">SQL</button>
+        <button role="tab" type="button" aria-selected="false" data-img="query-criteria" data-alt="Query Design on two joined tables, with criteria on Units In Stock and Discontinued">Query design</button>
+        <button role="tab" type="button" aria-selected="false" data-img="query-totals" data-alt="A totals query in the design grid: Group By on category and product, and Sum on units and sales">Totals</button>
+        <button role="tab" type="button" aria-selected="false" data-img="sql-view" data-w="1136" data-h="398" data-alt="SQL view of a query with inner and left joins, in Access SQL">SQL</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/datasheet.webp" srcset="/img/datasheet.webp 1136w, /img/datasheet@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A table of highway schemes in Datasheet view">
+        <img src="/img/datasheet.webp" srcset="/img/datasheet.webp 1136w, /img/datasheet@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="The Products table in Datasheet view">
       </div>
     </figure>
   </div>
@@ -341,24 +357,28 @@
         <li>Tree View, List View, Image List, Progress Bar, Slider and UpDown, built in and in the Controls gallery like any other control. They work the way the Windows Common Controls do in Access, so code written for those runs</li>
         <li>A Web Browser Control, showing a page from an address, a field or an expression</li>
         <li>A Chart control modelled on Access's modern one: column, bar, line, area, combo, pie, doughnut, scatter and bubble, from a table, a query or code, and able to follow the main form's record as a subform does</li>
+        <li>27 chart palettes, eleven of them checked for colour blindness, or make your own. Format a chart's series and points from code</li>
+        <li>A look for each database: Classic or Modern controls, rounded corners, a focus highlight, a system colour and an accent, and a default font that its worksheets follow too</li>
           <li>Datasheet view is the form itself as a grid, so its code, combo boxes, validation and conditional formatting all work, with its own font, colours, gridlines and frozen columns</li>
         <li>Find and Replace, Filter by Form, and Print for the current record or all of them</li>
-        <li>Calculated controls such as <code>=[LengthM]*[WidthM]</code> and <code>=Sum([Estimate])</code></li>
+        <li>Calculated controls such as <code>=[Quantity]*[Unit Price]</code> and <code>=Sum([Line Total])</code></li>
         <li>The properties and events you know from Access: tab order, input masks, validation, NotInList, and mouse and key events</li>
         <li>Pop-up and modal forms, anchoring, and forms that hide the commands to run your application</li>
       </ul>
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Forms screens">
-        <button role="tab" type="button" aria-selected="true" data-img="form-view" data-alt="A single form for one highway scheme, with a defects subform on a tab control">Form</button>
-        <button role="tab" type="button" aria-selected="false" data-img="continuous-form" data-alt="A continuous form with status colours, data bars and a total in the footer">Continuous</button>
+        <button role="tab" type="button" aria-selected="true" data-img="form-view" data-alt="A single form for one order, with its order lines in a subform and the order's total worked out underneath">Form</button>
+        <button role="tab" type="button" aria-selected="false" data-img="continuous-form" data-alt="A continuous form of products with combo boxes and check boxes, and low stock shaded by conditional formatting">Continuous</button>
         <button role="tab" type="button" aria-selected="false" data-img="form-design" data-alt="Form Design view with the field list and property sheet">Design</button>
-        <button role="tab" type="button" aria-selected="false" data-img="conditional-formatting" data-w="1136" data-h="530" data-alt="The Conditional Formatting Rules Manager with three Field Value Is rules">Conditional formatting</button>
-        <button role="tab" type="button" aria-selected="false" data-img="chart-dashboard" data-alt="A dashboard form with two Chart controls: estimate and actual by scheme type, and schemes by status">Charts</button>
-        <button role="tab" type="button" aria-selected="false" data-img="treeview-listview" data-alt="A form with a TreeView of scheme types and schemes, and a ListView of the chosen type's schemes, both filled by VBA">Trees and lists</button>
+        <button role="tab" type="button" aria-selected="false" data-img="conditional-formatting" data-w="1136" data-h="560" data-alt="The Conditional Formatting Rules Manager, with a rule written as an expression">Formatting</button>
+        <button role="tab" type="button" aria-selected="false" data-img="chart-dashboard" data-alt="A form with two Chart controls, a doughnut of sales by customer city and columns of sales by salesperson, and a combo box that changes their palette from code">Charts</button>
+        <button role="tab" type="button" aria-selected="false" data-img="treeview-listview" data-alt="A form with a Tree View of categories and their products, filled by VBA, and the chosen product's details beside it">Tree View</button>
+        <button role="tab" type="button" aria-selected="false" data-img="listview" data-alt="A form with a List View of orders in Report view, with an icon for each status, tick boxes and buttons for Icon, Small Icon and List views">List View</button>
+        <button role="tab" type="button" aria-selected="false" data-img="appearance" data-w="780" data-h="468" data-alt="Options: a database's Appearance settings, with control style, focus highlight, corner radius, record selector, system and accent colours and a default font">Appearance</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/form-view.webp" srcset="/img/form-view.webp 1136w, /img/form-view@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A single form for one highway scheme, with a defects subform on a tab control">
+        <img src="/img/form-view.webp" srcset="/img/form-view.webp 1136w, /img/form-view@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A single form for one order, with its order lines in a subform and the order's total worked out underneath">
       </div>
     </figure>
   </div>
@@ -382,12 +402,12 @@
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Report screens">
-        <button role="tab" type="button" aria-selected="true" data-img="report-view" data-alt="A report of highway schemes grouped by type, with a subtotal for each type">Report</button>
+        <button role="tab" type="button" aria-selected="true" data-img="report-view" data-alt="A report of sales grouped by category, with a subtotal for each category">Report</button>
         <button role="tab" type="button" aria-selected="false" data-img="report-preview" data-alt="Print Preview of the report on an A4 page, with page size, margins and zoom on the command bar">Print Preview</button>
         <button role="tab" type="button" aria-selected="false" data-img="report-design" data-alt="Report Design view with its sections and the Group, Sort, and Total pane">Design</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/report-view.webp" srcset="/img/report-view.webp 1136w, /img/report-view@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A report of highway schemes grouped by type, with a subtotal for each type">
+        <img src="/img/report-view.webp" srcset="/img/report-view.webp 1136w, /img/report-view@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A report of sales grouped by category, with a subtotal for each category">
       </div>
     </figure>
   </div>
@@ -409,11 +429,11 @@
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Pivot screens">
-        <button role="tab" type="button" aria-selected="true" data-img="pivottable" data-alt="A PivotTable of estimates by scheme type, with columns grouped by year and quarter">PivotTable</button>
-        <button role="tab" type="button" aria-selected="false" data-img="pivotchart" data-alt="A stacked column PivotChart of the same estimates">PivotChart</button>
+        <button role="tab" type="button" aria-selected="true" data-img="pivottable" data-alt="A PivotTable of sales by category and product, with a column for each year">PivotTable</button>
+        <button role="tab" type="button" aria-selected="false" data-img="pivotchart" data-alt="A stacked column PivotChart of sales by year and category">PivotChart</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/pivottable.webp" srcset="/img/pivottable.webp 1136w, /img/pivottable@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A PivotTable of estimates by scheme type, with columns grouped by year and quarter">
+        <img src="/img/pivottable.webp" srcset="/img/pivottable.webp 1136w, /img/pivottable@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A PivotTable of sales by category and product, with a column for each year">
       </div>
     </figure>
   </div>
@@ -433,20 +453,20 @@
           <li>Compile errors as VBA shows them: “Compile error: Expected: Then or GoTo”</li>
         <li>Transactions from code: <code>BeginTrans</code>, <code>CommitTrans</code> and <code>Rollback</code></li>
         <li>Macros too: Macro Design with If blocks and submacros, AutoExec, macros behind events, and <code>DoCmd.RunMacro</code></li>
-        <li>Explain Error and Fix Error: AI says what went wrong and offers a fix you can apply</li>
+        <li>Explain Error and Fix Error: AI says what went wrong and offers a fix you can apply. The <a href="#assistant">assistant</a> writes modules and macros too</li>
         <li>References for statistics, UK bank holidays and British National Grid coordinates</li>
       </ul>
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Code screens">
-        <button role="tab" type="button" aria-selected="true" data-img="debugger" data-alt="Code paused at a breakpoint, with the current line highlighted and Locals listing the variables">Debugger</button>
-        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The module behind a workbook form: a SheetChange event and a loop through the rows that ends with Data.Update">Worksheet code</button>
+        <button role="tab" type="button" aria-selected="true" data-img="debugger" data-alt="Code paused at a breakpoint in a loop, with the current line highlighted and Locals listing a recordset and a string">Debugger</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The module behind a workbook form: a Click event that reads the records as a ListObject and loops through its rows">Worksheet code</button>
         <button role="tab" type="button" aria-selected="false" data-img="intellisense" data-alt="IntelliSense listing a recordset's members after typing rs.">IntelliSense</button>
-        <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form, with Form_Current and a button's Click event">Form module</button>
-        <button role="tab" type="button" aria-selected="false" data-img="macro-design" data-alt="Macro Design: a comment, an If block that opens a form and sets a TempVar, and an Else with a MessageBox">Macro</button>
+        <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form: a Click event that builds a filter and applies it to a subform">Form module</button>
+        <button role="tab" type="button" aria-selected="false" data-img="macro-design" data-alt="Macro Design: a comment, an If block that opens a report and sets a TempVar, and an Else with a MessageBox">Macro</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/debugger.webp" srcset="/img/debugger.webp 1136w, /img/debugger@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="Code paused at a breakpoint, with the current line highlighted and Locals listing the variables">
+        <img src="/img/debugger.webp" srcset="/img/debugger.webp 1136w, /img/debugger@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="Code paused at a breakpoint in a loop, with the current line highlighted and Locals listing a recordset and a string">
       </div>
     </figure>
   </div>
@@ -530,7 +550,7 @@
   <div class="wrap request-grid">
     <div class="request-intro">
       <h2 id="suggest-title">Suggest a feature</h2>
-      <p>Something you rely on in Access that isn't here yet? Something Access never had that you've always wanted? Tell us.</p>
+      <p>Something you rely on in Excel or Access that isn't here yet? Something neither ever had that you've always wanted? Tell us.</p>
       <p>Every suggestion is read, and it helps decide what comes next. Leave your email if you'd like to hear back.</p>
     </div>
 
@@ -626,12 +646,13 @@
         </div>
         <fieldset class="field optgroup">
           <legend>Starting from</legend>
-          <label><input type="radio" name="existing" value="Existing Access database" checked> An Access database we already use</label>
+          <label><input type="radio" name="existing" value="Existing Excel workbook" checked> An Excel workbook we already use</label>
+          <label><input type="radio" name="existing" value="Existing Access database"> An Access database we already use</label>
           <label><input type="radio" name="existing" value="Starting fresh"> Nothing yet: we're starting fresh</label>
         </fieldset>
         <div class="field field-wide">
           <label for="f-msg">What would you like to try?</label>
-          <textarea id="f-msg" name="message" rows="4" maxlength="4000" placeholder="For example: a copy of the Access database we use for highway schemes, to see how its forms, reports and VBA hold up."></textarea>
+          <textarea id="f-msg" name="message" rows="4" maxlength="4000" placeholder="For example: a copy of the workbook we use for orders and stock, to see how it works as a shared database with forms and reports."></textarea>
         </div>
         <div class="field field-wide confirm">
           <span aria-hidden="true"></span>
@@ -683,6 +704,10 @@
       <details>
         <summary>Do my Excel macros run?</summary>
         <p>The language does, but the code doesn't import with the workbook. VBA written for Excel's <code>Workbook</code>, <code>Worksheet</code> and <code>Range</code> objects runs against a Spreadsheet control once you paste it into the form's module, with change events. It isn't the whole of Excel's object model, so expect to adjust code that uses charts, shapes, files on your PC or other applications.</p>
+      </details>
+      <details>
+        <summary>What does the AI assistant see?</summary>
+        <p>The design of your database: its tables' fields, queries, forms, reports, macros and code. Not the records. If it would help to see a few rows of a table, it asks first, each time, and shows up to five if you allow it. It runs on Anthropic's Claude, only for Admins, and it can be switched off for an account. Nothing it plans is built until you approve it, and its last build can be undone.</p>
       </details>
       <details>
         <summary>Is this Microsoft Access?</summary>

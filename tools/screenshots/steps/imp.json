@@ -1,1 +1,0 @@
-[{"click":"button.rail-btn[title='Import and export']","wait":600},{"upload":"$WEBACCESS/test/fixtures/sample.accdb","click":"[role=menuitem]:text-is('Access') >> nth=0","wait":2500}]

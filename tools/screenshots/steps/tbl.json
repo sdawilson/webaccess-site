@@ -1,2 +1,0 @@
-[{"rclick":"text=Schemes >> nth=0","wait":600},{"text":"Design View","exact":true,"wait":1800},
- {"eval":"(()=>{const i=[...document.querySelectorAll('input')].find(x=>x.value==='AreaM2'); if(i){i.click(); i.focus(); i.scrollIntoView({block:'end'});}})()","wait":800}]

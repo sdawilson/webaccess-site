@@ -82,13 +82,13 @@
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Spreadsheet screens">
-        <button role="tab" type="button" aria-selected="true" data-img="spreadsheet" data-alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">Workbook</button>
+        <button role="tab" type="button" aria-selected="true" data-img="spreadsheet" data-alt="A workbook on a form: a stock list with a title and a note above, the products of a query from row 4, low stock shaded by a conditional format, and a Stock value column worked out by a formula">Workbook</button>
         <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-runtime" data-alt="The same workbook as a User sees it, in the runtime, with no design tools">As a User</button>
         <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-design" data-alt="Form Design view with the Spreadsheet control selected, and its Record Source, Sheet, Insert Row, Allow Edits and Auto Update properties">Properties</button>
-        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The form's module: a SheetChange event that shades a cell, and a procedure that loops through the rows and saves them with Data.Update">Code</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The form's module: a button's Click event that reads the records as a ListObject, loops through its rows and puts the low ones in bold">Code</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/spreadsheet.webp" srcset="/img/spreadsheet.webp 1136w, /img/spreadsheet@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">
+        <img src="/img/spreadsheet.webp" srcset="/img/spreadsheet.webp 1136w, /img/spreadsheet@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A workbook on a form: a stock list with a title and a note above, the products of a query from row 4, low stock shaded by a conditional format, and a Stock value column worked out by a formula">
       </div>
     </figure>
   </div>
@@ -155,7 +155,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 id="migrate-title">Start from a workbook</h2>
-      <p>The usual route from a shared spreadsheet to something several people can rely on.</p>
+      <p>The usual route from a shared spreadsheet to something several people can rely on. Do it yourself, or tell <a href="/#assistant">the assistant</a> what you need and look over its plan.</p>
     </div>
     <ol class="steps">
       <li><h3>Put the data in a table</h3><p>Import the sheet that holds your rows. Each column becomes a field with a type, and you can add rules for what it will accept.</p></li>

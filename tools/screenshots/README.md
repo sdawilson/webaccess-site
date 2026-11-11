@@ -1,31 +1,34 @@
 # Screenshots
 
-The site's screenshots come from a local copy of webaccess. Re-take them after webaccess's look changes. Older shots use a small sample database of highway schemes and defects (the seeds below); new ones should use the demo's Fieldfare Traders sample, and the highways ones are to be moved over.
+Every screenshot on the site comes from a local copy of webaccess in demo mode, which builds the Fieldfare Traders sample database itself (a food wholesaler: orders, stock and sales). Re-take them after webaccess's look changes. There are no highways examples: Simon asked for none.
 
-1. Clone and start webaccess next to this repo, with a throwaway admin:
+1. Clone and start webaccess next to this repo, in demo mode, with a throwaway admin:
 
    ```sh
    git clone https://github.com/sdawilson/webaccess ../webaccess
-   cd ../webaccess && npm install && npm run build:univer
-   DATA_DIR=/tmp/wa-shots PORT=3100 ADMIN_USER=admin ADMIN_PASSWORD='Shot-Capture-2026!' node server/index.js
+   cd ../webaccess && npm install && npm run build:univer   # build:univer is the Spreadsheet control's workbook
+   DATA_DIR=/tmp/wa-shots PORT=3200 DEMO_MODE=true ADMIN_USER=admin ADMIN_PASSWORD='Shot-Capture-2026!' \
+     PUBLIC_URL=https://app.webaccessbuilder.com ANTHROPIC_API_KEY=test-key AI_API_URL=http://localhost:3220/v1/messages \
+     node server/index.js
    ```
 
-2. In another terminal, from this folder, add the sample data, then take the shots:
+   Start from an empty `DATA_DIR` each time, so the sample is the current one.
+
+2. In another terminal, from this folder:
 
    ```sh
    npm i playwright sharp
-   SEED_PW='Shot-Capture-2026!' node seed.mjs    # tables and records
-   SEED_PW='Shot-Capture-2026!' node seed2.mjs   # queries, forms and code
-   SEED_PW='Shot-Capture-2026!' node seed3.mjs   # a grouped report
-   SEED_PW='Shot-Capture-2026!' node seed4.mjs   # calculated fields, a chart dashboard
-   SEED_PW='Shot-Capture-2026!' node seed5.mjs   # a TreeView and ListView form
-   SEED_PW='Shot-Capture-2026!' node seed6.mjs   # a macro, for the Macro Design shot
-   SEED_PW='Shot-Capture-2026!' node users.mjs   # a few admins and users
-   WEBACCESS_DIR=../../../webaccess DEMO_URL=http://localhost:3200 ./capture.sh
+   WEBACCESS_DIR=../../../webaccess ./capture.sh          # everything
+   WEBACCESS_DIR=../../../webaccess ./capture.sh forms    # or only some groups
    ```
 
-`capture.sh` saves 2× PNGs to `shots/` and writes WebP versions, full and cropped, to `public/img/`. Each `steps/*.json` file lists the clicks for one screen.
+`shoot.mjs` signs in as the admin and takes the screens one at a time, in groups: `forms`, `pivots`, `queries`, `code`, `reports`, `misc` (macro, relationships, Options, users, sharing, Help, the Access import), `sheet` (the Stock Workbook), `assistant`, `runtime` (signed in as a User) and `demo` (as a demo visitor). It adds a few people and one macro to the sample. `capture.sh` saves 2× PNGs to `shots/`, and `imgs.mjs` writes WebP versions, full and cropped, to `public/img/`.
+
+Then look at every picture before publishing: `node sheet-of.mjs shots /tmp/sheet.jpg form-view pivottable …` makes a contact sheet.
+
+Two things to know:
+
+- **The assistant's screens use a stand-in for the AI service.** `shoot.mjs` runs a small server on port 3220 that answers with a script (the plan in the picture is written in `shoot.mjs`, not by a model), and the app is started with `AI_API_URL` pointing at it. Retake `assistant` from a real conversation when there is one worth showing.
+- **The Stock Workbook's note** beside its buttons is two lines in a one-line label in the sample; `shoot.mjs` makes the label taller before the shot.
 
 The data and passwords here are made up and only ever used on a local, temporary instance.
-
-The demo's screens come from a second copy of the app in demo mode: in the app folder, `DATA_DIR=/tmp/wa-demo PORT=3200 DEMO_MODE=true ADMIN_PASSWORD='Shot-Capture-2026!' node server/index.js`. It builds the Fieldfare Traders sample database itself. `demo.mjs` takes the demo's screens and `sheet.mjs` builds a "Stock Workbook" form with a Spreadsheet control on the sample and takes the four spreadsheet shots. If the demo copy isn't running, `capture.sh` keeps the published ones.

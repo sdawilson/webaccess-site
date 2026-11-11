@@ -2,7 +2,8 @@
 // the view switchers on each feature, the request form, and the optional Bunny Stream video.
 
 // ---------- settings ----------
-// To show the "Watch it in use" section, set these to a Bunny Stream library ID and video ID.
+// The video section is off the home page for now (11 Nov 2026: to be re-filmed). To bring it back, put a
+// <section id="tour"> with a .tour-frame on the page; these are the Bunny Stream library ID and video ID.
 const STREAM_LIBRARY_ID = '803383';
 const STREAM_VIDEO_ID = '00788605-e180-400b-bb28-7eeb615d5dd3'; // the narrated demo (v2, new layout, 1:45)
 // The demo: set this to the demo instance's address (e.g. 'https://demo.webaccessbuilder.com')
@@ -14,26 +15,29 @@ const COFFEE_URL = 'https://buymeacoffee.com/simonwilson_wab';
 
 // ---------- screen gallery ----------
 const SCREENS = [
-  ['spreadsheet', 'A workbook on a form, with a table’s records in its rows', 'A workbook on a form: a stock list with a title, totals and formulas, and the products of a database table filling its rows'],
-  ['spreadsheet-runtime', 'The same workbook as a User sees it, in the runtime', 'The stock workbook filling a User’s window, with no rail, command bar or Navigation Pane'],
-  ['spreadsheet-code', 'Excel’s objects in VBA: Worksheet, Range and a change event', 'The module behind the workbook form, with a SheetChange event and a loop that saves rows with Data.Update'],
-  ['continuous-form', 'Continuous form with conditional formatting and data bars', 'A continuous form listing highway schemes, with status colours and data bars on the estimates'],
-  ['form-view', 'Single form with a subform on a tab control', 'A single form for one scheme, with a datasheet subform of defects on a tab control'],
+  ['spreadsheet', 'A workbook on a form, with a query’s records in its rows', 'A workbook on a form: a stock list with a title and a note above, the products of a query from row 4, low stock shaded, and a Stock value column worked out by a formula'],
+  ['spreadsheet-runtime', 'The same workbook as a User sees it, in the runtime', 'The stock workbook in a User’s window, with no rail, command bar or Navigation Pane'],
+  ['spreadsheet-code', 'Excel’s objects in VBA: Worksheet, Range and ListObject', 'The module behind the workbook form, with a Click event that reads the records as a ListObject and loops through its rows'],
+  ['assistant', 'The assistant: a plan, waiting for Go ahead', 'The Assistant: a request in plain words, and its plan of a table, a relationship, a query, a form and a report, waiting for Go ahead'],
+  ['continuous-form', 'Continuous form with combo boxes and conditional formatting', 'A continuous form of products, with low stock shaded by conditional formatting'],
+  ['form-view', 'Single form with a subform of order lines', 'A single form for one order, with its order lines in a subform and the total worked out underneath'],
   ['form-design', 'Form Design view: controls on the command bar, field list and property sheet', 'Form Design view with the controls gallery, field list and property sheet'],
-  ['datasheet', 'A table in Datasheet view', 'A table of highway schemes in Datasheet view'],
-  ['table-design', 'Table Design view with Access field types', 'Table Design view listing each field and its data type'],
+  ['datasheet', 'A table in Datasheet view', 'The Products table in Datasheet view'],
+  ['table-design', 'Table Design view, with a Calculated field', 'Table Design view with a Calculated field selected, showing its expression, result type and format'],
   ['relationships', 'The Relationships window, with referential integrity', 'The Relationships window on the sample database, with lines between related tables and the relationships listed underneath'],
-  ['query-criteria', 'Query criteria in Access syntax, with an Or row', 'Query Design grid with criteria on Status and StartDate'],
-  ['query-totals', 'A totals query joining two tables', 'Query Design with two joined tables and Group By, Count, Sum and Max'],
-  ['sql-view', 'SQL view, in Access SQL', 'SQL view of a query in Access SQL'],
-  ['report-preview', 'A report in Print Preview, grouped by type with subtotals', 'Print Preview of a report of schemes grouped by type, on an A4 page'],
+  ['query-criteria', 'Query criteria in Access syntax, on two joined tables', 'Query Design on two joined tables, with criteria on Units In Stock and Discontinued'],
+  ['query-totals', 'A totals query: Group By and Sum', 'Query Design with Group By on category and product, and Sum on units and sales'],
+  ['sql-view', 'SQL view, in Access SQL', 'SQL view of a query with inner and left joins, in Access SQL'],
+  ['report-preview', 'A report in Print Preview, grouped by category with subtotals', 'Print Preview of a report of sales grouped by category, on an A4 page'],
   ['report-design', 'Report Design view with the Group, Sort, and Total pane', 'Report Design view with sections and the Group, Sort, and Total pane'],
-  ['chart-dashboard', 'Chart controls on a dashboard form', 'A dashboard form with two Chart controls: estimate and actual by scheme type, and schemes by status'],
-  ['treeview-listview', 'Tree View and List View controls, filled by VBA', 'A form with a TreeView of scheme types and schemes, and a ListView of the chosen type\u2019s schemes'],
-  ['pivottable', 'PivotTable view, grouped by year and quarter', 'A PivotTable of estimates by scheme type and quarter'],
-  ['pivotchart', 'PivotChart view of the same layout', 'A stacked column PivotChart of estimates by scheme type'],
-  ['conditional-formatting', 'The Conditional Formatting Rules Manager', 'The Conditional Formatting Rules Manager with three rules'],
-  ['form-code', 'The module behind a form', 'The VBA module behind a form, with Form_Current and a Click event'],
+  ['chart-dashboard', 'Chart controls, with a palette chosen from code', 'A form with two Chart controls: a doughnut of sales by customer city and columns of sales by salesperson'],
+  ['treeview-listview', 'A Tree View control, filled by VBA', 'A form with a Tree View of categories and their products, and the chosen product’s details beside it'],
+  ['listview', 'A List View control, with icons and tick boxes', 'A form with a List View of orders, with an icon for each status and buttons for its four views'],
+  ['pivottable', 'PivotTable view: sales by category and product, for each year', 'A PivotTable of sales by category and product, with a column for each year'],
+  ['pivotchart', 'PivotChart view: sales by year and category', 'A stacked column PivotChart of sales by year and category'],
+  ['conditional-formatting', 'The Conditional Formatting Rules Manager', 'The Conditional Formatting Rules Manager, with a rule written as an expression'],
+  ['appearance', 'A look for each database: Classic or Modern, colours and a default font', 'Options, with a database’s Appearance settings: control style, focus highlight, corner radius, record selector, colours and default font'],
+  ['form-code', 'The module behind a form', 'The VBA module behind a form, with a Click event that builds a filter'],
   ['intellisense', 'IntelliSense as you type', 'IntelliSense listing a recordset’s members'],
   ['debugger', 'Paused at a breakpoint, with Locals', 'VBA paused at a breakpoint with the Locals window showing variables'],
   ['macro-design', 'Macro Design: actions, If blocks and comments', 'Macro Design showing a comment, an If block with two actions, and an Else with a MessageBox'],

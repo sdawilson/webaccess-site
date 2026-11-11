@@ -51,7 +51,7 @@ Mark, for the green title bar:
 
 - Live at https://webaccessbuilder.com (DNS at Bunny); webaccessbuilder.co.uk forwards to it from names.co.uk, which keeps its DNS for email. Repo: `sdawilson/webaccess-site`.
 - A static site served by a Bunny Edge Script from a Storage zone, deployed by GitHub Actions on every push, once a day, and by hand.
-- Its screenshots come from a local copy of the app (`tools/screenshots/capture.sh` in the site repo). Re-take them when the app's look changes. Some still show an older highways sample; new ones use Fieldfare Traders (see "Leading with spreadsheets").
+- Its screenshots come from a local copy of the app in demo mode, with the Fieldfare Traders sample (`tools/screenshots/capture.sh` in the site repo). Re-take them when the app's look changes.
 - The site never links to GitHub (Simon's choice).
 - The public demo is at https://demo.webaccessbuilder.com: the Magic Containers app `webaccess-demo`, the same image with `DEMO_MODE=true`, showing the Fieldfare Traders sample. The site links to it from the hero, a "Try the demo" section, the FAQ and the notice on every page (`DEMO_URL` in `public/js/site.js`).
 - Status, as Simon wants it stated everywhere: **in active development, not yet recommended for production use; we're inviting people to test it and give feedback.** The site shows this in a notice on every page, the request form is for a *test instance* and needs the tester to confirm they understand, and the FAQ says to test with copies of data. Worth echoing in the app (sign-in page or About) and the guides.
@@ -98,5 +98,13 @@ Simon's view: Access developers are a small market, so the Spreadsheet control w
 - Three ways to build, in this order: no code, macros, VBA.
 - Don't say or imply it is Excel, or that it opens and runs Excel workbooks as they are. It imports and exports Excel files (formulas, formats, column widths); workbook VBA isn't imported, and conditional formats, validation, filters, charts and PivotTables don't come with a file. The `/excel/` page says so under "What's different".
 - Same care with Microsoft's names as for Access: "Excel" is fine in comparisons and in "Coming from Excel"; the trademark line in the footer names both Microsoft Access and Microsoft Excel.
-- Examples and screenshots use the Fieldfare Traders sample (a food wholesaler), never highways. Screenshots still showing the highways sample are to be retaken on Fieldfare.
+- Examples and screenshots use the Fieldfare Traders sample (a food wholesaler), never highways. Every screenshot was retaken on it on 11 Nov 2026, in the Modern look, and the highways seeds were deleted.
 - Claims with a source: 94% of business spreadsheets used for decisions contain errors (a 2024 review, linked to the phys.org report); VBA macros don't run in Excel for the web (Microsoft's Office Scripts and VBA comparison).
+
+## The AI assistant, the new look and the video (11 Nov 2026)
+
+- **The assistant** has its own section on the home page (`#assistant`), after the spreadsheet section. Say how it works, not how clever it is: it looks at the design, shows a plan, builds only on Go ahead, and its last build can be undone; it is sent the design and not the records, asks before seeing a few rows, is for Admins only, and can be switched off for an account. Keep the line that it is new, is an AI and can be wrong, and isn't in the public demo. It had not been tried with a real model when this was written, so make no claims about what it builds well.
+- The assistant's screenshot was made with a scripted stand-in for the AI (see `tools/screenshots/README.md`), and its caption says so. Replace it with a real conversation when there is a good one, and drop that sentence from the caption then.
+- The Questions say it runs on Anthropic's Claude. Simon hasn't been asked whether to name the supplier; it is there because people deciding whether to switch it on need to know where the design goes.
+- **The look**: each database has an Appearance (Classic or Modern controls, corner radius, focus highlight, record selector, system and accent colours, default font) and chart palettes (27 built in, eleven of them marked safe for colour blindness, plus a database's own). They're in the Forms section and on the screenshots page. Screenshots are in the Modern look, which new databases and the sample start with.
+- **The video is off the site** for now, at Simon's request: it showed the old look, a highways database and an Access import first. The section's code is still in `site.js`, and the film tooling is in `tools/video/`. When it is re-filmed, open with the spreadsheet, use Fieldfare Traders throughout, and change the title card to the new headline.

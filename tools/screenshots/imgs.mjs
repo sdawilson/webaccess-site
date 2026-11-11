@@ -11,11 +11,12 @@ const list = [
   ['users', null], ['user-view', null], ['property-sheet', null],
   ['report-view', null], ['report-preview', null], ['report-design', null], ['chart-dashboard', null], ['treeview-listview', null], ['help-guides', null],
   ['demo-signin', null], ['demo-menu', null], ['demo-dashboard', null], ['demo-orders', null], ['share', null], ['runtime-view', null], ['macro-design', null], ['relationships', null], ['spreadsheet', null], ['spreadsheet-design', null], ['spreadsheet-code', null], ['spreadsheet-runtime', null],
+  ['appearance', null], ['assistant', null], ['listview', null],
 ];
 const crops = {
   'continuous-form': DOC, 'form-view': DOC, 'form-design': DOC, 'pivottable': DOC, 'pivotchart': DOC, 'query-totals': DOC,
-  'query-criteria': DOC, 'sql-view': [304, 44, 1136, 398], 'table-design': DOC, 'datasheet': DOC, 'form-code': DOC, 'debugger': DOC,
-  'intellisense': DOC, 'conditional-formatting': [304, 100, 1136, 530], 'import-access': [230, 190, 980, 518] /* the dialog alone */, 'users': [304, 44, 1136, 398],
+  'query-criteria': DOC, 'sql-view': [304, 44, 1136, 398], 'table-design': [304, 44, 1136, 856] /* down to the field properties */, 'datasheet': DOC, 'form-code': DOC, 'debugger': DOC,
+  'intellisense': DOC, 'conditional-formatting': [304, 130, 1136, 560], 'import-access': [230, 190, 980, 518] /* the dialog alone */, 'users': [304, 44, 1136, 398],
   'user-view': [0, 0, 1200, 720],
   'runtime-view': [0, 0, 1440, 900], // the whole window: the point is what isn't there
   'property-sheet': DOC,
@@ -23,6 +24,8 @@ const crops = {
   'demo-signin': [120, 90, 1200, 720], 'demo-menu': DOC, 'demo-dashboard': DOC, 'demo-orders': DOC, 'macro-design': DOC, 'relationships': DOC, 'spreadsheet': DOC, 'spreadsheet-design': DOC, 'spreadsheet-code': DOC,
   'spreadsheet-runtime': [0, 0, 1136, 682], // a User's window: no rail or pane to leave out
   'share': [0, 44, 1200, 720],
+  'appearance': [232, 370, 780, 468], // Tools > Options: the Appearance section of the dialog
+  'assistant': DOC, 'listview': DOC,
 };
 const out = new URL('../../public/img/', import.meta.url).pathname;
 for (const [n] of list) {

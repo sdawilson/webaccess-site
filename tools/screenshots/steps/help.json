@@ -1,1 +1,0 @@
-[{"wait":1500},{"text":"Help","exact":true,"wait":2000},{"click":"input.help-search","wait":300},{"type":"subform","wait":1500}]

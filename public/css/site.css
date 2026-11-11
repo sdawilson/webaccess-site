@@ -272,6 +272,8 @@ p { margin: 0 0 1em; }
 .steps code { white-space: normal; }
 .shot-plain { max-width: 1000px; }
 .shot-plain figcaption { margin-top: 10px; color: var(--muted); font-size: 0.93rem; }
+.feature .shot > figcaption { margin-top: 10px; color: var(--muted); font-size: 0.93rem; }
+.feature-note { margin-top: 18px; color: var(--muted); font-size: 0.97rem; }
 
 /* ---------- roadmap ---------- */
 .roadmap { padding: 80px 0; border-top: 1px solid var(--rule); }

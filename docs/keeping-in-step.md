@@ -20,6 +20,7 @@ Compare the app's current README with what the site says, and note each thing th
 |---|---|---|
 | Hero, meta description | `public/index.html` | The headline leads on spreadsheets (see `docs/brand.md`); the feature list under it ("worksheets, forms, reports and pivot charts") |
 | "When the spreadsheet has become the system", "Worksheets on live data", "Everything in one place" | `public/index.html` (`#why-not`, `#sheets`, `#all-in-one`) | Each row and ticked bullet still true of the Spreadsheet control and the rest of the app |
+| "An assistant that builds it with you" | `public/index.html` (`#assistant`), the Question "What does the AI assistant see?" | What it is sent, who sees it, plan, approve and undo, and whether it is in the demo. Until the app's README covers it, the source is the Project doc `claude/ai-assistant-design.md` |
 | Coming from Excel | `public/excel/index.html` | "What carries over", "What's different" (remove a limit once the app lifts it), the steps and the questions |
 | "What you'll recognise" table | `public/access/index.html` | Each row still true; a new Access feature worth a row? |
 | Tables and queries, Forms, Reports, PivotTable, VBA sections | `public/index.html` | The ticked bullets, and whether a new feature belongs in one |
@@ -40,11 +41,11 @@ Keep the site's voice: plain British English, "we", short sentences, no hype, no
 
 If the new commits touched the app's `public/` folder (its browser code), retake the screenshots so they match:
 
-1. Clone the app next to this repo, `npm install`, `npm run build:univer` (the Spreadsheet control's workbook; without it the spreadsheet shots are blank), and start it with a throwaway admin on port 3100 (see `tools/screenshots/README.md`; use a fresh `DATA_DIR`).
-2. In `tools/screenshots/`: make sure `playwright` and `sharp` can be imported (`npm i playwright sharp` if not), then run `seed.mjs`, `seed2.mjs`, `seed3.mjs`, `seed4.mjs`, `seed5.mjs`, `seed6.mjs` and `users.mjs` with `SEED_PW`.
-3. For the demo's screens, start a second copy of the app with `DEMO_MODE=true` on port 3200 (its own fresh `DATA_DIR`; it builds the Fieldfare Traders sample itself). Then run `WEBACCESS_DIR=<app clone> DEMO_URL=http://localhost:3200 ./capture.sh`. Without the demo copy, the demo and spreadsheet screenshots already published are kept. `sheet.mjs` builds the "Stock Workbook" form on the sample for the spreadsheet shots.
-4. Look at every new image. If a step no longer finds what it clicks (a renamed button, say), fix that step's JSON in `tools/screenshots/steps/` and retake. Don't commit a screenshot that shows an error, a half-loaded screen or the wrong thing.
-5. If a notable new feature has a screen of its own, consider adding a shot: a step file, an entry in `capture.sh` and `imgs.mjs`, a caption in `SCREENS`, and possibly a view tab in the matching section.
+1. Clone the app next to this repo, `npm install`, `npm run build:univer` (the Spreadsheet control's workbook; without it the spreadsheet shots are blank), and start it in demo mode with a throwaway admin on port 3200 and a fresh `DATA_DIR`, so it builds the current Fieldfare Traders sample. `tools/screenshots/README.md` has the command, including the two settings that point the assistant at the script's stand-in.
+2. In `tools/screenshots/`: make sure `playwright` and `sharp` can be imported (`npm i playwright sharp` if not), then run `WEBACCESS_DIR=<app clone> ./capture.sh` (or `./capture.sh forms code` for some groups only).
+3. Look at every new image (`sheet-of.mjs` makes a contact sheet). If a step no longer finds what it clicks (a renamed button, say), fix it in `shoot.mjs` and retake that group. Don't commit a screenshot that shows an error, a half-loaded screen or the wrong thing.
+4. If a notable new feature has a screen of its own, consider adding a shot: a line in the right group of `shoot.mjs`, a crop in `imgs.mjs`, a caption in `SCREENS`, and possibly a view tab in the matching section.
+5. No highways examples: everything is on the Fieldfare Traders sample.
 
 ## 4. Check the result
 

@@ -49,7 +49,7 @@
   <div class="wrap">
     <div class="section-head">
       <h1>Screenshots</h1>
-      <p>Every screen here is Web Access Builder running in a browser, with a sample highways database. Click any screenshot to see it full size.</p>
+      <p>Every screen here is Web Access Builder running in a browser, with Fieldfare Traders, the sample database in the demo. Click any screenshot to see it full size.</p>
     </div>
     <nav class="shotjump" aria-label="Screenshot groups">
       <a href="#spreadsheets">Spreadsheets</a><a href="#designing">Designing</a><a href="#using">Working with data</a><a href="#code">Code</a><a href="#sharing">Sharing</a><a href="#start">Getting started</a>
@@ -60,9 +60,9 @@
       <div class="shotgrid">
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/spreadsheet-full@2x.webp" data-full="/img/spreadsheet-full@2x.webp">
-          <img src="/img/spreadsheet-full.webp" srcset="/img/spreadsheet-full.webp 1440w, /img/spreadsheet-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A workbook on a form: a stock list with a title, four figures above, the products of a table from row 6, and Stock value and Reorder columns worked out by formulas">
+          <img src="/img/spreadsheet-full.webp" srcset="/img/spreadsheet-full.webp 1440w, /img/spreadsheet-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A workbook on a form: a stock list with a title and a note above, the products of a query from row 4, low stock shaded by a conditional format, and a Stock value column worked out by a formula">
         </a>
-        <figcaption><h3>A workbook on a form</h3><p>A table's records go in at the row you choose. The title and figures above, the formulas beside and the total beneath are the workbook's own, and stay.</p></figcaption>
+        <figcaption><h3>A workbook on a form</h3><p>A query's records go in at the row you choose. The title and note above, the formula beside and the totals beneath are the workbook's own, and stay.</p></figcaption>
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/spreadsheet-runtime-full@2x.webp" data-full="/img/spreadsheet-runtime-full@2x.webp">
@@ -78,9 +78,9 @@
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/spreadsheet-code-full@2x.webp" data-full="/img/spreadsheet-code-full@2x.webp">
-          <img src="/img/spreadsheet-code-full.webp" srcset="/img/spreadsheet-code-full.webp 1440w, /img/spreadsheet-code-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="The form's module: a SheetChange event that shades a cell, and a procedure that loops through the rows and saves them with Data.Update">
+          <img src="/img/spreadsheet-code-full.webp" srcset="/img/spreadsheet-code-full.webp 1440w, /img/spreadsheet-code-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="The form's module: a button's Click event that reads the records as a ListObject, loops through its rows and puts the low ones in bold">
         </a>
-        <figcaption><h3>Worksheet code</h3><p>Excel's objects in VBA: Worksheet, Range and ListObject, with a change event. Data.Update writes changed rows to the table.</p></figcaption>
+        <figcaption><h3>Worksheet code</h3><p>Excel's objects in VBA: Worksheet, Range and ListObject. Here a button reads the records as a ListObject and puts the low stock in bold.</p></figcaption>
       </figure>
       </div>
     </section>
@@ -95,7 +95,7 @@
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/query-criteria-full@2x.webp" data-full="/img/query-criteria-full@2x.webp">
-          <img src="/img/query-criteria-full.webp" srcset="/img/query-criteria-full.webp 1440w, /img/query-criteria-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="Query Design grid with criteria on Status and StartDate across two rows">
+          <img src="/img/query-criteria-full.webp" srcset="/img/query-criteria-full.webp 1440w, /img/query-criteria-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="Query Design on two joined tables, with criteria on Units In Stock and Discontinued">
         </a>
         <figcaption><h3>Query design</h3><p>The design grid you know: drag between tables to join them, then Sort, Show and Criteria rows, with criteria written the Access way.</p></figcaption>
       </figure>
@@ -117,6 +117,12 @@
         </a>
         <figcaption><h3>Relationships</h3><p>Drag a field from one table to another to relate them, then enforce referential integrity, with cascade update and cascade delete if you want them.</p></figcaption>
       </figure>
+      <figure class="shotcard">
+        <a class="shotcard-img" href="/img/appearance-full@2x.webp" data-full="/img/appearance-full@2x.webp">
+          <img src="/img/appearance-full.webp" srcset="/img/appearance-full.webp 1440w, /img/appearance-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="Options: a database's Appearance settings, with control style, focus highlight, corner radius, record selector, system and accent colours and a default font">
+        </a>
+        <figcaption><h3>A look for each database</h3><p>Classic or Modern controls, corner radius, focus highlight, record selector, a system colour and an accent, and a default font. Everyone who opens the database gets it.</p></figcaption>
+      </figure>
       </div>
     </section>
     <section class="shotgroup" id="using" aria-labelledby="using-title">
@@ -124,48 +130,60 @@
       <div class="shotgrid">
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/continuous-form-full@2x.webp" data-full="/img/continuous-form-full@2x.webp">
-          <img src="/img/continuous-form-full.webp" srcset="/img/continuous-form-full.webp 1440w, /img/continuous-form-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A continuous form listing highway schemes, with status colours and data bars on the estimates">
+          <img src="/img/continuous-form-full.webp" srcset="/img/continuous-form-full.webp 1440w, /img/continuous-form-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A continuous form of products with combo boxes and check boxes, and low stock shaded by conditional formatting">
         </a>
-        <figcaption><h3>Continuous forms</h3><p>Status colours from conditional formatting, data bars on the estimates, and a total in the footer.</p></figcaption>
+        <figcaption><h3>Continuous forms</h3><p>A record on every row, with combo boxes and check boxes, low stock shaded by conditional formatting, and a count in the footer.</p></figcaption>
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/form-view-full@2x.webp" data-full="/img/form-view-full@2x.webp">
-          <img src="/img/form-view-full.webp" srcset="/img/form-view-full.webp 1440w, /img/form-view-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A single form for one scheme, with a datasheet subform of defects on a tab control">
+          <img src="/img/form-view-full.webp" srcset="/img/form-view-full.webp 1440w, /img/form-view-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A single form for one order, with its order lines in a subform and the order's total worked out underneath">
         </a>
-        <figcaption><h3>Forms and subforms</h3><p>A single form with a datasheet subform on a tab control, calculated controls, and an outturn that turns red when it's over budget.</p></figcaption>
+        <figcaption><h3>Forms and subforms</h3><p>An order with its lines in a subform, combo boxes that look up customers and products, and totals worked out as you type.</p></figcaption>
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/report-preview-full@2x.webp" data-full="/img/report-preview-full@2x.webp">
-          <img src="/img/report-preview-full.webp" srcset="/img/report-preview-full.webp 1440w, /img/report-preview-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="Print Preview of a report of schemes grouped by type, on an A4 page">
+          <img src="/img/report-preview-full.webp" srcset="/img/report-preview-full.webp 1440w, /img/report-preview-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="Print Preview of a report of sales grouped by category, on an A4 page">
         </a>
         <figcaption><h3>Print Preview</h3><p>Grouped reports with subtotals and page numbers, on A4, A3, A5, Letter or Legal, ready to print or save as PDF.</p></figcaption>
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/pivottable-full@2x.webp" data-full="/img/pivottable-full@2x.webp">
-          <img src="/img/pivottable-full.webp" srcset="/img/pivottable-full.webp 1440w, /img/pivottable-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A PivotTable of estimates by scheme type and quarter">
+          <img src="/img/pivottable-full.webp" srcset="/img/pivottable-full.webp 1440w, /img/pivottable-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A PivotTable of sales by category and product, with a column for each year">
         </a>
-        <figcaption><h3>PivotTable view</h3><p>Back after Access 2013 took it away: drag fields to rows, columns and totals, with dates grouped by year and quarter.</p></figcaption>
+        <figcaption><h3>PivotTable view</h3><p>Back after Access 2013 took it away: drag fields to rows, columns and totals, with dates grouped by year, quarter or month.</p></figcaption>
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/chart-dashboard-full@2x.webp" data-full="/img/chart-dashboard-full@2x.webp">
-          <img src="/img/chart-dashboard-full.webp" srcset="/img/chart-dashboard-full.webp 1440w, /img/chart-dashboard-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A dashboard form with two Chart controls: estimate and actual by scheme type, and schemes by status">
+          <img src="/img/chart-dashboard-full.webp" srcset="/img/chart-dashboard-full.webp 1440w, /img/chart-dashboard-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A form with two Chart controls, a doughnut of sales by customer city and columns of sales by salesperson, and a combo box that changes their palette">
         </a>
-        <figcaption><h3>Charts</h3><p>A Chart control modelled on Access's modern one, on a dashboard form, drawn from a table, a query or code.</p></figcaption>
+        <figcaption><h3>Charts</h3><p>A Chart control modelled on Access's modern one, drawn from a table, a query or code, in one of 27 palettes or your own.</p></figcaption>
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/treeview-listview-full@2x.webp" data-full="/img/treeview-listview-full@2x.webp">
-          <img src="/img/treeview-listview-full.webp" srcset="/img/treeview-listview-full.webp 1440w, /img/treeview-listview-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A form with a TreeView of scheme types and schemes, and a ListView of the chosen type's schemes">
+          <img src="/img/treeview-listview-full.webp" srcset="/img/treeview-listview-full.webp 1440w, /img/treeview-listview-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A form with a Tree View of categories and their products, and the chosen product's details beside it">
         </a>
-        <figcaption><h3>Tree View and List View</h3><p>Built-in controls that work like the Windows Common Controls, filled by VBA as you'd fill them in Access.</p></figcaption>
+        <figcaption><h3>Tree View</h3><p>A built-in control that works like the Windows Common Control, filled by VBA as you'd fill it in Access.</p></figcaption>
+      </figure>
+      <figure class="shotcard">
+        <a class="shotcard-img" href="/img/listview-full@2x.webp" data-full="/img/listview-full@2x.webp">
+          <img src="/img/listview-full.webp" srcset="/img/listview-full.webp 1440w, /img/listview-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="A form with a List View of orders in Report view, with an icon for each status, tick boxes and buttons for Icon, Small Icon and List views">
+        </a>
+        <figcaption><h3>List View</h3><p>Report, Icon, Small Icon and List views, with icons from an Image List, tick boxes and sorting by column, all from VBA.</p></figcaption>
       </figure>
       </div>
     </section>
     <section class="shotgroup" id="code" aria-labelledby="code-title">
-      <h2 id="code-title">Code</h2>
+      <h2 id="code-title">Code and the assistant</h2>
       <div class="shotgrid">
       <figure class="shotcard">
+        <a class="shotcard-img" href="/img/assistant-full@2x.webp" data-full="/img/assistant-full@2x.webp">
+          <img src="/img/assistant-full.webp" srcset="/img/assistant-full.webp 1440w, /img/assistant-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="The Assistant: a request in plain words to keep track of supplier deliveries, and its plan of a table, a relationship, a query, a form, a report and a menu button, waiting for Go ahead">
+        </a>
+        <figcaption><h3>The assistant</h3><p>Say what you need, look over its plan, and press Go ahead. It builds with the same designers you'd use, and its last build can be undone. This picture was made with a scripted stand-in for the AI.</p></figcaption>
+      </figure>
+      <figure class="shotcard">
         <a class="shotcard-img" href="/img/debugger-full@2x.webp" data-full="/img/debugger-full@2x.webp">
-          <img src="/img/debugger-full.webp" srcset="/img/debugger-full.webp 1440w, /img/debugger-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="VBA paused at a breakpoint, with the Locals window listing the variables">
+          <img src="/img/debugger-full.webp" srcset="/img/debugger-full.webp 1440w, /img/debugger-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="VBA paused at a breakpoint in a loop, with the Locals window listing a recordset and a string">
         </a>
         <figcaption><h3>The debugger</h3><p>Breakpoints, stepping with F8, and the Locals, Watches and Immediate windows.</p></figcaption>
       </figure>
@@ -177,7 +195,7 @@
       </figure>
       <figure class="shotcard">
         <a class="shotcard-img" href="/img/macro-design-full@2x.webp" data-full="/img/macro-design-full@2x.webp">
-          <img src="/img/macro-design-full.webp" srcset="/img/macro-design-full.webp 1440w, /img/macro-design-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="Macro Design: a comment, an If block that opens a form and sets a TempVar, and an Else with a MessageBox">
+          <img src="/img/macro-design-full.webp" srcset="/img/macro-design-full.webp 1440w, /img/macro-design-full@2x.webp 2880w" sizes="(min-width: 1100px) 570px, (min-width: 760px) 46vw, 94vw" width="1440" height="900" loading="lazy" alt="Macro Design: a comment, an If block that opens a report and sets a TempVar, and an Else with a MessageBox">
         </a>
         <figcaption><h3>Macros</h3><p>Macro Design, with If blocks, groups and submacros. Macros run from the Navigation Pane, from events, from code, and as AutoExec when the database opens.</p></figcaption>
       </figure>
