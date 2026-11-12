@@ -43,13 +43,25 @@
     <!-- signed in -->
     <section id="inbox" hidden aria-labelledby="inbox-title">
       <div class="inbox-head">
-        <h1 id="inbox-title">Requests and suggestions</h1>
+        <h1 id="inbox-title">Visits, messages and suggestions</h1>
         <button type="button" class="btn btn-ghost" id="refresh">Refresh</button>
       </div>
 
+      <section class="visits" aria-labelledby="visits-title">
+        <h2 id="visits-title">Visits</h2>
+        <p class="visits-totals" id="visits-totals">Loading…</p>
+        <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Visits by day">
+          <table class="datasheet visits-table">
+            <thead><tr><th scope="col">Day</th><th scope="col">Page views</th><th scope="col">Demo clicks</th><th scope="col">Start free clicks</th><th scope="col">Pages viewed</th></tr></thead>
+            <tbody id="visits-rows"></tbody>
+          </table>
+        </div>
+        <p class="visits-note">Counted by the pages' own script, so crawlers that don't run scripts aren't included. Nothing about a visitor is kept.</p>
+      </section>
+
       <div class="inbox-tools">
         <div class="viewbar" role="tablist" aria-label="Which list">
-          <button role="tab" type="button" aria-selected="true" data-kind="requests">Test instance requests <span class="count" data-count="requests"></span></button>
+          <button role="tab" type="button" aria-selected="true" data-kind="requests">Messages <span class="count" data-count="requests"></span></button>
           <button role="tab" type="button" aria-selected="false" data-kind="features">Feature suggestions <span class="count" data-count="features"></span></button>
         </div>
         <div class="viewbar" role="group" aria-label="Show">

@@ -142,33 +142,25 @@ const head = (title, description, canonical) => `<!doctype html>
     <a class="wordmark" href="/"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="256" height="26"></a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="/screenshots/">Screens</a></li>
-        <li><a href="/#sheets">Spreadsheets</a></li>
-        <li><a href="/#data">Features</a></li>
-        <li><a href="/#runtime">Runtime</a></li>
-        <li><a href="/#plans">Plans</a></li>
+        <li><a href="/features/">Features</a></li>
+        <li><a href="/vba/">Visual Basic</a></li>
         <li><a href="/excel/">From Excel</a></li>
         <li><a href="/access/">From Access</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/guides/" aria-current="page">Guides</a></li>
-        <li><a href="/#faq">Questions</a></li>
       </ul>
     </nav>
-    <a class="btn btn-light" href="/#demo">Try it</a>
+    <a class="btn btn-light" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
   </div>
 </header>
-<div class="devnotice" role="note">
-  <div class="wrap devnotice-inner">
-    <p><strong>In active development.</strong> Web Access Builder isn't yet recommended for production use. We're inviting people to test it and tell us what they find. <a href="https://demo.webaccessbuilder.com" target="_blank" rel="noopener">Try the demo</a> or <a href="/#request">request a test instance</a>.</p>
-  </div>
-</div>
 `;
 
 const foot = `
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
-    <p>© 2026 Simon Wilson. Microsoft Access and Microsoft Excel are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p class="footer-links"><a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
+    <p>© 2026 Simon Wilson. Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/features/">Features</a> <a href="/vba/">Visual Basic</a> <a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/pricing/">Pricing</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/features/#suggest">Suggest a feature</a> <a href="/pricing/#contact">Contact</a></p>
   </div>
 </footer>
 <script src="/js/admin-link.js" defer></script>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual Basic in a web browser: VBA forms, events and a debugger | Web Access Builder</title>
+<meta name="description" content="Write VBA in a web browser. Forms with controls and events, class modules, DAO and DoCmd, with IntelliSense, breakpoints and Locals. Nothing to install, and free to start.">
+<meta property="og:title" content="Visual Basic in a web browser: VBA forms, events and a debugger | Web Access Builder">
+<meta property="og:description" content="Write VBA in a web browser. Forms with controls and events, class modules, DAO and DoCmd, with IntelliSense, breakpoints and Locals. Nothing to install, and free to start.">
+<meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
+<meta property="og:url" content="https://webaccessbuilder.com/vba/">
+<link rel="canonical" href="https://webaccessbuilder.com/vba/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f4e3d">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/img/brand/logo-mark-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/img/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="titlebar">
+  <div class="titlebar-inner">
+    <a class="wordmark" href="/"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="256" height="26"></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="/features/">Features</a></li>
+        <li><a href="/vba/" aria-current="page">Visual Basic</a></li>
+        <li><a href="/excel/">From Excel</a></li>
+        <li><a href="/access/">From Access</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/guides/">Guides</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-light" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="pagehead" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 id="page-title">Visual Basic, in a web browser</h1>
+    <p class="lede">If you learned to build software by drawing a form, dropping a button on it and writing its Click event, this will feel like home. The language is VBA, the forms and controls are the ones you know, and the result is a web application your team opens from a link.</p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+      <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
+    </p>
+  </div>
+</section>
+
+<section class="familiar" id="why-vba" aria-labelledby="why-vba-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="why-vba-title">VBA never made it to the web. Until now.</h2>
+      <p>Millions of people know VBA, and what they've built with it is stuck on the desktop.</p>
+    </div>
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Where VBA stops, and what Web Access Builder does">
+      <table class="datasheet stack">
+        <thead>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">Where VBA stops</th><th scope="col">In Web Access Builder</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sel" aria-hidden="true"></td><td>VBA macros don't run in Excel for the web. Its scripts are written in TypeScript instead (<a href="https://learn.microsoft.com/en-us/office/dev/scripts/resources/vba-differences" rel="noopener" target="_blank">Microsoft</a>)</td><td>VBA runs in the browser, on an interpreter written for it. Nothing is installed</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Access has no web version: its web apps were shut down in 2018 (<a href="https://support.microsoft.com/en-us/access/access-services-in-sharepoint-roadmap" rel="noopener" target="_blank">Microsoft</a>)</td><td>Forms, reports and their code open from a link, on Windows or a Mac</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Microsoft has said VBA will stay but won't be developed further (<a href="https://nolongerset.com/will-officescripts-replace-vba/" rel="noopener" target="_blank">reported by No Longer Set</a>)</td><td>The language you know, with additions: JavaScript modules your VBA can call, and an AI assistant that writes code and explains errors</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Moving to the web usually means a new language, a framework, a server and a database</td><td>One tool. Draw the form, write the event, share the link</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="feature feature-alt" id="forms" aria-labelledby="vbforms-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="vbforms-title">Forms, controls and events</h2>
+      <p>Design view works the way you expect: a grid, a toolbox, a property sheet and a field list. Every control has events, and the code behind them is a module of the form.</p>
+      <ul class="ticks">
+        <li>Text boxes, combo boxes, list boxes, check boxes, option groups, buttons, tabs, subforms and images</li>
+        <li>Tree View, List View, Image List, Progress Bar, Slider and UpDown, built in, working the way the Windows Common Controls do</li>
+        <li>Chart controls, a Spreadsheet control and a Web Browser control</li>
+        <li>Form and control events: Load, Current, BeforeUpdate, AfterUpdate, Click, Change, Timer and the rest</li>
+        <li><code>Me</code>, <code>Forms!</code>, <code>Screen.ActiveForm</code>, <code>OpenArgs</code> and <code>TempVars</code></li>
+      </ul>
+      <p class="more"><a href="/features/#forms">More about forms</a></p>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Form screens">
+        <button role="tab" type="button" aria-selected="true" data-img="form-design" data-alt="Form Design view with the controls on the command bar, the field list and the property sheet">Design view</button>
+        <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form: a Click event that builds a filter and applies it to a subform">Its code</button>
+        <button role="tab" type="button" aria-selected="false" data-img="treeview-listview" data-alt="A form with a Tree View of categories and their products, filled by VBA, and the chosen product's details beside it">Tree View</button>
+        <button role="tab" type="button" aria-selected="false" data-img="form-view" data-alt="A single form for one order, with its order lines in a subform and the order's total worked out underneath">Running</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/form-design.webp" srcset="/img/form-design.webp 1136w, /img/form-design@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="Form Design view with the controls on the command bar, the field list and the property sheet">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="feature" id="code" aria-labelledby="code-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="code-title">No code, macros, or VBA</h2>
+      <p>Forms, queries and worksheets need no code at all. Add a macro when a button should do something. Write VBA when you need more, in an editor with IntelliSense as you type, and breakpoints, stepping, Locals, Watches and the Immediate window.</p>
+      <ul class="ticks">
+        <li>Excel's <code>Workbook</code>, <code>Worksheet</code> and <code>Range</code> on a Spreadsheet control, and worksheet change events</li>
+        <li>Form and control events, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code> and <code>InputBox</code></li>
+        <li><code>DLookup</code>, <code>DCount</code> and DAO recordsets: <code>Edit</code>, <code>AddNew</code>, <code>Update</code>, <code>FindFirst</code></li>
+        <li>More of <code>DoCmd</code>: <code>FindRecord</code>, <code>SearchForRecord</code>, <code>SetFilter</code>, and <code>OutputTo</code> and <code>TransferSpreadsheet</code> to export as a download; and the <code>Screen</code> and <code>Application</code> objects</li>
+          <li>Compile errors as VBA shows them: “Compile error: Expected: Then or GoTo”</li>
+        <li>Transactions from code: <code>BeginTrans</code>, <code>CommitTrans</code> and <code>Rollback</code></li>
+        <li>Macros too: Macro Design with If blocks and submacros, AutoExec, macros behind events, and <code>DoCmd.RunMacro</code></li>
+        <li>Explain Error and Fix Error: AI says what went wrong and offers a fix you can apply. The <a href="/features/#assistant">assistant</a> writes modules and macros too</li>
+        <li>References for statistics, UK bank holidays and British National Grid coordinates</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Code screens">
+        <button role="tab" type="button" aria-selected="true" data-img="debugger" data-alt="Code paused at a breakpoint in a loop, with the current line highlighted and Locals listing a recordset and a string">Debugger</button>
+        <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The module behind a workbook form: a Click event that reads the records as a ListObject and loops through its rows">Worksheet code</button>
+        <button role="tab" type="button" aria-selected="false" data-img="intellisense" data-alt="IntelliSense listing a recordset's members after typing rs.">IntelliSense</button>
+        <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form: a Click event that builds a filter and applies it to a subform">Form module</button>
+        <button role="tab" type="button" aria-selected="false" data-img="macro-design" data-alt="Macro Design: a comment, an If block that opens a report and sets a TempVar, and an Else with a MessageBox">Macro</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/debugger.webp" srcset="/img/debugger.webp 1136w, /img/debugger@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="Code paused at a breakpoint in a loop, with the current line highlighted and Locals listing a recordset and a string">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="web" id="different" aria-labelledby="different-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="different-title">What's different in a browser</h2>
+      <p>It's VBA, but it isn't Windows. These are the things to know before you bring code across.</p>
+    </div>
+    <dl class="extras extras-wide">
+      <div><dt>No Windows API</dt><dd><code>Declare</code> statements and <code>CreateObject</code> for desktop applications have nothing to call in a browser. <code>Dictionary</code> and <code>RegExp</code> are built in.</dd></div>
+      <div><dt>Files are the browser's</dt><dd>Code can't read or write the disk directly. Imports and exports go through the browser's file picker and downloads.</dd></div>
+      <div><dt>Not Excel's whole object model</dt><dd>Workbook, Worksheet, Range and ListObject are there for the Spreadsheet control. Charts, shapes and other Office applications are not.</dd></div>
+      <div><dt>JavaScript when you want it</dt><dd>Where desktop code would call a DLL, write a JavaScript module and call its functions from VBA.</dd></div>
+    </dl>
+    <p class="web-more"><a href="/guides/programmers-guide/">The Programmer's Guide</a> lists what's supported, statement by statement, and <a href="/guides/access-differences/">Differences from Access</a> lists what isn't.</p>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Start free">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Write your first event in the browser</h2>
+      <p>Free, with no card. The sample database comes with working code to step through.</p>
+    </div>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+      <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
+    <p>© 2026 Simon Wilson. Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/features/">Features</a> <a href="/vba/">Visual Basic</a> <a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/pricing/">Pricing</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/features/#suggest">Suggest a feature</a> <a href="/pricing/#contact">Contact</a></p>
+  </div>
+</footer>
+
+<script src="/js/site.js" defer></script>
+<script src="/js/admin-link.js" defer></script>
+</body>
+</html>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coming from Access · Web Access Builder</title>
-<meta name="description" content="If you have built in Microsoft Access: what is the same in Web Access Builder, what changes on the web, and how to bring a database across.">
-<meta property="og:title" content="Coming from Access · Web Access Builder">
-<meta property="og:description" content="If you have built in Microsoft Access: what is the same in Web Access Builder, what changes on the web, and how to bring a database across.">
+<title>An Access alternative on the web, with PivotTables, PivotCharts and VBA | Web Access Builder</title>
+<meta name="description" content="Built for people who know Microsoft Access: tables, queries, forms, reports, macros and VBA in a web browser, with PivotTable and PivotChart views back, and an import for your .accdb.">
+<meta property="og:title" content="An Access alternative on the web, with PivotTables, PivotCharts and VBA | Web Access Builder">
+<meta property="og:description" content="Built for people who know Microsoft Access: tables, queries, forms, reports, macros and VBA in a web browser, with PivotTable and PivotChart views back, and an import for your .accdb.">
 <meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
 <meta property="og:url" content="https://webaccessbuilder.com/access/">
 <link rel="canonical" href="https://webaccessbuilder.com/access/">
@@ -29,38 +29,56 @@
     <a class="wordmark" href="/"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="256" height="26"></a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="/screenshots/">Screens</a></li>
-        <li><a href="/#sheets">Spreadsheets</a></li>
-        <li><a href="/#data">Features</a></li>
-        <li><a href="/#runtime">Runtime</a></li>
-        <li><a href="/#plans">Plans</a></li>
+        <li><a href="/features/">Features</a></li>
+        <li><a href="/vba/">Visual Basic</a></li>
         <li><a href="/excel/">From Excel</a></li>
         <li><a href="/access/" aria-current="page">From Access</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/guides/">Guides</a></li>
-        <li><a href="/#faq">Questions</a></li>
       </ul>
     </nav>
-    <a class="btn btn-light" href="/#demo">Try it</a>
+    <a class="btn btn-light" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
   </div>
 </header>
-<div class="devnotice" role="note">
-  <div class="wrap devnotice-inner">
-    <p><strong>In active development.</strong> Web Access Builder isn't yet recommended for production use. We're inviting people to test it and tell us what they find. <a href="https://demo.webaccessbuilder.com" target="_blank" rel="noopener">Try the demo</a> or <a href="/#request">request a test instance</a>.</p>
-  </div>
-</div>
 
 <main id="main">
 
 <section class="pagehead" aria-labelledby="page-title">
   <div class="wrap">
     <h1 id="page-title">Coming from Access</h1>
-    <p class="lede">Web Access Builder is an independent product, built for people who know Microsoft Access. If you've built in Access, you'll know your way round: tables, queries, forms, reports, macros and VBA, in a browser, with nothing to install.</p>
+    <p class="lede">Web Access Builder is an independent product, built for people who know Microsoft Access. Tables, queries, forms, reports, macros and VBA, in a browser, with nothing to install, and with the PivotTable and PivotChart views that Access dropped.</p>
     <p class="hero-actions">
-      <a class="btn btn-primary" href="/#demo" data-demo-link>Try the demo</a>
-      <a class="btn btn-ghost" href="/#request">Request a test instance</a>
+      <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+      <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
     </p>
   </div>
 </section>
+
+<section class="web" id="lost" aria-labelledby="lost-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="lost-title">What Access lost, and never had</h2>
+      <p>Access is still the quickest way to build a database application. These are the places it stopped, with what you get here.</p>
+    </div>
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Where Access stops, and what Web Access Builder does">
+      <table class="datasheet datasheet-dark stack">
+        <thead>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">In Access</th><th scope="col">In Web Access Builder</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sel" aria-hidden="true"></td><td>PivotTable and PivotChart views were removed in Access 2013 (<a href="https://support.microsoft.com/en-us/office/discontinued-features-and-modified-functionality-in-access-2013-bc006fc3-5b48-499e-8c7d-9a2dfef68e2f" rel="noopener" target="_blank">Microsoft</a>)</td><td>Both are back as views of any form: drag fields to rows, columns and totals, and group dates by year, quarter or month</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Analysis means exporting to Excel</td><td>PivotTables, PivotCharts and a Spreadsheet control with formulas, on the live records</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Access web apps were shut down in 2018 (<a href="https://support.microsoft.com/en-us/access/access-services-in-sharepoint-roadmap" rel="noopener" target="_blank">Microsoft</a>)</td><td>Everything runs in a web browser, on Windows or a Mac</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Everyone needs Access, or its runtime, installed</td><td>Nothing to install. Share a link; up to 10 people use each database free</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>A front end to hand out again after every change</td><td>Save a change and everyone has it the next time they open the form</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>A back end on a shared drive</td><td>Hosted for you in London, with sign-in, roles and nightly backups</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Charts in a handful of types</td><td>Column, bar, line, area, combo, pie, doughnut, scatter and bubble, in 27 palettes, formatted from code</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 
 <section class="familiar" id="familiar" aria-labelledby="familiar-title">
   <div class="wrap">
@@ -195,13 +213,26 @@
   </div>
 </section>
 
+<section class="cta-band" aria-label="Start free">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Bring a database across and see</h2>
+      <p>Free, with no card. Import an .accdb and open its forms, reports and code in the browser.</p>
+    </div>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+      <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
+    </p>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
-    <p>© 2026 Simon Wilson. Microsoft Access and Microsoft Excel are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p class="footer-links"><a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
+    <p>© 2026 Simon Wilson. Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/features/">Features</a> <a href="/vba/">Visual Basic</a> <a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/pricing/">Pricing</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/features/#suggest">Suggest a feature</a> <a href="/pricing/#contact">Contact</a></p>
   </div>
 </footer>
 

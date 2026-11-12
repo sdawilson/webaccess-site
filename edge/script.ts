@@ -1,7 +1,7 @@
 // webaccess marketing site: Bunny Edge Script (standalone).
 //
 // GET  /...           serves the site's files from the storage zone, under site/
-// POST /api/request   saves a "request an instance" form to the storage zone, under requests/,
+// POST /api/request   saves a "get in touch" message to the storage zone, under requests/,
 //                     and emails a notification if RESEND_API_KEY is set
 // POST /api/feature   saves a "suggest a feature" form to the storage zone, under features/,
 //                     and emails a notification in the same way
@@ -129,7 +129,7 @@ async function serveFile(url: URL, method: string): Promise<Response> {
   return new Response("Not found", { status: 404, headers: { "Content-Type": "text/plain; charset=utf-8", ...SECURITY_HEADERS } });
 }
 
-// ---------- the forms: test-instance requests and feature suggestions ----------
+// ---------- the forms: messages and feature suggestions ----------
 
 const recent = new Map<string, number[]>(); // per client, in this isolate only: a light brake, not a guarantee
 
@@ -219,19 +219,16 @@ async function saveRequest(request: Request): Promise<Response> {
   for (const [k, max] of Object.entries(REQUEST_FIELDS)) data[k] = clean(raw[k], max);
   if (!data.name) return json(400, { error: "Enter your name." });
   if (!EMAIL.test(data.email)) return json(400, { error: "Enter an email address we can reply to." });
-  const acknowledged = raw.acknowledged === true || ["yes", "on", "true"].includes(clean(raw.acknowledged, 10).toLowerCase());
-  if (!acknowledged) return json(400, { error: "Please tick the box to confirm you understand it isn't ready for production use." });
-  if (tooMany(clientOf(request))) return json(429, { error: "Too many requests from here." });
+  if (tooMany(clientOf(request))) return json(429, { error: "Too many messages from here." });
 
-  const r = await store(REQUEST_PREFIX, request, { ...data, acknowledgedNotForProduction: true });
+  const r = await store(REQUEST_PREFIX, request, data);
   if (r instanceof Response) return r;
-  await notify(`Web Access Builder test instance request: ${r.organisation || r.name}`, [
+  await notify(`Web Access Builder message: ${r.organisation || r.name}`, [
     `Name: ${r.name}`,
     `Email: ${r.email}`,
     `Organisation: ${r.organisation || "-"}`,
     `Users: ${r.users || "-"}`,
     `Starting from: ${r.existing || "-"}`,
-    "Confirmed it's a test, not for production: yes",
     `Country: ${r.country || "-"}`,
     "",
     r.message || "(no message)",
@@ -273,12 +270,60 @@ async function saveFeature(request: Request): Promise<Response> {
   return json(200, { ok: true });
 }
 
+// ---------- counting visits ----------
+//
+// POST /api/hit { event, path } from site.js adds one to a count in stats/YYYY-MM-DD.json:
+// { "view": { "/": 12, "/excel/": 3 }, "demo": { "/": 4 }, "signup": { "/": 2 } }.
+// It is sent by the page's script, so crawlers that don't run scripts aren't counted, and
+// known crawlers that do are left out. No cookie, no address and nothing about the visitor
+// is kept. Two hits in the same instant can lose one: these are counts to steer by, not accounts.
+
+const HIT_EVENTS = ["view", "demo", "signup"];
+const BOT = /bot|crawl|spider|slurp|headless|lighthouse|pagespeed|preview|monitor|curl|wget|python|playwright|puppeteer/i;
+const STATS_PREFIX = "stats";
+
+async function readStats(day: string): Promise<Record<string, Record<string, number>>> {
+  const res = await fetch(storageUrl(`${STATS_PREFIX}/${day}.json`), { headers: { AccessKey: STORAGE_KEY } });
+  if (!res.ok) return {};
+  try { const v = await res.json(); return v && typeof v === "object" ? v : {}; } catch { return {}; }
+}
+
+async function saveHit(request: Request): Promise<Response> {
+  const raw = await readForm(request);
+  if (raw === null || raw instanceof Response) return json(200, { ok: true });
+  const event = clean(raw.event, 20);
+  const path = clean(raw.path, 80);
+  if (!HIT_EVENTS.includes(event) || !/^\/[a-z0-9/_-]*$/.test(path)) return json(200, { ok: true });
+  if (BOT.test(request.headers.get("user-agent") || "")) return json(200, { ok: true });
+  const day = new Date().toISOString().slice(0, 10);
+  const stats = await readStats(day);
+  const forEvent = (stats[event] = stats[event] || {});
+  if (!(path in forEvent) && Object.keys(forEvent).length >= 200) return json(200, { ok: true });   // made-up paths can't grow the file
+  forEvent[path] = (forEvent[path] || 0) + 1;
+  await fetch(storageUrl(`${STATS_PREFIX}/${day}.json`), {
+    method: "PUT",
+    headers: { AccessKey: STORAGE_KEY, "Content-Type": "application/json" },
+    body: JSON.stringify(stats),
+  });
+  return json(200, { ok: true });
+}
+
+// The last `days` days' counts, newest first: [{ day, view, demo, signup, pages: { path: views } }]
+async function listStats(days: number): Promise<Record<string, unknown>[]> {
+  const names: string[] = [];
+  for (let i = 0; i < days; i++) names.push(new Date(Date.now() - i * 86_400_000).toISOString().slice(0, 10));
+  const all = await mapLimit(names, 8, readStats);
+  const sum = (o: Record<string, number> | undefined) => Object.values(o || {}).reduce((a, b) => a + (Number(b) || 0), 0);
+  return names.map((day, i) => ({ day, view: sum(all[i].view), demo: sum(all[i].demo), signup: sum(all[i].signup), pages: all[i].view || {} }));
+}
+
 // ---------- admin: Simon's private view of requests and suggestions ----------
 //
 // /admin (a static page) signs in with ADMIN_PASSWORD (an Edge Script secret) and then calls
 // these, all POST so the CDN never caches them, with the token in an Authorization header:
 //   POST /api/admin/login   { password }                 -> { token, expires }
 //   POST /api/admin/list    { kind: requests|features }  -> { items: [...] }, newest first
+//   POST /api/admin/stats   { days? }                    -> { days: [...] }, the visit counts
 //   POST /api/admin/update  { kind, id, replied?, note? } -> { item }
 //   POST /api/admin/delete  { kind, id }                 -> { ok }
 // A token is "<expiry>.<HMAC-SHA256 of it, keyed by the password>", so changing the password
@@ -389,6 +434,11 @@ async function admin(action: string, request: Request): Promise<Response> {
 
   if (!(await tokenOk(request))) return json(401, { error: "Please sign in again." });
 
+  if (action === "stats") {
+    const days = Math.max(1, Math.min(90, Number(body.days) || 30));
+    return json(200, { days: await listStats(days) });
+  }
+
   if (action === "list") {
     const kind = String(body.kind || "");
     if (!ADMIN_KINDS.includes(kind)) return json(400, { error: "Unknown list." });
@@ -441,7 +491,11 @@ export async function handle(request: Request): Promise<Response> {
       if (request.method === "POST") return await saveFeature(request);
       return json(405, { error: "Use POST." });
     }
-    const adminRoute = /^\/api\/admin\/(login|list|update|delete)$/.exec(url.pathname);
+    if (url.pathname === "/api/hit") {
+      if (request.method === "POST") return await saveHit(request);
+      return json(405, { error: "Use POST." });
+    }
+    const adminRoute = /^\/api\/admin\/(login|list|stats|update|delete)$/.exec(url.pathname);
     if (adminRoute) return await admin(adminRoute[1], request);
     if (url.pathname.startsWith("/api/")) return json(404, { error: "Not found." });
     if (request.method === "GET" || request.method === "HEAD") return await serveFile(url, request.method);

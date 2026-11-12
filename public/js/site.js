@@ -5,6 +5,8 @@
 // The "Watch it in use" section shows when these are a Bunny Stream library ID and video ID.
 const STREAM_LIBRARY_ID = '803383';
 const STREAM_VIDEO_ID = '7ba38bcd-642d-489b-9308-ca32c20a44d7'; // the narrated demo (v3: Fieldfare Traders, Modern look, opens with the workbook, 1:50)
+// Where "Start free" goes: the app's sign-up page.
+const SIGNUP_URL = 'https://app.webaccessbuilder.com/signup';
 // The demo: set this to the demo instance's address (e.g. 'https://demo.webaccessbuilder.com')
 // to show the "Open the demo" buttons; until then the page offers a test instance instead.
 const DEMO_URL = 'https://demo.webaccessbuilder.com';
@@ -176,7 +178,7 @@ document.querySelectorAll('[data-views]').forEach((fig) => {
   sel(tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0]);
 });
 
-// ---------- request form ----------
+// ---------- the Get in touch form ----------
 const form = document.getElementById('request-form');
 if (form) {
   const status = document.getElementById('form-status');
@@ -189,17 +191,15 @@ if (form) {
     const email = form.elements.email;
     if (!data.name.trim()) { name.setAttribute('aria-invalid', 'true'); name.focus(); say('Enter your name.', 'err'); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) { email.setAttribute('aria-invalid', 'true'); email.focus(); say('Enter an email address we can reply to.', 'err'); return; }
-    const ack = form.elements.acknowledged;
-    if (!ack.checked) { ack.setAttribute('aria-invalid', 'true'); ack.focus(); say('Please tick the box to confirm you understand it isn\'t ready for production use.', 'err'); return; }
     const button = form.querySelector('button[type="submit"]');
     button.disabled = true;
     say('Sending…');
     try {
       const res = await fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.error || 'The request could not be sent.');
+      if (!res.ok) throw new Error(body.error || 'The message could not be sent.');
       form.classList.add('sent');
-      say(`Request sent. We'll reply to ${data.email.trim()}.`, 'ok');
+      say(`Message sent. We'll reply to ${data.email.trim()}.`, 'ok');
       button.textContent = 'Sent';
     } catch (err) {
       button.disabled = false;
@@ -269,3 +269,21 @@ if (DEMO_URL) {
   document.querySelectorAll('[data-demo]').forEach((el) => { el.hidden = false; });
   document.querySelectorAll('[data-demo-fallback]').forEach((el) => { el.hidden = true; });
 }
+
+// ---------- Start free ----------
+document.querySelectorAll('[data-signup]').forEach((a) => { a.href = SIGNUP_URL; });
+
+// ---------- counting visits ----------
+// One count for the page view, and one for each click on Start free or the demo. No cookie and
+// nothing about the visitor is sent: only which page, and which of the three things happened.
+const count = (event) => {
+  try {
+    const body = new Blob([JSON.stringify({ event, path: location.pathname })], { type: 'application/json' });
+    if (!(navigator.sendBeacon && navigator.sendBeacon('/api/hit', body))) fetch('/api/hit', { method: 'POST', body, keepalive: true }).catch(() => {});
+  } catch { /* counting must never get in the way */ }
+};
+if (!navigator.webdriver && location.hostname !== 'localhost') count('view');
+document.addEventListener('click', (e) => {
+  const a = e.target.closest && e.target.closest('[data-hit]');
+  if (a && !navigator.webdriver && location.hostname !== 'localhost') count(a.dataset.hit);
+});

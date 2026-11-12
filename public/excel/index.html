@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coming from Excel · Web Access Builder</title>
-<meta name="description" content="If your team runs on a shared workbook: what carries over to Web Access Builder, what is different, and how to start from a spreadsheet.">
-<meta property="og:title" content="Coming from Excel · Web Access Builder">
-<meta property="og:description" content="If your team runs on a shared workbook: what carries over to Web Access Builder, what is different, and how to start from a spreadsheet.">
+<title>An Excel alternative for shared data: a spreadsheet with a database behind it | Web Access Builder</title>
+<meta name="description" content="Using an Excel workbook as a database? Keep your worksheets, formulas and VBA, on a real database that everyone shares, in a browser. What carries over from Excel, what is different, and how to start.">
+<meta property="og:title" content="An Excel alternative for shared data: a spreadsheet with a database behind it | Web Access Builder">
+<meta property="og:description" content="Using an Excel workbook as a database? Keep your worksheets, formulas and VBA, on a real database that everyone shares, in a browser. What carries over from Excel, what is different, and how to start.">
 <meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
 <meta property="og:url" content="https://webaccessbuilder.com/excel/">
 <link rel="canonical" href="https://webaccessbuilder.com/excel/">
@@ -29,38 +29,57 @@
     <a class="wordmark" href="/"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="256" height="26"></a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="/screenshots/">Screens</a></li>
-        <li><a href="/#sheets">Spreadsheets</a></li>
-        <li><a href="/#data">Features</a></li>
-        <li><a href="/#runtime">Runtime</a></li>
-        <li><a href="/#plans">Plans</a></li>
+        <li><a href="/features/">Features</a></li>
+        <li><a href="/vba/">Visual Basic</a></li>
         <li><a href="/excel/" aria-current="page">From Excel</a></li>
         <li><a href="/access/">From Access</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/guides/">Guides</a></li>
-        <li><a href="/#faq">Questions</a></li>
       </ul>
     </nav>
-    <a class="btn btn-light" href="/#demo">Try it</a>
+    <a class="btn btn-light" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
   </div>
 </header>
-<div class="devnotice" role="note">
-  <div class="wrap devnotice-inner">
-    <p><strong>In active development.</strong> Web Access Builder isn't yet recommended for production use. We're inviting people to test it and tell us what they find. <a href="https://demo.webaccessbuilder.com" target="_blank" rel="noopener">Try the demo</a> or <a href="/#request">request a test instance</a>.</p>
-  </div>
-</div>
 
 <main id="main">
 
 <section class="pagehead" aria-labelledby="page-title">
   <div class="wrap">
     <h1 id="page-title">Coming from Excel</h1>
-    <p class="lede">If your team runs on a shared workbook, this is what you keep, what's different, and how to start. The short version: your worksheets, formulas and VBA, on a database that everyone shares.</p>
+    <p class="lede">If your team runs on a shared workbook, you already know where it hurts: copies, overwritten formulas, and macros that won't run online. Here you keep your worksheets, formulas and VBA, on a database that everyone shares.</p>
     <p class="hero-actions">
-      <a class="btn btn-primary" href="/#demo" data-demo-link>Try the demo</a>
-      <a class="btn btn-ghost" href="/#request">Request a test instance</a>
+      <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+      <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
     </p>
   </div>
 </section>
+
+<section class="web" id="limits" aria-labelledby="why-not-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="why-not-title">When the spreadsheet has become the system</h2>
+      <p>Most shared workbooks start small and end up running something that matters. A workbook has nowhere to keep rules about what goes in a cell, and no single copy that's the real one. A 2024 review of the research found errors in 94% of the spreadsheets businesses use to make decisions (<a href="https://phys.org/news/2024-08-business-spreadsheets-critical-errors.html" rel="noopener" target="_blank">reported by Phys.org</a>).</p>
+    </div>
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="A shared workbook compared with Web Access Builder">
+      <table class="datasheet datasheet-dark stack">
+        <thead>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">With a shared workbook</th><th scope="col">With Web Access Builder</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sel" aria-hidden="true"></td><td>Copies emailed round, and nobody sure which is current</td><td>One database. Everyone opens the same records from a link</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>A file on a shared drive, locked by whoever opened it first</td><td>Many people at once. A changed cell saves its own record straight away</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Anything can be typed into any cell</td><td>Field types, validation rules and relationships, kept by the database under the sheet</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>A formula or a column overwritten by accident</td><td>Lock the layout: Users change the records, not your formulas or formatting</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Everyone who can open the file can change everything in it</td><td>Admins design, Users work with the data, and Guests only read it</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>VBA macros that don't run in Excel for the web</td><td>VBA that runs in the browser, with worksheet change events</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Another file for the form, the report and the chart</td><td>Forms, printed reports, PivotTables and PivotCharts on the same data</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>A licence for everyone who needs to type a number in</td><td>Pay for the people who build. Up to 10 people use each database free</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 
 <!-- ============ Spreadsheets ============ -->
 <section class="feature" id="sheets" aria-labelledby="sheets-title">
@@ -186,13 +205,26 @@
   </div>
 </section>
 
+<section class="cta-band" aria-label="Start free">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Start from the workbook you already have</h2>
+      <p>Free, with no card. Import it, bind a sheet to a table, and see your formulas on live records.</p>
+    </div>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+      <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
+    </p>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
-    <p>© 2026 Simon Wilson. Microsoft Access and Microsoft Excel are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p class="footer-links"><a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/#suggest">Suggest a feature</a></p>
+    <p>© 2026 Simon Wilson. Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/features/">Features</a> <a href="/vba/">Visual Basic</a> <a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/pricing/">Pricing</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/features/#suggest">Suggest a feature</a> <a href="/pricing/#contact">Contact</a></p>
   </div>
 </footer>
 

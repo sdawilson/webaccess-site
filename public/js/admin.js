@@ -74,7 +74,28 @@ async function load(kind) {
   state.items[kind] = items;
 }
 
+// ---------- visits ----------
+async function loadVisits() {
+  const rows = $('visits-rows');
+  try {
+    const { days } = await api('stats', { days: 30 });
+    const sum = (k, n) => days.slice(0, n).reduce((t, d) => t + (d[k] || 0), 0);
+    $('visits-totals').textContent = `Last 7 days: ${sum('view', 7)} page views, ${sum('demo', 7)} demo clicks, ${sum('signup', 7)} Start free clicks. Last 30 days: ${sum('view', 30)}, ${sum('demo', 30)} and ${sum('signup', 30)}.`;
+    rows.replaceChildren(...days.slice(0, 14).map((d) => {
+      const tr = document.createElement('tr');
+      const pages = Object.entries(d.pages || {}).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([p, n]) => `${p} ${n}`).join(', ');
+      for (const v of [new Date(`${d.day}T12:00:00Z`).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }), d.view, d.demo, d.signup, pages]) {
+        const td = document.createElement('td'); td.textContent = String(v); tr.append(td);
+      }
+      return tr;
+    }));
+  } catch (err) {
+    if (err.message !== 'signed out') $('visits-totals').textContent = `The visit counts couldn't be read: ${err.message}`;
+  }
+}
+
 async function loadAll() {
+  loadVisits();
   $('inbox-status').textContent = 'Loading…';
   try {
     await Promise.all([load('requests'), load('features')]);
