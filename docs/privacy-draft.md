@@ -6,9 +6,9 @@ Draft of 12 November 2026, written by Claude for Simon. **Not legal advice and n
 
 ## Who we are
 
-Web Access Builder is provided by [Simon Wilson / company name], [address]. We're the controller of the personal information described here. [ICO registration number.]
+Web Access Builder is provided by Simon Wilson, trading in his own name, of [address]. We're the controller of the personal information described here. [ICO registration number.]
 
-To ask about your information, use the contact form at webaccessbuilder.com/pricing/#contact [or a contact email address].
+To ask about your information, email webaccessbuilder@gmail.com or use the contact form at webaccessbuilder.com/pricing/#contact.
 
 ## Two kinds of information
 
@@ -89,9 +89,9 @@ If you're unhappy with how we've handled your information, you can complain to t
 
 If your information is in a database that someone else built with Web Access Builder, please contact them: they decide what's held and why.
 
-## Children
+## Who the service is for
 
-The service isn't meant for anyone under 18, and we don't knowingly hold accounts for children.
+The service is for business use, by people aged 18 or over. We don't knowingly hold accounts for children.
 
 ## Changes
 
@@ -103,8 +103,8 @@ Last updated: [date].
 
 ## Notes for the reviewer
 
-1. **Contact details.** A privacy statement must identify the controller and give a way to reach them. Simon has preferred not to show an email address on the site. A postal address plus the contact form may be enough; a dedicated address such as privacy@webaccessbuilder.com would be safer.
-2. **ICO.** Whoever the controller is must pay the ICO data protection fee before taking sign-ups, unless exempt.
+1. **Contact details.** The controller is Simon Wilson in his own name, reached at webaccessbuilder@gmail.com (decided 12 Nov). A postal address is still needed. The mailbox is with Google, so Google should be added to the table of who else handles information if messages there contain personal data.
+2. **ICO.** Simon must pay the ICO data protection fee in his own name before taking sign-ups, unless exempt.
 3. **Controller and processor.** We're controller for account details and processor for what's in customers' databases. Check the split is drawn correctly, including for Users and Guests invited by a customer (their sign-in details).
 4. **Anthropic.** Confirm the retention and no-training statement against the terms of the account in use, and confirm the transfer mechanism to the United States. A data processing agreement with Anthropic, Bunny and Brevo should be in place.
 5. **Bunny.** Confirm that the app's server, as well as its storage, is in London, and whether Bunny's logs hold IP addresses and for how long.

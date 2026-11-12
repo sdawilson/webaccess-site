@@ -155,7 +155,8 @@ Approved by Simon on 12 Nov: the founder's note, the "Early access" label and na
 **Waiting on Simon:**
 
 - The sign-up address is `https://app.webaccessbuilder.com/signup` (agreed 12 Nov) (one constant, `SIGNUP_URL`, in `public/js/site.js`, plus the `href`s).
-- Builder plan (Simon, 12 Nov): up to 20 databases, 50 MB for each database, with "contact us" for more. The site also says "no limit on records", and the assistant's allowance on Builder is still "a larger allowance"; neither is confirmed.
+- Builder plan (Simon, 12 Nov): up to 20 databases, 50 MB for each database, with "contact us" for more. The site also says "no limit on records"; that is not confirmed. The assistant gets $2 a month on Builder (Simon, 12 Nov), shown on the site as "twice the free plan's allowance".
+- Terms and privacy (Simon, 12 Nov): the provider is Simon in his own name; the service is for business users only; the contact address is webaccessbuilder@gmail.com.
 - Terms and privacy are drafted (`terms-draft.md`, `privacy-draft.md`) and need legal review before they become `/terms/` and `/privacy/`.
 
 **Housekeeping:** `tools/site/newsite.py` generated the pages from `main` and is kept for reference only. The pages are now edited by hand; re-running it would undo later fixes.

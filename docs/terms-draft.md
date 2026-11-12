@@ -6,9 +6,11 @@ Draft of 12 November 2026, written by Claude for Simon. **Not legal advice and n
 
 ## 1. Who we are
 
-Web Access Builder is provided by [Simon Wilson / company name and number], [address] ("we", "us"). You can reach us through the contact form at webaccessbuilder.com/pricing/#contact [or a contact email address].
+Web Access Builder is provided by Simon Wilson, trading in his own name, of [address] ("we", "us"). You can reach us at webaccessbuilder@gmail.com or through the contact form at webaccessbuilder.com/pricing/#contact.
 
 These terms apply when you create an account or use the service at webaccessbuilder.com and its subdomains. By creating an account you agree to them.
+
+The service is for business use only. By creating an account you confirm that you're using it for your business, trade or profession, or for an organisation, and not as a consumer.
 
 ## 2. Words we use
 
@@ -19,7 +21,7 @@ These terms apply when you create an account or use the service at webaccessbuil
 
 ## 3. Your account
 
-- You must be 18 or over, and able to agree to these terms for yourself or for the organisation you're signing up for.
+- You must be 18 or over, and able to agree to these terms for your business or the organisation you're signing up for.
 - Sign-up needs a working email address, which we confirm with a code.
 - An Admin's sign-in is for that one person. Don't share a password. On the free plan an Admin can be signed in at one place at a time.
 - You're responsible for what's done through your account, and for the people you share a database with.
@@ -29,7 +31,7 @@ These terms apply when you create an account or use the service at webaccessbuil
 
 **Free.** One database of your own, up to 5,000 records and 10 MB, plus the sample database. All the design tools. No sharing with Users or Guests. A small monthly allowance for the AI assistant. No card is needed.
 
-**Builder.** £15 a month or £99 a year for each Admin [plus VAT if it applies]. Up to 20 databases, each up to 50 MB; more by agreement with us. Each database can be shared with up to 10 people, who don't pay. Nightly backups. A larger allowance for the AI assistant.
+**Builder.** £15 a month or £99 a year for each Admin [plus VAT if it applies]. Up to 20 databases, each up to 50 MB; more by agreement with us. Each database can be shared with up to 10 people, who don't pay. Nightly backups. Twice the free plan's allowance for the AI assistant.
 
 **More than 10 people on a database.** By agreement with us, at a fee that covers hosting.
 
@@ -39,8 +41,7 @@ The current limits are shown on the pricing page. If we lower a limit, the chang
 
 - A subscription is paid in advance, by the month or the year, and renews automatically until you cancel.
 - [Until online payment is available, an upgrade is arranged by request and paid by invoice.]
-- You can cancel at any time. The subscription then runs to the end of the period you've paid for. [We don't refund part of a period, except where the law requires it or section 12 applies.]
-- [If you're a consumer, you have 14 days from subscribing to change your mind and receive a refund.]
+- You can cancel at any time. The subscription then runs to the end of the period you've paid for. [We don't refund part of a period, except where section 12, 15 or 16 applies.]
 - We may change prices. We'll give at least 30 days' notice by email, and a new price applies from your next renewal.
 - If a payment fails, we'll tell you and try again. If it's still unpaid after [14] days, the account moves to the free plan (section 6).
 
@@ -99,7 +100,7 @@ Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporatio
 
 ## 14. Our responsibility to you
 
-- Nothing in these terms limits our liability for death or personal injury caused by negligence, for fraud, or for anything else the law doesn't allow us to limit. If you're a consumer, nothing here affects your legal rights.
+- Nothing in these terms limits our liability for death or personal injury caused by negligence, for fraud, or for anything else the law doesn't allow us to limit.
 - Subject to that, we aren't liable for loss of profit, business or revenue, for indirect or consequential loss, [or for loss of data that a download or backup of your own would have avoided].
 - Subject to that, our total liability to you in any 12 months is limited to [the greater of £100 and] the amount you paid us in those 12 months.
 - The service isn't designed for uses where a failure could cause injury or serious harm.
@@ -115,7 +116,7 @@ We may update these terms. For a change that matters, we'll email Admins at leas
 
 ## 17. General
 
-- These terms are governed by the law of England and Wales, and its courts decide any dispute. [If you're a consumer living elsewhere in the UK, you can also use your local courts.]
+- These terms are governed by the law of England and Wales, and its courts decide any dispute.
 - If part of these terms can't be enforced, the rest still applies.
 - You may not transfer your account to someone else without our agreement. We may transfer the service to a successor who takes on these terms.
 - Only you and we can enforce these terms.
@@ -142,8 +143,8 @@ These apply where your content includes personal data, and form part of the term
 
 ## Notes for the reviewer
 
-1. **Who the provider is.** Simon in his own name, or a company? This sets the liability position and what must be shown on the site.
-2. **Consumers.** The audience is business users, but a free sign-up is open to anyone. Either state that the service is for business use only, or keep the consumer wording (14-day cancellation, local courts, Consumer Rights Act 2015 rights for digital content).
+1. **The provider is Simon Wilson in his own name** (decided 12 Nov), so liability is personal. Worth advice on whether the cap in section 14 is enough, on insurance, and on what a sole trader must show on a website (name and a postal address).
+2. **Business use only** (decided 12 Nov). Sign-up should carry a tick box or a clear line saying so. If a consumer signs up anyway, consumer law may still apply to them.
 3. **Liability cap** (section 14): the figures, and whether the data-loss exclusion is reasonable under the Unfair Contract Terms Act 1977.
 4. **Refunds and VAT** (section 5).
 5. **Sensitive data** (section 11): whether to exclude special category data at all.
