@@ -29,7 +29,7 @@ These terms apply when you create an account or use the service at webaccessbuil
 
 **Free.** One database of your own, up to 5,000 records and 10 MB, plus the sample database. All the design tools. No sharing with Users or Guests. A small monthly allowance for the AI assistant. No card is needed.
 
-**Builder.** £15 a month or £99 a year for each Admin [plus VAT if it applies]. Up to 20 databases, each up to 50 MB. Each database can be shared with up to 10 people, who don't pay. Nightly backups. A larger allowance for the AI assistant.
+**Builder.** £15 a month or £99 a year for each Admin [plus VAT if it applies]. Up to 20 databases, each up to 50 MB; more by agreement with us. Each database can be shared with up to 10 people, who don't pay. Nightly backups. A larger allowance for the AI assistant.
 
 **More than 10 people on a database.** By agreement with us, at a fee that covers hosting.
 
