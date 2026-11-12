@@ -27,12 +27,12 @@ Written 12 November 2026. The website is built on a branch (see "Built on branch
 
 | | Free | Builder (£15 a month or £99 a year, per Admin) |
 |---|---|---|
-| Databases | 1 of your own, plus the Fieldfare Traders sample | As now |
-| Size | 5,000 records across the database (the sample not counted) and 10 MB including attachments | As now |
+| Databases | 1 of your own, plus the Fieldfare Traders sample | Up to 20; contact us for more |
+| Size | 5,000 records across the database (the sample not counted) and 10 MB including attachments | 50 MB for each database; contact us for more |
 | Tables, queries, forms, reports, code | Unlimited | Unlimited |
 | Sharing | None. Preview as User only | Up to 10 people use each database free, in the runtime |
-| Sign-in | One session at a time | As now |
-| AI assistant | $1 a month | The account's normal limit |
+| Sign-in | One session at a time | No limit |
+| AI assistant | $1 a month | $2 a month |
 | Kept for | Deleted after 180 days of no use | While subscribed |
 | Backups | Download a copy any time | Nightly backups as well |
 | Import and export (Excel, Access, CSV) | Yes | Yes |
