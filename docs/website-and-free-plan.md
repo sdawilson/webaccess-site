@@ -150,13 +150,13 @@ The redesigned site is on branch `free-plan` of `sdawilson/webaccess-site`. It m
 
 Not used on the site: the "94% of spreadsheets have errors" figure (it is about formula errors, not about using a workbook as a database).
 
+Approved by Simon on 12 Nov: the founder's note, the "Early access" label and naming Anthropic's Claude.
+
 **Waiting on Simon:**
 
-- The founder's note on the home page is Claude's draft in Simon's voice.
-- The sign-up address is assumed to be `https://app.webaccessbuilder.com/signup` (one constant, `SIGNUP_URL`, in `public/js/site.js`, plus the `href`s).
-- Builder plan wording that Simon hasn't confirmed: "As many as you need" databases, "No plan limit" on size, "A larger allowance" for the assistant.
-- "Early access" label, and naming Anthropic's Claude as the assistant's model.
-- No `/terms/` or `/privacy/` pages yet.
+- The sign-up address is `https://app.webaccessbuilder.com/signup` (agreed 12 Nov) (one constant, `SIGNUP_URL`, in `public/js/site.js`, plus the `href`s).
+- Builder plan (Simon, 12 Nov): up to 20 databases and 50 MB. The site says "each up to 50 MB, with no limit on records"; Simon to confirm that reading, and the assistant's allowance on Builder.
+- Terms and privacy are drafted (`terms-draft.md`, `privacy-draft.md`) and need legal review before they become `/terms/` and `/privacy/`.
 
 **Housekeeping:** `tools/site/newsite.py` generated the pages from `main` and is kept for reference only. The pages are now edited by hand; re-running it would undo later fixes.
 
