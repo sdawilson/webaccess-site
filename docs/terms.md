@@ -1,12 +1,10 @@
-# Terms of use: draft for review
+# Terms of use
 
-Draft of 12 November 2026, written by Claude for Simon. **Not legal advice and not yet reviewed by a lawyer.** Items in [square brackets] need a decision or a fact. Notes for the reviewer are at the end.
-
----
+Version 2026-11, 12 November 2026.
 
 ## 1. Who we are
 
-Web Access Builder is provided by Simon Wilson, trading in his own name, of [address] ("we", "us"). You can reach us at webaccessbuilder@gmail.com or through the contact form at webaccessbuilder.com/pricing/#contact.
+Web Access Builder is provided by Simon Wilson, trading in his own name, of 7 Hardwick Mews, Woburn Sands, MK17 8QU ("we", "us"). You can reach us at webaccessbuilder@gmail.com or through the contact form at webaccessbuilder.com/pricing/#contact.
 
 These terms apply when you create an account or use the service at webaccessbuilder.com and its subdomains. By creating an account you agree to them.
 
@@ -31,7 +29,7 @@ The service is for business use only. By creating an account you confirm that yo
 
 **Free.** One database of your own, up to 5,000 records and 10 MB, plus the sample database. All the design tools. No sharing with Users or Guests. A small monthly allowance for the AI assistant. No card is needed.
 
-**Builder.** £15 a month or £99 a year for each Admin [plus VAT if it applies]. Up to 20 databases, each up to 50 MB; more by agreement with us. Each database can be shared with up to 10 people, who don't pay. Nightly backups. Twice the free plan's allowance for the AI assistant.
+**Builder.** £15 a month or £99 a year for each Admin, plus VAT where it applies. Up to 20 databases, each up to 50 MB; more by agreement with us. Each database can be shared with up to 10 people, who don't pay. Nightly backups. Twice the free plan's allowance for the AI assistant.
 
 **More than 10 people on a database.** By agreement with us, at a fee that covers hosting.
 
@@ -40,10 +38,10 @@ The current limits are shown on the pricing page. If we lower a limit, the chang
 ## 5. Paying
 
 - A subscription is paid in advance, by the month or the year, and renews automatically until you cancel.
-- [Until online payment is available, an upgrade is arranged by request and paid by invoice.]
-- You can cancel at any time. The subscription then runs to the end of the period you've paid for. [We don't refund part of a period, except where section 12, 15 or 16 applies.]
+- Until online payment is available, an upgrade is arranged by request and paid by invoice.
+- You can cancel at any time. The subscription then runs to the end of the period you've paid for. We don't refund part of a period, except where section 12, 15 or 16 applies.
 - We may change prices. We'll give at least 30 days' notice by email, and a new price applies from your next renewal.
-- If a payment fails, we'll tell you and try again. If it's still unpaid after [14] days, the account moves to the free plan (section 6).
+- If a payment fails, we'll tell you and try again. If it's still unpaid after 14 days, the account moves to the free plan (section 6).
 
 ## 6. When a subscription ends
 
@@ -65,7 +63,7 @@ A free account that no Admin has signed in to for 180 days is deleted, with its 
 
 ## 9. Personal data in your databases
 
-If your content includes information about people, then under data protection law you are the controller of that information and we process it for you. The data processing terms in the schedule apply. Our privacy statement explains what we do with information about you as an account holder.
+If your content includes information about people, then under data protection law you are the controller of that information and we process it for you. The data processing terms in the schedule apply. Our [privacy policy](/privacy/) explains what we do with information about you as an account holder.
 
 ## 10. The AI assistant
 
@@ -77,7 +75,7 @@ If your content includes information about people, then under data protection la
 ## 11. What you mustn't do
 
 - Break the law, or store or share anything unlawful, or anything that infringes someone else's rights.
-- Store payment card numbers, or [special category data such as health records,] without agreeing it with us first.
+- Store payment card numbers, or special category data such as health records, without agreeing it with us first.
 - Try to get into another account, test the service's security without our written agreement, or get round a plan's limits.
 - Share an Admin sign-in, or create several free accounts to avoid paying.
 - Send spam or malware through the service, or use it in a way that harms it for others.
@@ -90,7 +88,7 @@ We may suspend an account that breaks these rules. Where we reasonably can, we'l
 - The service is in early access. We aim to keep it available and to look after your content with reasonable care and skill, but we don't promise it will be uninterrupted or free of errors.
 - We take nightly backups of paid accounts' databases and keep them for 30 days. Backups guard against failures on our side. You should still download your own copies of anything important.
 - We'll keep changing and improving the service. If we need to remove a feature you're likely to depend on, we'll give reasonable notice.
-- If we decide to close the service, we'll give at least [90] days' notice, keep downloads available throughout, and refund any period paid for beyond the closing date.
+- If we decide to close the service, we'll give at least 90 days' notice, keep downloads available throughout, and refund any period paid for beyond the closing date.
 
 ## 13. Our software and name
 
@@ -101,14 +99,14 @@ Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporatio
 ## 14. Our responsibility to you
 
 - Nothing in these terms limits our liability for death or personal injury caused by negligence, for fraud, or for anything else the law doesn't allow us to limit.
-- Subject to that, we aren't liable for loss of profit, business or revenue, for indirect or consequential loss, [or for loss of data that a download or backup of your own would have avoided].
-- Subject to that, our total liability to you in any 12 months is limited to [the greater of £100 and] the amount you paid us in those 12 months.
+- Subject to that, we aren't liable for loss of profit, business or revenue, for indirect or consequential loss, or for loss of data that a download or backup of your own would have avoided.
+- Subject to that, our total liability to you in any 12 months is limited to the greater of £100 and the amount you paid us in those 12 months.
 - The service isn't designed for uses where a failure could cause injury or serious harm.
 
 ## 15. Ending
 
 - You can close your account at any time. We then delete your content, and the last backups go within 30 days.
-- We may close an account that seriously or repeatedly breaks these terms. Otherwise we may end a paid subscription only with [30] days' notice and a refund of the unused period.
+- We may close an account that seriously or repeatedly breaks these terms. Otherwise we may end a paid subscription only with 30 days' notice and a refund of the unused period.
 
 ## 16. Changes to these terms
 
@@ -132,7 +130,7 @@ These apply where your content includes personal data, and form part of the term
 3. **Instructions.** We process it only on your documented instructions, which are these terms and what you do in the service, unless the law requires otherwise; if so we'll tell you, where the law allows.
 4. **Confidentiality.** Anyone we authorise to handle it is bound to keep it confidential.
 5. **Security.** We take appropriate technical and organisational measures, including encryption in transit, access limited to those who need it, separation between accounts and backups.
-6. **Sub-processors.** You agree to our using those listed in the privacy statement. We'll give [30] days' notice of a new one; if you object and we can't resolve it, you may close your account and receive a refund of the unused period. We remain responsible for what they do.
+6. **Sub-processors.** You agree to our using those listed in the [privacy policy](/privacy/). We'll give 30 days' notice of a new one; if you object and we can't resolve it, you may close your account and receive a refund of the unused period. We remain responsible for what they do.
 7. **Where it's held.** Databases are held in the United Kingdom. Any transfer outside the UK is made under a lawful transfer mechanism.
 8. **Helping you.** We'll give reasonable help with requests from the people the data is about, and with your own security, breach-notification and impact-assessment duties.
 9. **Breaches.** We'll tell you without undue delay if we become aware of a personal data breach affecting your content.
@@ -145,6 +143,7 @@ These apply where your content includes personal data, and form part of the term
 
 1. **The provider is Simon Wilson in his own name** (decided 12 Nov), so liability is personal. Worth advice on whether the cap in section 14 is enough, on insurance, and on what a sole trader must show on a website (name and a postal address).
 2. **Business use only** (decided 12 Nov). Sign-up should carry a tick box or a clear line saying so. If a consumer signs up anyway, consumer law may still apply to them.
+3. **Published 12 Nov without legal review**, at Simon's decision, because sign-up asks people to agree to these terms. The figures Claude chose are: £100 or 12 months' fees as the liability cap, 14 days for a failed payment, 90 days' notice of closure, 30 days' notice elsewhere, and VAT added where it applies.
 3. **Liability cap** (section 14): the figures, and whether the data-loss exclusion is reasonable under the Unfair Contract Terms Act 1977.
 4. **Refunds and VAT** (section 5).
 5. **Sensitive data** (section 11): whether to exclude special category data at all.

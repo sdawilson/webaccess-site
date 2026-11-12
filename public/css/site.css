@@ -802,3 +802,7 @@ html:has(.guide) { scroll-behavior: auto; }
 @media (max-width: 700px) { .footer-grid { grid-template-columns: minmax(0, 1fr); } }
 /* links inside the dark sections and dark tables stay readable */
 .web p a, .web li a, .web td a, .datasheet-dark a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+/* terms and privacy */
+.legal { padding: 56px 0 88px; }
+.legal-body h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+.legal-table td, .legal-table th { vertical-align: top; }

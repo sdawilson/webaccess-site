@@ -1,19 +1,17 @@
-# Privacy statement: draft for review
+# Privacy policy
 
-Draft of 12 November 2026, written by Claude for Simon. **Not legal advice and not yet reviewed by a lawyer.** Items in [square brackets] need a decision or a fact. Notes for the reviewer are at the end.
-
----
+12 November 2026.
 
 ## Who we are
 
-Web Access Builder is provided by Simon Wilson, trading in his own name, of [address]. We're the controller of the personal information described here. [ICO registration number.]
+Web Access Builder is provided by Simon Wilson, trading in his own name, of 7 Hardwick Mews, Woburn Sands, MK17 8QU. We're the controller of the personal information described here.
 
 To ask about your information, email webaccessbuilder@gmail.com or use the contact form at webaccessbuilder.com/pricing/#contact.
 
 ## Two kinds of information
 
-1. **Information about you**, as a visitor or an account holder. This statement is about that.
-2. **What you put in your databases.** That's yours. If it includes information about people, you're its controller and we only process it for you, under the data processing terms in our terms of use. We don't look at it, except where you ask us for help or we must to fix a fault or meet a legal duty.
+1. **Information about you**, as a visitor or an account holder. This policy is about that.
+2. **What you put in your databases.** That's yours. If it includes information about people, you're its controller and we only process it for you, under the data processing terms in our [terms of use](/terms/). We don't look at it, except where you ask us for help or we must to fix a fault or meet a legal duty.
 
 ## What we collect, and why
 
@@ -21,7 +19,7 @@ To ask about your information, email webaccessbuilder@gmail.com or use the conta
 |---|---|---|
 | Email address, name and password (stored hashed, never as typed) | To create your account and sign you in | Contract |
 | The verification and password-reset codes we email you | To confirm the address is yours | Contract |
-| Your plan, upgrade requests, invoices and payment records. [Card details are held by our payment provider, not by us.] | To provide and charge for a subscription, and to keep tax records | Contract; legal obligation |
+| Your plan, upgrade requests, invoices and payment records. We don't take or hold card details | To provide and charge for a subscription, and to keep tax records | Contract; legal obligation |
 | When you sign in, and a sign-in cookie | To keep you signed in, enforce one sign-in at a time on the free plan, and know when an account is unused | Contract; legitimate interests |
 | Technical records: IP address, browser type, pages requested, errors | To keep the service secure and working | Legitimate interests |
 | Messages you send through the contact and suggestion forms | To reply, and to plan what we build | Legitimate interests |
@@ -42,7 +40,7 @@ The app sets one cookie when you sign in, to keep you signed in. The demo sets o
 
 ## The AI assistant
 
-The assistant is provided using Anthropic's Claude, and only Admins can use it. When you use it, the design of your database and what you type are sent to Anthropic to produce a reply. Your records aren't sent, unless the assistant asks to see up to five rows of a table and you allow it, each time. [Anthropic doesn't use what's sent through its API to train its models, and deletes it after a limited period: confirm against Anthropic's current commercial terms.]
+The assistant is provided using Anthropic's Claude, and only Admins can use it. When you use it, the design of your database and what you type are sent to Anthropic to produce a reply. Your records aren't sent, unless the assistant asks to see up to five rows of a table and you allow it, each time. Under Anthropic's commercial terms, what's sent this way isn't used to train its models.
 
 ## Who else handles your information
 
@@ -51,7 +49,7 @@ The assistant is provided using Anthropic's Claude, and only Admins can use it. 
 | Bunny (BunnyWay d.o.o., Slovenia) | Hosting the app and website, database storage, backups, video | Databases and backups in London, UK. The website and video are delivered from Bunny's network worldwide |
 | Brevo (Sendinblue SAS, France) | Sending service emails | EU |
 | Anthropic | The AI assistant | United States |
-| [Payment provider] | Taking payments | [ ] |
+| Google | The mailbox for webaccessbuilder@gmail.com, if you email us | Worldwide |
 
 Each works for us under a contract. Where information leaves the UK, it goes to a country the UK treats as giving adequate protection, or under the UK's approved contract terms. We'd also disclose information if the law required it, or to a successor if the service changed hands.
 
@@ -65,13 +63,13 @@ Each works for us under a contract. Where information leaves the UK, it goes to 
 | Nightly backups (paid plans) | 30 days |
 | After you close an account | Deleted straight away; the last backups within 30 days |
 | Invoices and payment records | 6 years, as tax law requires |
-| Technical records | [Up to 90 days] |
-| Contact and suggestion messages | [Up to 2 years] |
-| The demo | A demo copy is deleted [when its session ends / after N hours] |
+| Technical records | Up to 90 days |
+| Contact and suggestion messages | Up to 2 years |
+| The demo | A demo copy is deleted when you end the demo, or shortly after you stop using it |
 
 ## Security
 
-Connections are encrypted. Passwords are stored hashed. Each account's databases are kept separate from every other account's. Access to the servers is limited to [Simon]. Databases on paid plans are backed up nightly. If a breach put your rights at risk, we'd tell you and the Information Commissioner's Office as the law requires.
+Connections are encrypted. Passwords are stored hashed. Each account's databases are kept separate from every other account's. Access to the servers is limited to Simon Wilson. Databases on paid plans are backed up nightly. If a breach put your rights at risk, we'd tell you and the Information Commissioner's Office as the law requires.
 
 ## Your rights
 
@@ -97,17 +95,17 @@ The service is for business use, by people aged 18 or over. We don't knowingly h
 
 We'll post any change here with its date. If a change matters, we'll email account holders before it takes effect.
 
-Last updated: [date].
+Last updated: 12 November 2026.
 
 ---
 
 ## Notes for the reviewer
 
-1. **Contact details.** The controller is Simon Wilson in his own name, reached at webaccessbuilder@gmail.com (decided 12 Nov). A postal address is still needed. The mailbox is with Google, so Google should be added to the table of who else handles information if messages there contain personal data.
+1. **Contact details.** The controller is Simon Wilson in his own name, reached at webaccessbuilder@gmail.com (decided 12 Nov). The mailbox is with Google, so Google should be added to the table of who else handles information if messages there contain personal data.
 2. **ICO.** Simon must pay the ICO data protection fee in his own name before taking sign-ups, unless exempt.
 3. **Controller and processor.** We're controller for account details and processor for what's in customers' databases. Check the split is drawn correctly, including for Users and Guests invited by a customer (their sign-in details).
 4. **Anthropic.** Confirm the retention and no-training statement against the terms of the account in use, and confirm the transfer mechanism to the United States. A data processing agreement with Anthropic, Bunny and Brevo should be in place.
 5. **Bunny.** Confirm that the app's server, as well as its storage, is in London, and whether Bunny's logs hold IP addresses and for how long.
-6. **Retention figures in brackets** are suggestions, not what the app does today. The demo's retention needs checking in the app.
+6. **Published 12 Nov without legal review**, at Simon's decision. **Retention figures** for technical records (90 days) and messages (2 years) are suggestions, not what the app does today. The demo's retention needs checking in the app.
 7. **Not yet built, so not yet true:** self-serve sign-up with emailed codes, the 180-day deletion and its warning emails, and online payment.
 8. **EU visitors.** If people in the EU sign up, EU GDPR applies as well; above a certain scale an EU representative may be needed.

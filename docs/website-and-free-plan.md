@@ -156,6 +156,7 @@ Approved by Simon on 12 Nov: the founder's note, the "Early access" label and na
 
 - The sign-up address is `https://app.webaccessbuilder.com/signup` (agreed 12 Nov) (one constant, `SIGNUP_URL`, in `public/js/site.js`, plus the `href`s).
 - Builder plan (Simon, 12 Nov): up to 20 databases, 50 MB for each database, with "contact us" for more. The site also says "no limit on records"; that is not confirmed. The assistant gets $2 a month on Builder (Simon, 12 Nov), shown on the site as "twice the free plan's allowance".
+- Also settled 12 Nov: "no use" means no Admin has signed in; sign-up must carry a tick box confirming business use (for the app); the email and postal address may appear on the terms and privacy pages.
 - Terms and privacy (Simon, 12 Nov): the provider is Simon in his own name; the service is for business users only; the contact address is webaccessbuilder@gmail.com.
 - Terms and privacy are drafted (`terms-draft.md`, `privacy-draft.md`) and need legal review before they become `/terms/` and `/privacy/`.
 
