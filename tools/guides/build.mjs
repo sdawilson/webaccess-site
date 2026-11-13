@@ -28,6 +28,10 @@ const GUIDES = [
     blurb: 'Writing code: the code window, VBA as it is implemented, events, Me, DoCmd, DAO, the SQL dialect, debugging and JavaScript modules.',
   },
   {
+    file: 'code-by-example.md', slug: 'code-by-example', title: 'Code by example',
+    blurb: 'Working code for the jobs that come up when building an application, by topic: forms, records, queries, errors, reports, charts, the Spreadsheet control, and working around the differences from Access and Excel. Every example is tested.',
+  },
+  {
     file: 'access-differences.md', slug: 'access-differences', title: 'Compared with Access',
     blurb: 'What is the same as Microsoft Access, what is different, what is missing and what is new, especially in VBA.',
   },
@@ -198,7 +202,7 @@ function indexPage() {
         <h2><a href="/guides/${g.slug}/">${esc(g.title)}</a></h2>
         <p>${esc(g.blurb)}</p>
       </li>`).join('');
-  return head('Guides', 'How to use Web Access Builder: the user guide, the programmer\'s guide, and how it compares with Microsoft Access.', '/guides/') + `
+  return head('Guides', 'How to use Web Access Builder: the user guide, the programmer\'s guide, code by example, and how it compares with Microsoft Access.', '/guides/') + `
 <main id="main" class="guides-index">
   <div class="wrap">
     <div class="section-head">
