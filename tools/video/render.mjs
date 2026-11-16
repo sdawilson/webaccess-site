@@ -45,7 +45,7 @@ const card = (big, small) => `<div style="height:${H}px;display:flex;flex-direct
   <div style="font-size:60px;font-weight:700;line-height:1.2">${big}</div>
   <div style="font-size:36px;color:#cfe0d8;line-height:1.4">${small}</div></div>`;
 await shoot(card('Spreadsheet and database, together at last.', 'Design it, then share it with your team as your own app'), path.join(out, 'card-title.png'), H);
-await shoot(card(`Try the demo at <span style="color:${GOLD}">webaccessbuilder.com</span>`, 'In active development, and not yet for production use'), path.join(out, 'card-end.png'), H);
+await shoot(card(`Start free at <span style="color:${GOLD}">webaccessbuilder.com</span>`, 'Free to build. £15 a month when you share it with your team'), path.join(out, 'card-end.png'), H);
 for (const s of plan.scenes) {
   await shoot(`<div style="height:${BAND}px;display:flex;align-items:center;justify-content:center;font-size:30px;border-top:3px solid ${GOLD}">${s.caption}</div>`, path.join(out, `band-${s.name}.png`), BAND);
 }

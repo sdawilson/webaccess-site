@@ -57,10 +57,10 @@ export class Camera {
     await this.page.waitForTimeout(120);
     return p;
   }
-  async click(target, { settle = 700, after = 0.5, dbl = false } = {}) {
+  async click(target, { settle = 700, after = 0.5, dbl = false, right = false } = {}) {
     const p = await this.moveTo(target);
     await this.beat(0.3, null, { click: true });
-    if (dbl) await this.page.mouse.dblclick(p.x, p.y); else await this.page.mouse.click(p.x, p.y);
+    if (dbl) await this.page.mouse.dblclick(p.x, p.y); else await this.page.mouse.click(p.x, p.y, right ? { button: 'right' } : {});
     await this.page.waitForTimeout(settle);
     if (after) await this.hold(after);
   }

@@ -1,0 +1,25 @@
+{
+ "note": "The assistant scene, filmed by hand in Chrome on the live app (16 Nov 2026), because the film's local copy has no API key. Images are in assistant-frames/ (copy them to <take>/ai-raw/), cropped to the app and resized by render.mjs. Cursor positions are in the film's 1440 x 762 frame. Insert with: node add-scene.mjs <take> assistant-scene.json share",
+ "name": "assistant",
+ "caption": "The assistant: ask, check its plan, and it builds it",
+ "beats": [
+  {"img": "ai-raw/ai1.jpg", "dur": 1.0, "from": {"x": 720, "y": 400}, "to": {"x": 720, "y": 400}},
+  {"img": "ai-raw/ai1.jpg", "dur": 0.7, "from": {"x": 720, "y": 400}, "to": {"x": 838, "y": 716}},
+  {"img": "ai-raw/ai1.jpg", "dur": 0.3, "from": {"x": 838, "y": 716}, "to": {"x": 838, "y": 716}, "click": true},
+  {"img": "ai-raw/ai2.jpg", "dur": 1.1, "from": {"x": 838, "y": 716}, "to": {"x": 838, "y": 716}},
+  {"img": "ai-raw/ai3.jpg", "dur": 1.0, "from": {"x": 838, "y": 716}, "to": {"x": 838, "y": 716}},
+  {"img": "ai-raw/ai3.jpg", "dur": 0.6, "from": {"x": 838, "y": 716}, "to": {"x": 1276, "y": 735}},
+  {"img": "ai-raw/ai3.jpg", "dur": 0.3, "from": {"x": 1276, "y": 735}, "to": {"x": 1276, "y": 735}, "click": true},
+  {"img": "ai-raw/ai4.jpg", "dur": 3.6, "from": {"x": 1276, "y": 735}, "to": {"x": 1276, "y": 735}},
+  {"img": "ai-raw/ai4.jpg", "dur": 0.8, "from": {"x": 1276, "y": 735}, "to": {"x": 499, "y": 612}},
+  {"img": "ai-raw/ai4.jpg", "dur": 0.3, "from": {"x": 499, "y": 612}, "to": {"x": 499, "y": 612}, "click": true},
+  {"img": "ai-raw/ai5.jpg", "dur": 1.4, "from": {"x": 499, "y": 612}, "to": {"x": 499, "y": 612}},
+  {"img": "ai-raw/ai6.jpg", "dur": 2.6, "from": {"x": 499, "y": 612}, "to": {"x": 499, "y": 612}},
+  {"img": "ai-raw/ai6.jpg", "dur": 0.6, "from": {"x": 499, "y": 612}, "to": {"x": 579, "y": 637}},
+  {"img": "ai-raw/ai6.jpg", "dur": 0.3, "from": {"x": 579, "y": 637}, "to": {"x": 579, "y": 637}, "click": true},
+  {"img": "ai-raw/ai7.jpg", "dur": 2.2, "from": {"x": 579, "y": 637}, "to": {"x": 579, "y": 637}},
+  {"img": "ai-raw/ai7.jpg", "dur": 0.7, "from": {"x": 579, "y": 637}, "to": {"x": 523, "y": 744}},
+  {"img": "ai-raw/ai7.jpg", "dur": 0.3, "from": {"x": 523, "y": 744}, "to": {"x": 523, "y": 744}, "click": true},
+  {"img": "ai-raw/ai8.jpg", "dur": 2.4, "from": {"x": 523, "y": 744}, "to": {"x": 523, "y": 744}}
+ ]
+}

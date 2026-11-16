@@ -99,6 +99,27 @@ if (want('forms')) {
   await closeOthers();
 }
 
+if (want('queries')) {
+  cam.scene('queries', 'Queries: tables and joins, criteria, then the results or the SQL');
+  await menu(); await cam.hold(0.4);
+  const q = p.locator('.nav-item, [role=treeitem], li').filter({ hasText: /^Products to Reorder$/ }).first();
+  await cam.click(q, { right: true, settle: 500, after: 0.5 });
+  await cam.click(p.getByText('Design View', { exact: true }).last(), { settle: 2000, after: 2.6 });
+  await cam.moveTo(p.locator('.qd-grid input[aria-label="Criteria, column 4"]').first()); await cam.hold(1.4);
+  await cam.click("button[title^='Run']", { settle: 1500, after: 2.4 });
+  await cam.click(p.getByText('SQL', { exact: true }).first(), { settle: 1000, after: 2.2 });
+  await closeOthers();
+}
+
+if (want('reports')) {
+  cam.scene('reports', 'Reports: grouped and totalled, ready to print or save as a PDF');
+  await menu(); await cam.hold(0.4);
+  await cam.click(p.locator('[data-name]').filter({ hasText: 'Sales by Category' }).first(), { settle: 2500, after: 1.8 });
+  await cam.click(p.getByText('Print Preview', { exact: true }).first(), { settle: 2500, after: 1.6 });
+  await cam.click("button[title^='Two Pages'], button[aria-label^='Two Pages'], [data-cmd='preview.two']", { settle: 1500, after: 2.2 });
+  await closeOthers();
+}
+
 if (want('pivottable')) {
   cam.scene('pivottable', 'PivotTable view: drag fields to rows, columns and totals');
   await menu();

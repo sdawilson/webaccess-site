@@ -18,8 +18,16 @@ line, re-generate that one clip, replace its file and render again; nothing need
 The film is all on the Fieldfare Traders sample that the demo-mode app builds for itself (no highways examples), and
 needs `npm run build:univer` run in the app's folder for the spreadsheet scene. It opens with the Stock Workbook: a
 stock level is changed in a cell, and the Products form shows the saved record. The scenes are `sheet`, `forms`,
-`pivottable`, `pivotchart`, `treeview`, `vba`, `share` and `runtime`. The AI assistant isn't in it: add a scene when
-there is a real conversation to film.
+`queries`, `reports`, `pivottable`, `pivotchart`, `treeview`, `vba`, `assistant`, `share` and `runtime`.
+
+The `assistant` scene isn't filmed by film.mjs, because the local copy has no API key. It was filmed by hand in
+Chrome on the live app on 16 Nov 2026 (a real conversation: "Make a form to enter suppliers, with their products
+listed beneath"). Its frames are kept in `assistant-frames/`; copy them to `<take>/ai-raw/` (cropped to the app, 1440 x 762 in shape) and
+`assistant-scene.json` holds its timing and cursor; add it to a take with
+`node add-scene.mjs <take> assistant-scene.json share` before rendering.
+
+The queries scene opens a saved query, Products to Reorder, rather than building one, because double-clicking a
+field whose name has a space in it adds it without brackets and the query then fails (reported 16 Nov 2026).
 
 After rendering: upload the MP4 to the Bunny Stream library, add the .vtt under Captions (English), and put the new
 video's ID in `public/js/site.js` (`STREAM_VIDEO_ID`). The home page shows the video in a `<section id="tour">` with a
