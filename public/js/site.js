@@ -4,7 +4,7 @@
 // ---------- settings ----------
 // The "Watch it in use" section shows when these are a Bunny Stream library ID and video ID.
 const STREAM_LIBRARY_ID = '803383';
-const STREAM_VIDEO_ID = '7ba38bcd-642d-489b-9308-ca32c20a44d7'; // the narrated demo (v3: Fieldfare Traders, Modern look, opens with the workbook, 1:50)
+const STREAM_VIDEO_ID = 'c39b5fb2-d471-44d4-9b9c-9b6bdaa32f66'; // the narrated tour (v4, 16 Nov 2026: adds queries, reports and the assistant; ends with Start free; 2:31)
 // Where "Start free" goes: the app's sign-up page.
 const SIGNUP_URL = 'https://app.webaccessbuilder.com/signup';
 // The demo: set this to the demo instance's address (e.g. 'https://demo.webaccessbuilder.com')
