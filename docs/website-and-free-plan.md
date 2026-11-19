@@ -166,3 +166,11 @@ Approved by Simon on 12 Nov: the founder's note, the "Early access" label and na
 
 - Which payment service, and what happens when a subscription lapses.
 - Who reviews the terms and privacy policy.
+
+## Languages, live 19 Nov
+
+- Home: "VBA, Python and JavaScript: all here" (Simon's wording) replaces the Visual Basic block; FAQ "Can I use Python or JavaScript?".
+- /vba/: "VBA, moved on" (the language additions, with the note that code using them won't run in Access) and "Python and JavaScript beside it".
+- /python/: new page, linked from the home and VBA pages, Features, footers and the sitemap; not in the top menu (Simon, 19 Nov).
+- The code video (1:31, Bunny Stream `e78e70c4-2c71-45f2-9e6a-e0e41609ad84`) plays on /vba/ and /python/, each with a VideoObject for search engines. Made with `tools/video/film-code.mjs`.
+- Wording kept to the app session's rules: Python in the browser; forms go as copies and changes are written back; computers only; no IntelliSense in Python modules.
