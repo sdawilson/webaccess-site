@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python in a database app, called from VBA: pandas, NumPy and Matplotlib | Web Access Builder</title>
+<meta name="description" content="Write Python modules in Web Access Builder and call them from VBA. Tick pandas, NumPy, Matplotlib, SciPy or scikit-learn in References, pass a form to Python, and show its charts on a form. Runs in the browser.">
+<meta property="og:title" content="Python in a database app, called from VBA: pandas, NumPy and Matplotlib | Web Access Builder">
+<meta property="og:description" content="Write Python modules in Web Access Builder and call them from VBA. Tick pandas, NumPy, Matplotlib, SciPy or scikit-learn in References, pass a form to Python, and show its charts on a form. Runs in the browser.">
+<meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
+<meta property="og:url" content="https://webaccessbuilder.com/python/">
+<link rel="canonical" href="https://webaccessbuilder.com/python/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f4e3d">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/img/brand/logo-mark-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/img/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="titlebar">
+  <div class="titlebar-inner">
+    <a class="wordmark" href="/"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="256" height="26"></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="/features/">Features</a></li>
+        <li><a href="/vba/">Visual Basic</a></li>
+        <li><a href="/excel/">From Excel</a></li>
+        <li><a href="/access/">From Access</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/guides/">Guides</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-light" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="pagehead" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 id="page-title">Python beside VBA</h1>
+    <p class="lede">Write Python in Web Access Builder and call it from VBA, like any other function. pandas, NumPy, Matplotlib, SciPy and scikit-learn are a tick away in References, and the Python runs in your browser, with nothing to install.</p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+      <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ The code video (hidden until data-stream-id is set) ============ -->
+<section class="tour" id="code-video" hidden data-stream-id="" data-stream-title="VBA, Python and JavaScript in Web Access Builder" aria-labelledby="code-video-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="code-video-title">Watch it: VBA, Python and JavaScript</h2>
+      <p>Two minutes, with narration and captions: modern VBA, the libraries in References, a Python module called from VBA, a form passed to Python, a Matplotlib chart on a form, and JavaScript.</p>
+    </div>
+    <div class="tour-frame"></div>
+  </div>
+</section>
+
+<section class="feature" id="modules" aria-labelledby="modules-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="modules-title">Python modules, called from VBA</h2>
+      <p>Insert > Python Module puts a Python module beside the VBA ones. Its functions are called from VBA by name: <code>Debug.Print Summary.describe(Array(14, 18, 21))</code>.</p>
+      <ul class="ticks">
+        <li>Real Python (3.14), not a lookalike, with its standard library</li>
+        <li>Tick the libraries a database uses in References: pandas, NumPy, Matplotlib, SciPy, scikit-learn and Pillow</li>
+        <li>A VBA array arrives as a list, and a recordset as its rows</li>
+        <li>Return a tuple and VBA gets an array; return a dict and it gets JSON</li>
+        <li>A Python error stops the VBA as a run-time error, with Python's message and line</li>
+        <li>Python colouring, indenting and a compile check in the code window</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Python modules">
+        <button role="tab" type="button" aria-selected="true" data-img="python-module" data-alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">A module</button>
+        <button role="tab" type="button" aria-selected="false" data-img="references" data-alt="The References dialog, with NumPy, pandas and Matplotlib ticked among the Python and JavaScript libraries">References</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/python-module.webp" srcset="/img/python-module.webp 1136w, /img/python-module@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="feature feature-alt" id="forms" aria-labelledby="pyforms-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="pyforms-title">Pass it a form, and it changes the form</h2>
+      <p>One line of VBA in an event passes the form to Python: <code>OrderMaths.line_summary Me</code>. Python reads the form and sets what it wants changed.</p>
+      <ul class="ticks">
+        <li>The form's controls, the current record, and the rows a subform shows</li>
+        <li>Set a caption, a colour, a value or whether a control is locked</li>
+        <li>Reports too, from a section's Format event, with a subreport's records</li>
+        <li>A recordset passed in arrives as its rows, ready for pandas</li>
+      </ul>
+      <p class="feature-note">The form goes to Python as a copy. What Python changes is written to the real form when the function returns, so a Python function can't wait for a click.</p>
+    </div>
+    <figure class="shot">
+      <div class="frame">
+        <a href="/img/python-form-full@2x.webp" target="_blank" rel="noopener"><img src="/img/python-form.webp" srcset="/img/python-form.webp 1136w, /img/python-form@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="The Orders form, whose order-lines label was written by Python: the number of lines, the items and the net total, worked out with pandas"></a>
+      </div>
+      <figcaption>"Order lines: 4, 37 items, net £900.30" is written by Python, with pandas, as each order comes up.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="feature" id="charts" aria-labelledby="charts-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="charts-title">Charts and pictures on a form</h2>
+      <p>A Matplotlib figure or a Pillow image comes back to VBA as a picture, and an Image control's <code>PictureData</code> shows it.</p>
+      <ul class="ticks">
+        <li>Any chart Matplotlib draws, on the data your queries return</li>
+        <li>Pictures made or changed with Pillow</li>
+        <li>Shown when the form opens, or when a button is clicked</li>
+      </ul>
+    </div>
+    <figure class="shot">
+      <div class="frame">
+        <a href="/img/python-chart-full@2x.webp" target="_blank" rel="noopener"><img src="/img/python-chart.webp" srcset="/img/python-chart.webp 1136w, /img/python-chart@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A Matplotlib bar chart of sales by category, drawn by Python and shown on a form in an Image control"></a>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="familiar" id="compare" aria-labelledby="compare-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="compare-title">Python next to your forms, not in a cell</h2>
+      <p>Python in Excel puts Python in a worksheet's cells. Here it sits beside your VBA and works with your forms and reports.</p>
+    </div>
+    <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Python in Excel and Python in Web Access Builder">
+      <table class="datasheet stack">
+        <thead>
+          <tr><th class="sel" aria-hidden="true"></th><th scope="col">Python in Excel</th><th scope="col">In Web Access Builder</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sel" aria-hidden="true"></td><td>Runs in a container on the Microsoft Cloud (<a href="https://support.microsoft.com/en-us/excel/python/data-security-and-python-in-excel" rel="noopener" target="_blank">Microsoft</a>)</td><td>Runs in your browser</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Reads the cell ranges and Power Query connections its formulas refer to (<a href="https://support.microsoft.com/en-us/excel/python/data-security-and-python-in-excel" rel="noopener" target="_blank">Microsoft</a>)</td><td>Reads the records you pass it, and the forms, subforms and reports, and changes them</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Written in a cell, with <code>=PY</code></td><td>Written in a module, and called from VBA, events and other modules</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="feature feature-alt" id="javascript" aria-labelledby="js-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="js-title">JavaScript too</h2>
+      <p>JavaScript modules work the same way: write your own, or tick a library in References and call it from VBA.</p>
+      <ul class="ticks">
+        <li>Statistics, from means to linear regression</li>
+        <li>Dates: working days, UK bank holidays, ISO weeks and financial years</li>
+        <li>Fuzzy matching, for tidying names typed in different ways</li>
+        <li>British National Grid coordinates, CSV, and hashes and UUIDs</li>
+        <li>A form or report passed to JavaScript works as it does with Python</li>
+      </ul>
+    </div>
+    <figure class="shot">
+      <div class="frame">
+        <a href="/img/js-module-full@2x.webp" target="_blank" rel="noopener"><img src="/img/js-module.webp" srcset="/img/js-module.webp 1136w, /img/js-module@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A JavaScript module beside the VBA ones, with VBA calling it and a fuzzy-matching library in the Immediate window"></a>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="web" id="limits" aria-labelledby="limits-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="limits-title">Good to know</h2>
+      <p>Python here runs in the browser, so it works a little differently from Python on a server.</p>
+    </div>
+    <dl class="extras extras-wide">
+      <div><dt>No network or files</dt><dd>Python and JavaScript run in a sandbox. They work on what VBA passes them, and can't reach the internet or your disk.</dd></div>
+      <div><dt>A few seconds to start</dt><dd>Python starts the first time it's called, then stays ready. Options can load it when the database opens.</dd></div>
+      <div><dt>On a computer</dt><dd>It works in Chrome, Edge, Firefox and Safari on a computer. Phones haven't been tested with the large libraries.</dd></div>
+      <div><dt>Copies, not live links</dt><dd>A form passed to Python goes as a copy, and changes are written back at the end. IntelliSense is for VBA; it isn't in Python modules yet.</dd></div>
+    </dl>
+    <p class="web-more"><a href="/guides/programmers-guide/">The Programmer's Guide</a> covers Python modules and passing forms in detail, and <a href="/guides/code-by-example/">Code by example</a> has working examples to copy.</p>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Start free">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Call your first Python function from VBA</h2>
+      <p>Free, with no card. The sample database is there to try it on.</p>
+    </div>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
+      <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
+    <p>© 2026 Simon Wilson. Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
+    <p class="footer-links"><a href="/features/">Features</a> <a href="/vba/">Visual Basic</a> <a href="/python/">Python</a> <a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/pricing/">Pricing</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/features/#suggest">Suggest a feature</a> <a href="/pricing/#contact">Contact</a> <a href="/terms/">Terms</a> <a href="/privacy/">Privacy</a></p>
+  </div>
+</footer>
+
+<script src="/js/site.js" defer></script>
+<script src="/js/admin-link.js" defer></script>
+</body>
+</html>

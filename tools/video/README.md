@@ -32,3 +32,16 @@ field whose name has a space in it adds it without brackets and the query then f
 After rendering: upload the MP4 to the Bunny Stream library, add the .vtt under Captions (English), and put the new
 video's ID in `public/js/site.js` (`STREAM_VIDEO_ID`). The home page shows the video in a `<section id="tour">` with a
 `.tour-frame` in it; that section was taken off the page on 11 Nov 2026 and goes back when the new video is uploaded.
+
+## The code video
+
+A second, shorter video (about 1:30) on the languages: modern VBA, the libraries in References, a Python
+module called from VBA, the Orders form passed to Python (pandas totals its lines as the records change),
+a Matplotlib chart on a form, and JavaScript with the Fuse library.
+
+    node film-code.mjs take-code          # films it; code-setup.mjs adds the modules, form and References
+    node render.mjs take-code code        # out/web-access-builder-code.mp4 and .en.vtt
+
+Its narration is `code/narration.json`, recorded into `code/vo/` (same voice and model as the tour). The local
+app needs `npm run build:python` as well as `build:univer`. `code-setup.mjs` is also used by the screenshot
+script's `languages` group, so the pictures on /vba/ and /python/ match the video.

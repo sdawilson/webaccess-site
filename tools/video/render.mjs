@@ -8,10 +8,22 @@ import { spawn, execFileSync } from 'node:child_process';
 import sharp from 'sharp';
 import { chromium } from 'playwright';
 
-const [, , dir = 'take'] = process.argv;
+//   node render.mjs <take-folder> [video]     video: tour (the default) or code
+const [, , dir = 'take', which = 'tour'] = process.argv;
 const here = import.meta.dirname;
+// Each video's narration, recordings, cards and file name.
+const VIDEOS = {
+  tour: { narration: 'narration.json', vo: 'vo', name: 'web-access-builder-demo',
+    title: ['Spreadsheet and database, together at last.', 'Design it, then share it with your team as your own app'],
+    end: ['Start free at <span style="color:#d9a514">webaccessbuilder.com</span>', 'Free to build. £15 a month when you share it with your team'] },
+  code: { narration: 'code/narration.json', vo: 'code/vo', name: 'web-access-builder-code',
+    title: ['VBA, Python and JavaScript: all here.', 'Code for your forms and reports, in a web browser'],
+    end: ['Start free at <span style="color:#d9a514">webaccessbuilder.com</span>', 'VBA, Python and JavaScript, with their libraries, in one place'] },
+};
+const V = VIDEOS[which];
+if (!V) throw new Error(`no video called ${which}: ${Object.keys(VIDEOS).join(', ')}`);
 const plan = JSON.parse(fs.readFileSync(path.join(dir, 'plan.json'), 'utf8'));
-const narration = JSON.parse(fs.readFileSync(path.join(here, 'narration.json'), 'utf8'));
+const narration = JSON.parse(fs.readFileSync(path.join(here, V.narration), 'utf8'));
 const FPS = 30, W = 1920, H = 1080, SH = 1016, BAND = H - SH;
 const LEAD = 0.35, TAIL = 0.7;               // the voice starts this long after a cut and ends this long before the next
 const GREEN = '#1f4e3d', GOLD = '#d9a514';
@@ -25,7 +37,7 @@ const ENC = ['-c:v', 'libx264', '-crf', '18', '-preset', 'veryfast', '-pix_fmt',
 
 // ---------- the voice: how long each scene must be ----------
 const voice = narration.map((n, i) => {
-  const file = path.join(here, 'vo', `${String(i + 1).padStart(2, '0')}-${n.scene}.mp3`);
+  const file = path.join(here, V.vo, `${String(i + 1).padStart(2, '0')}-${n.scene}.mp3`);
   return { ...n, file, len: fs.existsSync(file) ? dur(file) : 0 };
 });
 const need = (name) => { const v = voice.find((x) => x.scene === name); return v && v.len ? LEAD + v.len + TAIL : 0; };
@@ -44,8 +56,8 @@ const card = (big, small) => `<div style="height:${H}px;display:flex;flex-direct
   <div style="width:880px">${logo.replace('<svg ', '<svg style="width:100%;height:auto" ')}</div>
   <div style="font-size:60px;font-weight:700;line-height:1.2">${big}</div>
   <div style="font-size:36px;color:#cfe0d8;line-height:1.4">${small}</div></div>`;
-await shoot(card('Spreadsheet and database, together at last.', 'Design it, then share it with your team as your own app'), path.join(out, 'card-title.png'), H);
-await shoot(card(`Start free at <span style="color:${GOLD}">webaccessbuilder.com</span>`, 'Free to build. £15 a month when you share it with your team'), path.join(out, 'card-end.png'), H);
+await shoot(card(...V.title), path.join(out, 'card-title.png'), H);
+await shoot(card(...V.end), path.join(out, 'card-end.png'), H);
 for (const s of plan.scenes) {
   await shoot(`<div style="height:${BAND}px;display:flex;align-items:center;justify-content:center;font-size:30px;border-top:3px solid ${GOLD}">${s.caption}</div>`, path.join(out, `band-${s.name}.png`), BAND);
 }
@@ -127,7 +139,7 @@ const silent = path.join(out, 'silent.mp4');
 ffmpeg(['-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', silent]);
 let t = 0; const cues = [];
 for (const p of parts) { const v = voice.find((x) => x.scene === p.name); if (v && v.len) cues.push({ ...v, at: t + LEAD }); t += p.len; }
-const final = path.join(out, 'web-access-builder-demo.mp4');
+const final = path.join(out, `${V.name}.mp4`);
 if (cues.length) {
   const ins = cues.flatMap((c) => ['-i', c.file]);
   const filt = cues.map((c, i) => `[${i + 1}:a]adelay=${Math.round(c.at * 1000)}:all=1[a${i}]`).join(';') +
@@ -143,7 +155,7 @@ if (cues.length) {
     let at = c.at;
     bits.forEach((bit, i) => { const d = c.len * words[i] / total; vtt += `\n00:${ts(at)} --> 00:${ts(at + d)}\n${bit}\n`; at += d; });
   }
-  fs.writeFileSync(path.join(out, 'web-access-builder-demo.en.vtt'), vtt);
+  fs.writeFileSync(path.join(out, `${V.name}.en.vtt`), vtt);
 } else {
   fs.copyFileSync(silent, final);
 }

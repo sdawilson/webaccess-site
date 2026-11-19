@@ -185,23 +185,30 @@
   </div>
 </section>
 
-<!-- ============ Visual Basic ============ -->
+<!-- ============ Visual Basic, Python and JavaScript ============ -->
 <section class="feature" id="vba" aria-labelledby="vba-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
-      <h2 id="vba-title">Visual Basic, in a web browser</h2>
-      <p>Draw a form, drop controls on it, double-click a button and write its Click event. The language is VBA, the objects are the ones you know, and it runs in the browser with nothing installed.</p>
+      <h2 id="vba-title">VBA, Python and JavaScript: all here</h2>
+      <p>Draw a form, drop controls on it, double-click a button and write its Click event in VBA. When VBA isn't enough, call Python or JavaScript from it. It all runs in the browser, with nothing installed.</p>
       <ul class="ticks">
-        <li>Forms with text boxes, combo boxes, list boxes, tabs, subforms, charts, Tree View and List View, and their events</li>
-        <li>A code window with IntelliSense, breakpoints, stepping, Locals, Watches and the Immediate window</li>
-        <li>Class modules, <code>DoCmd</code>, DAO recordsets and domain functions such as <code>DLookup</code></li>
-        <li>Excel's <code>Worksheet</code>, <code>Range</code> and <code>ListObject</code> for the workbook on a form</li>
+        <li>VBA you know, moved on: class constructors, <code>AndAlso</code>, <code>+=</code>, <code>Continue For</code> and <code>Return</code>. Old code runs as it is</li>
+        <li>Python modules with pandas, NumPy, Matplotlib, SciPy and scikit-learn, a tick away in References</li>
+        <li>JavaScript modules, and libraries for statistics, dates and fuzzy matching</li>
+        <li>Pass a form to Python or JavaScript: it reads the record and its subform's rows, and changes the form</li>
+        <li>A code window with IntelliSense for VBA, breakpoints, stepping, Locals, Watches and the Immediate window</li>
       </ul>
-      <p class="more"><a href="/vba/">Visual Basic in the browser: what runs, and what's different</a></p>
+      <p class="more"><a href="/vba/">Visual Basic in the browser</a> · <a href="/python/">Python beside VBA</a></p>
     </div>
-    <figure class="shot">
-      <div class="frame">
-        <a href="/img/debugger-full@2x.webp" target="_blank" rel="noopener"><img src="/img/debugger.webp" srcset="/img/debugger.webp 1136w, /img/debugger@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="VBA paused at a breakpoint in a loop, with the current line highlighted and Locals listing a recordset and a string"></a>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Code screens">
+        <button role="tab" type="button" aria-selected="true" data-img="python-module" data-alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">Python</button>
+        <button role="tab" type="button" aria-selected="false" data-img="vba-additions" data-alt="VBA using a class constructor, a Dim with a value, Continue For, += and If(), with its output in the Immediate window">Modern VBA</button>
+        <button role="tab" type="button" aria-selected="false" data-img="python-chart" data-alt="A Matplotlib bar chart of sales by category, drawn by Python and shown on a form in an Image control">Chart</button>
+        <button role="tab" type="button" aria-selected="false" data-img="debugger" data-alt="VBA paused at a breakpoint in a loop, with the current line highlighted and Locals listing a recordset and a string">Debugger</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/python-module.webp" srcset="/img/python-module.webp 1136w, /img/python-module@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">
       </div>
     </figure>
   </div>
@@ -328,6 +335,10 @@
         <p>You can download a complete copy of a database at any time. A free account that isn't used for 180 days is deleted.</p>
       </details>
       <details>
+        <summary>Can I use Python or JavaScript?</summary>
+        <p>Yes, beside VBA. Insert a Python or JavaScript module and call its functions from VBA like any other. Tick the libraries you want in References: pandas, NumPy, Matplotlib, SciPy and scikit-learn for Python, and statistics, dates and fuzzy matching for JavaScript. They run in the browser, with nothing to install, and can't reach the network or your files. A form passed to them goes as a copy, and what they change is written back when the function returns. <a href="/python/">Python beside VBA</a> has the detail.</p>
+      </details>
+      <details>
         <summary>What does the AI assistant see?</summary>
         <p>The design of your database: its tables' fields, queries, forms, reports, macros and code. Not the records. If it would help to see a few rows of a table, it asks first, each time, and shows up to five if you allow it. It runs on Anthropic's Claude, only for Admins. Nothing it plans is built until you approve it.</p>
       </details>
@@ -358,7 +369,7 @@
   <div class="wrap footer-grid">
     <p class="wordmark wordmark-small"><img src="/img/brand/logo-white.svg" alt="Web Access Builder" width="197" height="20"></p>
     <p>© 2026 Simon Wilson. Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporation. Web Access Builder is an independent product and isn't affiliated with or endorsed by Microsoft.</p>
-    <p class="footer-links"><a href="/features/">Features</a> <a href="/vba/">Visual Basic</a> <a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/pricing/">Pricing</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/features/#suggest">Suggest a feature</a> <a href="/pricing/#contact">Contact</a> <a href="/terms/">Terms</a> <a href="/privacy/">Privacy</a></p>
+    <p class="footer-links"><a href="/features/">Features</a> <a href="/vba/">Visual Basic</a> <a href="/python/">Python</a> <a href="/excel/">From Excel</a> <a href="/access/">From Access</a> <a href="/pricing/">Pricing</a> <a href="/screenshots/">Screenshots</a> <a href="/guides/">Guides</a> <a href="/features/#suggest">Suggest a feature</a> <a href="/pricing/#contact">Contact</a> <a href="/terms/">Terms</a> <a href="/privacy/">Privacy</a></p>
   </div>
 </footer>
 

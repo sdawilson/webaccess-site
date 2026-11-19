@@ -209,17 +209,23 @@ if (form) {
 }
 
 // ---------- Bunny Stream video ----------
-if (STREAM_LIBRARY_ID && STREAM_VIDEO_ID) {
-  const tour = document.getElementById('tour');
-  if (tour) {
+// The tour (#tour) uses STREAM_VIDEO_ID. Any other section with data-stream-id plays that video
+// (the code video, on /vba/ and /python/); a section with an empty data-stream-id stays hidden.
+const embedVideo = (section, id, title) => {
   const iframe = document.createElement('iframe');
-  iframe.src = `https://iframe.mediadelivery.net/embed/${encodeURIComponent(STREAM_LIBRARY_ID)}/${encodeURIComponent(STREAM_VIDEO_ID)}?autoplay=false&preload=false&responsive=true`;
-  iframe.title = 'Web Access Builder in use';
+  iframe.src = `https://iframe.mediadelivery.net/embed/${encodeURIComponent(STREAM_LIBRARY_ID)}/${encodeURIComponent(id)}?autoplay=false&preload=false&responsive=true`;
+  iframe.title = title;
   iframe.loading = 'lazy';
   iframe.allow = 'accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen';
   iframe.allowFullscreen = true;
-  tour.querySelector('.tour-frame').append(iframe);
-  tour.hidden = false;
+  section.querySelector('.tour-frame').append(iframe);
+  section.hidden = false;
+};
+if (STREAM_LIBRARY_ID) {
+  const tour = document.getElementById('tour');
+  if (tour && STREAM_VIDEO_ID && !tour.dataset.streamId) embedVideo(tour, STREAM_VIDEO_ID, 'Web Access Builder in use');
+  for (const section of document.querySelectorAll('section[data-stream-id]')) {
+    if (section.dataset.streamId) embedVideo(section, section.dataset.streamId, section.dataset.streamTitle || 'Web Access Builder');
   }
 }
 

@@ -7,6 +7,7 @@ import { chromium } from 'playwright';
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import { setupCode } from '../video/code-setup.mjs';
 
 const BASE = process.env.APP_URL || 'http://localhost:3200';
 const ADMIN = { user: process.env.WA_USER || 'admin', password: process.env.WA_PW || 'Shot-Capture-2026!' };
@@ -274,6 +275,32 @@ await group('demo', async () => {
   await p.locator('button.fv-button', { hasText: /^Orders$/ }).click(); await pause(3000); await fullOrder();
   await shot('demo-orders');
   await p.context().close(); p = admin;
+});
+
+// last, as it adds modules, a form and References to the sample (see ../video/code-setup.mjs)
+await group('languages', async () => {
+  await setupCode(p); await pause(15000);   // Python, pandas and Matplotlib load on opening
+  const mod = async (name) => { await p.locator('.vbe').getByText(name, { exact: true }).first().click(); await pause(900); };
+  const imm = async (line, wait = 1500) => { await p.locator(`${PANE} .vbe-imm-text`).click(); await p.keyboard.type(line, { delay: 10 }); await p.keyboard.press('Enter'); await pause(wait); };
+  const clear = async () => { await p.locator('.vbe').getByRole('button', { name: 'Clear' }).first().click().catch(() => {}); await pause(200); };
+  await open('module', 'ModernVBA', 2000);
+  await clear(); await imm('OrdersSoFar');
+  await shot('vba-additions');
+  await mod('Customer'); await shot('vba-constructor');
+  await mod('OrderMaths'); await clear(); await imm('? Summary.describe(Array(14, 18, 21, 30, 96))', 5000);
+  await shot('python-module');
+  await mod('Text'); await clear(); await imm('? Text.initials("abbey mill delicatessen")'); await imm('? Fuzzy.BestMatch("abey mil", Array("Abbey Mill", "Fen Mill"))');
+  await shot('js-module');
+  await p.locator('button[title^="The libraries the code uses"]').first().click(); await pause(1000);
+  await p.locator('dialog[open] .refs-list').evaluate((e) => { e.scrollTop = e.scrollHeight; }); await pause(400);
+  await shot('references');
+  await p.locator('dialog[open]').getByRole('button', { name: 'Cancel' }).click(); await pause(400);
+  await closeAll();
+  await open('form', 'Orders', 5000); await fullOrder(); await pause(2500);
+  await shot('python-form');
+  await closeAll();
+  await open('form', 'Python Chart', 7000);
+  await shot('python-chart');
 });
 
 await browser.close();
