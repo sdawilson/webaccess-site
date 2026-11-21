@@ -193,6 +193,7 @@
         <li><code>DLookup</code>, <code>DCount</code> and DAO recordsets: <code>Edit</code>, <code>AddNew</code>, <code>Update</code>, <code>FindFirst</code></li>
         <li>More of <code>DoCmd</code>: <code>FindRecord</code>, <code>SearchForRecord</code>, <code>SetFilter</code>, and <code>OutputTo</code> and <code>TransferSpreadsheet</code> to export as a download; and the <code>Screen</code> and <code>Application</code> objects</li>
           <li>Compile errors as VBA shows them: “Compile error: Expected: Then or GoTo”</li>
+        <li>Stored procedures, written in VBA: a server module runs on the server as one transaction, so a job on thousands of records is one call, and all of it happens or none of it</li>
         <li>Transactions from code: <code>BeginTrans</code>, <code>CommitTrans</code> and <code>Rollback</code></li>
         <li>Macros too: Macro Design with If blocks and submacros, AutoExec, macros behind events, and <code>DoCmd.RunMacro</code></li>
         <li>Explain Error and Fix Error: AI says what went wrong and offers a fix you can apply. The <a href="/features/#assistant">assistant</a> writes modules and macros too</li>
@@ -205,6 +206,7 @@
         <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The module behind a workbook form: a Click event that reads the records as a ListObject and loops through its rows">Worksheet code</button>
         <button role="tab" type="button" aria-selected="false" data-img="intellisense" data-alt="IntelliSense listing a recordset's members after typing rs.">IntelliSense</button>
         <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form: a Click event that builds a filter and applies it to a subform">Form module</button>
+        <button role="tab" type="button" aria-selected="false" data-img="server-module" data-alt="A server module: a VBA function that runs on the server as one transaction, called from the Immediate window">Stored procedure</button>
         <button role="tab" type="button" aria-selected="false" data-img="macro-design" data-alt="Macro Design: a comment, an If block that opens a report and sets a TempVar, and an Else with a MessageBox">Macro</button>
       </div>
       <div class="frame" role="tabpanel">

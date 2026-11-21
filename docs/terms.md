@@ -29,9 +29,9 @@ The service is for business use only. By creating an account you confirm that yo
 
 **Free.** One database of your own, up to 5,000 records and 10 MB, plus the sample database. All the design tools. No sharing with Users or Guests. A small monthly allowance for the AI assistant. No card is needed.
 
-**Builder.** £15 a month or £99 a year for each Admin, plus VAT where it applies. Up to 20 databases, each up to 50 MB; more by agreement with us. Each database can be shared with up to 10 people, who don't pay. Nightly backups. Twice the free plan's allowance for the AI assistant.
+**Desktop and Server licences.** Not yet on sale. Desktop (£99) and Server (£495) will each be a one-off payment for each Admin, with no charge for the people who use what you build. The terms for them will be added here before they go on sale.
 
-**More than 10 people on a database.** By agreement with us, at a fee that covers hosting.
+**The Builder subscription** (£15 a month or £99 a year) is no longer offered. Sections 5 and 6 apply only to a subscription taken out before 21 November 2026.
 
 The current limits are shown on the pricing page. If we lower a limit, the change won't apply to a paid subscription until its next renewal.
 
@@ -143,6 +143,7 @@ These apply where your content includes personal data, and form part of the term
 
 1. **The provider is Simon Wilson in his own name** (decided 12 Nov), so liability is personal. Worth advice on whether the cap in section 14 is enough, on insurance, and on what a sole trader must show on a website (name and a postal address).
 2. **Business use only** (decided 12 Nov). Sign-up should carry a tick box or a clear line saying so. If a consumer signs up anyway, consumer law may still apply to them.
+3. **Changed 21 Nov** (Simon: Desktop £99 and Server £495, one-off for each Admin, runtimes free, the Builder subscription withdrawn, both products "coming soon"). Section 4 now says so; licence terms for Desktop and Server are still to be written, and need review, before either goes on sale.
 3. **Published 12 Nov without legal review**, at Simon's decision, because sign-up asks people to agree to these terms. The figures Claude chose are: £100 or 12 months' fees as the liability cap, 14 days for a failed payment, 90 days' notice of closure, 30 days' notice elsewhere, and VAT added where it applies.
 3. **Liability cap** (section 14): the figures, and whether the data-loss exclusion is reasonable under the Unfair Contract Terms Act 1977.
 4. **Refunds and VAT** (section 5).

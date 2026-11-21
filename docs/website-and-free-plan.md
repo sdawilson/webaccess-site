@@ -166,3 +166,12 @@ Approved by Simon on 12 Nov: the founder's note, the "Early access" label and na
 
 - Which payment service, and what happens when a subscription lapses.
 - Who reviews the terms and privacy policy.
+
+## Desktop and Server prices (Simon, 21 Nov)
+
+- **Desktop £99, Server £495**, each a one-off payment for each Admin. **Runtimes are free** on the web and the desktop, with no limit on people (the old "10 people per database" has gone).
+- **The hosted Builder subscription (£15 a month or £99 a year) is withdrawn.** Free hosted accounts stay, for building and trying.
+- **Both products are shown as "coming soon"**, with "Tell me when it's ready" leading to the contact form.
+- Site changes: the plans on the home and pricing pages (Free, Desktop, Server), a three-way comparison, new plan questions, "In a browser, on your desktop, or on your own server" on Features, the Barcode control and stored procedures (server modules) on Features, /vba/ and the home page, with two new pictures (`tools/screenshots/features-setup.mjs`, group `features`).
+- Terms: section 4 now names Desktop and Server as not yet on sale; their licence terms are still to be written and reviewed.
+- Claude's wording, not yet confirmed by Simon: "no limit on records" for Desktop and Server; Server described as "in your own bunny.net account", with hosting paid to bunny.net; "Desktop is for Windows first"; nothing is said about updates, a price for both together, or the AI assistant on Desktop and Server.

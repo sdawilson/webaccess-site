@@ -134,6 +134,7 @@
         <li>A look for each database: Classic or Modern controls, rounded corners, a focus highlight, a system colour and an accent, and a default font that its worksheets follow too</li>
           <li>Datasheet view is the form itself as a grid, so its code, combo boxes, validation and conditional formatting all work, with its own font, colours, gridlines and frozen columns</li>
         <li>Find and Replace, Filter by Form, and Print for the current record or all of them</li>
+        <li>A Barcode control for forms and reports: QR Code, Code 128, Code 39, EAN-13, UPC-A and more, from a field or an expression</li>
         <li>Calculated controls such as <code>=[Quantity]*[Unit Price]</code> and <code>=Sum([Line Total])</code></li>
         <li>The properties and events you know from Access: tab order, input masks, validation, NotInList, and mouse and key events</li>
         <li>Pop-up and modal forms, anchoring, and forms that hide the commands to run your application</li>
@@ -148,6 +149,7 @@
         <button role="tab" type="button" aria-selected="false" data-img="chart-dashboard" data-alt="A form with two Chart controls, a doughnut of sales by customer city and columns of sales by salesperson, and a combo box that changes their palette from code">Charts</button>
         <button role="tab" type="button" aria-selected="false" data-img="treeview-listview" data-alt="A form with a Tree View of categories and their products, filled by VBA, and the chosen product's details beside it">Tree View</button>
         <button role="tab" type="button" aria-selected="false" data-img="listview" data-alt="A form with a List View of orders in Report view, with an icon for each status, tick boxes and buttons for Icon, Small Icon and List views">List View</button>
+        <button role="tab" type="button" aria-selected="false" data-img="barcode" data-alt="A product form with a QR code and a Code 128 barcode, each made from the record on screen">Barcodes</button>
         <button role="tab" type="button" aria-selected="false" data-img="appearance" data-w="780" data-h="468" data-alt="Options: a database's Appearance settings, with control style, focus highlight, corner radius, record selector, system and accent colours and a default font">Appearance</button>
       </div>
       <div class="frame" role="tabpanel">
@@ -221,6 +223,7 @@
         <li>Transactions from code: <code>BeginTrans</code>, <code>CommitTrans</code> and <code>Rollback</code></li>
         <li>Macros too: Macro Design with If blocks and submacros, AutoExec, macros behind events, and <code>DoCmd.RunMacro</code></li>
         <li>Explain Error and Fix Error: AI says what went wrong and offers a fix you can apply. The <a href="#assistant">assistant</a> writes modules and macros too</li>
+        <li>Stored procedures, written in VBA: a server module runs on the server as one transaction, so a job on thousands of records is one call, and all of it happens or none of it</li>
         <li>Modern VBA: class constructors, <code>AndAlso</code>, <code>+=</code>, <code>Continue For</code> and <code>Return</code>, with older code running as it is (<a href="/vba/#modern">more</a>)</li>
         <li>Python and JavaScript modules your VBA can call, with pandas, NumPy, Matplotlib and other libraries in References (<a href="/python/">more</a>)</li>
         <li>References for statistics, UK bank holidays and British National Grid coordinates</li>
@@ -232,6 +235,7 @@
         <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The module behind a workbook form: a Click event that reads the records as a ListObject and loops through its rows">Worksheet code</button>
         <button role="tab" type="button" aria-selected="false" data-img="intellisense" data-alt="IntelliSense listing a recordset's members after typing rs.">IntelliSense</button>
         <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form: a Click event that builds a filter and applies it to a subform">Form module</button>
+        <button role="tab" type="button" aria-selected="false" data-img="server-module" data-alt="A server module: a VBA function that runs on the server as one transaction, called from the Immediate window">Stored procedure</button>
         <button role="tab" type="button" aria-selected="false" data-img="macro-design" data-alt="Macro Design: a comment, an If block that opens a report and sets a TempVar, and an Else with a MessageBox">Macro</button>
       </div>
       <div class="frame" role="tabpanel">
@@ -268,11 +272,11 @@
   <div class="wrap">
     <div class="section-head">
       <h2 id="runtime-title">Simple to build. Free to distribute.</h2>
-      <p>Someone who knows the work builds it. Everyone else uses it from a link, in a runtime with no design tools, without paying for anything or installing anything.</p>
+      <p>Someone who knows the work builds it. Everyone else uses it in a runtime with no design tools, without paying for anything.</p>
     </div>
     <ol class="steps steps-3">
-      <li><h3>Build it</h3><p>Admins design the tables, worksheets, forms, reports and code. An Admin seat is the only thing you pay for.</p></li>
-      <li><h3>Share it</h3><p>Invite people to a database by email: as a User, who works with the data, or a Guest, who can only read it. They open it from a link.</p></li>
+      <li><h3>Build it</h3><p>Admins design the tables, worksheets, forms, reports and code. A licence for each Admin is the only thing you pay for, and you pay once.</p></li>
+      <li><h3>Share it</h3><p>Add people to a database as a User, who works with the data, or a Guest, who can only read it. With Server they open it from a link; with Desktop they connect across your office network.</p></li>
       <li><h3>They use the runtime</h3><p>No design tools, no Navigation Pane, no Design view and no code window: just your forms, worksheets and reports, starting at the form you choose.</p></li>
     </ol>
 
@@ -284,13 +288,12 @@
         <figcaption>A form as a User sees it. The rail, the command bar and the Navigation Pane are gone, and so are Design view and the code window. Nothing in the database's code can bring them back.</figcaption>
       </figure>
       <div class="runtime-text">
-        <h3>Free for up to 10 people</h3>
-        <p>Up to 10 people use each database free, Users and Guests together, while it runs on SQLite. There's no per-user licence. Their access stays free for as long as your subscription is active.</p>
+        <h3>Free for everyone who uses it</h3>
+        <p>The runtimes are free, on the web and on the desktop, for Users and Guests alike. There's no per-user licence and no limit on how many people use what you build.</p>
         <ul class="ticks">
           <li><strong>Locked down properly.</strong> Nothing in a database's code can bring the design tools back, and the server checks every request, so hiding the tools isn't the only protection.</li>
           <li><strong>Errors come back to you.</strong> If something goes wrong, the person sees a plain message and carries on, and the error is logged for the database's Admins to see when they next open it.</li>
           <li><strong>See what they see.</strong> Preview as User opens your database in the runtime, exactly as they'll get it.</li>
-          <li><strong>More than 10 people?</strong> A database can move to a hosted SQL database for more, at a fee that covers its hosting.</li>
         </ul>
       </div>
     </div>
@@ -306,11 +309,26 @@
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Design tables, queries, forms, reports and code</th><td><span class="yn yes"><span class="visually-hidden">Yes</span></span></td><td><span class="yn"><span class="visually-hidden">No</span></span></td><td><span class="yn"><span class="visually-hidden">No</span></span></td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Share, rename, back up and delete it</th><td><span class="yn yes"><span class="visually-hidden">Yes</span></span></td><td><span class="yn"><span class="visually-hidden">No</span></span></td><td><span class="yn"><span class="visually-hidden">No</span></span></td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">See its error log</th><td><span class="yn yes"><span class="visually-hidden">Yes</span></span></td><td><span class="yn"><span class="visually-hidden">No</span></span></td><td><span class="yn"><span class="visually-hidden">No</span></span></td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Cost</th><td>A paid seat</td><td>Free, up to 10 per database</td><td>Free, up to 10 per database</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">Cost</th><td>A licence, paid once</td><td>Free</td><td>Free</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="runtime-status">Sharing a database needs the <a href="/pricing/">Builder plan</a>. On the free plan, Preview as User shows exactly what your team would get.</p>
+    <p class="runtime-status">Sharing a database needs <a href="/pricing/">Desktop or Server</a>, which are coming soon. On the free plan, Preview as User shows exactly what your team would get.</p>
+  </div>
+</section>
+<section class="web" id="desktop" aria-labelledby="desktop-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="desktop-title">In a browser, on your desktop, or on your own server</h2>
+      <p>The same builder, three places to run it. Start free in a browser; Desktop and Server are coming soon.</p>
+    </div>
+    <dl class="extras extras-wide">
+      <div><dt>Desktop: your data on your computer</dt><dd>The whole builder as an app for Windows, with its databases in a folder on your own computer. It needs no sign-in and no internet, and Python works offline too.</dd></div>
+      <div><dt>Share on your office network</dt><dd>Switch on Share on this network, and other computers connect with an address and a code: with the same app, free, or a browser. Nothing is stored on their computers.</dd></div>
+      <div><dt>Backups you control</dt><dd>A copy of each database that changed is kept every night, in a folder you choose. A database is one file: save a copy, or open one, from the File menu.</dd></div>
+      <div><dt>Server: the web version, on your own</dt><dd>The builder and its runtime on a server of your own, in your own bunny.net account. Your team opens what you build from a link, in a browser.</dd></div>
+    </dl>
+    <p class="web-more"><a href="/pricing/">Desktop is £99 and Server is £495, each paid once</a>. The runtimes are free.</p>
   </div>
 </section>
 <section class="familiar" id="all-in-one" aria-labelledby="all-in-one-title">
@@ -344,10 +362,9 @@
     <ul>
       <li><strong>Data macros</strong> on tables, and indexes over several fields</li>
       <li><strong>Reports as PDF files</strong> made on the server, and reports in columns</li>
-      <li><strong>Hosted SQL databases</strong> for more than 10 people</li>
       <li><strong>Connections to your own SQL Server</strong>, as linked tables</li>
-      <li><strong>Desktop version</strong> on all platforms: Windows, Mac and Linux</li>
-      <li><strong>Runtime as an application</strong> to install, for the web and desktop</li>
+      <li><strong>Desktop and Server</strong>, to buy: Desktop for Windows first, then Mac and Linux</li>
+      <li><strong>Stored procedures on a schedule</strong></li>
     </ul>
     <p class="roadmap-more">Something missing from this list? <a href="#suggest">Suggest a feature</a></p>
   </div>

@@ -8,6 +8,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { setupCode } from '../video/code-setup.mjs';
+import { setupFeatures } from './features-setup.mjs';
 
 const BASE = process.env.APP_URL || 'http://localhost:3200';
 const ADMIN = { user: process.env.WA_USER || 'admin', password: process.env.WA_PW || 'Shot-Capture-2026!' };
@@ -301,6 +302,17 @@ await group('languages', async () => {
   await closeAll();
   await open('form', 'Python Chart', 7000);
   await shot('python-chart');
+});
+
+// the Barcode control and a server module (see features-setup.mjs)
+await group('features', async () => {
+  await setupFeatures(p); await pause(2000);
+  await open('form', 'Product Label', 3000);
+  await shot('barcode');
+  await closeAll();
+  await open('module', 'Stock', 2000);
+  await p.locator(`${PANE} .vbe-imm-text`).click(); await p.keyboard.type('? Stock.MarkForReorder(30)', { delay: 10 }); await p.keyboard.press('Enter'); await pause(2500);
+  await shot('server-module');
 });
 
 await browser.close();

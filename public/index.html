@@ -39,10 +39,19 @@
   },
   {
    "@type": "Offer",
-   "name": "Builder",
-   "price": "15",
+   "name": "Desktop",
+   "price": "99",
    "priceCurrency": "GBP",
-   "description": "Per Admin, per month. Up to 10 people use each database free."
+   "availability": "https://schema.org/PreOrder",
+   "description": "Paid once, for each Admin. Runs on your own computer. The people who use what you build pay nothing."
+  },
+  {
+   "@type": "Offer",
+   "name": "Server",
+   "price": "495",
+   "priceCurrency": "GBP",
+   "availability": "https://schema.org/PreOrder",
+   "description": "Paid once, for each Admin. The web version on your own server. The people who use what you build pay nothing."
   }
  ]
 }
@@ -95,7 +104,7 @@
         <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
         <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
       </p>
-      <p class="hero-note">Free to build, with no card. <a href="/pricing/">£15 a month</a> when you share it with your team.</p>
+      <p class="hero-note">Free to build, with no card. <a href="/pricing/">Pay once</a> to share it, and the people who use it never pay.</p>
     </div>
     <figure class="hero-shot">
       <div class="window">
@@ -196,6 +205,7 @@
         <li>Python modules with pandas, NumPy, Matplotlib, SciPy and scikit-learn, a tick away in References</li>
         <li>JavaScript modules, and libraries for statistics, dates and fuzzy matching</li>
         <li>Pass a form to Python or JavaScript: it reads the record and its subform's rows, and changes the form</li>
+        <li>Stored procedures in VBA: a server module runs on the server as one transaction, all or nothing</li>
         <li>A code window with IntelliSense for VBA, breakpoints, stepping, Locals, Watches and the Immediate window</li>
       </ul>
       <p class="more"><a href="/vba/">Visual Basic in the browser</a> · <a href="/python/">Python beside VBA</a></p>
@@ -240,17 +250,17 @@
 <section class="plans" id="plans" aria-labelledby="plans-title">
   <div class="wrap">
     <div class="section-head">
-      <h2 id="plans-title">Free to build. Pay when you share it.</h2>
-      <p>Build and test on your own for nothing, for as long as you like. When it's ready for your team, one subscription shares each database with up to 10 people.</p>
+      <h2 id="plans-title">Free to build. Pay once to share it.</h2>
+      <p>Build and test in your browser for nothing, for as long as you like. When it's ready for your team, buy Desktop or Server once. There's no subscription, and the people who use what you build don't pay.</p>
     </div>
     <div class="plan-grid">
       <article class="plan">
         <h3>Free</h3>
         <p class="plan-price">£0</p>
-        <p class="plan-per">No card needed</p>
+        <p class="plan-per">In your browser. No card needed</p>
         <ul class="ticks">
           <li>One database of your own, up to 5,000 records and 10 MB</li>
-          <li>Every design tool: worksheets, tables, queries, forms, reports, macros and VBA</li>
+          <li>Every design tool: worksheets, tables, queries, forms, reports, macros, VBA, Python and JavaScript</li>
           <li>The Fieldfare Traders sample, to take apart</li>
           <li>Preview as User, to see what your team would get</li>
           <li>The AI assistant, with a small monthly allowance</li>
@@ -258,28 +268,33 @@
         <p class="plan-cta"><a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a></p>
       </article>
       <article class="plan plan-main">
-        <h3>Builder</h3>
-        <p class="plan-price">£15 <span>a month</span></p>
-        <p class="plan-per">or £99 a year, for each Admin</p>
+        <h3>Desktop <span class="pill pill-soon">Coming soon</span></h3>
+        <p class="plan-price">£99 <span>once</span></p>
+        <p class="plan-per">For each Admin. Not a subscription</p>
         <ul class="ticks">
-          <li>Share each database with up to 10 people, free for them, in the runtime</li>
-          <li>Up to 20 databases, each up to 50 MB, with no limit on records*</li>
-          <li>Runtime errors reported to you</li>
-          <li>Nightly backups, as well as a download at any time</li>
-          <li>Twice the free plan's allowance for the AI assistant</li>
+          <li>Build and run on your own computer, with your data kept on it</li>
+          <li>Works offline, Python included</li>
+          <li>Share on your office network: your team connects with the free runtime, or a browser</li>
+          <li>Nightly backups to a folder you choose</li>
+          <li>No limit on records</li>
         </ul>
-        <p class="plan-cta"><a class="btn btn-ghost" href="/pricing/">Compare the plans</a></p>
+        <p class="plan-cta"><a class="btn btn-ghost" href="/pricing/#contact">Tell me when it's ready</a></p>
       </article>
       <article class="plan">
-        <h3>More than 10 people</h3>
-        <p class="plan-price">Talk to us</p>
-        <p class="plan-per">Per database</p>
-        <p>A database that needs more people moves to a hosted SQL database, at a fee that covers its hosting.</p>
-        <p class="plan-cta"><a class="btn btn-ghost" href="/pricing/#contact">Get in touch</a></p>
+        <h3>Server <span class="pill pill-soon">Coming soon</span></h3>
+        <p class="plan-price">£495 <span>once</span></p>
+        <p class="plan-per">For each Admin. Not a subscription</p>
+        <ul class="ticks">
+          <li>The web version on a server of your own, in your own bunny.net account</li>
+          <li>Build in a browser, and share from a link</li>
+          <li>Your team uses the web runtime, free, from anywhere</li>
+          <li>Your data stays in your own account</li>
+        </ul>
+        <p class="plan-cta"><a class="btn btn-ghost" href="/pricing/#contact">Tell me when it's ready</a></p>
       </article>
     </div>
-    <p class="plan-note">You pay for Admins, the people who design. The people you share a database with don't need a licence of their own. Databases are hosted in London.</p>
-    <p class="plan-note">* If you need more databases or storage, please <a href="/pricing/#contact">contact us</a>.</p>
+    <p class="plan-note"><strong>Runtimes are free.</strong> You pay once for each Admin, the people who design. The people who use what you build, on the desktop or on the web, need no licence, however many they are.</p>
+    <p class="plan-note">Desktop is for Windows first. <a href="/pricing/#compare">Compare the three</a>.</p>
   </div>
 </section>
 
@@ -312,11 +327,11 @@
     <div class="faq-list">
       <details>
         <summary>What does the free plan include?</summary>
-        <p>One database of your own, up to 5,000 records and 10 MB, with every design tool: worksheets, tables, queries, forms, reports, macros and VBA. You also get the Fieldfare Traders sample to take apart. You sign in from one place at a time. Sharing a database with other people needs the Builder plan; Preview as User shows what they'd see.</p>
+        <p>One database of your own, up to 5,000 records and 10 MB, with every design tool: worksheets, tables, queries, forms, reports, macros, VBA, Python and JavaScript. You also get the Fieldfare Traders sample to take apart. You sign in from one place at a time. Sharing with other people needs Desktop or Server; Preview as User shows what they'd see.</p>
       </details>
       <details>
         <summary>What do I pay for?</summary>
-        <p>Sharing. The Builder plan is £15 a month or £99 a year for each Admin, the people who design. Up to 10 people then use each database free, as Users or Guests. <a href="/pricing/">Pricing</a> has the detail.</p>
+        <p>Sharing, and you pay once. Desktop is £99: it runs on your own computer and shares on your office network. Server is £495: the web version on a server of your own. Each is for one Admin, the people who design. The people who use what you build pay nothing. Both are coming soon; <a href="/pricing/">Pricing</a> has the detail.</p>
       </details>
       <details>
         <summary>Is it Excel?</summary>

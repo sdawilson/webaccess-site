@@ -806,3 +806,5 @@ html:has(.guide) { scroll-behavior: auto; }
 .legal { padding: 56px 0 88px; }
 .legal-body h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
 .legal-table td, .legal-table th { vertical-align: top; }
+/* "Coming soon" beside a plan's name */
+.pill-soon { margin-left: 8px; vertical-align: middle; font-size: 0.72rem; }
