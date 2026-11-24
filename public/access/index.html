@@ -157,8 +157,8 @@
         <dl>
           <dt>On Render</dt>
           <dd>An event that runs as each record's copy of a control is drawn, so code can colour rows in a continuous form.</dd>
-          <dt>JavaScript modules</dt>
-          <dd>In place of Windows DLLs: write a function, export it, and call it from VBA. It runs in a sealed sandbox with no network.</dd>
+          <dt>Python and JavaScript</dt>
+          <dd>Write any event in Python or JavaScript instead of VBA, or call them from VBA where you'd have used a Windows DLL. They reach the same forms, data and DoCmd, in a sealed sandbox with no network.</dd>
           <dt>Built-in libraries</dt>
           <dd>UK bank holidays and working days, British National Grid and OS grid references, chainage along a line, and statistics, ready to tick in References.</dd>
         </dl>
@@ -203,7 +203,7 @@
       </details>
       <details>
         <summary>Will my VBA run?</summary>
-        <p>Much of it, as written: form and control events in Access's order, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code>, <code>DLookup</code> and <code>DCount</code>, DAO recordsets, error handling and class modules. Things a web page can't do, such as <code>Shell</code>, file access, Windows DLLs and automating Excel, are marked in the code window, and only that line fails if it runs. JavaScript modules stand in for DLLs.</p>
+        <p>Much of it, as written: form and control events in Access's order, <code>Me</code>, <code>DoCmd</code>, <code>MsgBox</code>, <code>DLookup</code> and <code>DCount</code>, DAO recordsets, error handling and class modules. Things a web page can't do, such as <code>Shell</code>, file access, Windows DLLs and automating Excel, are marked in the code window, and only that line fails if it runs. Python and JavaScript modules stand in for DLLs.</p>
       </details>
       <details>
         <summary>Does it do reports?</summary>

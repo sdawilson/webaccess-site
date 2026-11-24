@@ -175,3 +175,11 @@ Approved by Simon on 12 Nov: the founder's note, the "Early access" label and na
 - Site changes: the plans on the home and pricing pages (Free, Desktop, Server), a three-way comparison, new plan questions, "In a browser, on your desktop, or on your own server" on Features, the Barcode control and stored procedures (server modules) on Features, /vba/ and the home page, with two new pictures (`tools/screenshots/features-setup.mjs`, group `features`).
 - Terms: section 4 now names Desktop and Server as not yet on sale; their licence terms are still to be written and reviewed.
 - Claude's wording, not yet confirmed by Simon: "no limit on records" for Desktop and Server; Server described as "in your own bunny.net account", with hosting paid to bunny.net; "Desktop is for Windows first"; nothing is said about updates, a price for both together, or the AI assistant on Desktop and Server.
+
+## Python and JavaScript as first-class languages (24 Nov, on branch `first-class`)
+
+- The app (main `9fac232`, rolled out 24 Nov) lets any form or report event be written in VBA, Python or JavaScript, chosen in Choose Builder, and Python and JavaScript call the app as they run (MsgBox, DoCmd, recordsets, domain functions, VBA, TempVars).
+- Home: the languages block now leads with events in any of the three and live calls; its question "Can I use Python or JavaScript?" no longer says a form goes as a copy.
+- /python/: retitled "Python and JavaScript, as first-class as VBA"; new sections "Choose the language for each event" and "It calls the app as it runs"; the old "Pass it a form" section and its copy-and-write-back note are gone; "Good to know" covers browsers (Python's live calls need current Chrome, Edge, Firefox or Safari 27; older Safari works on a copy), events that run often, and no breakpoints or IntelliSense in Python or JavaScript yet.
+- /vba/: "Or write the event in Python or JavaScript". Features and the Access page updated to match.
+- Six new pictures from a Restock form with an event in each language (`setupEvents` in `tools/screenshots/features-setup.mjs`, group `events`). The code video (1:31) predates event procedures; it still plays on /vba/ and /python/, now below the new sections.

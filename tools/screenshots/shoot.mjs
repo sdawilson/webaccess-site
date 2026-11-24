@@ -8,7 +8,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { setupCode } from '../video/code-setup.mjs';
-import { setupFeatures } from './features-setup.mjs';
+import { setupFeatures, setupEvents } from './features-setup.mjs';
 
 const BASE = process.env.APP_URL || 'http://localhost:3200';
 const ADMIN = { user: process.env.WA_USER || 'admin', password: process.env.WA_PW || 'Shot-Capture-2026!' };
@@ -313,6 +313,37 @@ await group('features', async () => {
   await open('module', 'Stock', 2000);
   await p.locator(`${PANE} .vbe-imm-text`).click(); await p.keyboard.type('? Stock.MarkForReorder(30)', { delay: 10 }); await p.keyboard.press('Enter'); await pause(2500);
   await shot('server-module');
+});
+
+// event procedures in Python and JavaScript, beside VBA (see features-setup.mjs)
+await group('events', async () => {
+  await setupEvents(p); await pause(15000);   // Python starts as the database opens: a form has a Python module
+  await open('form', 'Restock', 5000);
+  await p.locator(`${PANE} button`, { hasText: /^Reorder$/ }).click(); await pause(2500);
+  await shot('event-msgbox');
+  await p.locator('dialog[open] button', { hasText: /^No$/ }).click(); await pause(600);
+  await p.locator(`${PANE} button`, { hasText: /Who supplies it/ }).click(); await pause(2000);
+  await shot('event-form');
+  await view('Design', 2500);
+  await p.locator(`${PANE} select[aria-label=Selection]`).selectOption('form'); await pause(500);
+  await p.locator(`${PANE} .fd-proptab[data-tab="events"]`).click(); await pause(800);
+  await shot('event-boxes');
+  const sel = p.locator(`${PANE} select[aria-label=Selection]`);
+  const opts = await sel.locator('option').evaluateAll((os) => os.map((o) => [o.value, o.textContent]));
+  const lvl = opts.find(([, t]) => /txtLevel/.test(t));
+  console.log('  options:', opts.slice(0, 12).map((o) => o.join('=')).join(' | '));
+  await sel.selectOption(lvl ? lvl[0] : opts[opts.length - 1][0]); await pause(600);
+  const evs = await p.locator(`${PANE} .fd-event`).evaluateAll((es) => es.map((e) => e.dataset.event));
+  console.log('  events on txtLevel:', evs.slice(0, 8).join(', '));
+  await p.locator(`${PANE} .fd-prop:has(.fd-event[data-event="${evs.find((e) => /after.?update/i.test(e)) || evs[0]}"]) .fd-builder`).click(); await pause(1200);
+  await shot('choose-builder');
+  await p.locator('dialog[open] button', { hasText: /^Cancel$/ }).click(); await pause(500);
+  await closeAll();
+  await p.locator("button.rail-btn[title^='Open the code window']").click(); await pause(1500);
+  await p.locator('.vbe').getByText('Form_Restock.py', { exact: true }).first().click(); await pause(1500);
+  await shot('event-python');
+  await p.locator('.vbe').getByText('Form_Restock.js', { exact: true }).first().click(); await pause(1200);
+  await shot('event-js');
 });
 
 await browser.close();

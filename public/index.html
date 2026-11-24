@@ -199,26 +199,26 @@
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="vba-title">VBA, Python and JavaScript: all here</h2>
-      <p>Draw a form, drop controls on it, double-click a button and write its Click event in VBA. When VBA isn't enough, call Python or JavaScript from it. It all runs in the browser, with nothing installed.</p>
+      <p>Draw a form, drop controls on it, and choose the language for each event: a button's Click in Python, a text box's After Update in VBA, a key press in JavaScript. All three reach the same forms, data and commands. It runs in the browser, with nothing installed.</p>
       <ul class="ticks">
+        <li>Event procedures in VBA, Python or JavaScript: Choose Builder asks which, and one form can mix all three</li>
+        <li>Python and JavaScript call the app as they run: <code>MsgBox</code>, <code>DoCmd</code>, recordsets, <code>DLookup</code> and your own VBA</li>
         <li>VBA you know, moved on: class constructors, <code>AndAlso</code>, <code>+=</code>, <code>Continue For</code> and <code>Return</code>. Old code runs as it is</li>
-        <li>Python modules with pandas, NumPy, Matplotlib, SciPy and scikit-learn, a tick away in References</li>
-        <li>JavaScript modules, and libraries for statistics, dates and fuzzy matching</li>
-        <li>Pass a form to Python or JavaScript: it reads the record and its subform's rows, and changes the form</li>
+        <li>pandas, NumPy, Matplotlib, SciPy and scikit-learn for Python, and libraries for statistics, dates and fuzzy matching for JavaScript, a tick away in References</li>
         <li>Stored procedures in VBA: a server module runs on the server as one transaction, all or nothing</li>
         <li>A code window with IntelliSense for VBA, breakpoints, stepping, Locals, Watches and the Immediate window</li>
       </ul>
-      <p class="more"><a href="/vba/">Visual Basic in the browser</a> · <a href="/python/">Python beside VBA</a></p>
+      <p class="more"><a href="/vba/">Visual Basic in the browser</a> · <a href="/python/">Python and JavaScript</a></p>
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Code screens">
-        <button role="tab" type="button" aria-selected="true" data-img="python-module" data-alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">Python</button>
+        <button role="tab" type="button" aria-selected="true" data-img="event-python" data-alt="A form's Python module behind the Restock form: a Load, a Before Update that cancels with event.Cancel, and a button's Click that shows a message box and reads a total with DSum as it runs. The Project panel lists the form's VBA, Python and JavaScript modules together">Python events</button>
+        <button role="tab" type="button" aria-selected="false" data-img="choose-builder" data-alt="Choose Builder over the form designer, offering Macro Builder, Expression Builder, and Code Builder in VBA, Python or JavaScript for a text box's After Update">Choose Builder</button>
+        <button role="tab" type="button" aria-selected="false" data-img="event-msgbox" data-alt="A message box asking whether to reorder a product, shown by the Reorder button's Click event, which is written in Python">Running</button>
         <button role="tab" type="button" aria-selected="false" data-img="vba-additions" data-alt="VBA using a class constructor, a Dim with a value, Continue For, += and If(), with its output in the Immediate window">Modern VBA</button>
-        <button role="tab" type="button" aria-selected="false" data-img="python-chart" data-alt="A Matplotlib bar chart of sales by category, drawn by Python and shown on a form in an Image control">Chart</button>
-        <button role="tab" type="button" aria-selected="false" data-img="debugger" data-alt="VBA paused at a breakpoint in a loop, with the current line highlighted and Locals listing a recordset and a string">Debugger</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/python-module.webp" srcset="/img/python-module.webp 1136w, /img/python-module@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">
+        <img src="/img/event-python.webp" srcset="/img/event-python.webp 1136w, /img/event-python@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A form's Python module behind the Restock form: a Load, a Before Update that cancels with event.Cancel, and a button's Click that shows a message box and reads a total with DSum as it runs. The Project panel lists the form's VBA, Python and JavaScript modules together">
       </div>
     </figure>
   </div>
@@ -351,7 +351,7 @@
       </details>
       <details>
         <summary>Can I use Python or JavaScript?</summary>
-        <p>Yes, beside VBA. Insert a Python or JavaScript module and call its functions from VBA like any other. Tick the libraries you want in References: pandas, NumPy, Matplotlib, SciPy and scikit-learn for Python, and statistics, dates and fuzzy matching for JavaScript. They run in the browser, with nothing to install, and can't reach the network or your files. A form passed to them goes as a copy, and what they change is written back when the function returns. <a href="/python/">Python beside VBA</a> has the detail.</p>
+        <p>Yes, as fully as VBA. Choose the language for each event: Choose Builder offers VBA, Python and JavaScript, and one form can mix them. Python and JavaScript call the app as they run, with message boxes, <code>DoCmd</code>, recordsets and your VBA procedures, and VBA can call them too. Tick the libraries you want in References: pandas, NumPy, Matplotlib, SciPy and scikit-learn for Python; statistics, dates and fuzzy matching for JavaScript. They run in the browser, with nothing to install, and can't reach the network or your files. <a href="/python/">Python and JavaScript</a> has the detail.</p>
       </details>
       <details>
         <summary>What does the AI assistant see?</summary>

@@ -225,13 +225,15 @@
         <li>Explain Error and Fix Error: AI says what went wrong and offers a fix you can apply. The <a href="#assistant">assistant</a> writes modules and macros too</li>
         <li>Stored procedures, written in VBA: a server module runs on the server as one transaction, so a job on thousands of records is one call, and all of it happens or none of it</li>
         <li>Modern VBA: class constructors, <code>AndAlso</code>, <code>+=</code>, <code>Continue For</code> and <code>Return</code>, with older code running as it is (<a href="/vba/#modern">more</a>)</li>
-        <li>Python and JavaScript modules your VBA can call, with pandas, NumPy, Matplotlib and other libraries in References (<a href="/python/">more</a>)</li>
+        <li>Event procedures in VBA, Python or JavaScript, chosen event by event in Choose Builder; Python and JavaScript call the app as they run, and VBA calls them (<a href="/python/">more</a>)</li>
+        <li>pandas, NumPy, Matplotlib and other libraries in References, for Python and JavaScript alike</li>
         <li>References for statistics, UK bank holidays and British National Grid coordinates</li>
       </ul>
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Code screens">
         <button role="tab" type="button" aria-selected="true" data-img="debugger" data-alt="Code paused at a breakpoint in a loop, with the current line highlighted and Locals listing a recordset and a string">Debugger</button>
+        <button role="tab" type="button" aria-selected="false" data-img="event-python" data-alt="A form's Python module behind the Restock form: a Load, a Before Update that cancels with event.Cancel, and a button's Click that shows a message box and reads a total with DSum as it runs. The Project panel lists the form's VBA, Python and JavaScript modules together">Python events</button>
         <button role="tab" type="button" aria-selected="false" data-img="spreadsheet-code" data-alt="The module behind a workbook form: a Click event that reads the records as a ListObject and loops through its rows">Worksheet code</button>
         <button role="tab" type="button" aria-selected="false" data-img="intellisense" data-alt="IntelliSense listing a recordset's members after typing rs.">IntelliSense</button>
         <button role="tab" type="button" aria-selected="false" data-img="form-code" data-alt="The module behind a form: a Click event that builds a filter and applies it to a subform">Form module</button>

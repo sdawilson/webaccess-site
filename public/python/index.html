@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Python in a database app, called from VBA: pandas, NumPy and Matplotlib | Web Access Builder</title>
-<meta name="description" content="Write Python modules in Web Access Builder and call them from VBA. Tick pandas, NumPy, Matplotlib, SciPy or scikit-learn in References, pass a form to Python, and show its charts on a form. Runs in the browser.">
-<meta property="og:title" content="Python in a database app, called from VBA: pandas, NumPy and Matplotlib | Web Access Builder">
-<meta property="og:description" content="Write Python modules in Web Access Builder and call them from VBA. Tick pandas, NumPy, Matplotlib, SciPy or scikit-learn in References, pass a form to Python, and show its charts on a form. Runs in the browser.">
+<title>Python and JavaScript for forms and reports: event procedures, pandas and Matplotlib | Web Access Builder</title>
+<meta name="description" content="Write a form's or report's events in Python or JavaScript, as you would in VBA. The code calls the app as it runs, with message boxes, DoCmd and recordsets, and pandas, NumPy and Matplotlib are a tick away. Runs in the browser.">
+<meta property="og:title" content="Python and JavaScript for forms and reports: event procedures, pandas and Matplotlib | Web Access Builder">
+<meta property="og:description" content="Write a form's or report's events in Python or JavaScript, as you would in VBA. The code calls the app as it runs, with message boxes, DoCmd and recordsets, and pandas, NumPy and Matplotlib are a tick away. Runs in the browser.">
 <meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
 <meta property="og:url" content="https://webaccessbuilder.com/python/">
 <link rel="canonical" href="https://webaccessbuilder.com/python/">
@@ -58,12 +58,66 @@
 
 <section class="pagehead" aria-labelledby="page-title">
   <div class="wrap">
-    <h1 id="page-title">Python beside VBA</h1>
-    <p class="lede">Write Python in Web Access Builder and call it from VBA, like any other function. pandas, NumPy, Matplotlib, SciPy and scikit-learn are a tick away in References, and the Python runs in your browser, with nothing to install.</p>
+    <h1 id="page-title">Python and JavaScript, as first-class as VBA</h1>
+    <p class="lede">Write a button's Click, a text box's Before Update or a report's Format in Python or JavaScript, just as you would in VBA. The code calls the app as it runs, and pandas, NumPy and Matplotlib are a tick away. It all runs in your browser, with nothing to install.</p>
     <p class="hero-actions">
       <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
       <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
     </p>
+  </div>
+</section>
+
+<section class="feature" id="events" aria-labelledby="events-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="events-title">Choose the language for each event</h2>
+      <p>In Design view, press … beside an event. Choose Builder offers the Macro Builder, the Expression Builder, and Code Builder in VBA, Python or JavaScript, with your default picked (set it in Options). The procedure's first lines are written for you.</p>
+      <ul class="ticks">
+        <li>One form can mix them: its Load in VBA, a text box's After Update in Python, a button's Click in JavaScript. Each event runs one procedure</li>
+        <li>The names are VBA's: <code>def cmdSave_Click(form):</code>, <code>export function Form_Load(form)</code></li>
+        <li>The form comes first, standing in for <code>Me</code>; an event's arguments come as <code>event</code>: <code>event.Cancel = True</code>, <code>event.KeyCode = 0</code>, <code>event.Response</code></li>
+        <li>A form's Python and JavaScript modules sit beside its VBA one, and are renamed, copied, exported and imported with it</li>
+        <li>Compile catches an event written in two languages, and a procedure for a control the form hasn't got</li>
+        <li>Reports too: <code>Detail_Format(report, event)</code> can leave a record out</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Event procedures">
+        <button role="tab" type="button" aria-selected="true" data-img="choose-builder" data-alt="Choose Builder over the form designer, offering Macro Builder, Expression Builder, and Code Builder in VBA, Python or JavaScript for a text box's After Update">Choose Builder</button>
+        <button role="tab" type="button" aria-selected="false" data-img="event-python" data-alt="A form's Python module behind the Restock form: a Load, a Before Update that cancels with event.Cancel, and a button's Click that shows a message box and reads a total with DSum as it runs. The Project panel lists the form's VBA, Python and JavaScript modules together">Python</button>
+        <button role="tab" type="button" aria-selected="false" data-img="event-js" data-alt="The form's JavaScript module: a button's Click that awaits DLookup to show the product's supplier, and a Key Down that swallows F2 with event.KeyCode">JavaScript</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/choose-builder.webp" srcset="/img/choose-builder.webp 1136w, /img/choose-builder@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="Choose Builder over the form designer, offering Macro Builder, Expression Builder, and Code Builder in VBA, Python or JavaScript for a text box's After Update">
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="feature feature-alt" id="calls" aria-labelledby="calls-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="calls-title">It calls the app as it runs</h2>
+      <p>Python and JavaScript reach the same objects VBA does, with VBA's behaviour, error numbers and the signed-in person's rights. In Python it's plain code on the real form; in JavaScript each call to the app is awaited.</p>
+      <ul class="ticks">
+        <li><code>MsgBox</code> and <code>InputBox</code>, <code>DoCmd.OpenForm</code> and the rest of <code>DoCmd</code>, other forms and reports</li>
+        <li>Recordsets, <code>DLookup</code>, <code>DSum</code> and the other domain functions, on your tables and queries</li>
+        <li>Your VBA: the form's own procedures, a standard module's, and VBA's built-in functions. VBA calls back: <code>Forms!Orders.WithVat(19.99)</code></li>
+        <li>TempVars, shared by VBA, Python, JavaScript, macros and queries</li>
+        <li>Errors from the app as <code>AccessError</code>, with VBA's numbers; uncaught, Debug opens the module at the line</li>
+        <li>Every constant VBA knows, <code>vbYesNo</code> to <code>acNormal</code>, with nothing to import</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Calling the app">
+        <button role="tab" type="button" aria-selected="true" data-img="event-msgbox" data-alt="A message box asking whether to reorder a product, shown by the Reorder button's Click event, which is written in Python">Python asks</button>
+        <button role="tab" type="button" aria-selected="false" data-img="event-form" data-alt="The Restock form after its JavaScript Click: the supplier's name, looked up as the code ran, shown under the buttons">JavaScript looks it up</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/event-msgbox.webp" srcset="/img/event-msgbox.webp 1136w, /img/event-msgbox@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A message box asking whether to reorder a product, shown by the Reorder button's Click event, which is written in Python">
+      </div>
+      <figcaption>The Reorder button's Click is Python: the message box, and the DSum of what's been sold, come from the app as the code runs.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -81,8 +135,8 @@
 <section class="feature" id="modules" aria-labelledby="modules-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
-      <h2 id="modules-title">Python modules, called from VBA</h2>
-      <p>Insert > Python Module puts a Python module beside the VBA ones. Its functions are called from VBA by name: <code>Debug.Print Summary.describe(Array(14, 18, 21))</code>.</p>
+      <h2 id="modules-title">Python modules VBA can call</h2>
+      <p>Not every piece of Python belongs to an event. Insert > Python Module puts one beside the VBA modules, and VBA calls its functions by name: <code>Debug.Print Summary.describe(Array(14, 18, 21))</code>.</p>
       <ul class="ticks">
         <li>Real Python (3.14), not a lookalike, with its standard library</li>
         <li>Tick the libraries a database uses in References: pandas, NumPy, Matplotlib, SciPy, scikit-learn and Pillow</li>
@@ -95,6 +149,7 @@
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Python modules">
         <button role="tab" type="button" aria-selected="true" data-img="python-module" data-alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">A module</button>
+        <button role="tab" type="button" aria-selected="false" data-img="python-form" data-alt="The Orders form, whose order-lines label was written by Python: the number of lines, the items and the net total, worked out with pandas">A form</button>
         <button role="tab" type="button" aria-selected="false" data-img="references" data-alt="The References dialog, with NumPy, pandas and Matplotlib ticked among the Python and JavaScript libraries">References</button>
       </div>
       <div class="frame" role="tabpanel">
@@ -104,29 +159,7 @@
   </div>
 </section>
 
-<section class="feature feature-alt" id="forms" aria-labelledby="pyforms-title">
-  <div class="wrap feature-grid">
-    <div class="feature-text">
-      <h2 id="pyforms-title">Pass it a form, and it changes the form</h2>
-      <p>One line of VBA in an event passes the form to Python: <code>OrderMaths.line_summary Me</code>. Python reads the form and sets what it wants changed.</p>
-      <ul class="ticks">
-        <li>The form's controls, the current record, and the rows a subform shows</li>
-        <li>Set a caption, a colour, a value or whether a control is locked</li>
-        <li>Reports too, from a section's Format event, with a subreport's records</li>
-        <li>A recordset passed in arrives as its rows, ready for pandas</li>
-      </ul>
-      <p class="feature-note">The form goes to Python as a copy. What Python changes is written to the real form when the function returns, so a Python function can't wait for a click.</p>
-    </div>
-    <figure class="shot">
-      <div class="frame">
-        <a href="/img/python-form-full@2x.webp" target="_blank" rel="noopener"><img src="/img/python-form.webp" srcset="/img/python-form.webp 1136w, /img/python-form@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="The Orders form, whose order-lines label was written by Python: the number of lines, the items and the net total, worked out with pandas"></a>
-      </div>
-      <figcaption>"Order lines: 4, 37 items, net £900.30" is written by Python, with pandas, as each order comes up.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="feature" id="charts" aria-labelledby="charts-title">
+<section class="feature feature-alt" id="charts" aria-labelledby="charts-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="charts-title">Charts and pictures on a form</h2>
@@ -149,7 +182,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 id="compare-title">Python next to your forms, not in a cell</h2>
-      <p>Python in Excel puts Python in a worksheet's cells. Here it sits beside your VBA and works with your forms and reports.</p>
+      <p>Python in Excel puts Python in a worksheet's cells. Here it runs your forms' and reports' events, beside VBA.</p>
     </div>
     <div class="datasheet-scroll" tabindex="0" role="region" aria-label="Python in Excel and Python in Web Access Builder">
       <table class="datasheet stack">
@@ -159,29 +192,27 @@
         <tbody>
           <tr><td class="sel" aria-hidden="true"></td><td>Runs in a container on the Microsoft Cloud (<a href="https://support.microsoft.com/en-us/excel/python/data-security-and-python-in-excel" rel="noopener" target="_blank">Microsoft</a>)</td><td>Runs in your browser</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><td>Reads the cell ranges and Power Query connections its formulas refer to (<a href="https://support.microsoft.com/en-us/excel/python/data-security-and-python-in-excel" rel="noopener" target="_blank">Microsoft</a>)</td><td>Reads the records you pass it, and the forms, subforms and reports, and changes them</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Written in a cell, with <code>=PY</code></td><td>Written in a module, and called from VBA, events and other modules</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Written in a cell, with <code>=PY</code></td><td>Written behind a form or report and run by its events, or in a module that VBA calls</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<section class="feature feature-alt" id="javascript" aria-labelledby="js-title">
+<section class="feature" id="javascript" aria-labelledby="js-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="js-title">JavaScript too</h2>
-      <p>JavaScript modules work the same way: write your own, or tick a library in References and call it from VBA.</p>
+      <p>Everything above works in JavaScript: event procedures, modules VBA calls, and the app's objects. A call to the app is awaited, in an <code>async function</code>: <code>await DoCmd.OpenForm(…)</code>, <code>await MsgBox(…)</code>.</p>
       <ul class="ticks">
-        <li>Statistics, from means to linear regression</li>
-        <li>Dates: working days, UK bank holidays, ISO weeks and financial years</li>
-        <li>Fuzzy matching, for tidying names typed in different ways</li>
-        <li>British National Grid coordinates, CSV, and hashes and UUIDs</li>
-        <li>A form or report passed to JavaScript works as it does with Python</li>
-      </ul>
+        <li>Libraries in References: statistics, from means to linear regression; dates, with working days, UK bank holidays and financial years; fuzzy matching; coordinates, CSV, hashes and UUIDs</li>
+        <li>The form is a copy read without waiting; what the code sets goes to the app before each awaited call, and the copy comes back up to date</li>
+        <li>Works in every browser</li>
+</ul>
     </div>
     <figure class="shot">
       <div class="frame">
-        <a href="/img/js-module-full@2x.webp" target="_blank" rel="noopener"><img src="/img/js-module.webp" srcset="/img/js-module.webp 1136w, /img/js-module@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A JavaScript module beside the VBA ones, with VBA calling it and a fuzzy-matching library in the Immediate window"></a>
+        <a href="/img/event-js-full@2x.webp" target="_blank" rel="noopener"><img src="/img/event-js.webp" srcset="/img/event-js.webp 1136w, /img/event-js@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="The form's JavaScript module: a button's Click that awaits DLookup to show the product's supplier, and a Key Down that swallows F2 with event.KeyCode"></a>
       </div>
     </figure>
   </div>
@@ -191,22 +222,23 @@
   <div class="wrap">
     <div class="section-head">
       <h2 id="limits-title">Good to know</h2>
-      <p>Python here runs in the browser, so it works a little differently from Python on a server.</p>
+      <p>Python and JavaScript here run in the browser, so they work a little differently from code on a server.</p>
     </div>
     <dl class="extras extras-wide">
-      <div><dt>No network or files</dt><dd>Python and JavaScript run in a sandbox. They work on what VBA passes them, and can't reach the internet or your disk.</dd></div>
-      <div><dt>A few seconds to start</dt><dd>Python starts the first time it's called, then stays ready. Options can load it when the database opens.</dd></div>
-      <div><dt>On a computer</dt><dd>It works in Chrome, Edge, Firefox and Safari on a computer. Phones haven't been tested with the large libraries.</dd></div>
-      <div><dt>Copies, not live links</dt><dd>A form passed to Python goes as a copy, and changes are written back at the end. IntelliSense is for VBA; it isn't in Python modules yet.</dd></div>
+      <div><dt>No network or files</dt><dd>They run in a sandbox. They reach the app's forms, data and commands, and can't reach the internet or your disk.</dd></div>
+      <div><dt>Which browsers</dt><dd>Python calls the app as it runs in current Chrome, Edge and Firefox, and Safari 27 or later. In older Safari, and on iPhones and iPads before iOS 27, Python event code works on a copy of the form and can't call the app. JavaScript works everywhere. Phones haven't been tested with the large libraries.</dd></div>
+      <div><dt>A few seconds to start</dt><dd>Python starts as a database opens when one of its forms uses it, then stays ready.</dd></div>
+      <div><dt>Events that run often</dt><dd>On Render, Mouse Move, Key Press, Timer and a report's Format take a few milliseconds a run in Python or JavaScript, and a fraction of one in VBA. For long reports and lists, VBA is quicker; Choose Builder says so.</dd></div>
+      <div><dt>Finding faults</dt><dd><code>print()</code> and <code>console.log</code> write to the Immediate window, and an error opens the module at its line. Breakpoints and IntelliSense are for VBA; they aren't in Python or JavaScript modules yet.</dd></div>
     </dl>
-    <p class="web-more"><a href="/guides/programmers-guide/">The Programmer's Guide</a> covers Python modules and passing forms in detail, and <a href="/guides/code-by-example/">Code by example</a> has working examples to copy.</p>
+    <p class="web-more"><a href="/guides/programmers-guide/">The Programmer's Guide</a> covers event procedures in Python and JavaScript in detail, and <a href="/guides/code-by-example/">Code by example</a> has working examples to copy.</p>
   </div>
 </section>
 
 <section class="cta-band" aria-label="Start free">
   <div class="wrap cta-inner">
     <div>
-      <h2>Call your first Python function from VBA</h2>
+      <h2>Write your first event in Python</h2>
       <p>Free, with no card. The sample database is there to try it on.</p>
     </div>
     <p class="hero-actions">

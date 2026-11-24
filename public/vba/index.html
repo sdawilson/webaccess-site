@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Visual Basic in a web browser, with Python and JavaScript beside it | Web Access Builder</title>
-<meta name="description" content="Write VBA in a web browser: forms with controls and events, class constructors and modern syntax, and Python and JavaScript modules your VBA can call. Nothing to install, and free to start.">
+<meta name="description" content="Write VBA in a web browser: forms with controls and events, class constructors and modern syntax, or write any event in Python or JavaScript instead. Nothing to install, and free to start.">
 <meta property="og:title" content="Visual Basic in a web browser, with Python and JavaScript beside it | Web Access Builder">
-<meta property="og:description" content="Write VBA in a web browser: forms with controls and events, class constructors and modern syntax, and Python and JavaScript modules your VBA can call. Nothing to install, and free to start.">
+<meta property="og:description" content="Write VBA in a web browser: forms with controls and events, class constructors and modern syntax, or write any event in Python or JavaScript instead. Nothing to install, and free to start.">
 <meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
 <meta property="og:url" content="https://webaccessbuilder.com/vba/">
 <link rel="canonical" href="https://webaccessbuilder.com/vba/">
@@ -81,7 +81,7 @@
         <tbody>
           <tr><td class="sel" aria-hidden="true"></td><td>VBA macros don't run in Excel for the web. Its scripts are written in TypeScript instead (<a href="https://learn.microsoft.com/en-us/office/dev/scripts/resources/vba-differences" rel="noopener" target="_blank">Microsoft</a>)</td><td>VBA runs in the browser, on an interpreter written for it. Nothing is installed</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><td>Access has no web version: its web apps were shut down in 2018 (<a href="https://support.microsoft.com/en-us/access/access-services-in-sharepoint-roadmap" rel="noopener" target="_blank">Microsoft</a>)</td><td>Forms, reports and their code open from a link, on Windows or a Mac</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Microsoft has said VBA will stay but won't be developed further (<a href="https://nolongerset.com/will-officescripts-replace-vba/" rel="noopener" target="_blank">reported by No Longer Set</a>)</td><td>The language you know, moved on: class constructors, <code>AndAlso</code>, <code>+=</code> and <code>Continue For</code>, with Python and JavaScript modules your VBA can call</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Microsoft has said VBA will stay but won't be developed further (<a href="https://nolongerset.com/will-officescripts-replace-vba/" rel="noopener" target="_blank">reported by No Longer Set</a>)</td><td>The language you know, moved on: class constructors, <code>AndAlso</code>, <code>+=</code> and <code>Continue For</code>. And any event can be written in Python or JavaScript instead</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><td>Moving to the web usually means a new language, a framework, a server and a database</td><td>One tool. Draw the form, write the event, share the link</td></tr>
         </tbody>
       </table>
@@ -119,25 +119,27 @@
 <section class="feature feature-alt" id="python" aria-labelledby="pyjs-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
-      <h2 id="pyjs-title">Python and JavaScript beside it</h2>
-      <p>Insert a Python or JavaScript module and VBA calls its functions by name, like any other. Both run in the browser, with nothing to install.</p>
+      <h2 id="pyjs-title">Or write the event in Python or JavaScript</h2>
+      <p>VBA isn't the only choice. Press … beside an event and Choose Builder offers Code Builder in VBA, Python or JavaScript, with your default picked. Each event runs one procedure, and one form can mix all three.</p>
       <ul class="ticks">
-        <li>Python libraries a tick away in References: pandas, NumPy, Matplotlib, SciPy, scikit-learn and Pillow</li>
-        <li>JavaScript libraries for statistics, dates and bank holidays, fuzzy matching, coordinates, CSV and hashing</li>
-        <li>Pass a form or a report: Python or JavaScript reads its record and a subform's rows, and what it changes is written back</li>
-        <li>A Matplotlib chart or a Pillow image shows on a form through an Image control</li>
+        <li><code>def cmdSave_Click(form):</code> or <code>export function cmdSave_Click(form)</code>, written for you</li>
+        <li>Arguments come as <code>event</code>: <code>event.Cancel = True</code> cancels a Before Update, <code>event.KeyCode = 0</code> swallows a key</li>
+        <li>Python and JavaScript call the app as they run: message boxes, <code>DoCmd</code>, recordsets, <code>DLookup</code>, and the form's VBA procedures</li>
+        <li>VBA calls them back: <code>Forms!Orders.WithVat(19.99)</code> runs a function in the form's Python module</li>
+        <li>TempVars pass values between VBA, Python, JavaScript, macros and queries</li>
+        <li>Python libraries in References: pandas, NumPy, Matplotlib, SciPy, scikit-learn and Pillow; JavaScript ones for statistics, dates, fuzzy matching and more</li>
       </ul>
-      <p class="more"><a href="/python/">Python beside VBA: what it can do, and its limits</a></p>
+      <p class="more"><a href="/python/">Python and JavaScript: what they can do, and their limits</a></p>
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Python and JavaScript">
-        <button role="tab" type="button" aria-selected="true" data-img="python-module" data-alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">Python</button>
-        <button role="tab" type="button" aria-selected="false" data-img="python-form" data-alt="The Orders form, whose order-lines label was written by Python: the number of lines, the items and the net total, worked out with pandas">A form</button>
-        <button role="tab" type="button" aria-selected="false" data-img="python-chart" data-alt="A Matplotlib bar chart of sales by category, drawn by Python and shown on a form in an Image control">A chart</button>
-        <button role="tab" type="button" aria-selected="false" data-img="js-module" data-alt="A JavaScript module beside the VBA ones, with VBA calling it and a fuzzy-matching library in the Immediate window">JavaScript</button>
+        <button role="tab" type="button" aria-selected="true" data-img="choose-builder" data-alt="Choose Builder over the form designer, offering Macro Builder, Expression Builder, and Code Builder in VBA, Python or JavaScript for a text box's After Update">Choose Builder</button>
+        <button role="tab" type="button" aria-selected="false" data-img="event-python" data-alt="A form's Python module behind the Restock form: a Load, a Before Update that cancels with event.Cancel, and a button's Click that shows a message box and reads a total with DSum as it runs. The Project panel lists the form's VBA, Python and JavaScript modules together">Python</button>
+        <button role="tab" type="button" aria-selected="false" data-img="event-js" data-alt="The form's JavaScript module: a button's Click that awaits DLookup to show the product's supplier, and a Key Down that swallows F2 with event.KeyCode">JavaScript</button>
+        <button role="tab" type="button" aria-selected="false" data-img="event-msgbox" data-alt="A message box asking whether to reorder a product, shown by the Reorder button's Click event, which is written in Python">Running</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/python-module.webp" srcset="/img/python-module.webp 1136w, /img/python-module@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="A Python module that totals an order's lines with pandas, beside the VBA modules, with VBA calling a Python function in the Immediate window">
+        <img src="/img/choose-builder.webp" srcset="/img/choose-builder.webp 1136w, /img/choose-builder@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="Choose Builder over the form designer, offering Macro Builder, Expression Builder, and Code Builder in VBA, Python or JavaScript for a text box's After Update">
       </div>
     </figure>
   </div>

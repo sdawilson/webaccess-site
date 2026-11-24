@@ -13,6 +13,7 @@ const list = [
   ['demo-signin', null], ['demo-menu', null], ['demo-dashboard', null], ['demo-orders', null], ['share', null], ['runtime-view', null], ['macro-design', null], ['relationships', null], ['spreadsheet', null], ['spreadsheet-design', null], ['spreadsheet-code', null], ['spreadsheet-runtime', null],
   ['appearance', null], ['assistant', null], ['listview', null],
   ['barcode', null], ['server-module', null],
+  ['event-msgbox', null], ['event-form', null], ['event-boxes', null], ['choose-builder', null], ['event-python', null], ['event-js', null],
   ['vba-additions', null], ['vba-constructor', null], ['python-module', null], ['js-module', null], ['references', null], ['python-form', null], ['python-chart', null],
 ];
 const crops = {
@@ -29,6 +30,7 @@ const crops = {
   'appearance': [232, 370, 780, 468], // Tools > Options: the Appearance section of the dialog
   'assistant': DOC, 'listview': DOC,
   'barcode': DOC, 'server-module': DOC,
+  'event-msgbox': DOC, 'event-form': DOC, 'event-boxes': DOC, 'choose-builder': DOC, 'event-python': DOC, 'event-js': DOC,
   'vba-additions': DOC, 'vba-constructor': DOC, 'python-module': DOC, 'js-module': DOC, 'python-form': DOC, 'python-chart': DOC,
   'references': [446, 210, 548, 480], // the dialog, scrolled to the Python libraries
 };
