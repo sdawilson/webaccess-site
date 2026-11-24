@@ -33,7 +33,7 @@ Compare the app's current README with what the site says, and note each thing th
 | Screenshot crops | `tools/screenshots/imgs.mjs` | Document crops start at the Navigation Pane's right edge (x 304). If the rail or pane changes width, move them, or the pane's "+" buttons show down the left of every picture |
 | Screenshots page | `public/screenshots/index.html` | Each card's title, note and alt text still describe its screen; a notable new screen may deserve a card |
 | Try the demo | `public/index.html` (`#demo`) | What the sample database contains and how long a demo lasts, as the app's README says |
-| Runtime, Plans | `public/index.html` (`#runtime`, `#plans`), the hero note, the FAQ | Sharing, roles, runtime mode and the error log as the app has them (live since 9 Nov 2026). Paying isn't switched on: keep "what we plan to charge" until Simon says otherwise. Never change prices or the free limit (10 people per database) unless Simon has; `docs/brand.md` has them |
+| Runtime, Plans | `public/index.html` (`#runtime`, `#plans`), the hero note, the FAQ | Sharing, roles, runtime mode and the error log as the app has them (live since 9 Nov 2026). Paying isn't switched on: keep "what we plan to charge" until Simon says otherwise. Never change prices or the runtime rule (free, no limit on people, since 21 Nov) unless Simon has; `docs/brand.md` has them |
 
 Keep the site's voice: plain British English, "we", short sentences, no hype, nothing the app doesn't do yet. Keep the development notice and the "not for production" wording exactly as they are unless Simon has changed them.
 
