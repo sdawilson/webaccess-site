@@ -1,6 +1,6 @@
 # Privacy policy
 
-12 November 2026.
+Updated 26 November 2026.
 
 ## Who we are
 
@@ -19,7 +19,7 @@ To ask about your information, email webaccessbuilder@gmail.com or use the conta
 |---|---|---|
 | Email address, name and password (stored hashed, never as typed) | To create your account and sign you in | Contract |
 | The verification and password-reset codes we email you | To confirm the address is yours | Contract |
-| Your plan, upgrade requests, invoices and payment records. We don't take or hold card details | To provide and charge for a subscription, and to keep tax records | Contract; legal obligation |
+| Your plan, upgrade requests, invoices and payment records. We don't take or hold card details | To provide and charge for a licence, and to keep tax records | Contract; legal obligation |
 | When you sign in, and a sign-in cookie | To keep you signed in, enforce one sign-in at a time on the free plan, and know when an account is unused | Contract; legitimate interests |
 | Technical records: IP address, browser type, pages requested, errors | To keep the service secure and working | Legitimate interests |
 | Messages you send through the contact and suggestion forms | To reply, and to plan what we build | Legitimate interests |
@@ -95,7 +95,7 @@ The service is for business use, by people aged 18 or over. We don't knowingly h
 
 We'll post any change here with its date. If a change matters, we'll email account holders before it takes effect.
 
-Last updated: 12 November 2026.
+Last updated: 26 November 2026.
 
 ---
 
