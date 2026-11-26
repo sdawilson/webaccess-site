@@ -8,68 +8,69 @@ Web Access Builder is provided by Simon Wilson, trading in his own name, of 7 Ha
 
 To ask about your information, email webaccessbuilder@gmail.com or use the contact form at webaccessbuilder.com/pricing/#contact.
 
-## Two kinds of information
+## What this covers
 
-1. **Information about you**, as a visitor or an account holder. This policy is about that.
-2. **What you put in your databases.** That's yours. If it includes information about people, you're its controller and we only process it for you, under the data processing terms in our [terms of use](/terms/). We don't look at it, except where you ask us for help or we must to fix a fault or meet a legal duty.
+Information about you when you visit webaccessbuilder.com, try the demo, or write to us.
+
+Desktop and Server, when they go on sale, keep your databases on your own computer or in your own account, not with us.
+
+Free accounts are no longer offered. If you opened one before 27 November 2026, see [Accounts opened before 27 November 2026](#accounts-opened-before-27-november-2026).
 
 ## What we collect, and why
 
 | What | Why | Lawful basis |
 |---|---|---|
-| Email address, name and password (stored hashed, never as typed) | To create your account and sign you in | Contract |
-| The verification and password-reset codes we email you | To confirm the address is yours | Contract |
-| Your plan, upgrade requests, invoices and payment records. We don't take or hold card details | To provide and charge for a licence, and to keep tax records | Contract; legal obligation |
-| When you sign in, and a sign-in cookie | To keep you signed in, enforce one sign-in at a time on the free plan, and know when an account is unused | Contract; legitimate interests |
-| Technical records: IP address, browser type, pages requested, errors | To keep the service secure and working | Legitimate interests |
-| Messages you send through the contact and suggestion forms | To reply, and to plan what we build | Legitimate interests |
-| The AI assistant's use on your account: how much, and what was asked | To apply your plan's allowance and fix faults | Contract; legitimate interests |
-| Service emails: verification, warnings before a free account is deleted, changes to the terms, billing | To run your account | Contract |
+| Messages you send through the contact and suggestion forms, with your email address | To reply, to plan what we build, and to tell you when Desktop or Server is ready if you ask us to | Legitimate interests; your consent, for being told when they're ready |
+| Technical records: IP address, browser type, pages requested, errors | To keep the website and the demo secure and working | Legitimate interests |
+| What you do in the demo, and any file you import into it | To give you the demo. It's deleted with your copy | Legitimate interests |
+| The demo's AI requests: the error and the code it concerns | To answer them, and to count them against the demo's allowance | Legitimate interests |
 
 We don't sell your information, show adverts, or send marketing email unless you've asked for it.
 
 ## The website
 
-webaccessbuilder.com sets no cookies and uses no analytics service. We keep a daily count of page views and of clicks on "Start free" and the demo. The count holds no IP address and nothing about any one visitor.
+webaccessbuilder.com sets no cookies and uses no analytics service. We keep a daily count of page views and of clicks on the demo. The count holds no IP address and nothing about any one visitor.
 
-The video on the site is played from Bunny Stream, which receives your IP address in order to deliver it.
+The videos on the site are played from Bunny Stream, which receives your IP address in order to deliver them.
 
-## Cookies in the app
+## The demo
 
-The app sets one cookie when you sign in, to keep you signed in. The demo sets one, which ends when you close the browser. Both are strictly necessary, so no consent banner is needed. There are no advertising or tracking cookies.
+The demo sets one cookie, so it knows which copy is yours. It ends when you close the browser. It's strictly necessary, so no consent banner is needed. There are no advertising or tracking cookies.
 
-## The AI assistant
+Your copy, and anything you put in it, is deleted when you end the demo, after 30 minutes without use, or after two hours. Please don't put real personal data into it.
 
-The assistant is provided using Anthropic's Claude, and only Admins can use it. When you use it, the design of your database and what you type are sent to Anthropic to produce a reply. Your records aren't sent, unless the assistant asks to see up to five rows of a table and you allow it, each time. Under Anthropic's commercial terms, what's sent this way isn't used to train its models.
+Explain Error and Fix Error in the demo are provided using Anthropic's Claude. When you use them, the error and the code it concerns are sent to Anthropic to produce a reply. Under Anthropic's commercial terms, what's sent this way isn't used to train its models.
+
+## Accounts opened before 27 November 2026
+
+If you opened a free account before then, we hold your email address, name and password (stored hashed, never as typed), when you sign in, and your databases, in London, while the account is open. What's in your databases is yours: you're its controller and we only process it for you, under the data processing terms you agreed to. We don't look at it, except where you ask us for help or we must to fix a fault or meet a legal duty.
+
+You can download any database at any time, and ask us to close the account, which deletes it. An account nobody has signed in to for 180 days is deleted, after emails 30 and 7 days beforehand. If you use the AI assistant there, the design of your database and what you type are sent to Anthropic to produce a reply; your records aren't sent, unless the assistant asks to see up to five rows of a table and you allow it, each time.
 
 ## Who else handles your information
 
 | Who | What for | Where |
 |---|---|---|
-| Bunny (BunnyWay d.o.o., Slovenia) | Hosting the app and website, database storage, backups, video | Databases and backups in London, UK. The website and video are delivered from Bunny's network worldwide |
-| Brevo (Sendinblue SAS, France) | Sending service emails | EU |
-| Anthropic | The AI assistant | United States |
-| Google | The mailbox for webaccessbuilder@gmail.com, if you email us | Worldwide |
+| Bunny (BunnyWay d.o.o., Slovenia) | Hosting the website, the demo and the app, the messages you send us, and video | The demo and accounts in London, UK. The website and video are delivered from Bunny's network worldwide |
+| Anthropic | AI requests in the demo, and the assistant on accounts | United States |
+| Brevo (Sendinblue SAS, France) | Emails to account holders | EU |
+| Google | The mailbox for webaccessbuilder@gmail.com, if you email us, and our replies | Worldwide |
 
-Each works for us under a contract. Where information leaves the UK, it goes to a country the UK treats as giving adequate protection, or under the UK's approved contract terms. We'd also disclose information if the law required it, or to a successor if the service changed hands.
+Each works for us under a contract. Where information leaves the UK, it goes to a country the UK treats as giving adequate protection, or under the UK's approved contract terms. We'd also disclose information if the law required it, or to a successor if Web Access Builder changed hands.
 
 ## How long we keep it
 
 | What | How long |
 |---|---|
-| Your account and databases | While the account is open |
-| A free account nobody has signed in to for 180 days | Deleted, after emails 30 and 7 days beforehand |
-| A deleted database | 30 days in the bin, then gone |
-| Nightly backups (paid plans) | 30 days |
-| After you close an account | Deleted straight away; the last backups within 30 days |
-| Invoices and payment records | 6 years, as tax law requires |
-| Technical records | Up to 90 days |
 | Contact and suggestion messages | Up to 2 years |
-| The demo | A demo copy is deleted when you end the demo, or shortly after you stop using it |
+| A request to be told when Desktop or Server is ready | Until we've told you, or you ask us to stop |
+| Technical records | Up to 90 days |
+| The demo | Deleted when you end the demo, after 30 minutes without use, or after two hours |
+| Accounts opened before 27 November 2026 | While the account is open; deleted after 180 days without a sign-in |
 
 ## Security
 
-Connections are encrypted. Passwords are stored hashed. Each account's databases are kept separate from every other account's. Access to the servers is limited to Simon Wilson. Databases on paid plans are backed up nightly. If a breach put your rights at risk, we'd tell you and the Information Commissioner's Office as the law requires.
+Connections are encrypted. Each demo copy is kept separate from every other. Access to the servers is limited to Simon Wilson. If a breach put your rights at risk, we'd tell you and the Information Commissioner's Office as the law requires.
 
 ## Your rights
 
@@ -81,19 +82,19 @@ Under UK data protection law you can ask us to:
 - restrict or stop how we use it, where we rely on legitimate interests
 - give it to you in a form you can take elsewhere
 
-Most of this you can do yourself: download any database at any time, and close your account to delete it. For anything else, contact us; we'll reply within one month. There's no charge.
+Contact us; we'll reply within one month. There's no charge.
 
 If you're unhappy with how we've handled your information, you can complain to the Information Commissioner's Office at ico.org.uk. We'd appreciate the chance to put it right first.
 
 If your information is in a database that someone else built with Web Access Builder, please contact them: they decide what's held and why.
 
-## Who the service is for
+## Who it's for
 
-The service is for business use, by people aged 18 or over. We don't knowingly hold accounts for children.
+Web Access Builder is made for business use. The website and the demo aren't meant for children, and we don't knowingly collect information about them.
 
 ## Changes
 
-We'll post any change here with its date. If a change matters, we'll email account holders before it takes effect.
+We'll post any change here with its date.
 
 Last updated: 26 November 2026.
 
@@ -101,11 +102,11 @@ Last updated: 26 November 2026.
 
 ## Notes for the reviewer
 
-1. **Contact details.** The controller is Simon Wilson in his own name, reached at webaccessbuilder@gmail.com (decided 12 Nov). The mailbox is with Google, so Google should be added to the table of who else handles information if messages there contain personal data.
-2. **ICO.** Simon must pay the ICO data protection fee in his own name before taking sign-ups, unless exempt.
-3. **Controller and processor.** We're controller for account details and processor for what's in customers' databases. Check the split is drawn correctly, including for Users and Guests invited by a customer (their sign-in details).
-4. **Anthropic.** Confirm the retention and no-training statement against the terms of the account in use, and confirm the transfer mechanism to the United States. A data processing agreement with Anthropic, Bunny and Brevo should be in place.
+1. **Contact details.** The controller is Simon Wilson in his own name, reached at webaccessbuilder@gmail.com (decided 12 Nov).
+2. **Changed 26 Nov** (Simon): free hosted accounts withdrawn; the hosted app keeps only Simon's own databases and the demo. This policy now covers the website, the demo and messages, with a section for any account opened before. The earlier version is in this file's history at commit `7f6d6ef`.
+3. **ICO.** Simon must pay the ICO data protection fee in his own name, unless exempt.
+4. **Anthropic.** Confirm the no-training statement against the terms of the account in use, and the transfer mechanism to the United States. Data processing agreements with Anthropic, Bunny and Brevo should be in place.
 5. **Bunny.** Confirm that the app's server, as well as its storage, is in London, and whether Bunny's logs hold IP addresses and for how long.
-6. **Published 12 Nov without legal review**, at Simon's decision. **Retention figures** for technical records (90 days) and messages (2 years) are suggestions, not what the app does today. The demo's retention needs checking in the app.
-7. **Not yet built, so not yet true:** self-serve sign-up with emailed codes, the 180-day deletion and its warning emails, and online payment.
-8. **EU visitors.** If people in the EU sign up, EU GDPR applies as well; above a certain scale an EU representative may be needed.
+6. **Retention figures** for technical records (90 days) and messages (2 years) are suggestions, not what the systems do today.
+7. **Desktop and Server.** When they go on sale, add what is collected to sell and license them (name, email, invoices, licence records, payments) and the payment provider.
+8. **Not reviewed by a lawyer**, at Simon's decision, as before.

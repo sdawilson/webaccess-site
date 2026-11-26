@@ -1,138 +1,66 @@
 # Terms of use
 
-Version 2026-11, updated 26 November 2026.
+Updated 26 November 2026.
 
 ## 1. Who we are
 
 Web Access Builder is provided by Simon Wilson, trading in his own name, of 7 Hardwick Mews, Woburn Sands, MK17 8QU ("we", "us"). You can reach us at webaccessbuilder@gmail.com or through the contact form at webaccessbuilder.com/pricing/#contact.
 
-These terms apply when you create an account or use the service at webaccessbuilder.com and its subdomains. By creating an account you agree to them.
+## 2. What these terms cover
 
-The service is for business use only. By creating an account you confirm that you're using it for your business, trade or profession, or for an organisation, and not as a consumer.
+These terms apply when you use this website, webaccessbuilder.com, and the demo at demo.webaccessbuilder.com. By using them you agree to these terms. Web Access Builder is made for business use.
 
-## 2. Words we use
+Desktop and Server aren't on sale yet. Each will come with its own licence terms, which you'll see before you buy.
 
-- **Account**: what you create when you sign up. It holds your databases.
-- **Admin**: a person who designs databases in an account.
-- **User** and **Guest**: people an Admin shares a database with. They use it; they don't design it.
-- **Your content**: the databases, records, files, designs and code that you or the people you share with put into the service.
+Free accounts are no longer offered. If you opened one before 27 November 2026, the terms you agreed to then still apply to it; ask us and we'll send you a copy.
 
-## 3. Your account
+## 3. The demo
 
-- You must be 18 or over, and able to agree to these terms for your business or the organisation you're signing up for.
-- Sign-up needs a working email address, which we confirm with a code.
-- An Admin's sign-in is for that one person. Don't share a password. On the free plan an Admin can be signed in at one place at a time.
-- You're responsible for what's done through your account, and for the people you share a database with.
-- Tell us promptly if you think someone else has used your account.
+- The demo is for trying Web Access Builder out. It gives you your own temporary copy of a sample database, with the design tools.
+- Nothing is kept. Your copy, and anything you put in it, is deleted when you end the demo, after 30 minutes without use, or after two hours.
+- Don't put real personal data, confidential information, or anything you can't afford to lose into it.
+- The demo includes a few AI requests, for Explain Error and Fix Error, provided using Anthropic's Claude. What they produce can be wrong.
+- We may change, limit or stop the demo at any time.
 
-## 4. The plans
+## 4. What you mustn't do
 
-**Free.** One database of your own, up to 5,000 records and 10 MB, plus the sample database. All the design tools. No sharing with Users or Guests. A small monthly allowance for the AI assistant. No card is needed.
+- Break the law, or upload anything unlawful or anything that infringes someone else's rights.
+- Try to get into someone else's demo or into our systems, or test our security without our written agreement.
+- Send malware, start demos in bulk, or use the website or the demo in a way that harms them for others.
 
-**Desktop and Server licences.** Not yet on sale. Desktop (£99) and Server (£495) will each be a one-off payment for each Admin, with no charge for the people who use what you build. The terms for them will be added here before they go on sale.
+## 5. Our content and name
 
-The current limits are shown on the pricing page.
-
-## 5. Free accounts that aren't used
-
-A free account that no Admin has signed in to for 180 days is deleted, with its databases. We'll email the account's Admins 30 days and 7 days beforehand. Signing in during that time keeps the account.
-
-## 6. Your content
-
-- Your content is yours. We don't claim any ownership of it.
-- You give us permission to store, copy, back up and display it only as needed to run the service for you.
-- You can download a complete copy of a database at any time, on any plan.
-- You're responsible for your content: that you have the right to put it there, and that it's lawful.
-- The sample database is ours. You may use and change your copy within the service.
-
-## 7. Personal data in your databases
-
-If your content includes information about people, then under data protection law you are the controller of that information and we process it for you. The data processing terms in the schedule apply. Our [privacy policy](/privacy/) explains what we do with information about you as an account holder.
-
-## 8. The AI assistant
-
-- The assistant is provided using Anthropic's Claude. It's available to Admins only.
-- It's sent the design of your database: tables' fields, queries, forms, reports, macros and code. It isn't sent your records, unless you allow it to see up to five rows of a table when it asks.
-- What it produces can be wrong. Nothing it proposes is built until you approve it, and checking it is your responsibility.
-- Each plan has a monthly allowance. When it's used up, the assistant stops until the next month.
-
-## 9. What you mustn't do
-
-- Break the law, or store or share anything unlawful, or anything that infringes someone else's rights.
-- Store payment card numbers, or special category data such as health records, without agreeing it with us first.
-- Try to get into another account, test the service's security without our written agreement, or get round a plan's limits.
-- Share an Admin sign-in, or create several free accounts to avoid paying.
-- Send spam or malware through the service, or use it in a way that harms it for others.
-- Resell the service itself. Sharing the databases and applications you build with your own team or customers, within your plan, is what it's for.
-
-We may suspend an account that breaks these rules. Where we reasonably can, we'll tell you first and give you the chance to put it right and to download your content.
-
-## 10. The service
-
-- The service is in early access. We aim to keep it available and to look after your content with reasonable care and skill, but we don't promise it will be uninterrupted or free of errors.
-- We take nightly backups of paid accounts' databases and keep them for 30 days. Backups guard against failures on our side. You should still download your own copies of anything important.
-- We'll keep changing and improving the service. If we need to remove a feature you're likely to depend on, we'll give reasonable notice.
-- If we decide to close the service, we'll give at least 90 days' notice, keep downloads available throughout, and refund any period paid for beyond the closing date.
-
-## 11. Our software and name
-
-We own the service, its software, its guides and its name. These terms give you the right to use the service on your plan, and nothing more. Applications you build are yours, but they run only within the service.
+The website, the demo, the software, the guides, the videos and the sample database are ours. You may use them to find out about Web Access Builder and to try it.
 
 Microsoft, Access, Excel and Visual Basic are trademarks of Microsoft Corporation. Web Access Builder is an independent product, not affiliated with or endorsed by Microsoft.
 
-## 12. Our responsibility to you
+## 6. Our responsibility to you
 
+- The website and the demo are free, and provided as they are. We aim to keep them accurate and working, but we don't promise they'll be uninterrupted or free of errors.
 - Nothing in these terms limits our liability for death or personal injury caused by negligence, for fraud, or for anything else the law doesn't allow us to limit.
-- Subject to that, we aren't liable for loss of profit, business or revenue, for indirect or consequential loss, or for loss of data that a download or backup of your own would have avoided.
-- Subject to that, our total liability to you in any 12 months is limited to the greater of £100 and the amount you paid us in those 12 months.
-- The service isn't designed for uses where a failure could cause injury or serious harm.
+- Subject to that, we aren't liable for loss of profit, business or revenue, for loss of anything you put into the demo, or for indirect or consequential loss, and our total liability to you is limited to £100.
 
-## 13. Ending
+## 7. Your information
 
-- You can close your account at any time. We then delete your content, and the last backups go within 30 days.
-- We may close an account that seriously or repeatedly breaks these terms.
+Our [privacy policy](/privacy/) explains what we do with information about you.
 
-## 14. Changes to these terms
+## 8. Changes to these terms
 
-We may update these terms. For a change that matters, we'll email Admins at least 30 days before it takes effect. If you don't accept it, you can close your account, and we'll refund any unused paid period.
+We may update these terms. The date at the top shows when they last changed.
 
-## 15. General
+## 9. General
 
 - These terms are governed by the law of England and Wales, and its courts decide any dispute.
 - If part of these terms can't be enforced, the rest still applies.
-- You may not transfer your account to someone else without our agreement. We may transfer the service to a successor who takes on these terms.
 - Only you and we can enforce these terms.
-
----
-
-## Schedule: data processing terms
-
-These apply where your content includes personal data, and form part of the terms.
-
-1. **Roles.** You are the controller. We are the processor.
-2. **What and why.** We process the personal data in your content to provide the service to you, for as long as you have an account. What kinds of data, and about whom, are your choice.
-3. **Instructions.** We process it only on your documented instructions, which are these terms and what you do in the service, unless the law requires otherwise; if so we'll tell you, where the law allows.
-4. **Confidentiality.** Anyone we authorise to handle it is bound to keep it confidential.
-5. **Security.** We take appropriate technical and organisational measures, including encryption in transit, access limited to those who need it, separation between accounts and backups.
-6. **Sub-processors.** You agree to our using those listed in the [privacy policy](/privacy/). We'll give 30 days' notice of a new one; if you object and we can't resolve it, you may close your account and receive a refund of the unused period. We remain responsible for what they do.
-7. **Where it's held.** Databases are held in the United Kingdom. Any transfer outside the UK is made under a lawful transfer mechanism.
-8. **Helping you.** We'll give reasonable help with requests from the people the data is about, and with your own security, breach-notification and impact-assessment duties.
-9. **Breaches.** We'll tell you without undue delay if we become aware of a personal data breach affecting your content.
-10. **At the end.** You can download your content before closing. After closing we delete it, with backups, within 30 days, unless the law requires us to keep it.
-11. **Checks.** We'll give you the information reasonably needed to show we meet these terms, and allow an audit no more than once a year, on reasonable notice and at your cost.
 
 ---
 
 ## Notes for the reviewer
 
-1. **The provider is Simon Wilson in his own name** (decided 12 Nov), so liability is personal. Worth advice on whether the cap in section 12 is enough, on insurance, and on what a sole trader must show on a website (name and a postal address).
-2. **Business use only** (decided 12 Nov). Sign-up should carry a tick box or a clear line saying so. If a consumer signs up anyway, consumer law may still apply to them.
-3. **Changed 21 Nov** (Simon: Desktop £99 and Server £495, one-off for each Admin, runtimes free, the Builder subscription withdrawn, both products "coming soon"). Section 4 now says so; licence terms for Desktop and Server are still to be written, and need review, before either goes on sale.
-3. **Changed 26 Nov**: no one had taken out the Builder subscription (Simon), so its sections (5 Paying, 6 When a subscription ends) and the other mentions of it were removed, and sections 7 to 17 became 5 to 15. The version stays 2026-11, which the app records at sign-up: nothing changed for anyone who had signed up.
-3. **Published 12 Nov without legal review**, at Simon's decision, because sign-up asks people to agree to these terms. The figures Claude chose are: £100 or 12 months' fees as the liability cap, 14 days for a failed payment, 90 days' notice of closure, 30 days' notice elsewhere, and VAT added where it applies.
-3. **Liability cap** (section 12): the figures, and whether the data-loss exclusion is reasonable under the Unfair Contract Terms Act 1977.
-4. **Refunds and VAT**: to be covered in the Desktop and Server licence terms (the subscription's Paying section has gone).
-5. **Sensitive data** (section 9): whether to exclude special category data at all.
-6. **Closing the service** (section 10): is 90 days a commitment Simon wants to make?
-7. **Not yet in the app, so not yet true:** self-serve sign-up, the 180-day deletion with warning emails, online payment, and the Builder limits of 20 databases and 50 MB. The terms shouldn't be published before these are built.
-8. **The demo** (demo.webaccessbuilder.com) needs no account. A line there should say that it's for trying things out, isn't kept, and shouldn't be given real data.
+1. **The provider is Simon Wilson in his own name** (decided 12 Nov), so liability is personal. Worth advice on whether the £100 cap in section 6 is enough, on insurance, and on what a sole trader must show on a website (name and a postal address).
+2. **Changed 26 Nov** (Simon): free hosted accounts are withdrawn, and the hosted app keeps only Simon's own databases and the demo. Desktop and Server are the products, both still "coming soon". At Simon's choice these short terms for the website and the demo replace the account terms (version 2026-11, which sign-up recorded). That version is in this file's history in the `webaccess-site` repository, at commit `7f6d6ef`, for anyone who opened an account before.
+3. **Sign-up** is closed by Simon in the app (Administration > Accounts > Sign-ups). Until it is, the sign-up page still links to these terms, which no longer describe accounts.
+4. **Desktop and Server licence terms** are still to be written, and need review, before either goes on sale: the licence, refunds, VAT, updates, and the data processing terms if either ever holds customers' data for them (neither does as designed: Desktop keeps it on the customer's computer, Server in the customer's own bunny.net account).
+5. **Not reviewed by a lawyer**, at Simon's decision, as before.
+6. **The demo's times** (30 minutes without use, two hours in all, 10 AI requests) are the live demo's settings on 26 Nov.

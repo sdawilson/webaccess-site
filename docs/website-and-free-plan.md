@@ -191,3 +191,14 @@ Approved by Simon on 12 Nov: the founder's note, the "Early access" label and na
 - Pricing and the home page: "Linked tables on SQL Server, PostgreSQL and MySQL" on the Desktop and Server plans, and a row in the comparison (Free no, Desktop and Server yes).
 - From Access: rows for linked tables and the Linked Table Manager, and pass-through queries; the import step says links come across with Desktop or Server.
 - Stacked on branch `legal-tidy` (terms and privacy without the withdrawn subscription, and the home picture's address), so publishing this publishes both.
+
+## No free plan: the demo, then Desktop and Server (Simon, 26 Nov; same branch)
+
+- Simon, 26 Nov: the hosted app keeps only his own databases and the demo sessions. The products are Desktop and the host-your-own web app (Server), both bought. Free hosted accounts are withdrawn.
+- His choices: buttons are **Try the demo** then **Tell me when it's ready** (the contact form); new sign-ups closed in the app, existing free accounts (if any) keep working; the terms replaced with short terms for the website and the demo.
+- Every page: the header's Start free became Try the demo; each closing pair is the demo, then Tell me when it's ready.
+- Home and Pricing: the Free card became a Demo card (£0, no sign-up, the sample, every design tool, import up to 10 MB, a few AI requests, not kept: ended, 30 minutes idle, or two hours); "Try it free. Pay once to use it."; the comparison's Free column is Demo; the free-plan questions removed or rewritten; the Free offer removed from the structured data.
+- Features: "On your desktop, or on your own server"; Preview as User in the demo; the assistant isn't in the demo.
+- Terms: short terms for the website and the demo; a line for any account opened before 27 Nov. Privacy: the website, the demo and messages, with a section for accounts opened before 27 Nov. The earlier versions are at commit `7f6d6ef`.
+- **For Simon in the app:** Administration > Accounts > Sign-ups > Close sign-ups. That also stops the demo offering "Create a free account" (it asks the app, and keeps the answer ten minutes).
+- **Still to change:** both videos end with "Start free at webaccessbuilder.com" (narration and end card); a new last line and end card are needed.

@@ -80,7 +80,7 @@ def page(slug, title, lede, desc):
     os.makedirs(f'public/{slug}', exist_ok=True)
     open(f'public/{slug}/index.html', 'w').write(t + main + foot)
 
-page('terms', 'Terms of use', 'Version 2026-11, updated 26 November 2026. For business use only.',
-     'The terms for using Web Access Builder: the plans, paying, your content, the AI assistant and what happens when an account ends.')
+page('terms', 'Terms of use', 'For this website and the demo. Updated 26 November 2026.',
+     'The terms for using the Web Access Builder website and its demo: what the demo is for, what you mustn\'t do, and our responsibility to you.')
 page('privacy', 'Privacy policy', 'What we hold about you, why, who else handles it and how long we keep it.',
-     'What Web Access Builder holds about visitors and account holders, why, who else handles it, how long it is kept and your rights.')
+     'What Web Access Builder holds about visitors, people trying the demo and people who write to us, why, who else handles it, how long it is kept and your rights.')
