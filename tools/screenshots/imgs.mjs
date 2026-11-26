@@ -4,6 +4,8 @@ import sharp from 'sharp';
 // The document area: from the Navigation Pane's right edge (x 304 with the rail), the command bar and the document,
 // at 5:3. Starting any further left shows the pane's "+" buttons down the edge.
 const DOC = [304, 44, 1136, 682];
+// The window less the top bar and the rail, at 5:3: the Navigation Pane and all of the document.
+const PANE_DOC = [64, 44, 1376, 826];
 const list = [
   ['continuous-form', null], ['form-view', null], ['form-design', null], ['pivottable', null], ['pivotchart', null],
   ['query-totals', null], ['query-criteria', null], ['sql-view', null], ['table-design', null], ['datasheet', null],
@@ -14,6 +16,7 @@ const list = [
   ['appearance', null], ['assistant', null], ['listview', null],
   ['barcode', null], ['server-module', null],
   ['event-msgbox', null], ['event-form', null], ['event-boxes', null], ['choose-builder', null], ['event-python', null], ['event-js', null],
+  ['link-connection', null], ['link-tables', null], ['linked-query', null], ['linked-manager', null], ['write-conflict', null],
   ['vba-additions', null], ['vba-constructor', null], ['python-module', null], ['js-module', null], ['references', null], ['python-form', null], ['python-chart', null],
 ];
 const crops = {
@@ -31,6 +34,8 @@ const crops = {
   'assistant': DOC, 'listview': DOC,
   'barcode': DOC, 'server-module': DOC,
   'event-msgbox': DOC, 'event-form': DOC, 'event-boxes': DOC, 'choose-builder': DOC, 'event-python': DOC, 'event-js': DOC,
+  // linked tables (linked-shoot.mjs): the linked tables' arrows in the Navigation Pane matter
+  'link-connection': PANE_DOC, 'link-tables': PANE_DOC, 'linked-query': PANE_DOC, 'linked-manager': PANE_DOC, 'write-conflict': PANE_DOC,
   'vba-additions': DOC, 'vba-constructor': DOC, 'python-module': DOC, 'js-module': DOC, 'python-form': DOC, 'python-chart': DOC,
   'references': [446, 210, 548, 480], // the dialog, scrolled to the Python libraries
 };

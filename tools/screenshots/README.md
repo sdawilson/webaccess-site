@@ -32,3 +32,11 @@ Two things to know:
 - **The Stock Workbook's note** beside its buttons is two lines in a one-line label in the sample; `shoot.mjs` makes the label taller before the shot.
 
 The data and passwords here are made up and only ever used on a local, temporary instance.
+
+**Linked tables** have their own script, `linked-shoot.mjs`, because they aren't in the demo. It needs:
+
+- a local PostgreSQL with a `warehouse` database (tables `bins`, `stock_levels` with one row for each sample product by `product_id`, and `deliveries`) and a login for it;
+- `127.0.0.1 warehouse-db` in `/etc/hosts`, the server name shown in the connection form;
+- the app started **without** `DEMO_MODE`, with `LINK_ALLOW_PRIVATE=1` so it may reach a local server.
+
+`APP_URL=http://localhost:3300 PG_PASSWORD=… OUT=shots DSF=2 node linked-shoot.mjs` adds the sample as a database, makes the connection, links the three tables, saves a query joining them to Products, and takes `link-connection`, `link-tables`, `linked-query`, `linked-manager` and `write-conflict` (it changes a count on the server while it is being edited). `imgs.mjs` crops them with the Navigation Pane in.

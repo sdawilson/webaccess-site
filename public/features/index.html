@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Features: worksheets, forms, reports, PivotTables and VBA | Web Access Builder</title>
-<meta name="description" content="Everything in Web Access Builder: worksheets on live data, tables and queries, forms, reports, PivotTables, PivotCharts, charts, macros, VBA with a debugger, an AI assistant, and sharing in a runtime.">
+<meta name="description" content="Everything in Web Access Builder: worksheets on live data, tables and queries, linked SQL tables, forms, reports, PivotTables, PivotCharts, charts, macros, VBA with a debugger, an AI assistant, and sharing in a runtime.">
 <meta property="og:title" content="Features: worksheets, forms, reports, PivotTables and VBA | Web Access Builder">
-<meta property="og:description" content="Everything in Web Access Builder: worksheets on live data, tables and queries, forms, reports, PivotTables, PivotCharts, charts, macros, VBA with a debugger, an AI assistant, and sharing in a runtime.">
+<meta property="og:description" content="Everything in Web Access Builder: worksheets on live data, tables and queries, linked SQL tables, forms, reports, PivotTables, PivotCharts, charts, macros, VBA with a debugger, an AI assistant, and sharing in a runtime.">
 <meta property="og:image" content="https://webaccessbuilder.com/img/og.png">
 <meta property="og:url" content="https://webaccessbuilder.com/features/">
 <link rel="canonical" href="https://webaccessbuilder.com/features/">
@@ -51,7 +51,7 @@
       <a class="btn btn-primary" href="https://app.webaccessbuilder.com/signup" data-signup data-hit="signup">Start free</a>
       <a class="btn btn-ghost" href="https://demo.webaccessbuilder.com" data-demo-link data-hit="demo" target="_blank" rel="noopener">Try the demo, no sign-up</a>
     </p>
-    <p class="jump"><a href="#sheets">Worksheets</a> <a href="#data">Tables and queries</a> <a href="#forms">Forms</a> <a href="#reports">Reports</a> <a href="#pivot">Pivots</a> <a href="#code">Code</a> <a href="#assistant">Assistant</a> <a href="#runtime">Sharing</a></p>
+    <p class="jump"><a href="#sheets">Worksheets</a> <a href="#data">Tables and queries</a> <a href="#linked">Linked tables</a> <a href="#forms">Forms</a> <a href="#reports">Reports</a> <a href="#pivot">Pivots</a> <a href="#code">Code</a> <a href="#assistant">Assistant</a> <a href="#runtime">Sharing</a></p>
   </div>
 </section>
 
@@ -119,7 +119,39 @@
     </figure>
   </div>
 </section>
-<section class="feature feature-alt" id="forms" aria-labelledby="forms-title">
+<section class="feature feature-alt" id="linked" aria-labelledby="linked-title">
+  <div class="wrap feature-grid">
+    <div class="feature-text">
+      <h2 id="linked-title">Linked tables on your SQL server</h2>
+      <p>Already have a database on SQL Server, PostgreSQL or MySQL? Link its tables, as you would in Access, and use them like your own: in datasheets, forms, queries, reports and code. The records stay on the server, and your forms become the way in. Linked tables come with Desktop and Server.</p>
+      <ul class="ticks">
+        <li>Data &gt; SQL Database: make a connection, tick the tables and views, and they appear in the Navigation Pane with Access's arrow and Access's names, such as <code>dbo_Customers</code></li>
+        <li>They work wherever a table does: forms and subforms, reports, charts, recordsets, <code>DLookup</code>, and queries that join them to your own tables</li>
+        <li>A saved record goes to the server first, checked against the record as you read it. If someone changed it meanwhile, Access's Write Conflict dialog asks what to do</li>
+        <li>Action queries, and <code>BeginTrans</code>, <code>CommitTrans</code> and <code>Rollback</code> in code, cover linked and local tables together: a refusal part-way undoes the lot</li>
+        <li>The Linked Table Manager: Refresh, Relink to another server or table, and Convert to Local Table</li>
+        <li>Pass-through queries in the server's own SQL, with Returns Records, ODBC Timeout and Max Records</li>
+        <li>Or import instead: a table's records, design and key copied in as a table of your own</li>
+        <li>An Access database's ODBC links and pass-through queries come across in Import Objects</li>
+        <li>Passwords are kept, encrypted, on the server that runs the app, never in the database file. A runtime copy can carry them locked inside it, so the people who use it are never asked</li>
+        <li>Changes made on the server show within seconds: the app checks before it reads, and Requery checks at once. A linked table can hold up to 2 million records</li>
+      </ul>
+    </div>
+    <figure class="shot" data-views>
+      <div class="viewbar" role="tablist" aria-label="Linked tables screens">
+        <button role="tab" type="button" aria-selected="true" data-img="linked-query" data-w="1376" data-h="826" data-alt="A query in the sample database joining its Products table to three tables linked from a PostgreSQL warehouse database, which sit in the Navigation Pane with an arrow on their icons">Linked tables</button>
+        <button role="tab" type="button" aria-selected="false" data-img="link-connection" data-w="1376" data-h="826" data-alt="The New connection form: connection name, kind of server, server, port, database, schema, login and password, with Encrypt the connection ticked">Connection</button>
+        <button role="tab" type="button" aria-selected="false" data-img="link-tables" data-w="1376" data-h="826" data-alt="Link tables on the Warehouse connection, with bins, deliveries and stock_levels ticked">Choose tables</button>
+        <button role="tab" type="button" aria-selected="false" data-img="linked-manager" data-w="1376" data-h="826" data-alt="The Linked Table Manager, listing three linked tables with their table on the server, how many records each has and when each was last checked">Manager</button>
+        <button role="tab" type="button" aria-selected="false" data-img="write-conflict" data-w="1376" data-h="826" data-alt="Access's Write Conflict dialog, with Save Record, Copy To Clipboard and Drop Changes, after a stock count was changed on the server while it was being edited">Write Conflict</button>
+      </div>
+      <div class="frame" role="tabpanel">
+        <img src="/img/linked-query.webp" srcset="/img/linked-query.webp 1376w, /img/linked-query@2x.webp 2752w" sizes="(min-width: 1100px) 760px, 94vw" width="1376" height="826" loading="lazy" alt="A query in the sample database joining its Products table to three tables linked from a PostgreSQL warehouse database, which sit in the Navigation Pane with an arrow on their icons">
+      </div>
+    </figure>
+  </div>
+</section>
+<section class="feature" id="forms" aria-labelledby="forms-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="forms-title">Forms</h2>
@@ -158,7 +190,7 @@
     </figure>
   </div>
 </section>
-<section class="feature" id="reports" aria-labelledby="reports-title">
+<section class="feature feature-alt" id="reports" aria-labelledby="reports-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="reports-title">Reports</h2>
@@ -185,7 +217,7 @@
     </figure>
   </div>
 </section>
-<section class="feature feature-alt" id="pivot" aria-labelledby="pivot-title">
+<section class="feature" id="pivot" aria-labelledby="pivot-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="pivot-title">PivotTable and PivotChart, back again</h2>
@@ -209,7 +241,7 @@
     </figure>
   </div>
 </section>
-<section class="feature" id="code" aria-labelledby="code-title">
+<section class="feature feature-alt" id="code" aria-labelledby="code-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="code-title">No code, macros, or VBA</h2>
@@ -246,7 +278,7 @@
     </figure>
   </div>
 </section>
-<section class="feature feature-alt" id="assistant" aria-labelledby="assistant-title">
+<section class="feature" id="assistant" aria-labelledby="assistant-title">
   <div class="wrap feature-grid">
     <div class="feature-text">
       <h2 id="assistant-title">An assistant that builds it with you</h2>
@@ -347,7 +379,8 @@
         <tbody>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">A database server, and someone to run it</th><td>Tables, queries and relationships, designed on screen</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">A front end, written in a web framework</th><td>Forms, with worksheets, charts and subforms, drawn in Design view</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A reporting tool</th><td>Reports with grouping, totals and Print Preview, printed or saved as PDF</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><th scope="row">A way into the SQL database you already have</th><td>Linked tables on SQL Server, PostgreSQL and MySQL, used like your own (with Desktop and Server)</td></tr>
+<tr><td class="sel" aria-hidden="true"></td><th scope="row">A reporting tool</th><td>Reports with grouping, totals and Print Preview, printed or saved as PDF</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">A language for each layer</th><td>No code, macros, or VBA: one language, with a debugger</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">A developer to get you started</th><td>An assistant that plans a table, a form or a report with you, and builds it when you approve</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><th scope="row">Sign-in, roles and permissions</th><td>Admins, Users and Guests, invited to each database by email</td></tr>
@@ -364,7 +397,6 @@
     <ul>
       <li><strong>Data macros</strong> on tables, and indexes over several fields</li>
       <li><strong>Reports as PDF files</strong> made on the server, and reports in columns</li>
-      <li><strong>Connections to your own SQL Server</strong>, as linked tables</li>
       <li><strong>Desktop and Server</strong>, to buy: Desktop for Windows first, then Mac and Linux</li>
       <li><strong>Stored procedures on a schedule</strong></li>
     </ul>

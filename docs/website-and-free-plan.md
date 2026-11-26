@@ -183,3 +183,11 @@ Approved by Simon on 12 Nov: the founder's note, the "Early access" label and na
 - /python/: retitled "Python and JavaScript, as first-class as VBA"; new sections "Choose the language for each event" and "It calls the app as it runs"; the old "Pass it a form" section and its copy-and-write-back note are gone; "Good to know" covers browsers (Python's live calls need current Chrome, Edge, Firefox or Safari 27; older Safari works on a copy), events that run often, and no breakpoints or IntelliSense in Python or JavaScript yet.
 - /vba/: "Or write the event in Python or JavaScript". Features and the Access page updated to match.
 - Six new pictures from a Restock form with an event in each language (`setupEvents` in `tools/screenshots/features-setup.mjs`, group `events`). The code video (1:31) predates event procedures; it still plays on /vba/ and /python/, now below the new sections.
+
+## Linked tables (26 Nov, on branch `linked-tables`, publish once the app has them)
+
+- Simon, 26 Nov: linked tables are about to go live. They come with the licensed products only (Desktop and Server; not the free plan or the demo), per his decision of 24 Nov.
+- Features: a new section "Linked tables on your SQL server" after Tables and queries, with five pictures (`tools/screenshots/linked-shoot.mjs`, against a local PostgreSQL); "Connections to your own SQL Server" taken off Still to come; a row in Everything in one place; the jump links and description.
+- Pricing and the home page: "Linked tables on SQL Server, PostgreSQL and MySQL" on the Desktop and Server plans, and a row in the comparison (Free no, Desktop and Server yes).
+- From Access: rows for linked tables and the Linked Table Manager, and pass-through queries; the import step says links come across with Desktop or Server.
+- Stacked on branch `legal-tidy` (terms and privacy without the withdrawn subscription, and the home picture's address), so publishing this publishes both.
