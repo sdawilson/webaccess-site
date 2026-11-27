@@ -35,9 +35,11 @@ video's ID in `public/js/site.js` (`STREAM_VIDEO_ID`). The home page shows the v
 
 ## The code video
 
-A second, shorter video (about 1:30) on the languages: modern VBA, the libraries in References, a Python
-module called from VBA, the Orders form passed to Python (pandas totals its lines as the records change),
-a Matplotlib chart on a form, and JavaScript with the Fuse library.
+A second, shorter video (about 1:40) on the languages: modern VBA (constructors, Try and Catch, $"…" strings,
+inline functions), the libraries in References, a Python module called from VBA, an event written in Python
+and one in JavaScript on the Restock form (`setupEvents` in `../screenshots/features-setup.mjs`), a Matplotlib
+chart on a form, and JavaScript with the Fuse library. Refilmed 27 Nov 2026 on the app's staging build `eb75b97`
+(take-code3); the tour was re-rendered from take7 the same day with new `runtime` and `end` lines and end card.
 
     node film-code.mjs take-code          # films it; code-setup.mjs adds the modules, form and References
     node render.mjs take-code code        # out/web-access-builder-code.mp4 and .en.vtt

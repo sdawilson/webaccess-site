@@ -286,6 +286,9 @@ await group('languages', async () => {
   const clear = async () => { await p.locator('.vbe').getByRole('button', { name: 'Clear' }).first().click().catch(() => {}); await pause(200); };
   await open('module', 'ModernVBA', 2000);
   await clear(); await imm('OrdersSoFar');
+  // the module is longer than the window: show it from the Dim lines, so Try … End Try is in view
+  await p.locator(`${PANE} .ce-input`).evaluate((t) => { const line = t.value.slice(0, t.value.indexOf('Dim total')).split('\n').length; t.scrollTop = Math.max(0, (line - 2) * 20); t.dispatchEvent(new Event('scroll')); });
+  await pause(500);
   await shot('vba-additions');
   await mod('Customer'); await shot('vba-constructor');
   await mod('OrderMaths'); await clear(); await imm('? Summary.describe(Array(14, 18, 21, 30, 96))', 5000);

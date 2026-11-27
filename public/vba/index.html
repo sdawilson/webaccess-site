@@ -25,10 +25,10 @@
  "@context": "https://schema.org",
  "@type": "VideoObject",
  "name": "VBA, Python and JavaScript in Web Access Builder",
- "description": "A 1 minute 31 second tour of the languages in Web Access Builder: VBA with class constructors and modern syntax, the JavaScript and Python libraries in References, a Python module called from VBA, a form passed to Python with pandas, a Matplotlib chart on a form, and JavaScript with fuzzy matching, all in a web browser.",
+ "description": "A 1 minute 41 second tour of the languages in Web Access Builder: VBA with class constructors and modern syntax, the JavaScript and Python libraries in References, a Python module called from VBA, an event written in Python and one in JavaScript, a Matplotlib chart on a form, and JavaScript with fuzzy matching, all in a web browser.",
  "thumbnailUrl": "https://vz-c8b446fb-9c4.b-cdn.net/e78e70c4-2c71-45f2-9e6a-e0e41609ad84/thumbnail.jpg",
  "uploadDate": "2026-11-19T13:26:00+00:00",
- "duration": "PT1M31S",
+ "duration": "PT1M41S",
  "embedUrl": "https://iframe.mediadelivery.net/embed/803383/e78e70c4-2c71-45f2-9e6a-e0e41609ad84",
  "contentUrl": "https://vz-c8b446fb-9c4.b-cdn.net/e78e70c4-2c71-45f2-9e6a-e0e41609ad84/play_720p.mp4"
 }
@@ -81,7 +81,7 @@
         <tbody>
           <tr><td class="sel" aria-hidden="true"></td><td>VBA macros don't run in Excel for the web. Its scripts are written in TypeScript instead (<a href="https://learn.microsoft.com/en-us/office/dev/scripts/resources/vba-differences" rel="noopener" target="_blank">Microsoft</a>)</td><td>VBA runs in the browser, on an interpreter written for it. Nothing is installed</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><td>Access has no web version: its web apps were shut down in 2018 (<a href="https://support.microsoft.com/en-us/access/access-services-in-sharepoint-roadmap" rel="noopener" target="_blank">Microsoft</a>)</td><td>Forms, reports and their code open from a link, on Windows or a Mac</td></tr>
-          <tr><td class="sel" aria-hidden="true"></td><td>Microsoft has said VBA will stay but won't be developed further (<a href="https://nolongerset.com/will-officescripts-replace-vba/" rel="noopener" target="_blank">reported by No Longer Set</a>)</td><td>The language you know, moved on: class constructors, <code>AndAlso</code>, <code>+=</code> and <code>Continue For</code>. And any event can be written in Python or JavaScript instead</td></tr>
+          <tr><td class="sel" aria-hidden="true"></td><td>Microsoft has said VBA will stay but won't be developed further (<a href="https://nolongerset.com/will-officescripts-replace-vba/" rel="noopener" target="_blank">reported by No Longer Set</a>)</td><td>The language you know, moved on: class constructors, <code>Try … Catch</code>, <code>$"…"</code> strings and inline functions. And any event can be written in Python or JavaScript instead</td></tr>
           <tr><td class="sel" aria-hidden="true"></td><td>Moving to the web usually means a new language, a framework, a server and a database</td><td>One tool. Draw the form, write the event, share the link</td></tr>
         </tbody>
       </table>
@@ -100,17 +100,20 @@
         <li><code>Continue For</code>, <code>Continue Do</code>, <code>Exit While</code> and <code>Return value</code></li>
         <li><code>Dim n As Long = 5</code> and <code>For i As Long = 1 To 10</code></li>
         <li><code>n += 1</code> and the other compound operators, with <code>&lt;&lt;</code> and <code>&gt;&gt;</code></li>
-        <li>Delegates: a variable that holds a procedure, for callbacks, with <code>AddressOf</code></li>
+        <li><code>Try … Catch … Finally</code>, beside <code>On Error</code></li>
+        <li>Values written into a string: <code>$"Total: {n:Currency}"</code></li>
+        <li>Inline functions: <code>SortArray names, Function(a, b) Len(a) - Len(b)</code>, and delegates with <code>AddressOf</code></li>
+        <li><code>For Each</code> over a class of your own, and default members, as in Access</li>
       </ul>
       <p class="feature-note">Code that uses the additions won't run in Access. The Immediate window notes the first use of each, and Options turns the notes off.</p>
     </div>
     <figure class="shot" data-views>
       <div class="viewbar" role="tablist" aria-label="Modern VBA">
-        <button role="tab" type="button" aria-selected="true" data-img="vba-additions" data-alt="VBA using a class constructor, a Dim with a value, Continue For, += and If(), with its output in the Immediate window">The additions</button>
+        <button role="tab" type="button" aria-selected="true" data-img="vba-additions" data-alt="VBA using a class constructor, SortArray with an inline function, Try, Catch and Finally, and values written into strings with $&quot;…&quot;">The additions</button>
         <button role="tab" type="button" aria-selected="false" data-img="vba-constructor" data-alt="A class module with Sub New taking a name and a credit limit, and a function using Return and AndAlso">A constructor</button>
       </div>
       <div class="frame" role="tabpanel">
-        <img src="/img/vba-additions.webp" srcset="/img/vba-additions.webp 1136w, /img/vba-additions@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="VBA using a class constructor, a Dim with a value, Continue For, += and If(), with its output in the Immediate window">
+        <img src="/img/vba-additions.webp" srcset="/img/vba-additions.webp 1136w, /img/vba-additions@2x.webp 2272w" sizes="(min-width: 1100px) 760px, 94vw" width="1136" height="682" loading="lazy" alt="VBA using a class constructor, SortArray with an inline function, Try, Catch and Finally, and values written into strings with $&quot;…&quot;">
       </div>
     </figure>
   </div>
@@ -150,7 +153,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 id="code-video-title">Watch it: VBA, Python and JavaScript</h2>
-      <p>A minute and a half, with narration and captions: modern VBA, the libraries in References, a Python module called from VBA, a form passed to Python, a Matplotlib chart on a form, and JavaScript.</p>
+      <p>A minute and a half, with narration and captions: modern VBA, the libraries in References, a Python module called from VBA, an event written in Python and one in JavaScript, a Matplotlib chart on a form, and JavaScript.</p>
     </div>
     <div class="tour-frame"></div>
   </div>

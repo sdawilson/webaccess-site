@@ -1,5 +1,5 @@
 // Films the code video: modern VBA, the libraries in References, Python and JavaScript modules,
-// a form passed to Python and a Matplotlib chart on a form.
+// an event written in Python and one in JavaScript, and a Matplotlib chart on a form.
 //   node film-code.mjs <take-folder> [scene]     then: node render.mjs <take-folder> code
 import path from 'node:path';
 import fs from 'node:fs';
@@ -7,6 +7,7 @@ import os from 'node:os';
 import { spawn } from 'node:child_process';
 import { Camera, signIn, BASE, ADMIN } from './filmlib.mjs';
 import { setupCode } from './code-setup.mjs';
+import { setupEvents } from '../screenshots/features-setup.mjs';
 
 const [, , dir = 'take-code', only] = process.argv;
 const APP = path.resolve(process.env.WEBACCESS_DIR || '../../../webaccess');
@@ -21,6 +22,7 @@ await cam.open();
 const p = cam.page;
 await signIn(p);
 await setupCode(p);
+await setupEvents(p);   // the Restock form, with an event in each language
 // Python, pandas and Matplotlib load in the background on opening (Load Python on startup)
 await p.waitForTimeout(12000);
 const want = (name) => !only || only === name;
@@ -38,11 +40,14 @@ const code = async () => {
 };
 
 if (want('vba')) {
-  cam.scene('vba', 'Modern VBA: constructors, AndAlso, +=, Continue For, Return');
+  cam.scene('vba', 'Modern VBA: constructors, Try and Catch, $"…" strings, inline functions');
   await cam.hold(0.6);
   await code();
   await cam.click(module('Customer'), { settle: 800, after: 3.4 });
-  await cam.click(module('ModernVBA'), { settle: 800, after: 2.8 });
+  await cam.click(module('ModernVBA'), { settle: 800, after: 2.6 });
+  // the module is longer than the window: bring Try … End Try into view before it runs
+  await p.locator('.ce-input').evaluate((t) => { const line = t.value.slice(0, t.value.indexOf('SortArray')).split('\n').length; t.scrollTop = Math.max(0, (line - 2) * 20); t.dispatchEvent(new Event('scroll')); });
+  await p.waitForTimeout(500); await cam.hold(3.0);
   await clearImm();
   await cam.click(imm, { after: 0.3 });
   await cam.type('OrdersSoFar', 0.06);
@@ -74,19 +79,16 @@ if (want('python')) {
   await cam.click(module('OrderMaths'), { settle: 800, after: 3.2 });
 }
 
-if (want('pyform')) {
-  cam.scene('pyform', 'A form passed to Python: pandas totals the order lines');
+if (want('events')) {
+  cam.scene('events', 'Any event in Python or JavaScript, working on the live form');
   await code();
-  await cam.click(module('Form_Orders'), { settle: 800, after: 0.3 });
-  // scroll the code to Form_Current, where the one line passes Me to Python
-  await p.evaluate(() => { const t = document.querySelector('.ce-input'); const i = t.value.indexOf('Private Sub Form_Current'); t.focus(); t.setSelectionRange(i, i); t.blur(); });
-  await p.locator('.ce-input').evaluate((t) => { const line = t.value.slice(0, t.selectionStart).split('\n').length; t.scrollTop = Math.max(0, (line - 3) * 20); t.dispatchEvent(new Event('scroll')); });
-  await p.waitForTimeout(500); await cam.hold(2.6);
-  await cam.click(tab('Main Menu'), { settle: 600, after: 0.3 });
-  await cam.click('[data-name=cmdOrders]', { settle: 5000, after: 2.2 });
-  const next = p.locator('.doc-body > .doc-pane:not([hidden]) button[title*="Next record"]').last();
-  await cam.click(next, { settle: 2500, after: 1.8 });
-  await cam.click(next, { settle: 2500, after: 2.0 });
+  await cam.click(module('Form_Restock.py'), { settle: 1000, after: 3.6 });
+  await cam.click(module('Form_Restock.js'), { settle: 1000, after: 2.6 });
+  await cam.click(p.locator('.nav-item').filter({ hasText: /^Restock$/ }).first(), { settle: 5000, after: 1.4 });
+  const pane = '.doc-body > .doc-pane:not([hidden])';
+  await cam.click(p.locator(`${pane} button`, { hasText: /^Reorder$/ }), { settle: 2500, after: 2.6 });   // Python's MsgBox
+  await cam.click(p.locator('dialog[open] button', { hasText: /^Yes$/ }), { settle: 1500, after: 2.0 });
+  await cam.click(p.locator(`${pane} button`, { hasText: /Who supplies it/ }), { settle: 6000, after: 2.6 }); // JavaScript's await
 }
 
 if (want('chart')) {

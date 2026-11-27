@@ -20,16 +20,24 @@ End Function
 ` },
   ModernVBA: { kind: 'standard', code: `${HEADER}Sub OrdersSoFar()
     Dim c As New Customer("Abbey Mill Delicatessen", 400)
-    Dim total As Currency = 0
-    Dim amount As Variant
+    Dim total As Currency = 0, orders As Long = 0
+    Dim amounts As Variant = Array(120, 95, 0, 210)
 
-    For Each amount In Array(120, 95, 0, 210)
+    SortArray amounts, Function(a, b) b - a
+    For Each amount As Variant In amounts
         If amount = 0 Then Continue For
         total += amount
+        orders += 1
     Next
 
-    Debug.Print c.Name; " has ordered "; Format(total, "£#,##0.00")
-    Debug.Print If(c.OverLimit(total), "Over the credit limit", "Within the credit limit")
+    Try
+        Debug.Print $"{c.Name} has ordered {total:Currency}"
+        Debug.Print $"Largest {amounts(0):Currency}, average {total / orders:Currency}"
+    Catch When Err.Number = 11
+        Debug.Print "No orders yet"
+    Finally
+        Debug.Print If(c.OverLimit(total), "Over the credit limit", "Within the credit limit")
+    End Try
 End Sub
 ` },
   Summary: { kind: 'py', code: `import statistics

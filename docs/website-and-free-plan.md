@@ -202,3 +202,12 @@ Approved by Simon on 12 Nov: the founder's note, the "Early access" label and na
 - Terms: short terms for the website and the demo; a line for any account opened before 27 Nov. Privacy: the website, the demo and messages, with a section for accounts opened before 27 Nov. The earlier versions are at commit `7f6d6ef`.
 - **For Simon in the app:** Administration > Accounts > Sign-ups > Close sign-ups. That also stops the demo offering "Create a free account" (it asks the app, and keeps the answer ten minutes).
 - **Still to change:** both videos end with "Start free at webaccessbuilder.com" (narration and end card); a new last line and end card are needed.
+
+## Final language additions and new videos (27 Nov, on branch `final-update`)
+
+- Simon, 27 Nov: staging is the final version. Its additions (Try … Catch … Finally, `$"…"` strings, inline functions with a `SortArray` comparer, For Each over your own class and default members) are in the programmer's guide; Claude added eight examples to Code by example on staging (`eb75b97`, 168 examples, test passing).
+- Site: the modern VBA lines on Home, Features and /vba/ name the new additions; the Modern VBA picture retaken.
+- Videos, rendered 27 Nov, to be uploaded to Bunny Stream by Simon (new IDs then go in the pages):
+  - tour (2:33): new `runtime` line ("free, however many people use it") and end ("runs on your own desktop, or on a server of your own. Try the demo…"), new end card; pictures as before (take7).
+  - code (1:41): refilmed on staging; the VBA scene shows the new additions; "a form passed to Python" replaced by an event in Python and one in JavaScript.
+- **Publish only after** staging is live on main and the demo, and the new video IDs are in.

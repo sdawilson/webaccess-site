@@ -15,10 +15,10 @@ const here = import.meta.dirname;
 const VIDEOS = {
   tour: { narration: 'narration.json', vo: 'vo', name: 'web-access-builder-demo',
     title: ['Spreadsheet and database, together at last.', 'Design it, then share it with your team as your own app'],
-    end: ['Start free at <span style="color:#d9a514">webaccessbuilder.com</span>', 'Free to build. £15 a month when you share it with your team'] },
+    end: ['Try the demo at <span style="color:#d9a514">webaccessbuilder.com</span>', 'On your desktop, or on a server of your own. Runtimes are free'] },
   code: { narration: 'code/narration.json', vo: 'code/vo', name: 'web-access-builder-code',
     title: ['VBA, Python and JavaScript: all here.', 'Code for your forms and reports, in a web browser'],
-    end: ['Start free at <span style="color:#d9a514">webaccessbuilder.com</span>', 'VBA, Python and JavaScript, with their libraries, in one place'] },
+    end: ['Try the demo at <span style="color:#d9a514">webaccessbuilder.com</span>', 'VBA, Python and JavaScript, with their libraries, in one place'] },
 };
 const V = VIDEOS[which];
 if (!V) throw new Error(`no video called ${which}: ${Object.keys(VIDEOS).join(', ')}`);

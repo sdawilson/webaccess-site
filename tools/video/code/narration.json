@@ -1,10 +1,34 @@
 [
- {"scene": "title", "text": "VBA, Python and JavaScript: all here, in Web Access Builder."},
- {"scene": "vba", "text": "The VBA you already have runs as it is. And the language has moved on: class constructors, AndAlso, plus-equals, Continue For, and Return."},
- {"scene": "refs", "text": "Libraries are a tick away in References: statistics, dates and fuzzy matching in JavaScript; NumPy, pandas, Matplotlib, SciPy and scikit-learn in Python."},
- {"scene": "python", "text": "A Python module sits beside the VBA ones. VBA calls its functions by name, and the Python runs in the browser, with nothing to install."},
- {"scene": "pyform", "text": "Pass a form to Python, and it can read the record and the subform's rows, then change the form. Here, pandas totals each order's lines as you move from one to the next."},
- {"scene": "chart", "text": "A Matplotlib chart shows on a form, through an Image control."},
- {"scene": "js", "text": "JavaScript works the same way: your own modules, or a library, such as Fuse for fuzzy matching, called from VBA."},
- {"scene": "end", "text": "VBA, Python and JavaScript, all in one place. Start free at webaccessbuilder.com."}
+ {
+  "scene": "title",
+  "text": "VBA, Python and JavaScript: all here, in Web Access Builder."
+ },
+ {
+  "scene": "vba",
+  "text": "The VBA you already have runs as it is. And the language has moved on: class constructors, Try and Catch, values written straight into a string, and inline functions."
+ },
+ {
+  "scene": "refs",
+  "text": "Libraries are a tick away in References: statistics, dates and fuzzy matching in JavaScript; NumPy, pandas, Matplotlib, SciPy and scikit-learn in Python."
+ },
+ {
+  "scene": "python",
+  "text": "A Python module sits beside the VBA ones. VBA calls its functions by name, and the Python runs in the browser, with nothing to install."
+ },
+ {
+  "scene": "events",
+  "text": "Any event can be written in Python or JavaScript instead. The code works on the live form: here, Python asks a question with a message box and updates the record, and JavaScript looks up the supplier."
+ },
+ {
+  "scene": "chart",
+  "text": "A Matplotlib chart shows on a form, through an Image control."
+ },
+ {
+  "scene": "js",
+  "text": "JavaScript works the same way: your own modules, or a library, such as Fuse for fuzzy matching, called from VBA."
+ },
+ {
+  "scene": "end",
+  "text": "VBA, Python and JavaScript, all in one place. Try the demo at webaccessbuilder.com."
+ }
 ]
