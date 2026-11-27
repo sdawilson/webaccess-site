@@ -4,7 +4,7 @@
 // ---------- settings ----------
 // The "Watch it in use" section shows when these are a Bunny Stream library ID and video ID.
 const STREAM_LIBRARY_ID = '803383';
-const STREAM_VIDEO_ID = 'c39b5fb2-d471-44d4-9b9c-9b6bdaa32f66'; // the narrated tour (v4, 16 Nov 2026: adds queries, reports and the assistant; ends with Start free; 2:31)
+const STREAM_VIDEO_ID = 'b6b813e4-94dd-4beb-82b5-bb50348ba264'; // the narrated tour (v4, 16 Nov 2026: adds queries, reports and the assistant; ends with Start free; 2:31)
 // Where "Start free" goes: the app's sign-up page.
 const SIGNUP_URL = 'https://app.webaccessbuilder.com/signup';
 // The demo: set this to the demo instance's address (e.g. 'https://demo.webaccessbuilder.com')
